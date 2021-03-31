@@ -1,0 +1,3519 @@
+entity Acc {
+	id Long required,
+	acc String maxlength(50)
+}
+
+entity AccP {
+	acc String required maxlength(50)
+}
+
+entity AccPp {
+	id Long required,
+	acc String maxlength(50)
+}
+
+entity Accbillno {
+	account String required maxlength(30),
+	accbillno String maxlength(30)
+}
+
+entity Accounts {
+	account String required maxlength(30),
+	consumetime Instant required,
+	hoteltime Instant,
+	feenum Integer,
+	money BigDecimal,
+	memo String maxlength(100),
+	empn String maxlength(10),
+	imprest BigDecimal,
+	propertiy String maxlength(100),
+	earntypen Integer,
+	payment Integer,
+	roomn String maxlength(10),
+	id Long required,
+	ulogogram String maxlength(30),
+	lk Integer,
+	acc String maxlength(50),
+	jzSign Integer,
+	jzflag Long,
+	sign String maxlength(4),
+	bs Integer,
+	jzhotel Instant,
+	jzempn String maxlength(50),
+	jztime Instant,
+	chonghong Integer,
+	billno String maxlength(10),
+	printcount Integer,
+	vipjf BigDecimal,
+	hykh String maxlength(20),
+	sl BigDecimal,
+	sgdjh String maxlength(20),
+	hoteldm String maxlength(20),
+	isnew Integer,
+	guestId Double,
+	yhkh String maxlength(50),
+	djq String maxlength(100),
+	ysje BigDecimal,
+	bj String maxlength(2),
+	bjempn String maxlength(50),
+	bjtime Instant,
+	paper2 String maxlength(50),
+	bc String maxlength(20),
+	auto String maxlength(2),
+	xsy String maxlength(50),
+	djkh String maxlength(50),
+	djsign String maxlength(2),
+	classname String maxlength(50),
+	iscy String maxlength(20),
+	bsign String maxlength(2),
+	fx String maxlength(2),
+	djlx String maxlength(50),
+	isup Integer,
+	yongjin BigDecimal,
+	czpc String maxlength(50),
+	cxflag Integer,
+	pmemo String maxlength(200),
+	czbillno String maxlength(50),
+	djqbz String maxlength(50),
+	ysqmemo String maxlength(100),
+	transactionId String maxlength(100),
+	outTradeNo String maxlength(100),
+	gsname String maxlength(200),
+	rz Instant,
+	gz Instant,
+	ts Integer,
+	ky String maxlength(50),
+	xy String maxlength(50),
+	roomtype String maxlength(50),
+	bkid Long
+}
+
+entity Adhoc {
+	id String required maxlength(10),
+	remark String required maxlength(40)
+}
+
+entity Auditinfo {
+	auditdate Instant required,
+	audittime Instant,
+	empn String maxlength(10),
+	aidentify String maxlength(100)
+}
+
+entity BookYst {
+	roomcode String maxlength(100),
+	roomname String required maxlength(100),
+	roomnum String maxlength(100),
+	roomseparatenum String maxlength(100),
+	bedids String maxlength(200),
+	bedsimpledesc String maxlength(100),
+	bednum String maxlength(200),
+	roomsize String maxlength(200),
+	roomfloor String maxlength(200),
+	netservice String maxlength(200),
+	nettype String maxlength(200),
+	iswindow String maxlength(200),
+	remark String maxlength(200),
+	sortid String maxlength(200),
+	roomstate String maxlength(200),
+	source String maxlength(100),
+	roomamenities String maxlength(100),
+	maxguestnums String maxlength(200),
+	roomdistribution String maxlength(100),
+	conditionbeforedays String maxlength(100),
+	conditionleastdays String maxlength(100),
+	conditionleastroomnum String maxlength(100),
+	paymentype String maxlength(100),
+	rateplandesc String maxlength(200),
+	rateplanname String maxlength(100),
+	rateplanstate String maxlength(100),
+	addvaluebednum String maxlength(100),
+	addvaluebedprice String maxlength(200),
+	addvaluebreakfastnum String maxlength(200),
+	addvaluebreakfastprice String maxlength(200),
+	baseprice String maxlength(200),
+	saleprice String maxlength(200),
+	marketprice String maxlength(200),
+	hotelproductservice String maxlength(100),
+	hotelproductservicedesc String maxlength(500),
+	hotelproductid String maxlength(50),
+	roomid String maxlength(50),
+	hotelid String maxlength(50)
+}
+
+entity Bookingtime {
+	id Long required,
+	bookid String maxlength(50),
+	roomn String maxlength(20),
+	booktime Instant,
+	rtype String maxlength(50),
+	sl Long,
+	remark String maxlength(100),
+	sign Integer,
+	rzsign Integer
+}
+
+entity Cardysq {
+	id Long required,
+	roomn String maxlength(30),
+	guestname String maxlength(50),
+	account String maxlength(50),
+	rq Instant,
+	cardid String maxlength(100),
+	djh String maxlength(100),
+	sqh String maxlength(100),
+	empn String maxlength(50),
+	sign String maxlength(2),
+	hoteltime Instant,
+	yxrq Instant,
+	je BigDecimal,
+	ysqmemo String maxlength(100)
+}
+
+/** 夜审房类出租率表 */
+entity CheckCzl {
+	hoteltime Instant required,
+	rtype String required maxlength(45),
+	rnum Integer required,
+	rOutnum Integer required,
+	czl BigDecimal required,
+	chagrge BigDecimal required,
+	chagrgeAvg BigDecimal required,
+	empn String required maxlength(45),
+	entertime Instant required
+}
+
+/** 协议出租率 */
+entity CheckCzl2 {
+	hoteltime Instant required,
+	protocol String required maxlength(45),
+	rnum Integer required,
+	czl BigDecimal required,
+	chagrge BigDecimal required,
+	chagrgeAvg BigDecimal required,
+	empn String required maxlength(45),
+	entertime Instant required
+}
+
+entity Checkin {
+	/** 主键 */
+	bkid Long required,
+	guestId Long required,
+	account String required maxlength(30),
+	hoteltime Instant,
+	indatetime Instant,
+	residefate Integer,
+	gotime Instant,
+	empn String maxlength(10),
+	roomn String required maxlength(10),
+	uname String maxlength(50),
+	rentp String required maxlength(10),
+	protocolrent BigDecimal,
+	remark String maxlength(8000),
+	phonen String maxlength(10),
+	empn2 String maxlength(10),
+	adhoc String maxlength(40),
+	auditflag Integer,
+	groupn String maxlength(20),
+	memo String maxlength(500),
+	lfSign String maxlength(1),
+	keynum String maxlength(3),
+	hykh String maxlength(50),
+	bm String maxlength(10),
+	flag Integer,
+	jxtime Instant,
+	jxflag Integer,
+	checkf Integer,
+	guestname String required maxlength(45),
+	fgf Integer required,
+	fgxx String maxlength(200),
+	hourSign Integer,
+	xsy String maxlength(20),
+	rzsign Integer,
+	jf Integer,
+	gname String maxlength(50),
+	zcsign Integer,
+	cqsl Integer,
+	sfjf Integer,
+	ywly String maxlength(20),
+	fk String maxlength(2),
+	fkrq Instant,
+	bc String maxlength(50),
+	jxremark String maxlength(100),
+	txid Double,
+	cfr String maxlength(50),
+	fjbm String maxlength(2),
+	djlx String maxlength(100),
+	wlddh String maxlength(100),
+	fksl BigDecimal,
+	dqtx String maxlength(1)
+}
+
+entity CheckinAccount {
+	account String required maxlength(30),
+	roomn String maxlength(10),
+	indatetime Instant,
+	gotime Instant,
+	kfang BigDecimal,
+	dhua BigDecimal,
+	minin BigDecimal,
+	peich BigDecimal,
+	qit BigDecimal,
+	total BigDecimal
+}
+
+entity CheckinBak {
+	guestId Long required,
+	account String required maxlength(30),
+	hoteltime Instant required,
+	indatetime Instant,
+	residefate Integer,
+	gotime Instant,
+	empn String maxlength(10),
+	roomn String maxlength(300),
+	uname String maxlength(50),
+	rentp String required maxlength(10),
+	protocolrent BigDecimal,
+	remark String maxlength(8000),
+	comeinfo String maxlength(40),
+	goinfo String maxlength(40),
+	phonen String maxlength(10),
+	empn2 String maxlength(10),
+	adhoc String maxlength(40),
+	auditflag Integer,
+	groupn String maxlength(20),
+	payment String maxlength(10),
+	mtype String maxlength(10),
+	memo String maxlength(8000),
+	flight String maxlength(20),
+	credit BigDecimal,
+	talklevel String maxlength(10),
+	lfSign String maxlength(1),
+	keynum String maxlength(3),
+	icNum Integer,
+	bh Integer,
+	icOwner String maxlength(50),
+	markId String maxlength(50),
+	gj String maxlength(50),
+	yfj BigDecimal,
+	hoteldate Instant,
+	id Integer required
+}
+
+entity CheckinTz {
+	guestId Long,
+	account String maxlength(30),
+	hoteltime Instant,
+	indatetime Instant,
+	residefate Integer,
+	gotime Instant,
+	empn String maxlength(10),
+	roomn String required maxlength(10),
+	rentp String required maxlength(10),
+	protocolrent BigDecimal,
+	remark String maxlength(8000),
+	phonen String maxlength(10),
+	empn2 String maxlength(10),
+	memo String maxlength(500),
+	lfSign String maxlength(1),
+	guestname String maxlength(45),
+	bc String maxlength(50),
+	roomtype String maxlength(50)
+}
+
+entity Choice {
+	id Integer required,
+	createdat Instant required,
+	updatedat Instant required,
+	text String required maxlength(191),
+	votes Integer required
+}
+
+entity Ck2xsy {
+	rq Instant required,
+	cpbh String required maxlength(12),
+	sl Integer required
+}
+
+entity Class0 {
+	dt Instant required,
+	empn String required maxlength(10),
+	oldmoney BigDecimal,
+	getmoney BigDecimal,
+	toup BigDecimal,
+	downempn String maxlength(10),
+	todown BigDecimal,
+	flag Integer,
+	old2 BigDecimal,
+	get2 BigDecimal,
+	toup2 BigDecimal,
+	todown2 BigDecimal,
+	upempn2 String maxlength(10),
+	/** 收现金押金 */
+	im9008 BigDecimal,
+	/** 收刷卡押金 */
+	im9009 BigDecimal,
+	/** 现金收款 */
+	co9991 BigDecimal,
+	/** 刷卡收款 */
+	co9992 BigDecimal,
+	/** 免单收款 */
+	co9993 BigDecimal,
+	/** 会员卡收款 */
+	co9994 BigDecimal,
+	/** 挂账 */
+	co9995 BigDecimal,
+	co9998 BigDecimal,
+	im9007 BigDecimal,
+	gotime Instant,
+	co9999 BigDecimal,
+	/** 退现押金 */
+	cm9008 BigDecimal,
+	/** 退刷卡押金 */
+	cm9009 BigDecimal,
+	co99910 BigDecimal,
+	checkSign String maxlength(2),
+	classPb String maxlength(10),
+	ck BigDecimal,
+	dk BigDecimal,
+	sjrq Instant,
+	qsjrq Instant,
+	byje BigDecimal,
+	xfcw String maxlength(30),
+	hoteldm String maxlength(20),
+	isnew Integer,
+	co99912 BigDecimal,
+	xj BigDecimal,
+	classname String maxlength(50),
+	co9010 BigDecimal,
+	co9012 BigDecimal,
+	co9013 BigDecimal,
+	co9014 BigDecimal,
+	co99915 BigDecimal,
+	hyxj BigDecimal,
+	hysk BigDecimal,
+	hyqt BigDecimal,
+	hkxj BigDecimal,
+	hksk BigDecimal,
+	hkqt BigDecimal,
+	qtwt BigDecimal,
+	qtysq BigDecimal,
+	bbysj BigDecimal,
+	zfbje BigDecimal,
+	wxje BigDecimal,
+	w99920 BigDecimal,
+	z99921 BigDecimal
+}
+
+entity ClassBak {
+	id Long required,
+	empn String maxlength(100),
+	dt Instant,
+	rq Instant,
+	ghname String maxlength(100),
+	bak String maxlength(100)
+}
+
+entity Classreport {
+	empn String required maxlength(10),
+	dt Instant required,
+	xjUp BigDecimal,
+	yfjA BigDecimal,
+	yfjD BigDecimal,
+	gz BigDecimal,
+	zz BigDecimal,
+	zzYj BigDecimal,
+	zzJs BigDecimal,
+	zzTc BigDecimal,
+	ff BigDecimal,
+	minibar BigDecimal,
+	phone BigDecimal,
+	other BigDecimal,
+	pc BigDecimal,
+	cz BigDecimal,
+	cy BigDecimal,
+	md BigDecimal,
+	huiy BigDecimal,
+	dtb BigDecimal,
+	sszx BigDecimal,
+	cyz BigDecimal,
+	hoteldm String maxlength(20),
+	gzxj BigDecimal,
+	isnew Integer
+}
+
+entity ClassreportRoom {
+	account String required maxlength(30),
+	roomn String maxlength(10),
+	yfj BigDecimal,
+	yfj9008 BigDecimal,
+	yfj9009 BigDecimal,
+	yfj9007 BigDecimal,
+	gz BigDecimal,
+	ff BigDecimal,
+	minibar BigDecimal,
+	phone BigDecimal,
+	other BigDecimal,
+	pc BigDecimal,
+	cz BigDecimal,
+	cy BigDecimal,
+	md BigDecimal,
+	huiy BigDecimal,
+	dtb BigDecimal,
+	sszx BigDecimal
+}
+
+entity Clog {
+	id Integer required,
+	empn String maxlength(20),
+	begindate Instant,
+	enddate Instant,
+	dqrq Instant
+}
+
+entity Code1 {
+	code1 String required maxlength(20),
+	code2 String required maxlength(20)
+}
+
+entity Comset {
+	comNum String required maxlength(10),
+	comBytes String required maxlength(18),
+	comDatabit String required maxlength(10),
+	comParitycheck String required maxlength(10),
+	comStopbit String required maxlength(18),
+	comFunction Integer required
+}
+
+entity Crinfo {
+	id Long required,
+	operatetime Instant,
+	oldrent BigDecimal,
+	newrent BigDecimal,
+	oldroomn String maxlength(10),
+	newroomn String maxlength(10),
+	account String maxlength(30),
+	empn String maxlength(10),
+	oldday Integer,
+	newday Integer,
+	hoteltime Instant,
+	roomn String maxlength(10),
+	memo String required maxlength(100),
+	realname String maxlength(50),
+	isup Integer
+}
+
+entity CtClass {
+	dt Instant required,
+	empn String required maxlength(10),
+	flag Integer,
+	jbempn String maxlength(20),
+	gotime Instant,
+	xj BigDecimal,
+	zp BigDecimal,
+	sk BigDecimal,
+	hyk BigDecimal,
+	cq BigDecimal,
+	gz BigDecimal,
+	gfz BigDecimal,
+	yq BigDecimal,
+	yh BigDecimal,
+	zzh BigDecimal,
+	checkSign String maxlength(2)
+}
+
+entity CyCptype {
+	cptdm String required maxlength(4),
+	cptname String required maxlength(20),
+	printsign Boolean required,
+	printer String maxlength(100),
+	printnum Integer,
+	printcut Integer,
+	syssign Boolean,
+	typesign String maxlength(100),
+	qy String maxlength(20)
+}
+
+entity CyRoomtype {
+	rtdm String required maxlength(10),
+	minc BigDecimal,
+	servicerate BigDecimal,
+	printer String maxlength(100),
+	printnum Integer
+}
+
+entity CzBqz {
+	rq Instant,
+	qSl Integer,
+	qKfl BigDecimal,
+	qPjz BigDecimal,
+	qYsfz BigDecimal,
+	qSjfz BigDecimal,
+	qFzcz BigDecimal,
+	qPjzcz BigDecimal,
+	bSl Integer,
+	bKfl BigDecimal,
+	bPjz BigDecimal,
+	bYsfz BigDecimal,
+	bSjfz BigDecimal,
+	bFzcz BigDecimal,
+	bPjzcz BigDecimal,
+	zSl Integer,
+	zKfl BigDecimal,
+	zPjz BigDecimal,
+	zYsfz BigDecimal,
+	zSjfz BigDecimal,
+	zFzcz BigDecimal,
+	zPjzcz BigDecimal,
+	zk BigDecimal
+}
+
+entity CzCzl2 {
+	dr Instant,
+	type String maxlength(50),
+	fs Integer,
+	kfl BigDecimal,
+	fzsr BigDecimal,
+	pjz BigDecimal,
+	fsM Integer,
+	kflM BigDecimal,
+	fzsrM BigDecimal,
+	pjzM BigDecimal,
+	fsY Integer,
+	kflY BigDecimal,
+	fzsrY BigDecimal,
+	pjzY BigDecimal,
+	fsQ Integer,
+	kflQ BigDecimal,
+	fzsrQ BigDecimal,
+	pjzQ BigDecimal,
+	dateY String maxlength(50),
+	dqdate Instant,
+	empn String maxlength(45),
+	number Integer required,
+	numberM Integer required,
+	numberY Integer required,
+	hoteldm String maxlength(50),
+	isnew Integer
+}
+
+entity CzCzl3 {
+	zfs Integer,
+	kfs BigDecimal,
+	protocoln String maxlength(50),
+	roomtype String maxlength(50),
+	sl Integer
+}
+
+entity CzlCz {
+	tjrq Instant required,
+	typeid Integer,
+	type String required maxlength(50),
+	fjsl Integer,
+	kfl BigDecimal,
+	pjz BigDecimal,
+	ysfz BigDecimal,
+	sjfz BigDecimal,
+	fzcz BigDecimal,
+	pjzcj BigDecimal,
+	kfsM BigDecimal,
+	kflM BigDecimal,
+	pjzM BigDecimal,
+	fzsr BigDecimal,
+	dayz BigDecimal,
+	hoteltime Instant,
+	empn String maxlength(45),
+	monthz BigDecimal,
+	hoteldm String maxlength(50),
+	isnew Integer
+}
+
+entity DCk {
+	id Integer required,
+	depot String required maxlength(20),
+	ckdate Instant required,
+	ckbillno String required maxlength(20),
+	deptname String maxlength(20),
+	jbr String maxlength(20),
+	remark String maxlength(100),
+	spbm String required maxlength(20),
+	spmc String required maxlength(50),
+	unit String maxlength(20),
+	price BigDecimal,
+	sl BigDecimal,
+	je BigDecimal,
+	memo String maxlength(100),
+	flag Integer,
+	dbSign Integer,
+	cktype String maxlength(30),
+	empn String maxlength(20),
+	lrdate Instant,
+	kcid Double,
+	f1 String maxlength(10),
+	f2 String maxlength(10),
+	f1empn String maxlength(50),
+	f2empn String maxlength(50),
+	f1sj Instant,
+	f2sj Instant
+}
+
+entity DCktime {
+	begintime Instant required,
+	endtime Instant required,
+	depot String required maxlength(20),
+	ckbillno String maxlength(30)
+}
+
+entity DCktype {
+	cktype String required maxlength(30),
+	memo String maxlength(100),
+	sign String required maxlength(20)
+}
+
+entity DCompany {
+	company String required maxlength(100),
+	linkman String maxlength(50),
+	phone String maxlength(100),
+	address String maxlength(100),
+	remark String maxlength(100),
+	fax String maxlength(100),
+	id Integer required
+}
+
+entity DDb {
+	id Integer required,
+	dbdate Instant required,
+	dbbillno String required maxlength(20),
+	rdepot String required maxlength(20),
+	cdepot String required maxlength(20),
+	jbr String maxlength(50),
+	remark String maxlength(50),
+	spbm String required maxlength(20),
+	spmc String required maxlength(20),
+	unit String maxlength(20),
+	price BigDecimal,
+	sl BigDecimal,
+	je BigDecimal,
+	memo String maxlength(100),
+	flag Integer,
+	kcid Integer,
+	empn String maxlength(20),
+	lrdate Instant,
+	ckbillno String maxlength(30),
+	f1 String maxlength(10),
+	f2 String maxlength(10),
+	f1empn String maxlength(50),
+	f2empn String maxlength(50),
+	f1sj Instant,
+	f2sj Instant
+}
+
+entity DDepot {
+	depotid Boolean required,
+	depot String required maxlength(20)
+}
+
+entity DDept {
+	deptid Integer required,
+	deptname String required maxlength(50)
+}
+
+entity DEmpn {
+	empnid Integer required,
+	empn String required maxlength(50),
+	deptid Integer,
+	phone String maxlength(50)
+}
+
+entity DGoods {
+	typeid Integer required,
+	goodsname String required maxlength(100),
+	goodsid String required maxlength(20),
+	ggxh String maxlength(50),
+	pysj String maxlength(50),
+	wbsj String maxlength(50),
+	unit String maxlength(50),
+	gcsl BigDecimal,
+	dcsl BigDecimal,
+	remark String maxlength(50)
+}
+
+entity DKc {
+	id Integer required,
+	depot String required maxlength(20),
+	spbm String required maxlength(20),
+	spmc String required maxlength(50),
+	xh String maxlength(50),
+	dw String maxlength(20),
+	price BigDecimal,
+	sl BigDecimal,
+	je BigDecimal
+}
+
+entity DPdb {
+	id Long required,
+	begindate Instant,
+	enddate Instant,
+	bm String maxlength(20),
+	spmc String maxlength(50),
+	qcsl BigDecimal,
+	rksl BigDecimal,
+	xssl BigDecimal,
+	dbsl BigDecimal,
+	qtck BigDecimal,
+	jcsl BigDecimal,
+	swsl BigDecimal,
+	pyk BigDecimal,
+	memo String maxlength(200),
+	depot String maxlength(50),
+	rkje BigDecimal,
+	xsje BigDecimal,
+	dbje BigDecimal,
+	jcje BigDecimal,
+	dp String maxlength(50),
+	qcje BigDecimal,
+	swje BigDecimal,
+	qtje BigDecimal
+}
+
+entity DRk {
+	id Integer required,
+	rkdate Instant required,
+	depot String required maxlength(20),
+	rklx String maxlength(50),
+	rkbillno String required maxlength(20),
+	company Integer,
+	deptname String maxlength(50),
+	jbr String maxlength(50),
+	remark String maxlength(100),
+	empn String maxlength(50),
+	lrdate Instant,
+	spbm String required maxlength(20),
+	spmc String required maxlength(50),
+	ggxh String maxlength(20),
+	dw String maxlength(20),
+	price BigDecimal,
+	sl BigDecimal,
+	je BigDecimal,
+	sign Integer,
+	memo String maxlength(100),
+	flag Integer,
+	f1 String maxlength(10),
+	f2 String maxlength(10),
+	f1empn String maxlength(50),
+	f2empn String maxlength(50),
+	f1sj Instant,
+	f2sj Instant
+}
+
+entity DSpcz {
+	rq Instant,
+	czrq Instant
+}
+
+entity DType {
+	typeid Integer required,
+	typename String required maxlength(50),
+	fatherid Integer required,
+	disabled Integer
+}
+
+entity DUnit {
+	unit String required maxlength(20)
+}
+
+entity DXs {
+	id Long required,
+	begintime Instant required,
+	endtime Instant required,
+	ckbillno String required maxlength(30),
+	depot String maxlength(50),
+	kcid Long required,
+	ckid Long required,
+	spbm String required maxlength(30),
+	spmc String required maxlength(50),
+	unit String maxlength(20),
+	rkprice BigDecimal,
+	xsprice BigDecimal,
+	sl BigDecimal,
+	rkje BigDecimal,
+	xsje BigDecimal
+}
+
+entity Dayearndetail {
+	earndate Instant required,
+	salespotn Integer required,
+	money BigDecimal
+}
+
+entity DxSed {
+	id Long required,
+	dxRq Instant,
+	dxZt String maxlength(2),
+	fsSj Instant
+}
+
+entity DxSedinfo {
+	id Long required,
+	yddx String maxlength(2),
+	yddxmemo String maxlength(50),
+	qxyddx String maxlength(2),
+	qxydmemo String maxlength(50),
+	czdx String maxlength(2),
+	czmemo String maxlength(300),
+	qxczdx String maxlength(10),
+	qxczmemo String maxlength(300),
+	yyedx String maxlength(2),
+	yyememo String maxlength(300),
+	fstime String maxlength(20),
+	sffshm String maxlength(2),
+	rzdx String maxlength(50),
+	rzdxroomn String maxlength(50),
+	jfdz String maxlength(50),
+	blhy String maxlength(2),
+	rzmemo String maxlength(300),
+	blhymemo String maxlength(300),
+	tfdx String maxlength(2),
+	tfdxmemo String maxlength(300),
+	fslb String maxlength(2),
+	fslbmemo String maxlength(300)
+}
+
+entity Ee {
+	id Long required,
+	acc String maxlength(50)
+}
+
+entity Errlog {
+	iderrlog Integer required,
+	errnumber Integer,
+	errtext String maxlength(255),
+	errwindowmenu String maxlength(255),
+	errobject String maxlength(255),
+	errevent String maxlength(255),
+	errline Integer,
+	errtime Instant,
+	sumbitsign Boolean,
+	bmpfile String maxlength(255),
+	bmpblob Blob
+}
+
+entity Feetype {
+	feenum Integer required,
+	feename String required maxlength(45),
+	price BigDecimal required,
+	sign Integer required,
+	beizhu String maxlength(45),
+	pym String maxlength(45),
+	salespotn Integer required,
+	depot String maxlength(50),
+	cbsign Integer,
+	ordersign Integer,
+	hoteldm String maxlength(20),
+	isnew Integer,
+	ygj BigDecimal,
+	autosign String maxlength(2),
+	jj BigDecimal,
+	hyj BigDecimal,
+	dqkc BigDecimal
+}
+
+entity FkCz {
+	id Long required,
+	hoteltime Instant required,
+	wxf Integer,
+	ksf Integer,
+	kf Integer,
+	zfs Integer,
+	groupyd Integer,
+	skyd Integer,
+	ydwd Integer,
+	qxyd Integer,
+	isnew Integer,
+	hoteldm String maxlength(50),
+	hys BigDecimal,
+	khys BigDecimal
+}
+
+entity FtXz {
+	id Long required,
+	roomn String maxlength(50)
+}
+
+entity FtXzs {
+	id Long required,
+	roomn String maxlength(50)
+}
+
+entity FwDs {
+	id Long required,
+	hoteltime Instant,
+	rq Instant,
+	xz Integer,
+	memo String maxlength(50),
+	fwy String maxlength(50),
+	roomn String maxlength(50),
+	rtype String maxlength(100),
+	empn String maxlength(100),
+	sl Integer
+}
+
+entity FwEmpn {
+	empnid String required maxlength(50),
+	empn String required maxlength(50),
+	deptid Integer,
+	phone String maxlength(50)
+}
+
+entity FwJywp {
+	id Long required,
+	jyrq Instant,
+	roomn String maxlength(50),
+	guestname String maxlength(100),
+	jywp String maxlength(200),
+	fwy String maxlength(100),
+	djr String maxlength(100),
+	/** 是否归还 */
+	flag String maxlength(2),
+	ghrq Instant,
+	djrq Instant,
+	remark String maxlength(300)
+}
+
+entity FwWxf {
+	id Long required,
+	roomn String maxlength(100),
+	memo String maxlength(200),
+	djrq Instant,
+	wxr String maxlength(100),
+	wcrq Instant,
+	djr String maxlength(100),
+	flag String maxlength(10)
+}
+
+entity FwYlwp {
+	id Long required,
+	roomn String maxlength(50),
+	guestname String maxlength(100),
+	memo String maxlength(300),
+	sdr String maxlength(100),
+	sdrq Instant,
+	rlr String maxlength(100),
+	rlrq Instant,
+	remark String maxlength(300),
+	empn String maxlength(100),
+	czrq Instant,
+	/** 0未认领 */
+	flag String maxlength(2)
+}
+
+entity Fwcheck {
+	id Integer required,
+	roomn String required maxlength(50),
+	zlrq Instant,
+	zlempn String maxlength(50),
+	okrq Instant,
+	okempn String maxlength(30),
+	flag Integer
+}
+
+entity GbGlobal {
+	checkTime Instant required,
+	gotime Instant required
+}
+
+entity Getaccount {
+	accountname String required maxlength(10),
+	accountnum Integer required
+}
+
+entity Getbillnum {
+	billname String required maxlength(20),
+	billnum BigDecimal required,
+	ym String required maxlength(10)
+}
+
+entity Goaccounts {
+	account String required maxlength(30),
+	roomn String maxlength(10),
+	guestName String maxlength(50),
+	jzSign Integer required,
+	memo String maxlength(255),
+	jztime Instant,
+	goempn String maxlength(10),
+	jzempn String maxlength(10),
+	gotime Instant,
+	guestId Long,
+	indatetime Instant,
+	residefate Integer,
+	hoteltime Instant,
+	goHotel Instant,
+	hykh String maxlength(30),
+	jzhotel Instant,
+	bc String maxlength(20),
+	bkid Long
+}
+
+entity Gpurchase {
+	id Long required,
+	dfw String maxlength(50),
+	fh String maxlength(50),
+	account String maxlength(50),
+	guestname String maxlength(50),
+	qh String maxlength(50),
+	mm String maxlength(50),
+	dfrq Instant,
+	hsff String maxlength(50),
+	empn String maxlength(50),
+	qxsign String maxlength(2),
+	djrq Instant,
+	hoteltime Instant
+}
+
+entity GrCause {
+	causedm String required maxlength(50),
+	causetype String required maxlength(50)
+}
+
+entity Grouphr {
+	groupn String required maxlength(10),
+	roomtype String required maxlength(10),
+	number Integer,
+	price BigDecimal
+}
+
+entity Groupplanroom {
+	groupn String required maxlength(10),
+	roomn String required maxlength(10),
+	roomE BigDecimal
+}
+
+entity Groups {
+	groupn String required maxlength(10),
+	gname String required maxlength(50),
+	account String required maxlength(30),
+	ulogogram String maxlength(10),
+	protocoln String maxlength(10),
+	serve BigDecimal,
+	flight String maxlength(20),
+	indatetime Instant required,
+	residefate Integer,
+	satrap String maxlength(20),
+	phone String maxlength(30),
+	remark String maxlength(200),
+	empn String maxlength(10),
+	empn2 String maxlength(10),
+	ciflag String maxlength(10),
+	coflag String maxlength(10),
+	goflag String maxlength(10),
+	totalrn Integer,
+	flag String maxlength(10),
+	guestId Long,
+	zhSign Integer,
+	gotime Instant,
+	hoteltime Instant,
+	paper String maxlength(50),
+	papertype Integer,
+	ffsign Integer,
+	nativePlace String maxlength(50),
+	address String maxlength(50),
+	rentp String maxlength(20),
+	goempn String maxlength(50),
+	tttime Instant,
+	jzhotel Instant,
+	cc String maxlength(50),
+	gj String maxlength(50),
+	bksf String maxlength(50),
+	scdm String maxlength(50),
+	zhlx String maxlength(50),
+	kryq String maxlength(100),
+	xsy String maxlength(50),
+	ywly String maxlength(50),
+	ky String maxlength(50),
+	xydw String maxlength(50),
+	hykh String maxlength(50),
+	sfsk String maxlength(10),
+	wlddh String maxlength(100),
+	czrq Instant,
+	qxrq Instant,
+	tfzd String maxlength(20),
+	yddate Instant
+}
+
+/** 散客预订 */
+entity Guestbook {
+	id Integer required,
+	guestname String required maxlength(45),
+	indate Instant required,
+	gotime Instant required,
+	ts Integer required,
+	phone String maxlength(45),
+	remark String maxlength(100),
+	/** 1 预订2入住3失效 */
+	flag Integer,
+	caldate Instant,
+	account String required maxlength(50),
+	paper String maxlength(20),
+	ptype String maxlength(20),
+	webgooksign Integer,
+	pro String maxlength(50),
+	rprice BigDecimal,
+	ywly String maxlength(20),
+	xyh String maxlength(50),
+	xsy String maxlength(50),
+	name String maxlength(50),
+	empn String maxlength(50),
+	yddate Instant,
+	ordernumber String maxlength(100),
+	hotelid String maxlength(50),
+	upsign String maxlength(2),
+	orderstatuscode String maxlength(2),
+	webflag String maxlength(2),
+	orderstatusch String maxlength(2),
+	tfzd String maxlength(20)
+}
+
+entity Guestid {
+	id Long required,
+	addtime Instant
+}
+
+entity Guestidtx {
+	id Long required,
+	addtime Instant
+}
+
+entity Guestsource {
+	number Integer required,
+	guestsource String required maxlength(20),
+	yzqh String maxlength(2)
+}
+
+entity GyHzbm {
+	nm String required maxlength(6),
+	hz String required maxlength(4),
+	py String maxlength(8),
+	sj String maxlength(8),
+	jh String maxlength(8),
+	jx String maxlength(8),
+	wb String maxlength(8)
+}
+
+entity HisAcc {
+	acc String required maxlength(50)
+}
+
+entity Hisguest {
+	id Long required,
+	name String maxlength(200),
+	xb String maxlength(10),
+	zjlx String maxlength(200),
+	zjh String maxlength(20),
+	dz String maxlength(200),
+	mz String maxlength(50),
+	intime Instant,
+	gotime Instant,
+	bz String maxlength(100),
+	roomn String maxlength(100),
+	flag String maxlength(1)
+}
+
+entity Hisguestinfobc {
+	id Long required,
+	guestId Double,
+	empn String maxlength(20),
+	memo String maxlength(500),
+	czrq Instant,
+	flag String maxlength(2)
+}
+
+entity Historyguestinfo {
+	papertypen Integer,
+	paper String maxlength(20),
+	name String required maxlength(20),
+	sex String maxlength(2),
+	nationality String maxlength(20),
+	address String maxlength(200),
+	lastindate Instant,
+	lastresidefate Integer,
+	lastaccount String maxlength(30),
+	namePy String maxlength(20),
+	cphone String maxlength(20),
+	guestId Long required,
+	nativePlace String maxlength(100),
+	memo String maxlength(8000),
+	phone String maxlength(20),
+	fax String maxlength(20),
+	mobile String maxlength(20),
+	uname String maxlength(50),
+	gsn Integer,
+	birthday Instant,
+	addtime Instant,
+	ip String maxlength(30),
+	empn String maxlength(10),
+	totalresidefate Integer,
+	totalexpenditure Integer,
+	totalcs Integer,
+	lastexpenditure Integer,
+	lastroomn String maxlength(20),
+	blacksign Integer,
+	blackinfo String maxlength(100),
+	hykh String maxlength(45),
+	xsy String maxlength(20),
+	hoteldm String maxlength(20),
+	isnew Integer,
+	xyh String maxlength(50),
+	yxsign Integer,
+	txid Integer,
+	jf BigDecimal,
+	jfdh BigDecimal,
+	xp Blob
+}
+
+entity Historyroominfo {
+	account String required maxlength(30),
+	indate Instant required,
+	residefate Integer,
+	employeen String maxlength(20),
+	roomn String required maxlength(50),
+	roomtype String maxlength(120),
+	rent BigDecimal,
+	protocolrent BigDecimal,
+	name1 String maxlength(20),
+	sex1 String maxlength(2),
+	nationality1 String maxlength(20),
+	papertypen1 Integer,
+	paper1 String maxlength(20),
+	address1 String maxlength(40),
+	remark String maxlength(8000),
+	expenditure BigDecimal,
+	gotime Instant required,
+	empn String maxlength(20),
+	cphone String maxlength(20),
+	groupn String maxlength(20),
+	hoteltime Instant,
+	guestId Long,
+	goSign Integer,
+	xy String maxlength(50),
+	ky String maxlength(50),
+	paper2 String maxlength(45),
+	ywly String maxlength(20),
+	xyh String maxlength(50),
+	xsy String maxlength(50),
+	gohotel Instant,
+	hoteldm String maxlength(50),
+	isnew Integer,
+	hykh String maxlength(50),
+	bc String maxlength(20),
+	hoteld Instant,
+	zcq Long,
+	djlx String maxlength(50),
+	wlddh String maxlength(100),
+	isup Integer,
+	id Long required,
+	bkid Long
+}
+
+entity Hotels {
+	hoteldm String required maxlength(20),
+	hname String required maxlength(50),
+	haddress String maxlength(150),
+	hmanager String required maxlength(30),
+	hphone String maxlength(50),
+	hfax String maxlength(50),
+	hpulldate String maxlength(255),
+	hstatus Integer,
+	workforceDm String maxlength(100),
+	localmainip String maxlength(20),
+	audittime String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	autoaudit Boolean,
+	zds String required maxlength(10),
+	jqcode String required maxlength(100),
+	regcode String maxlength(200),
+	printMemo String maxlength(2000),
+	lockid String maxlength(100),
+	webadd String maxlength(100),
+	linkid String maxlength(50)
+}
+
+entity HourAwoke {
+	id Boolean required,
+	gotime Instant,
+	roomn String maxlength(20),
+	txtime Instant,
+	empn String maxlength(50),
+	account String maxlength(50)
+}
+
+entity HtBkzk {
+	id Long required,
+	lb String maxlength(50),
+	acc String maxlength(50),
+	moneys BigDecimal,
+	imprest BigDecimal,
+	roomn String maxlength(50),
+	memo String maxlength(100)
+}
+
+entity HtCzl {
+	id Long required,
+	hoteltime Instant,
+	vtype String maxlength(50),
+	vvtype String maxlength(50),
+	memo String maxlength(100),
+	cnum Integer,
+	num Integer,
+	czl BigDecimal,
+	pjj BigDecimal,
+	ffsr BigDecimal,
+	isup Integer
+}
+
+entity HtFk {
+	id Long required,
+	roomn String maxlength(50),
+	start String maxlength(20),
+	end String maxlength(20),
+	fkrq Instant,
+	empn String maxlength(50),
+	bz String maxlength(50),
+	kh String maxlength(100)
+}
+
+entity HtFp {
+	id Long required,
+	account String maxlength(50),
+	roomn String maxlength(50),
+	guestname String maxlength(50),
+	fphm String maxlength(50),
+	xfe BigDecimal,
+	fpje BigDecimal,
+	empn String maxlength(50),
+	rq Instant,
+	hoteltime Instant,
+	zpe BigDecimal,
+	zxf BigDecimal,
+	sign String maxlength(2)
+}
+
+entity HtFpgl {
+	id Long required,
+	indate Instant,
+	godate Instant,
+	account String maxlength(50),
+	guestname String maxlength(50),
+	roomn String maxlength(50),
+	xf BigDecimal,
+	fpsign String maxlength(2),
+	fpje BigDecimal,
+	fph String maxlength(50),
+	kpempn String maxlength(50),
+	rq Instant
+}
+
+entity HtFtyc {
+	hoteltime Instant,
+	types String maxlength(50),
+	zfs Integer,
+	wxf Integer,
+	kyf Integer,
+	tdyd Integer,
+	skyd Integer,
+	id Integer required
+}
+
+entity HtMx {
+	djh String maxlength(50),
+	account String maxlength(50),
+	roomn String maxlength(50),
+	consumetime Instant,
+	feenum String maxlength(50),
+	memo String maxlength(50),
+	money BigDecimal,
+	imprest BigDecimal,
+	pro String maxlength(50),
+	lsh String maxlength(50),
+	empn String maxlength(50),
+	chonghong Integer,
+	id Long required,
+	yyd String maxlength(50)
+}
+
+entity HtUname {
+	id Long required,
+	xyh String maxlength(50),
+	uname String maxlength(100),
+	xfje BigDecimal,
+	mxfje BigDecimal,
+	bl String maxlength(50)
+}
+
+entity HtXsy {
+	id Long required,
+	xsy String maxlength(50),
+	ywly String maxlength(50),
+	xyh String maxlength(100),
+	account String maxlength(50),
+	guestname String maxlength(50),
+	roomn String maxlength(50),
+	indate Instant,
+	godate Instant,
+	ff BigDecimal,
+	other BigDecimal,
+	sub BigDecimal
+}
+
+entity HtXyXf {
+	acc String maxlength(50),
+	xyh String maxlength(50),
+	id Long required
+}
+
+entity HyZsr {
+	rq Instant required,
+	xj BigDecimal,
+	sk BigDecimal,
+	gz BigDecimal,
+	md BigDecimal,
+	djq BigDecimal,
+	hyk BigDecimal,
+	ml BigDecimal,
+	bm String required maxlength(50),
+	hoteldm String maxlength(50),
+	isnew Integer
+}
+
+entity IcLog {
+	id Long required,
+	icId String maxlength(50),
+	roomn String maxlength(10),
+	sTime Instant,
+	eTime Instant,
+	empn String maxlength(10),
+	opTime Instant
+}
+
+entity Jbb {
+	flag Boolean required
+}
+
+entity Jsqx {
+	id Long required,
+	ip String maxlength(20),
+	hname String maxlength(50)
+}
+
+entity KtvSr {
+	id Long required,
+	rq Instant,
+	xj BigDecimal,
+	sk BigDecimal,
+	gz BigDecimal,
+	md BigDecimal,
+	djq BigDecimal,
+	hyk BigDecimal,
+	ml BigDecimal,
+	czrq Instant,
+	czy String maxlength(50)
+}
+
+entity Login {
+	empn String required maxlength(50),
+	ip String maxlength(50),
+	op String maxlength(50),
+	optime Instant
+}
+
+entity ManagerHz {
+	id Long required,
+	hoteldate Instant required,
+	feenum String required maxlength(50),
+	feename String maxlength(50),
+	salespotn Integer,
+	dayje BigDecimal,
+	mje BigDecimal,
+	smje BigDecimal,
+	yje BigDecimal,
+	syje BigDecimal,
+	sign String maxlength(10),
+	isnew Integer,
+	isup Integer
+}
+
+entity ManagerR {
+	id Long required,
+	hoteldate Instant required,
+	feenum String required maxlength(50),
+	feename String maxlength(50),
+	salespotn Integer,
+	dayje BigDecimal,
+	mje BigDecimal,
+	smje BigDecimal,
+	yje BigDecimal,
+	syje BigDecimal,
+	sign String maxlength(10)
+}
+
+/** 会员表 */
+entity Member {
+	cardid String required maxlength(30),
+	guestname String required maxlength(45),
+	paper String maxlength(45),
+	cardtype String required maxlength(20),
+	phone String maxlength(50),
+	password String required maxlength(45),
+	jfPoint BigDecimal,
+	jfChange BigDecimal,
+	ckMoney BigDecimal,
+	kxfMoney BigDecimal,
+	xfMoney BigDecimal,
+	flag Integer,
+	empn String maxlength(45),
+	enddate Instant,
+	adddate Instant,
+	memo String maxlength(100),
+	address String maxlength(100),
+	birthday Instant,
+	namePy String maxlength(45),
+	nativePlace String maxlength(100),
+	zxf BigDecimal,
+	ykh String maxlength(30),
+	whz Integer,
+	sfsj Integer,
+	xsy String maxlength(50),
+	djje BigDecimal,
+	hoteldm String maxlength(20),
+	isnew Integer,
+	cardid2 String maxlength(50),
+	hoteltime Instant,
+	isup String maxlength(2),
+	jsdx String maxlength(2)
+}
+
+entity Memberbillno {
+	id Integer required,
+	billno String required maxlength(20),
+	cardno String required maxlength(20)
+}
+
+entity Message {
+	id Integer required,
+	roomn String required maxlength(20),
+	memo String maxlength(300),
+	sign Integer,
+	name String maxlength(50),
+	account String maxlength(20),
+	addtime Instant
+}
+
+entity Microsoft {
+	user1 String maxlength(20),
+	password String maxlength(50)
+}
+
+entity Minibar {
+	hoteldate Instant required,
+	feenum Integer required,
+	feename String required maxlength(20),
+	jycb BigDecimal,
+	price BigDecimal,
+	je BigDecimal,
+	sl BigDecimal required
+}
+
+entity Money {
+	zgh String required maxlength(50),
+	name String maxlength(50),
+	gzlb String required maxlength(50),
+	gzje BigDecimal,
+	sj Instant,
+	flag Integer required,
+	cqts String maxlength(6)
+}
+
+entity Nationality {
+	id String required maxlength(20),
+	nationality String required maxlength(20)
+}
+
+entity Numbers {
+	numbers String required maxlength(16)
+}
+
+entity Officephone {
+	extension String required maxlength(10),
+	roomn String required maxlength(10),
+	officename String required maxlength(40)
+}
+
+entity Oplog {
+	oper String required maxlength(10),
+	op String required maxlength(500),
+	optime Instant required,
+	windows String maxlength(40),
+	optype String required maxlength(10)
+}
+
+entity Papertype {
+	papertypen Integer required,
+	papername String required maxlength(20)
+}
+
+entity Payment {
+	logogram String required maxlength(10),
+	pmmname String maxlength(20),
+	credit BigDecimal
+}
+
+entity Pbcatcol {
+	pbcTnam String required maxlength(65),
+	pbcTid Integer,
+	pbcOwnr String required maxlength(65),
+	pbcCnam String required maxlength(65),
+	pbcCid Integer,
+	pbcLabl String maxlength(254),
+	pbcLpos Integer,
+	pbcHdr String maxlength(254),
+	pbcHpos Integer,
+	pbcJtfy Integer,
+	pbcMask String maxlength(31),
+	pbcCase Integer,
+	pbcHght Integer,
+	pbcWdth Integer,
+	pbcPtrn String maxlength(31),
+	pbcBmap String maxlength(1),
+	pbcInit String maxlength(254),
+	pbcCmnt String maxlength(254),
+	pbcEdit String maxlength(31),
+	pbcTag String maxlength(254)
+}
+
+entity Pbcatedt {
+	pbeName String required maxlength(30),
+	pbeEdit String maxlength(254),
+	pbeType Integer,
+	pbeCntr Integer,
+	pbeSeqn Integer required,
+	pbeFlag Integer,
+	pbeWork String maxlength(32)
+}
+
+entity Pbcatfmt {
+	pbfName String required maxlength(30),
+	pbfFrmt String maxlength(254),
+	pbfType Integer,
+	pbfCntr Integer
+}
+
+entity Pbcattbl {
+	pbtTnam String required maxlength(65),
+	pbtTid Integer,
+	pbtOwnr String required maxlength(65),
+	pbdFhgt Integer,
+	pbdFwgt Integer,
+	pbdFitl String maxlength(1),
+	pbdFunl String maxlength(1),
+	pbdFchr Integer,
+	pbdFptc Integer,
+	pbdFfce String maxlength(18),
+	pbhFhgt Integer,
+	pbhFwgt Integer,
+	pbhFitl String maxlength(1),
+	pbhFunl String maxlength(1),
+	pbhFchr Integer,
+	pbhFptc Integer,
+	pbhFfce String maxlength(18),
+	pblFhgt Integer,
+	pblFwgt Integer,
+	pblFitl String maxlength(1),
+	pblFunl String maxlength(1),
+	pblFchr Integer,
+	pblFptc Integer,
+	pblFfce String maxlength(18),
+	pbtCmnt String maxlength(254)
+}
+
+entity Pbcatvld {
+	pbvName String required maxlength(30),
+	pbvVald String maxlength(254),
+	pbvType Integer,
+	pbvCntr Integer,
+	pbvMsg String maxlength(254)
+}
+
+entity Planroomn {
+	account String required maxlength(20),
+	rtype String maxlength(20),
+	roomn String required maxlength(20),
+	empn String maxlength(20),
+	yddate Instant,
+	flag Integer,
+	gotime Instant,
+	rzsign String maxlength(2),
+	id Long required,
+	name String maxlength(50),
+	rentp BigDecimal,
+	gosign String maxlength(1),
+	insign String maxlength(1),
+	czrq Instant,
+	fk String maxlength(2),
+	fkrq Instant,
+	zcq BigDecimal,
+	hotelid String maxlength(50),
+	ordernumber String maxlength(50),
+	isup Integer,
+	paper String maxlength(50),
+	xb String maxlength(50),
+	address String maxlength(150),
+	guestId Long
+}
+
+entity Plantype {
+	account String maxlength(50),
+	groupn String required maxlength(50),
+	roomtype String required maxlength(50),
+	kysl Integer,
+	sl Integer,
+	indate Instant,
+	rentp BigDecimal,
+	flag Integer,
+	godate Instant,
+	zs Integer,
+	ypf Integer,
+	yqx Integer
+}
+
+entity PrismaMigrations {
+	id String required maxlength(36),
+	checksum String required maxlength(64),
+	finishedAt Instant,
+	migrationName String required maxlength(255),
+	logs String maxlength(255),
+	rolledBackAt Instant,
+	startedAt Instant required,
+	appliedStepsCount Integer required
+}
+
+entity ProItem {
+	item String required maxlength(20),
+	je BigDecimal,
+	id Integer required
+}
+
+entity Project {
+	id Integer required,
+	createdat Instant required,
+	updatedat Instant required,
+	name String required maxlength(191)
+}
+
+entity Puacc {
+	account String required maxlength(50),
+	ulogogram String maxlength(50),
+	puacc String required maxlength(50),
+	roomn String maxlength(50),
+	hoteltime Instant required,
+	consumetime Instant required,
+	feenum Integer,
+	memo String maxlength(100),
+	money BigDecimal,
+	imprest BigDecimal,
+	empn String maxlength(50),
+	jztime Instant,
+	jzhoteltime Instant,
+	jzempn Instant,
+	guestId Double,
+	guestname String maxlength(50),
+	earntypen Integer
+}
+
+entity Punit {
+	ulogogram String required maxlength(10),
+	uname String required maxlength(50),
+	satrap String maxlength(100),
+	phone String maxlength(20),
+	fax String maxlength(20),
+	address String maxlength(50),
+	account String required maxlength(30),
+	protocoln String maxlength(10),
+	totalexp BigDecimal,
+	totalarr BigDecimal,
+	tImprest BigDecimal,
+	toplimit BigDecimal,
+	enabled Integer,
+	xydatetime Instant,
+	zgh String maxlength(50),
+	bz String maxlength(50),
+	monthAcc Integer,
+	empn String maxlength(45),
+	typesign String maxlength(50),
+	sfqd String maxlength(2),
+	czrq Instant,
+	yongjin BigDecimal
+}
+
+entity Qdbill {
+	billno String required maxlength(20),
+	id Boolean required
+}
+
+entity Question {
+	id Integer required,
+	createdat Instant required,
+	updatedat Instant required,
+	text String required maxlength(191)
+}
+
+entity R {
+	roomn String required maxlength(10),
+	ssdate Instant required,
+	dayn Integer required
+}
+
+entity RProgram {
+	node Integer required,
+	parentnode Integer required,
+	displaytext String maxlength(255),
+	tabtext String maxlength(255),
+	sortorder Integer,
+	pictureindex String maxlength(255),
+	selectedpictureindex String maxlength(255),
+	statepictureindex String maxlength(255),
+	expanded Integer,
+	disabled Boolean,
+	classname String maxlength(255),
+	free String maxlength(2)
+}
+
+entity Rentp {
+	protocoln String required maxlength(10),
+	roomtype String required maxlength(20),
+	agiorate BigDecimal required,
+	jfsign String maxlength(2),
+	ordersign Integer,
+	defaultP String maxlength(2),
+	isintotime Integer,
+	timeStart String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	timeEnd String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	timeFee BigDecimal,
+	isintoday Integer,
+	dayStart Integer,
+	dayEnd Integer,
+	dayFee BigDecimal,
+	isintosometime Integer,
+	intosometime BigDecimal,
+	intosometimefee BigDecimal,
+	intosometimeallfee BigDecimal,
+	isouttimeaddfee Integer,
+	outtime BigDecimal,
+	methodoffee String maxlength(0),
+	outtimefee BigDecimal,
+	defaultoutday Integer,
+	defaultouttime String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	outtimeMinute Integer,
+	defaulttimelen Integer,
+	newRentp String maxlength(0),
+	qytssign String maxlength(2),
+	starttime String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	endtime String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	dr String maxlength(2),
+	tfsj String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	zds String maxlength(2),
+	bzs BigDecimal,
+	csjs BigDecimal,
+	/** 入住超时自动转房价标识 */
+	rzzdzfj String maxlength(2),
+	/** 入住超过几小时按什么房价 */
+	rzcxss Integer,
+	rzcszfj String maxlength(50),
+	/** 否是允许修改房价 */
+	sfrxxgfj String maxlength(2),
+	/** 费计方式 */
+	jffs String maxlength(10),
+	/** 住入多少分钟不收费 */
+	rzbsftime BigDecimal,
+	bztfsign String maxlength(2),
+	/** 退房时间 */
+	bztfsj String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	/** 半日加收标志 */
+	btjssign String maxlength(2),
+	/** 半天加收时间 */
+	btjstime String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	/** 半天费用 */
+	bfprice BigDecimal,
+	qtjssign String maxlength(2),
+	/** 全天费加收时间 */
+	qtjstime String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	/** 制限入住时间段 */
+	xzsign String maxlength(2),
+	xzkstime String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	xzrsign String maxlength(2),
+	xzjstime String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	qyauto String maxlength(2),
+	tsrz String maxlength(2),
+	sr String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	er String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	rztfs String maxlength(2),
+	qyxiaoshi String maxlength(2),
+	xiaosprice BigDecimal,
+	/** 超时多久算1小时 */
+	yanchishu BigDecimal,
+	zddw BigDecimal
+}
+
+entity RentpDjlx {
+	djlx String required maxlength(100)
+}
+
+entity RentpKy {
+	fj String required maxlength(200),
+	ky String maxlength(200),
+	yw String maxlength(100),
+	djlx String maxlength(50)
+}
+
+entity RentpTs {
+	protocoln String required maxlength(10),
+	qytssign String maxlength(2),
+	starttime String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	endtime String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	dr String maxlength(2),
+	tfsj String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/)
+}
+
+entity ReportA {
+	acc String required maxlength(50),
+	gotime Instant
+}
+
+entity ReportAccountDay {
+	hoteldate Instant required,
+	feenum Integer required,
+	feename String maxlength(45),
+	salespotn Integer,
+	je BigDecimal required,
+	mtje BigDecimal required,
+	dqrq Instant
+}
+
+entity ReportDay {
+	hoteldate Instant required,
+	feenum Integer required,
+	feename String maxlength(20),
+	salespotn Integer,
+	je BigDecimal,
+	mtje BigDecimal,
+	dqrq Instant
+}
+
+entity ReportDayPos {
+	hoteldate Instant required,
+	cpbh String required maxlength(12),
+	cpmc String required maxlength(52),
+	roomarea String required maxlength(20),
+	sType String maxlength(20),
+	je BigDecimal,
+	mtje BigDecimal
+}
+
+entity ReportGo {
+	id Long required,
+	dt Instant,
+	roomn String maxlength(20),
+	name String maxlength(200),
+	intime Instant,
+	gotime Instant,
+	zdh String maxlength(100),
+	fj BigDecimal,
+	ff BigDecimal,
+	min BigDecimal,
+	pc BigDecimal,
+	yh BigDecimal,
+	dh BigDecimal,
+	hy BigDecimal,
+	qt BigDecimal,
+	xj BigDecimal,
+	sk BigDecimal,
+	hyk BigDecimal,
+	md BigDecimal,
+	gz BigDecimal,
+	djq BigDecimal,
+	qt2 BigDecimal,
+	empn String maxlength(20),
+	hoteltime Instant,
+	x1 BigDecimal,
+	x2 BigDecimal,
+	x3 BigDecimal,
+	j1 BigDecimal,
+	j2 BigDecimal,
+	j3 BigDecimal,
+	account String maxlength(50),
+	memo String maxlength(200),
+	jzGo String maxlength(2),
+	jsrq Instant,
+	xy String maxlength(50),
+	jzTime Instant,
+	jzHoteltime Instant,
+	wxje BigDecimal,
+	zfb BigDecimal
+}
+
+entity ReportGoday {
+	xm String maxlength(20),
+	roomn String maxlength(50),
+	account String required maxlength(30),
+	residefate Integer,
+	gotime Instant,
+	indatetime Instant,
+	markid String maxlength(50),
+	kefang BigDecimal,
+	canyin BigDecimal,
+	chaz BigDecimal,
+	xxian BigDecimal,
+	dhua BigDecimal,
+	minin BigDecimal,
+	peich BigDecimal,
+	qt BigDecimal,
+	total BigDecimal,
+	huiy BigDecimal,
+	dtb BigDecimal,
+	sszx BigDecimal,
+	yj9007 BigDecimal,
+	yj9008 BigDecimal,
+	yj9009 BigDecimal
+}
+
+entity ReportGz {
+	begintime Instant required,
+	endtime Instant required,
+	feenum String required maxlength(30),
+	je BigDecimal,
+	salespotn String maxlength(10),
+	feename String maxlength(50),
+	hoteldm String maxlength(20)
+}
+
+entity ReportMemo {
+	memo String required maxlength(50),
+	sz BigDecimal,
+	id Integer required,
+	hoteltime Instant
+}
+
+entity ReportMonth {
+	hotelmonth String required maxlength(6),
+	feenum Integer required,
+	feename String maxlength(20),
+	salespotn Integer,
+	je BigDecimal,
+	ytje BigDecimal
+}
+
+entity ReportMonthPos {
+	hotelmonth String required maxlength(6),
+	cpbh String required maxlength(12),
+	cpmc String required maxlength(52),
+	roomarea String required maxlength(20),
+	sType String maxlength(20),
+	je BigDecimal,
+	mtje BigDecimal
+}
+
+entity ReportOutacc {
+	id Integer required,
+	account String maxlength(50),
+	ye BigDecimal
+}
+
+entity ReportSjd {
+	begintime Instant required,
+	endtime Instant required,
+	feenum String required maxlength(20),
+	je BigDecimal,
+	salespotn String maxlength(10),
+	feename String maxlength(50),
+	hoteldm String required maxlength(20)
+}
+
+entity ReportXs {
+	begintime Instant required,
+	endtime Instant required,
+	feenum String required maxlength(20),
+	feename String maxlength(50),
+	price BigDecimal,
+	sl BigDecimal,
+	je BigDecimal,
+	salespotn String maxlength(20),
+	depot String maxlength(20)
+}
+
+entity ReportYear {
+	hotelyear String required maxlength(4),
+	feenum String required maxlength(10),
+	feename String maxlength(20),
+	salespotn Integer,
+	je BigDecimal
+}
+
+entity Rginfo {
+	hoteldm String maxlength(20),
+	roomn String required maxlength(10),
+	roomtype String required maxlength(20),
+	roomstatus String maxlength(6),
+	phonen String maxlength(10),
+	auditflag Integer,
+	rsflag Integer,
+	groupn String maxlength(20),
+	rs2 String maxlength(6),
+	lfSign String maxlength(10),
+	keynum String maxlength(3),
+	extphone String maxlength(20),
+	floor2 String maxlength(20),
+	sign Integer,
+	beizhu String maxlength(50),
+	ss String maxlength(10),
+	st String maxlength(10),
+	name1 String maxlength(45),
+	remark String maxlength(45),
+	v9build String maxlength(50),
+	v9floor String maxlength(50),
+	v9room String maxlength(50),
+	v9term String maxlength(50),
+	v9dai String maxlength(50),
+	v9coid String maxlength(50),
+	isnew Integer,
+	booksign Integer,
+	px BigDecimal,
+	icRoomn String maxlength(20),
+	fjtz String maxlength(200),
+	fslx String maxlength(50),
+	kfpl BigDecimal,
+	czSign String maxlength(2),
+	dxphone String maxlength(50),
+	status String maxlength(50)
+}
+
+entity RginfoBak {
+	hoteldm String maxlength(20),
+	roomn String required maxlength(10),
+	roomtype String required maxlength(20),
+	roomstatus String maxlength(6),
+	phonen String maxlength(10),
+	auditflag Integer,
+	rsflag Integer,
+	groupn String maxlength(20),
+	rs2 String maxlength(6),
+	lfSign String maxlength(10),
+	keynum String maxlength(3),
+	extphone String maxlength(20),
+	floor2 String maxlength(20),
+	sign Integer,
+	status String maxlength(10),
+	beizhu String maxlength(50),
+	ss String maxlength(10),
+	st String maxlength(10),
+	name1 String maxlength(45),
+	remark String maxlength(45),
+	v9build String maxlength(50),
+	v9floor String maxlength(50),
+	v9room String maxlength(50),
+	v9term String maxlength(50),
+	v9dai String maxlength(50),
+	v9coid String maxlength(50),
+	isnew Integer,
+	booksign Integer,
+	px BigDecimal
+}
+
+entity RoomCyb {
+	id Long required,
+	account String maxlength(100),
+	name String maxlength(100),
+	zyj BigDecimal,
+	zxf BigDecimal,
+	bzyj BigDecimal,
+	ysff BigDecimal,
+	ce BigDecimal,
+	bz String maxlength(200),
+	roomn String maxlength(200)
+}
+
+entity RoomEl {
+	id Long required,
+	days Integer,
+	sj Integer,
+	rq Instant,
+	hoteltime Instant,
+	empn String maxlength(50),
+	roomn String maxlength(50),
+	fj String maxlength(50),
+	account String maxlength(50),
+	signs String maxlength(2),
+	je BigDecimal,
+	gname String maxlength(200),
+	guestId Double,
+	hykh String maxlength(50)
+}
+
+entity RoomGo {
+	id Long required,
+	roomn String required maxlength(20),
+	icdh String maxlength(20),
+	account String required maxlength(30),
+	guestname String maxlength(100),
+	indate Instant,
+	gotime Instant,
+	hoteltime Instant,
+	czrq Instant,
+	price BigDecimal,
+	zt String maxlength(30),
+	empn String maxlength(30)
+}
+
+entity Roomarea {
+	roomarea String required maxlength(20)
+}
+
+entity Roomcount {
+	roomn String maxlength(50),
+	roomntype String maxlength(50),
+	indate Instant
+}
+
+entity Roominfo {
+	id Integer required,
+	account String maxlength(50),
+	roomn String maxlength(50),
+	indate Instant,
+	residefate Integer,
+	gotime Instant,
+	roomtype String maxlength(50),
+	xy String maxlength(50),
+	rentp BigDecimal,
+	name String maxlength(50),
+	groupn String maxlength(50),
+	guestId Integer,
+	ky Integer,
+	hoteltime Instant,
+	flag Integer,
+	empn String maxlength(50),
+	ywly String maxlength(20),
+	xsy String maxlength(50),
+	uname String maxlength(50),
+	isnew Integer,
+	bc String maxlength(20),
+	hykh String maxlength(50),
+	rzhotel Instant,
+	zcq Long,
+	djlx String maxlength(50),
+	kcsl BigDecimal,
+	bkid Long
+}
+
+entity Roomstatus {
+	roomn String maxlength(50),
+	roomstatus String maxlength(30),
+	hoteltime Instant
+}
+
+entity Roomtype {
+	name String maxlength(20),
+	roomtype String required maxlength(20),
+	number Integer,
+	rent BigDecimal,
+	remark String maxlength(50),
+	yj BigDecimal,
+	czs String maxlength(2),
+	upsign String maxlength(2)
+}
+
+entity Rzbillno {
+	id Integer required,
+	billno String maxlength(20),
+	roomn String maxlength(20),
+	account String maxlength(30)
+}
+
+entity Salespot {
+	salespotn Integer required,
+	name String required maxlength(20)
+}
+
+entity Session0 {
+	id Integer required,
+	createdat Instant required,
+	updatedat Instant required,
+	expiresat Instant required,
+	handle String required unique maxlength(191),
+	hashedsessiontoken String required maxlength(191),
+	anticsrftoken String required maxlength(191),
+	publicdata String required maxlength(191),
+	privatedata String required maxlength(191)
+}
+
+entity Smcctl {
+	sysid String required maxlength(2),
+	paraclass String required maxlength(8),
+	paraid String required maxlength(20),
+	description String maxlength(40),
+	value String maxlength(60)
+}
+
+entity Smdgroup {
+	sysid String required maxlength(2),
+	groupno String required maxlength(20),
+	progid String required maxlength(10),
+	run String required maxlength(1),
+	ins String maxlength(1),
+	upd String maxlength(1),
+	del String maxlength(1),
+	qry String maxlength(1),
+	pro String maxlength(1),
+	prn String maxlength(1),
+	filterstring String maxlength(100),
+	hiddencols String maxlength(10),
+	spec1 String maxlength(20),
+	spec2 String maxlength(40),
+	spec3 String maxlength(60)
+}
+
+entity Smdmembers {
+	usrid String required maxlength(20),
+	groupno String required maxlength(20),
+	seq String required maxlength(20)
+}
+
+entity Smdsys {
+	sysid String required maxlength(2),
+	parentsysid String required maxlength(20),
+	subsysid String required maxlength(20),
+	subsysname String required maxlength(60),
+	seqno Integer required,
+	sign Integer,
+	bmp String maxlength(30)
+}
+
+entity Smduser {
+	sysid String maxlength(2),
+	userid String required maxlength(20),
+	progid String required maxlength(255),
+	run String required maxlength(1),
+	ins String maxlength(1),
+	upd String maxlength(1),
+	del String maxlength(1),
+	qry String maxlength(1),
+	pro String maxlength(1),
+	prn String maxlength(1),
+	filtersql String maxlength(100),
+	hiddencols String maxlength(100),
+	spec1 String maxlength(20),
+	spec2 String maxlength(60),
+	spec3 String maxlength(80)
+}
+
+entity Smmgroup {
+	sysid String required maxlength(2),
+	groupno String required maxlength(20),
+	groupname String maxlength(30)
+}
+
+entity Smmprog {
+	sysid String required maxlength(2),
+	subsysid String maxlength(20),
+	progid String required maxlength(20),
+	progtype String maxlength(1),
+	progname String required maxlength(30),
+	seqno Integer required,
+	disableflg String maxlength(1),
+	remark String maxlength(60),
+	bmp String maxlength(30)
+}
+
+entity Smmsys {
+	sysid String required maxlength(2),
+	sysname String maxlength(60)
+}
+
+entity Smmuser {
+	sysid String maxlength(2),
+	userid String required maxlength(20),
+	username String required maxlength(30),
+	password String required maxlength(20),
+	expiredate String maxlength(10),
+	disableflg String maxlength(1),
+	lastlogon String maxlength(20),
+	groupno String maxlength(20),
+	rightsmode String maxlength(1),
+	superadmin String maxlength(1),
+	groupadmin String maxlength(1),
+	earntypen Integer,
+	phone String maxlength(20),
+	send String maxlength(2),
+	web String maxlength(2),
+	isup Integer
+}
+
+entity Smtoluser {
+	ipaddress String required maxlength(20),
+	sysid String maxlength(2),
+	userid String maxlength(20),
+	logontime String maxlength(25)
+}
+
+entity Sprssb {
+	id Long required,
+	roomn String maxlength(200),
+	gname String maxlength(50),
+	indate String maxlength(30),
+	godate String maxlength(30),
+	ff BigDecimal,
+	min BigDecimal,
+	yhp BigDecimal,
+	xdf BigDecimal,
+	pc BigDecimal,
+	dh BigDecimal,
+	hy BigDecimal,
+	cy BigDecimal,
+	qt BigDecimal,
+	xjyj BigDecimal,
+	txj BigDecimal,
+	xjs BigDecimal,
+	sk BigDecimal,
+	hyk BigDecimal,
+	md BigDecimal,
+	gz BigDecimal,
+	djq BigDecimal,
+	hoteltiime Instant,
+	account String maxlength(50),
+	fx String maxlength(100),
+	gsz BigDecimal,
+	ye BigDecimal,
+	fkqt BigDecimal,
+	isup Integer,
+	wx BigDecimal,
+	zfb BigDecimal,
+	wxje BigDecimal
+}
+
+entity Srzc {
+	id Long required,
+	xjs BigDecimal,
+	xjt BigDecimal,
+	sk BigDecimal
+}
+
+entity SysArea {
+	idbiArea Integer required,
+	parentnode Integer required,
+	displaytext String maxlength(255),
+	tagdata String maxlength(255),
+	sortorder Integer,
+	pictureindex String maxlength(255),
+	selectedpictureindex String maxlength(255),
+	statepictureindex String maxlength(255),
+	expanded Integer
+}
+
+entity SysConfig {
+	cdm String required maxlength(10),
+	cname String required maxlength(50),
+	cvalues String required maxlength(100),
+	cremark String maxlength(100),
+	types String maxlength(20)
+}
+
+entity SysFdcz {
+	empn String required maxlength(20),
+	roomn String required maxlength(20),
+	op String required maxlength(100),
+	optime Instant,
+	id Integer required
+}
+
+entity SysFeenum {
+	salespotdm String required maxlength(20),
+	fndm String required maxlength(30),
+	fnname String required maxlength(50),
+	fntype String required maxlength(4),
+	pycode String required maxlength(30),
+	wbcode String required maxlength(4),
+	syssign Boolean required,
+	orderid Integer,
+	salespotn Integer,
+	isnew Integer,
+	ye BigDecimal,
+	password String maxlength(50),
+	je BigDecimal,
+	hoteldm String maxlength(50)
+}
+
+entity SysFwcz {
+	empn String required maxlength(20),
+	roomn String required maxlength(20),
+	op String required maxlength(100),
+	ip String maxlength(50),
+	optime Instant required,
+	remark String maxlength(50)
+}
+
+entity SysLog {
+	empn String required maxlength(10),
+	ip String required maxlength(20),
+	op String maxlength(120),
+	type String required maxlength(45),
+	hoteltime Instant,
+	optime Instant,
+	roomn String required maxlength(45),
+	id Integer required,
+	guestname String maxlength(100),
+	je BigDecimal
+}
+
+entity SysPapercode {
+	codeName String required maxlength(20),
+	codeNum String required maxlength(10),
+	codeChar String required maxlength(50),
+	codeSer String maxlength(10),
+	codeAllname String maxlength(50)
+}
+
+entity SysSalespot {
+	salespotdm String required maxlength(20),
+	syssign Boolean required
+}
+
+entity SysSetupprinter {
+	printer String required maxlength(255)
+}
+
+entity SysTeafeenum {
+	sysNum String required maxlength(20),
+	sysName String maxlength(20)
+}
+
+entity Syscolor {
+	id Long required,
+	vc Integer,
+	vd Integer,
+	oc Integer,
+	od Integer,
+	oo Integer,
+	ss Integer,
+	book Integer
+}
+
+entity SystemVersion {
+	build Integer required,
+	curVer String required maxlength(10),
+	upDate Instant
+}
+
+entity TBmda {
+	bmbh String required maxlength(30),
+	bmmc String maxlength(16),
+	bmxz BigDecimal
+}
+
+entity TCbrb {
+	id Long required,
+	fl String maxlength(50),
+	flje BigDecimal,
+	fk String maxlength(50),
+	fkje BigDecimal,
+	rq Instant
+}
+
+entity TCbsy {
+	id Long required,
+	mc String maxlength(50),
+	je BigDecimal
+}
+
+entity TCheckin {
+	guestId Long required,
+	account String required maxlength(30),
+	hoteltime Instant,
+	indatetime Instant,
+	residefate Integer,
+	gotime Instant,
+	empn String maxlength(10),
+	roomn String required maxlength(10),
+	uname String maxlength(50),
+	rentp String required maxlength(10),
+	protocolrent BigDecimal,
+	remark String maxlength(8000),
+	phonen String maxlength(10),
+	empn2 String maxlength(10),
+	adhoc String maxlength(40),
+	auditflag Integer,
+	groupn String maxlength(20),
+	memo String maxlength(8000),
+	lfSign String maxlength(1),
+	keynum String maxlength(3),
+	hykh String maxlength(50),
+	hoteldate Instant,
+	guestname String maxlength(45),
+	id Integer required,
+	ywly String maxlength(50),
+	xsy String maxlength(50),
+	roomtype String maxlength(50)
+}
+
+entity TCpcc {
+	id Integer required,
+	tableno String maxlength(10),
+	tablename String maxlength(50),
+	yyls String maxlength(50),
+	xlbh String maxlength(10),
+	xlmc String maxlength(50),
+	sj Instant
+}
+
+entity TCpda {
+	cpbh String required maxlength(12),
+	cpmc String maxlength(40),
+	cpgg String maxlength(12),
+	cpdw String maxlength(10),
+	xlbh String maxlength(8),
+	zlbh String maxlength(8),
+	cpjg BigDecimal,
+	sjbz BigDecimal,
+	sjjg BigDecimal,
+	cxbz BigDecimal,
+	cxjg BigDecimal,
+	cfdyj String maxlength(100),
+	tybz BigDecimal,
+	scbz BigDecimal,
+	zzcs String maxlength(10),
+	zrbz BigDecimal,
+	cbj BigDecimal,
+	roomarea String maxlength(20),
+	pym String maxlength(52),
+	xsytcbz Integer,
+	xsytc BigDecimal,
+	modus String maxlength(50),
+	depot String maxlength(50),
+	sfzs String maxlength(2),
+	sfyx String maxlength(1)
+}
+
+entity TCpdw {
+	cpdw String required maxlength(10)
+}
+
+entity TCpk {
+	cpbh String required maxlength(10),
+	cpmc String maxlength(20),
+	cpsl BigDecimal,
+	cpdj BigDecimal,
+	gys String maxlength(20),
+	jjx BigDecimal
+}
+
+entity TCtgo {
+	yyls String required maxlength(30),
+	zhbm String maxlength(10),
+	guestname String maxlength(50),
+	phone String maxlength(30),
+	jzSign Integer required,
+	gotime Instant,
+	jztime Instant,
+	je BigDecimal,
+	empn String maxlength(10),
+	roomarea String maxlength(20),
+	fwf BigDecimal
+}
+
+entity TCzyd {
+	zhbm String maxlength(10),
+	zhmc String maxlength(10),
+	zhsm String maxlength(300),
+	ydr String maxlength(30),
+	ydrdh String maxlength(18),
+	zwzt Integer,
+	ydrs Integer,
+	ydsj Instant,
+	sfdd String maxlength(2),
+	account String required maxlength(30),
+	yhMark Integer,
+	empn String maxlength(30),
+	czsj Instant
+}
+
+entity TFps {
+	id Integer required,
+	uname String maxlength(100),
+	fph String maxlength(100),
+	je BigDecimal,
+	yyls String maxlength(20),
+	xfje BigDecimal,
+	addtime Instant
+}
+
+entity THyaddvalue {
+	id Long required,
+	hykh String required maxlength(30),
+	addtime Instant required,
+	ckje BigDecimal required,
+	kxfje BigDecimal required,
+	payment Integer required,
+	memo String maxlength(50),
+	empn String required maxlength(10),
+	isnew Integer,
+	hoteldm String maxlength(20)
+}
+
+entity TJfhz {
+	hoteltime Instant,
+	indate Instant,
+	rest Integer,
+	gotime Instant,
+	account String maxlength(50),
+	hfhj BigDecimal,
+	hykh String required maxlength(50),
+	hzdate Instant required,
+	hzroomn String required maxlength(50),
+	hzrt String maxlength(50),
+	hoteldm String maxlength(20),
+	isnew Integer,
+	id Long required,
+	isup Integer
+}
+
+entity TJsje {
+	jsjezj BigDecimal,
+	yyls String required maxlength(50),
+	xj BigDecimal,
+	zp BigDecimal,
+	xyk BigDecimal,
+	cq BigDecimal,
+	hyk BigDecimal,
+	gz BigDecimal,
+	yq BigDecimal,
+	jsrq Instant required,
+	vipKh String maxlength(30),
+	keepbrH BigDecimal,
+	lead String maxlength(16),
+	userName String maxlength(16),
+	yh BigDecimal,
+	numbers String maxlength(16),
+	yfj BigDecimal,
+	gfz BigDecimal,
+	roomarea String maxlength(20),
+	zk BigDecimal,
+	blzk String maxlength(10),
+	fwf BigDecimal,
+	djh Integer,
+	acc String maxlength(50),
+	gp BigDecimal
+}
+
+entity TJzh {
+	jzh String required maxlength(1),
+	comno String maxlength(4),
+	jsj String maxlength(40)
+}
+
+entity TKhyq {
+	yqbh String required maxlength(10),
+	yqnr String maxlength(50)
+}
+
+entity TNkhyq {
+	khyqbh String maxlength(10),
+	tableno String maxlength(10),
+	yyls String maxlength(50),
+	cpbh String maxlength(50),
+	id Integer required
+}
+
+entity TQxsz {
+	userName String required maxlength(16),
+	czyd Integer,
+	qtyy Integer,
+	ryyskbb Integer,
+	rxlfxbb Integer,
+	rdlfxbb Integer,
+	rfwqkfx Integer,
+	sjdyyskbb Integer,
+	sjdxlfxbb Integer,
+	sjddlfxbb Integer,
+	sjdfwqkfx Integer,
+	xsfx Integer,
+	pxmlfx Integer,
+	qyxx Integer,
+	bmsz Integer,
+	ygda Integer,
+	dwsz Integer,
+	cpsz Integer,
+	yclsz Integer,
+	cpgcmx Integer,
+	zhsz Integer,
+	tcyy Integer,
+	sjsz Integer,
+	cxsz Integer,
+	hyklx Integer,
+	hykgl Integer,
+	hyxfqk Integer,
+	sjbf Integer,
+	sjhf Integer,
+	sjqc Integer,
+	sjjh Integer,
+	keepbr Integer,
+	number Integer,
+	keepbrgl Integer,
+	yjkcgl Integer,
+	cprxsph Integer,
+	sjdxsph Integer,
+	tccx Integer,
+	ylrbb Integer
+}
+
+entity TQyxx {
+	qybh String required maxlength(8),
+	qymc String maxlength(30),
+	dcdh String maxlength(50),
+	qydz String maxlength(40),
+	qyby String maxlength(40),
+	regcode String maxlength(25)
+}
+
+entity TSelPr {
+	value String required maxlength(10)
+}
+
+entity TSjb {
+	timeSm String required maxlength(10),
+	begTime Instant,
+	lastTime Instant
+}
+
+entity TTcb {
+	yyls String required maxlength(30),
+	cpbh String maxlength(12),
+	cpmc String maxlength(20),
+	cpsl BigDecimal,
+	tcyy String required maxlength(10),
+	userName String maxlength(16),
+	tcsj Instant required,
+	ckSign Integer,
+	roomarea String maxlength(20),
+	id Long required,
+	printSign Integer
+}
+
+entity TTcyy {
+	tcbh String required maxlength(10),
+	tcyy String required maxlength(20),
+	ywsh BigDecimal
+}
+
+entity TTeayysr {
+	rq Instant required,
+	hoteltime Instant,
+	qy String maxlength(20),
+	zh String maxlength(20),
+	yyls String required maxlength(20),
+	xf BigDecimal,
+	xj BigDecimal,
+	sk BigDecimal,
+	md BigDecimal,
+	gz BigDecimal,
+	gfz BigDecimal,
+	hyk BigDecimal,
+	yh BigDecimal,
+	ml BigDecimal,
+	djq BigDecimal,
+	gsz BigDecimal,
+	isup Integer,
+	id Long required,
+	zfb BigDecimal
+}
+
+entity TTelecom {
+	markid Integer required,
+	callnumstart Integer,
+	callnumlen Integer,
+	tonumstart Integer,
+	tonumlen Integer,
+	starttimestart Integer,
+	starttimelen Integer,
+	endtimestart Integer,
+	endtimelen Integer,
+	timelongstart Integer,
+	timelonglen Integer,
+	totallen Integer
+}
+
+entity TTime {
+	id Long required,
+	xzwy Integer,
+	dt Integer,
+	stime String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	etime String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	wyld String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	xzlc Integer,
+	lcdt Integer,
+	lcstime String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	lcetime String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	lcld String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	brsign Integer,
+	brdt Integer,
+	brstime String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	bretime String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	bryl String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/)
+}
+
+entity TUser {
+	userXh Integer required,
+	userName String required maxlength(16),
+	userPass String maxlength(8),
+	userSex BigDecimal,
+	bmbh String maxlength(2),
+	userOld BigDecimal,
+	userTel String maxlength(50),
+	userSfz String maxlength(24),
+	pdano String maxlength(3)
+}
+
+entity TXsy {
+	cpbh String required maxlength(12),
+	cpmc String maxlength(20),
+	cpsl BigDecimal
+}
+
+entity TYclb {
+	yclbh String required maxlength(50),
+	yclmc String maxlength(50),
+	ycldw String maxlength(10),
+	jg BigDecimal
+}
+
+entity TYclmxb {
+	yclbh String required maxlength(50),
+	yclsl BigDecimal,
+	jg BigDecimal,
+	cpbh String required maxlength(12)
+}
+
+entity TYyls {
+	jdsj Instant required,
+	zhbm String required maxlength(10),
+	yyls String required maxlength(50),
+	zhmc String maxlength(10),
+	krsl Integer,
+	userName String maxlength(16),
+	cpmc String maxlength(20),
+	cpgg String maxlength(12),
+	cpjg BigDecimal,
+	cpdw String maxlength(10),
+	cpsl BigDecimal,
+	sjbz BigDecimal,
+	sjjg BigDecimal,
+	cxbz BigDecimal,
+	cxjg BigDecimal,
+	scbz BigDecimal,
+	bz String maxlength(6),
+	xfhj BigDecimal,
+	zhhj BigDecimal,
+	zwzt Integer,
+	zhsm String maxlength(20),
+	cpbh String maxlength(12),
+	cpje BigDecimal,
+	dz BigDecimal,
+	zrbz BigDecimal,
+	tcyy String maxlength(10),
+	memo String maxlength(200),
+	modus String maxlength(20),
+	id Long required,
+	printName String maxlength(100),
+	printSign Integer,
+	roomarea String maxlength(20),
+	xsy String maxlength(16),
+	xsytc BigDecimal,
+	ckSign Integer,
+	printSign2 Integer,
+	pdayyls String maxlength(20),
+	pdano String maxlength(3),
+	khyqSign Integer,
+	chonghong Boolean,
+	imprest BigDecimal,
+	sign Boolean,
+	isnew Integer,
+	hoteltime Instant,
+	auto String maxlength(2),
+	hykh String maxlength(50),
+	acc String maxlength(50),
+	ddy String maxlength(50),
+	zs String maxlength(2)
+}
+
+entity TZdxf {
+	lbbh Integer
+}
+
+entity TZf {
+	id Integer required,
+	memo String required maxlength(20)
+}
+
+entity TZhsz {
+	zhbm String required maxlength(10),
+	zhmc String maxlength(10),
+	zhsm String maxlength(20),
+	maxsl Integer,
+	krsl Integer,
+	roomarea String maxlength(20),
+	userName String maxlength(16),
+	zwzt Integer,
+	sj Instant,
+	yyls String maxlength(50),
+	ydr String maxlength(30),
+	ydrdh String maxlength(18),
+	ydsj Instant,
+	jzSign Integer,
+	padyyls String maxlength(11),
+	pdano String maxlength(120),
+	zdxf BigDecimal,
+	ce Integer,
+	sign String maxlength(2),
+	qbj BigDecimal,
+	xsj BigDecimal,
+	csdw BigDecimal,
+	csjg BigDecimal,
+	gsj BigDecimal,
+	gsjg BigDecimal,
+	tm String maxlength(50),
+	jzsj String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	yscs Integer,
+	qybc String maxlength(2),
+	kssj String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	jssj String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	fy String maxlength(50),
+	jj Instant,
+	hourSign String maxlength(2),
+	px Integer
+}
+
+entity TbBooking {
+	id Long required,
+	hotelid Integer,
+	/** 店酒名称 */
+	hotelname String maxlength(50),
+	hotelphone String maxlength(15),
+	address String maxlength(100),
+	/** 住店人 */
+	stay String maxlength(50),
+	/** 预订人 */
+	bookpeople String maxlength(50),
+	papernumber String maxlength(30),
+	mobile String maxlength(13),
+	telphone String maxlength(15),
+	email String maxlength(30),
+	staydate Instant,
+	leavedate Instant,
+	days Integer,
+	timeRange String maxlength(20),
+	roomid Integer,
+	roomtype String maxlength(20),
+	/** 预定房间数 */
+	rooms Integer,
+	/** 房号 */
+	roomno String maxlength(50),
+	roomprice BigDecimal,
+	total BigDecimal,
+	operatedate Instant required,
+	modfiydate Instant required,
+	loginname String maxlength(30),
+	/** 确认后产生订单号 */
+	ordernumber String required maxlength(30),
+	/** 1:等待酒店确认
+2:预定成功
+3已入住
+4:预定失败 */
+	flag Integer required
+}
+
+entity TbBookingState {
+	/** 预定房间数 */
+	rooms Integer,
+	/** 房号 */
+	roomno String maxlength(50),
+	roomprice BigDecimal,
+	total BigDecimal,
+	/** 确认后产生订单号 */
+	ordernumber String required maxlength(30),
+	/** 1:等待酒店确认
+2:预定成功
+3已入住
+4:预定失败 */
+	flag Integer required,
+	proc Integer required
+}
+
+entity TbRoom {
+	fRoomno String required maxlength(6),
+	fLouno String maxlength(1),
+	fFloorno Integer,
+	fPerson Integer,
+	fCardno Integer,
+	fEndtime Instant,
+	fCardid Integer,
+	fSele String maxlength(1)
+}
+
+entity TbRzdnum {
+	billno String required maxlength(20),
+	roomn String required maxlength(20)
+}
+
+entity TbSqlNoupdate {
+	/** id自增 */
+	id Integer required,
+	/** 执行语法 */
+	sqlstr String maxlength(8000),
+	scsj Instant,
+	/** 更新时间 */
+	gxsj Instant
+}
+
+entity TeaFeenum {
+	feenum String required maxlength(20),
+	feename String maxlength(50),
+	price BigDecimal,
+	sign Boolean
+}
+
+entity Teezk {
+	id Long required,
+	vname String maxlength(10)
+}
+
+entity TeleBaseprice {
+	ulogogram BigDecimal required,
+	areanum String required maxlength(10),
+	remark String maxlength(20),
+	unittimelen BigDecimal,
+	unitprice BigDecimal,
+	firsttimelen BigDecimal,
+	firstprice BigDecimal,
+	pfnPot String maxlength(12),
+	pfnprice1 BigDecimal,
+	pfnprice2 BigDecimal,
+	serve BigDecimal,
+	addflag Integer
+}
+
+entity TeleHd {
+	extension String required maxlength(10),
+	roomn String maxlength(10),
+	tpno String maxlength(40),
+	calldt String required maxlength(20),
+	calltimelen BigDecimal,
+	unitprice BigDecimal,
+	price BigDecimal,
+	remark String maxlength(100),
+	flag String maxlength(1),
+	bs String maxlength(2)
+}
+
+entity Test1 {
+	id Integer required,
+	insertTime Instant required
+}
+
+entity Token {
+	id Integer required,
+	createdat Instant required,
+	updatedat Instant required,
+	hashedtoken String required maxlength(191),
+	type String required maxlength(191),
+	expiresat Instant required,
+	sentto String required maxlength(191)
+}
+
+entity UpSqllist {
+	build Integer required,
+	sqlNo Integer required,
+	sqltext String maxlength(2000),
+	runsign Integer,
+	optime Instant,
+	errtext String maxlength(1000)
+}
+
+entity User {
+	id Integer required,
+	createdat Instant required,
+	updatedat Instant required,
+	name String required maxlength(191),
+	email String required unique maxlength(191),
+	hashedpassword String required maxlength(191),
+	role String required maxlength(191)
+}
+
+entity UserTemp {
+	name String maxlength(50),
+	subject String maxlength(50),
+	score Integer
+}
+
+entity VipCardtype {
+	cardname String required maxlength(20),
+	cardtype Boolean required,
+	kfrent String maxlength(20),
+	zcrent String maxlength(20),
+	xcrent String maxlength(20),
+	xxrent String maxlength(20),
+	czcardrate BigDecimal,
+	initintegration Integer,
+	jfgz String maxlength(45),
+	types BigDecimal,
+	jfsign Integer,
+	jfpoint BigDecimal,
+	kkzsjf BigDecimal,
+	jdcz String maxlength(2),
+	spzk String maxlength(50),
+	srjf BigDecimal
+}
+
+entity VipChange {
+	cardname String required maxlength(50),
+	roomtype String required maxlength(50),
+	jfpoint BigDecimal,
+	memo String maxlength(100)
+}
+
+entity VipCheckjf {
+	hoteltime Instant required,
+	consumetime Instant,
+	account String required maxlength(45),
+	roomn String required maxlength(45),
+	name String required maxlength(45),
+	guestId Integer,
+	rtype String required maxlength(45),
+	protocoln String required maxlength(45),
+	rentp BigDecimal required,
+	point Integer,
+	id Integer required,
+	hoteldm String maxlength(20)
+}
+
+entity VipCzgz {
+	id Long required,
+	ktype String required maxlength(50),
+	sx BigDecimal,
+	xs BigDecimal,
+	zsje BigDecimal,
+	jf BigDecimal
+}
+
+entity VipCzlpdh {
+	id Long required,
+	czid Long required,
+	lpbh String maxlength(500),
+	lpmc String maxlength(500),
+	lpsl BigDecimal,
+	memo String maxlength(500)
+}
+
+entity VipGuest {
+	vipcard String required maxlength(30),
+	vipCardtypeid Integer required,
+	groupcard Integer,
+	totalconsumer BigDecimal,
+	totalintegration Integer
+}
+
+/** 会员积分明细表 */
+entity VipHyjf {
+	guestId Integer required,
+	hyname String required maxlength(45),
+	hykh String required maxlength(45),
+	roomn String maxlength(45),
+	account String maxlength(45),
+	indate Instant,
+	gotime Instant,
+	indays Integer,
+	hoteltime Instant required,
+	inxy String maxlength(45),
+	xyff BigDecimal,
+	jf BigDecimal required,
+	empn String maxlength(45),
+	hoteldm String maxlength(20),
+	isnew Integer,
+	lpbm String maxlength(20),
+	lpmc String maxlength(50),
+	id Long required,
+	dhrq Instant,
+	isup Integer,
+	sl BigDecimal
+}
+
+entity VipIntegrationchange {
+	idvipIntegrationdh Long required,
+	vipGuestid Long required,
+	changeTime Instant required,
+	changeGift String required maxlength(100),
+	changeOp String maxlength(10),
+	deductIntegration Integer
+}
+
+entity VipLpdh {
+	bm String required maxlength(50),
+	vname String maxlength(200),
+	jf BigDecimal
+}
+
+entity VipSjjl {
+	id Integer required,
+	cardid String required maxlength(50),
+	cardtype String maxlength(50),
+	newcardtype String maxlength(50),
+	sjpoint BigDecimal,
+	sjtime Instant,
+	empn String maxlength(50),
+	hoteldm String maxlength(20),
+	isnew Integer
+}
+
+entity VipUpdaterule {
+	oldid String required maxlength(20),
+	newid String required maxlength(20),
+	rule Boolean required,
+	numerical Integer
+}
+
+entity VipZzdj {
+	id Integer required,
+	cardid String required maxlength(50),
+	guestId Long required,
+	guestname String maxlength(50),
+	account String maxlength(30),
+	xfje BigDecimal,
+	djje BigDecimal,
+	djrq Instant,
+	empn String maxlength(30),
+	isnew Integer,
+	hoteldm String maxlength(50)
+}
+
+entity Workinfo {
+	zgh String required maxlength(50),
+	yglb String maxlength(50),
+	department String maxlength(50),
+	zw String maxlength(50),
+	gzjb BigDecimal,
+	zwxm String maxlength(50),
+	ywxm String maxlength(50),
+	sex String maxlength(10),
+	sfz String maxlength(50),
+	roomn String maxlength(50),
+	jg String maxlength(50),
+	csrq Instant,
+	mz String maxlength(50),
+	zzmm String maxlength(50),
+	zj String maxlength(50),
+	hyzk String maxlength(10),
+	whcd String maxlength(50),
+	ywcd String maxlength(50),
+	pthcd String maxlength(50),
+	jy String maxlength(10),
+	gzrq Instant,
+	tjr String maxlength(50),
+	grah String maxlength(50),
+	tc String maxlength(50),
+	hkdz String maxlength(50),
+	gygh String maxlength(50),
+	jzdz String maxlength(50),
+	jzyb String maxlength(50),
+	lxdh String maxlength(50),
+	account String maxlength(50),
+	zzh String maxlength(10)
+}
+
+entity Wxpayinfo {
+	id Long required,
+	roomn String maxlength(50),
+	guestname String maxlength(50),
+	account String maxlength(50),
+	totalFee BigDecimal,
+	refundFee BigDecimal,
+	transactionId String maxlength(50),
+	outTradeNo String maxlength(50),
+	refundId String maxlength(50),
+	opdate Instant,
+	remark String maxlength(100),
+	empn String maxlength(50),
+	zftype String maxlength(20),
+	ytkje BigDecimal,
+	ytcz String maxlength(50)
+}
+
+entity XsEmpn {
+	empnid String required maxlength(20),
+	empn String required maxlength(50)
+}
+
+entity Xsy2 {
+	rq Instant required,
+	cpbh String required maxlength(12),
+	yyls String required maxlength(30),
+	sl Integer required
+}
+
+entity XtCode {
+	id Integer required,
+	codetype String required maxlength(30),
+	code String maxlength(10),
+	codename String maxlength(30),
+	memo String maxlength(50)
+}
+
+entity XtCodetype {
+	codetype String required maxlength(30),
+	codetypename String required maxlength(50),
+	memo String maxlength(50)
+}
+
+entity Yearearn {
+	syear String required maxlength(4),
+	totalmoney BigDecimal,
+	prepay BigDecimal,
+	realearn BigDecimal,
+	tab BigDecimal,
+	tab2 BigDecimal
+}
+
+entity Yearearndetail {
+	syear String required maxlength(4),
+	salespotn Integer required,
+	money BigDecimal
+}
+
+
+
+// Relations
+relationship ManyToOne {
+	Choice{question required} to Question{choice}
+}
+
+relationship ManyToOne {
+	Hotels{sysAreaIdbiArea required} to SysArea{hotels}
+}
+
+relationship ManyToOne {
+	Session0{user required} to User{session0}
+}
+
+relationship ManyToOne {
+	Token{user required} to User{token}
+}
+
+
+
+// Options
+service * with serviceClass
+paginate * with pagination
+dto * with mapstruct
+filter *
+
