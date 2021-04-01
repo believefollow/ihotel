@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="bookingtime">
+      <h2 data-cy="bookingtimeDetailsHeading"><span jhiTranslate="ihotelApp.bookingtime.detail.title">Bookingtime</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ihotelApp.bookingtime.id">Id</span></dt>
+        <dd>
+          <span>{{ bookingtime.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookingtime.bookid">Bookid</span></dt>
+        <dd>
+          <span>{{ bookingtime.bookid }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookingtime.roomn">Roomn</span></dt>
+        <dd>
+          <span>{{ bookingtime.roomn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookingtime.booktime">Booktime</span></dt>
+        <dd>
+          <span>{{ bookingtime.booktime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookingtime.rtype">Rtype</span></dt>
+        <dd>
+          <span>{{ bookingtime.rtype }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookingtime.sl">Sl</span></dt>
+        <dd>
+          <span>{{ bookingtime.sl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookingtime.remark">Remark</span></dt>
+        <dd>
+          <span>{{ bookingtime.remark }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookingtime.sign">Sign</span></dt>
+        <dd>
+          <span>{{ bookingtime.sign }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookingtime.rzsign">Rzsign</span></dt>
+        <dd>
+          <span>{{ bookingtime.rzsign }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/bookingtime', bookingtime.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+{
+  "ihotelApp": {
+    "dKc": {
+      "home": {
+        "title": "D Kcs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 D Kc",
+        "createOrEditLabel": "创建或编辑 D Kc",
+        "search": "查找 D Kc",
+        "notFound": "No D Kcs found"
+      },
+      "created": "D Kc {{ param }} 创建成功",
+      "updated": "D Kc {{ param }} 更新成功",
+      "deleted": "D Kc {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 D Kc {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "D Kc"
+      },
+      "id": "Id",
+      "depot": "Depot",
+      "spbm": "Spbm",
+      "spmc": "Spmc",
+      "xh": "Xh",
+      "dw": "Dw",
+      "price": "Price",
+      "sl": "Sl",
+      "je": "Je"
+    }
+  }
+}

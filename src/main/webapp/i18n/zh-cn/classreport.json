@@ -1,0 +1,49 @@
+{
+  "ihotelApp": {
+    "classreport": {
+      "home": {
+        "title": "Classreports",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Classreport",
+        "createOrEditLabel": "创建或编辑 Classreport",
+        "search": "查找 Classreport",
+        "notFound": "No Classreports found"
+      },
+      "created": "Classreport {{ param }} 创建成功",
+      "updated": "Classreport {{ param }} 更新成功",
+      "deleted": "Classreport {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Classreport {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Classreport"
+      },
+      "id": "ID",
+      "empn": "Empn",
+      "dt": "Dt",
+      "xjUp": "Xj Up",
+      "yfjA": "Yfj A",
+      "yfjD": "Yfj D",
+      "gz": "Gz",
+      "zz": "Zz",
+      "zzYj": "Zz Yj",
+      "zzJs": "Zz Js",
+      "zzTc": "Zz Tc",
+      "ff": "Ff",
+      "minibar": "Minibar",
+      "phone": "Phone",
+      "other": "Other",
+      "pc": "Pc",
+      "cz": "Cz",
+      "cy": "Cy",
+      "md": "Md",
+      "huiy": "Huiy",
+      "dtb": "Dtb",
+      "sszx": "Sszx",
+      "cyz": "Cyz",
+      "hoteldm": "Hoteldm",
+      "gzxj": "Gzxj",
+      "isnew": "Isnew"
+    }
+  }
+}

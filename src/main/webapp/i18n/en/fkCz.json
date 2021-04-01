@@ -1,0 +1,37 @@
+{
+  "ihotelApp": {
+    "fkCz": {
+      "home": {
+        "title": "Fk Czs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Fk Cz",
+        "createOrEditLabel": "Create or edit a Fk Cz",
+        "search": "Search for Fk Cz",
+        "notFound": "No Fk Czs found"
+      },
+      "created": "A new Fk Cz is created with identifier {{ param }}",
+      "updated": "A Fk Cz is updated with identifier {{ param }}",
+      "deleted": "A Fk Cz is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Fk Cz {{ id }}?"
+      },
+      "detail": {
+        "title": "Fk Cz"
+      },
+      "id": "Id",
+      "hoteltime": "Hoteltime",
+      "wxf": "Wxf",
+      "ksf": "Ksf",
+      "kf": "Kf",
+      "zfs": "Zfs",
+      "groupyd": "Groupyd",
+      "skyd": "Skyd",
+      "ydwd": "Ydwd",
+      "qxyd": "Qxyd",
+      "isnew": "Isnew",
+      "hoteldm": "Hoteldm",
+      "hys": "Hys",
+      "khys": "Khys"
+    }
+  }
+}

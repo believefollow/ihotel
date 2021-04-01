@@ -1,0 +1,261 @@
+<div>
+  <h2 id="page-heading" data-cy="CheckinHeading">
+    <span jhiTranslate="ihotelApp.checkin.home.title">Checkins</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="ihotelApp.checkin.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-checkin"
+        [routerLink]="['/checkin/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span class="hidden-sm-down" jhiTranslate="ihotelApp.checkin.home.createLabel"> Create a new Checkin </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <form name="searchForm" class="form-inline">
+        <div class="input-group w-100 mt-3">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="currentSearch"
+            id="currentSearch"
+            name="currentSearch"
+            placeholder="{{ 'ihotelApp.checkin.home.search' | translate }}"
+          />
+
+          <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+            <fa-icon icon="search"></fa-icon>
+          </button>
+
+          <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+            <fa-icon icon="trash-alt"></fa-icon>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="checkins?.length === 0">
+    <span jhiTranslate="ihotelApp.checkin.home.notFound">No checkins found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="checkins && checkins.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="bkid"><span jhiTranslate="ihotelApp.checkin.bkid">Bkid</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="guestId">
+            <span jhiTranslate="ihotelApp.checkin.guestId">Guest Id</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="account">
+            <span jhiTranslate="ihotelApp.checkin.account">Account</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="hoteltime">
+            <span jhiTranslate="ihotelApp.checkin.hoteltime">Hoteltime</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="indatetime">
+            <span jhiTranslate="ihotelApp.checkin.indatetime">Indatetime</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="residefate">
+            <span jhiTranslate="ihotelApp.checkin.residefate">Residefate</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="gotime">
+            <span jhiTranslate="ihotelApp.checkin.gotime">Gotime</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="empn"><span jhiTranslate="ihotelApp.checkin.empn">Empn</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="roomn"><span jhiTranslate="ihotelApp.checkin.roomn">Roomn</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="uname"><span jhiTranslate="ihotelApp.checkin.uname">Uname</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="rentp"><span jhiTranslate="ihotelApp.checkin.rentp">Rentp</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="protocolrent">
+            <span jhiTranslate="ihotelApp.checkin.protocolrent">Protocolrent</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="remark">
+            <span jhiTranslate="ihotelApp.checkin.remark">Remark</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="phonen">
+            <span jhiTranslate="ihotelApp.checkin.phonen">Phonen</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="empn2"><span jhiTranslate="ihotelApp.checkin.empn2">Empn 2</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="adhoc"><span jhiTranslate="ihotelApp.checkin.adhoc">Adhoc</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="auditflag">
+            <span jhiTranslate="ihotelApp.checkin.auditflag">Auditflag</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="groupn">
+            <span jhiTranslate="ihotelApp.checkin.groupn">Groupn</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="memo"><span jhiTranslate="ihotelApp.checkin.memo">Memo</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="lfSign">
+            <span jhiTranslate="ihotelApp.checkin.lfSign">Lf Sign</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="keynum">
+            <span jhiTranslate="ihotelApp.checkin.keynum">Keynum</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="hykh"><span jhiTranslate="ihotelApp.checkin.hykh">Hykh</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="bm"><span jhiTranslate="ihotelApp.checkin.bm">Bm</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="flag"><span jhiTranslate="ihotelApp.checkin.flag">Flag</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="jxtime">
+            <span jhiTranslate="ihotelApp.checkin.jxtime">Jxtime</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="jxflag">
+            <span jhiTranslate="ihotelApp.checkin.jxflag">Jxflag</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="checkf">
+            <span jhiTranslate="ihotelApp.checkin.checkf">Checkf</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="guestname">
+            <span jhiTranslate="ihotelApp.checkin.guestname">Guestname</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="fgf"><span jhiTranslate="ihotelApp.checkin.fgf">Fgf</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="fgxx"><span jhiTranslate="ihotelApp.checkin.fgxx">Fgxx</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="hourSign">
+            <span jhiTranslate="ihotelApp.checkin.hourSign">Hour Sign</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="xsy"><span jhiTranslate="ihotelApp.checkin.xsy">Xsy</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="rzsign">
+            <span jhiTranslate="ihotelApp.checkin.rzsign">Rzsign</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="jf"><span jhiTranslate="ihotelApp.checkin.jf">Jf</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="gname"><span jhiTranslate="ihotelApp.checkin.gname">Gname</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="zcsign">
+            <span jhiTranslate="ihotelApp.checkin.zcsign">Zcsign</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="cqsl"><span jhiTranslate="ihotelApp.checkin.cqsl">Cqsl</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="sfjf"><span jhiTranslate="ihotelApp.checkin.sfjf">Sfjf</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="ywly"><span jhiTranslate="ihotelApp.checkin.ywly">Ywly</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="fk"><span jhiTranslate="ihotelApp.checkin.fk">Fk</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="fkrq"><span jhiTranslate="ihotelApp.checkin.fkrq">Fkrq</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="bc"><span jhiTranslate="ihotelApp.checkin.bc">Bc</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="jxremark">
+            <span jhiTranslate="ihotelApp.checkin.jxremark">Jxremark</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="txid"><span jhiTranslate="ihotelApp.checkin.txid">Txid</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="cfr"><span jhiTranslate="ihotelApp.checkin.cfr">Cfr</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="fjbm"><span jhiTranslate="ihotelApp.checkin.fjbm">Fjbm</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="djlx"><span jhiTranslate="ihotelApp.checkin.djlx">Djlx</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="wlddh"><span jhiTranslate="ihotelApp.checkin.wlddh">Wlddh</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="fksl"><span jhiTranslate="ihotelApp.checkin.fksl">Fksl</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="dqtx"><span jhiTranslate="ihotelApp.checkin.dqtx">Dqtx</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let checkin of checkins; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/checkin', checkin.id, 'view']">{{ checkin.id }}</a>
+          </td>
+          <td>{{ checkin.bkid }}</td>
+          <td>{{ checkin.guestId }}</td>
+          <td>{{ checkin.account }}</td>
+          <td>{{ checkin.hoteltime | formatMediumDatetime }}</td>
+          <td>{{ checkin.indatetime | formatMediumDatetime }}</td>
+          <td>{{ checkin.residefate }}</td>
+          <td>{{ checkin.gotime | formatMediumDatetime }}</td>
+          <td>{{ checkin.empn }}</td>
+          <td>{{ checkin.roomn }}</td>
+          <td>{{ checkin.uname }}</td>
+          <td>{{ checkin.rentp }}</td>
+          <td>{{ checkin.protocolrent }}</td>
+          <td>{{ checkin.remark }}</td>
+          <td>{{ checkin.phonen }}</td>
+          <td>{{ checkin.empn2 }}</td>
+          <td>{{ checkin.adhoc }}</td>
+          <td>{{ checkin.auditflag }}</td>
+          <td>{{ checkin.groupn }}</td>
+          <td>{{ checkin.memo }}</td>
+          <td>{{ checkin.lfSign }}</td>
+          <td>{{ checkin.keynum }}</td>
+          <td>{{ checkin.hykh }}</td>
+          <td>{{ checkin.bm }}</td>
+          <td>{{ checkin.flag }}</td>
+          <td>{{ checkin.jxtime | formatMediumDatetime }}</td>
+          <td>{{ checkin.jxflag }}</td>
+          <td>{{ checkin.checkf }}</td>
+          <td>{{ checkin.guestname }}</td>
+          <td>{{ checkin.fgf }}</td>
+          <td>{{ checkin.fgxx }}</td>
+          <td>{{ checkin.hourSign }}</td>
+          <td>{{ checkin.xsy }}</td>
+          <td>{{ checkin.rzsign }}</td>
+          <td>{{ checkin.jf }}</td>
+          <td>{{ checkin.gname }}</td>
+          <td>{{ checkin.zcsign }}</td>
+          <td>{{ checkin.cqsl }}</td>
+          <td>{{ checkin.sfjf }}</td>
+          <td>{{ checkin.ywly }}</td>
+          <td>{{ checkin.fk }}</td>
+          <td>{{ checkin.fkrq | formatMediumDatetime }}</td>
+          <td>{{ checkin.bc }}</td>
+          <td>{{ checkin.jxremark }}</td>
+          <td>{{ checkin.txid }}</td>
+          <td>{{ checkin.cfr }}</td>
+          <td>{{ checkin.fjbm }}</td>
+          <td>{{ checkin.djlx }}</td>
+          <td>{{ checkin.wlddh }}</td>
+          <td>{{ checkin.fksl }}</td>
+          <td>{{ checkin.dqtx }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/checkin', checkin.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/checkin', checkin.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(checkin)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="checkins && checkins.length > 0">
+    <div class="row justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

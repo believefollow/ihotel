@@ -1,0 +1,100 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="checkinTz">
+      <h2 data-cy="checkinTzDetailsHeading"><span jhiTranslate="ihotelApp.checkinTz.detail.title">Checkin Tz</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ checkinTz.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinTz.guestId">Guest Id</span></dt>
+        <dd>
+          <span>{{ checkinTz.guestId }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinTz.account">Account</span></dt>
+        <dd>
+          <span>{{ checkinTz.account }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinTz.hoteltime">Hoteltime</span></dt>
+        <dd>
+          <span>{{ checkinTz.hoteltime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinTz.indatetime">Indatetime</span></dt>
+        <dd>
+          <span>{{ checkinTz.indatetime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinTz.residefate">Residefate</span></dt>
+        <dd>
+          <span>{{ checkinTz.residefate }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinTz.gotime">Gotime</span></dt>
+        <dd>
+          <span>{{ checkinTz.gotime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinTz.empn">Empn</span></dt>
+        <dd>
+          <span>{{ checkinTz.empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinTz.roomn">Roomn</span></dt>
+        <dd>
+          <span>{{ checkinTz.roomn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinTz.rentp">Rentp</span></dt>
+        <dd>
+          <span>{{ checkinTz.rentp }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinTz.protocolrent">Protocolrent</span></dt>
+        <dd>
+          <span>{{ checkinTz.protocolrent }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinTz.remark">Remark</span></dt>
+        <dd>
+          <span>{{ checkinTz.remark }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinTz.phonen">Phonen</span></dt>
+        <dd>
+          <span>{{ checkinTz.phonen }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinTz.empn2">Empn 2</span></dt>
+        <dd>
+          <span>{{ checkinTz.empn2 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinTz.memo">Memo</span></dt>
+        <dd>
+          <span>{{ checkinTz.memo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinTz.lfSign">Lf Sign</span></dt>
+        <dd>
+          <span>{{ checkinTz.lfSign }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinTz.guestname">Guestname</span></dt>
+        <dd>
+          <span>{{ checkinTz.guestname }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinTz.bc">Bc</span></dt>
+        <dd>
+          <span>{{ checkinTz.bc }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinTz.roomtype">Roomtype</span></dt>
+        <dd>
+          <span>{{ checkinTz.roomtype }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/checkin-tz', checkinTz.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

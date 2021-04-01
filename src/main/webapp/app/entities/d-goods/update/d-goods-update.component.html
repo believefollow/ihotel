@@ -1,0 +1,176 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-d-goods-heading" data-cy="DGoodsCreateUpdateHeading" jhiTranslate="ihotelApp.dGoods.home.createOrEditLabel">
+        Create or edit a D Goods
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dGoods.typeid" for="field_typeid">Typeid</label>
+          <input type="number" class="form-control" name="typeid" id="field_typeid" data-cy="typeid" formControlName="typeid" />
+          <div *ngIf="editForm.get('typeid')!.invalid && (editForm.get('typeid')!.dirty || editForm.get('typeid')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('typeid')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small class="form-text text-danger" [hidden]="!editForm.get('typeid')?.errors?.number" jhiTranslate="entity.validation.number">
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dGoods.goodsname" for="field_goodsname">Goodsname</label>
+          <input type="text" class="form-control" name="goodsname" id="field_goodsname" data-cy="goodsname" formControlName="goodsname" />
+          <div *ngIf="editForm.get('goodsname')!.invalid && (editForm.get('goodsname')!.dirty || editForm.get('goodsname')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('goodsname')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('goodsname')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 100 }"
+            >
+              This field cannot be longer than 100 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dGoods.goodsid" for="field_goodsid">Goodsid</label>
+          <input type="text" class="form-control" name="goodsid" id="field_goodsid" data-cy="goodsid" formControlName="goodsid" />
+          <div *ngIf="editForm.get('goodsid')!.invalid && (editForm.get('goodsid')!.dirty || editForm.get('goodsid')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('goodsid')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('goodsid')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 20 }"
+            >
+              This field cannot be longer than 20 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dGoods.ggxh" for="field_ggxh">Ggxh</label>
+          <input type="text" class="form-control" name="ggxh" id="field_ggxh" data-cy="ggxh" formControlName="ggxh" />
+          <div *ngIf="editForm.get('ggxh')!.invalid && (editForm.get('ggxh')!.dirty || editForm.get('ggxh')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('ggxh')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dGoods.pysj" for="field_pysj">Pysj</label>
+          <input type="text" class="form-control" name="pysj" id="field_pysj" data-cy="pysj" formControlName="pysj" />
+          <div *ngIf="editForm.get('pysj')!.invalid && (editForm.get('pysj')!.dirty || editForm.get('pysj')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('pysj')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dGoods.wbsj" for="field_wbsj">Wbsj</label>
+          <input type="text" class="form-control" name="wbsj" id="field_wbsj" data-cy="wbsj" formControlName="wbsj" />
+          <div *ngIf="editForm.get('wbsj')!.invalid && (editForm.get('wbsj')!.dirty || editForm.get('wbsj')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('wbsj')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dGoods.unit" for="field_unit">Unit</label>
+          <input type="text" class="form-control" name="unit" id="field_unit" data-cy="unit" formControlName="unit" />
+          <div *ngIf="editForm.get('unit')!.invalid && (editForm.get('unit')!.dirty || editForm.get('unit')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('unit')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dGoods.gcsl" for="field_gcsl">Gcsl</label>
+          <input type="number" class="form-control" name="gcsl" id="field_gcsl" data-cy="gcsl" formControlName="gcsl" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dGoods.dcsl" for="field_dcsl">Dcsl</label>
+          <input type="number" class="form-control" name="dcsl" id="field_dcsl" data-cy="dcsl" formControlName="dcsl" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dGoods.remark" for="field_remark">Remark</label>
+          <input type="text" class="form-control" name="remark" id="field_remark" data-cy="remark" formControlName="remark" />
+          <div *ngIf="editForm.get('remark')!.invalid && (editForm.get('remark')!.dirty || editForm.get('remark')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('remark')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

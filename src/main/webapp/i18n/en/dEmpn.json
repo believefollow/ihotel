@@ -1,0 +1,28 @@
+{
+  "ihotelApp": {
+    "dEmpn": {
+      "home": {
+        "title": "D Empns",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new D Empn",
+        "createOrEditLabel": "Create or edit a D Empn",
+        "search": "Search for D Empn",
+        "notFound": "No D Empns found"
+      },
+      "created": "A new D Empn is created with identifier {{ param }}",
+      "updated": "A D Empn is updated with identifier {{ param }}",
+      "deleted": "A D Empn is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete D Empn {{ id }}?"
+      },
+      "detail": {
+        "title": "D Empn"
+      },
+      "id": "ID",
+      "empnid": "Empnid",
+      "empn": "Empn",
+      "deptid": "Deptid",
+      "phone": "Phone"
+    }
+  }
+}

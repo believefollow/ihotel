@@ -1,0 +1,42 @@
+{
+  "ihotelApp": {
+    "checkinTz": {
+      "home": {
+        "title": "Checkin Tzs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Checkin Tz",
+        "createOrEditLabel": "Create or edit a Checkin Tz",
+        "search": "Search for Checkin Tz",
+        "notFound": "No Checkin Tzs found"
+      },
+      "created": "A new Checkin Tz is created with identifier {{ param }}",
+      "updated": "A Checkin Tz is updated with identifier {{ param }}",
+      "deleted": "A Checkin Tz is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Checkin Tz {{ id }}?"
+      },
+      "detail": {
+        "title": "Checkin Tz"
+      },
+      "id": "ID",
+      "guestId": "Guest Id",
+      "account": "Account",
+      "hoteltime": "Hoteltime",
+      "indatetime": "Indatetime",
+      "residefate": "Residefate",
+      "gotime": "Gotime",
+      "empn": "Empn",
+      "roomn": "Roomn",
+      "rentp": "Rentp",
+      "protocolrent": "Protocolrent",
+      "remark": "Remark",
+      "phonen": "Phonen",
+      "empn2": "Empn 2",
+      "memo": "Memo",
+      "lfSign": "Lf Sign",
+      "guestname": "Guestname",
+      "bc": "Bc",
+      "roomtype": "Roomtype"
+    }
+  }
+}

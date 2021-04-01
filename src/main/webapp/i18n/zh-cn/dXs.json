@@ -1,0 +1,38 @@
+{
+  "ihotelApp": {
+    "dXs": {
+      "home": {
+        "title": "D Xs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 D Xs",
+        "createOrEditLabel": "创建或编辑 D Xs",
+        "search": "查找 D Xs",
+        "notFound": "No D Xs found"
+      },
+      "created": "D Xs {{ param }} 创建成功",
+      "updated": "D Xs {{ param }} 更新成功",
+      "deleted": "D Xs {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 D Xs {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "D Xs"
+      },
+      "id": "Id",
+      "begintime": "Begintime",
+      "endtime": "Endtime",
+      "ckbillno": "Ckbillno",
+      "depot": "Depot",
+      "kcid": "Kcid",
+      "ckid": "Ckid",
+      "spbm": "Spbm",
+      "spmc": "Spmc",
+      "unit": "Unit",
+      "rkprice": "Rkprice",
+      "xsprice": "Xsprice",
+      "sl": "Sl",
+      "rkje": "Rkje",
+      "xsje": "Xsje"
+    }
+  }
+}

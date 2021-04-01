@@ -1,0 +1,27 @@
+{
+  "ihotelApp": {
+    "ck2xsy": {
+      "home": {
+        "title": "Ck 2 Xsies",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Ck 2 Xsy",
+        "createOrEditLabel": "创建或编辑 Ck 2 Xsy",
+        "search": "查找 Ck 2 Xsy",
+        "notFound": "No Ck 2 Xsies found"
+      },
+      "created": "Ck 2 Xsy {{ param }} 创建成功",
+      "updated": "Ck 2 Xsy {{ param }} 更新成功",
+      "deleted": "Ck 2 Xsy {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Ck 2 Xsy {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Ck 2 Xsy"
+      },
+      "id": "ID",
+      "rq": "Rq",
+      "cpbh": "Cpbh",
+      "sl": "Sl"
+    }
+  }
+}

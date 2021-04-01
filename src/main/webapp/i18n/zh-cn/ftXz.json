@@ -1,0 +1,25 @@
+{
+  "ihotelApp": {
+    "ftXz": {
+      "home": {
+        "title": "Ft Xzs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Ft Xz",
+        "createOrEditLabel": "创建或编辑 Ft Xz",
+        "search": "查找 Ft Xz",
+        "notFound": "No Ft Xzs found"
+      },
+      "created": "Ft Xz {{ param }} 创建成功",
+      "updated": "Ft Xz {{ param }} 更新成功",
+      "deleted": "Ft Xz {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Ft Xz {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Ft Xz"
+      },
+      "id": "Id",
+      "roomn": "Roomn"
+    }
+  }
+}

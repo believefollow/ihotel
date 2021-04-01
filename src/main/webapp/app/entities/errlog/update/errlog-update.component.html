@@ -1,0 +1,215 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-errlog-heading" data-cy="ErrlogCreateUpdateHeading" jhiTranslate="ihotelApp.errlog.home.createOrEditLabel">
+        Create or edit a Errlog
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.errlog.iderrlog" for="field_iderrlog">Iderrlog</label>
+          <input type="number" class="form-control" name="iderrlog" id="field_iderrlog" data-cy="iderrlog" formControlName="iderrlog" />
+          <div *ngIf="editForm.get('iderrlog')!.invalid && (editForm.get('iderrlog')!.dirty || editForm.get('iderrlog')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('iderrlog')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('iderrlog')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.errlog.errnumber" for="field_errnumber">Errnumber</label>
+          <input type="number" class="form-control" name="errnumber" id="field_errnumber" data-cy="errnumber" formControlName="errnumber" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.errlog.errtext" for="field_errtext">Errtext</label>
+          <input type="text" class="form-control" name="errtext" id="field_errtext" data-cy="errtext" formControlName="errtext" />
+          <div *ngIf="editForm.get('errtext')!.invalid && (editForm.get('errtext')!.dirty || editForm.get('errtext')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('errtext')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 255 }"
+            >
+              This field cannot be longer than 255 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.errlog.errwindowmenu" for="field_errwindowmenu">Errwindowmenu</label>
+          <input
+            type="text"
+            class="form-control"
+            name="errwindowmenu"
+            id="field_errwindowmenu"
+            data-cy="errwindowmenu"
+            formControlName="errwindowmenu"
+          />
+          <div
+            *ngIf="
+              editForm.get('errwindowmenu')!.invalid && (editForm.get('errwindowmenu')!.dirty || editForm.get('errwindowmenu')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('errwindowmenu')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 255 }"
+            >
+              This field cannot be longer than 255 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.errlog.errobject" for="field_errobject">Errobject</label>
+          <input type="text" class="form-control" name="errobject" id="field_errobject" data-cy="errobject" formControlName="errobject" />
+          <div *ngIf="editForm.get('errobject')!.invalid && (editForm.get('errobject')!.dirty || editForm.get('errobject')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('errobject')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 255 }"
+            >
+              This field cannot be longer than 255 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.errlog.errevent" for="field_errevent">Errevent</label>
+          <input type="text" class="form-control" name="errevent" id="field_errevent" data-cy="errevent" formControlName="errevent" />
+          <div *ngIf="editForm.get('errevent')!.invalid && (editForm.get('errevent')!.dirty || editForm.get('errevent')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('errevent')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 255 }"
+            >
+              This field cannot be longer than 255 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.errlog.errline" for="field_errline">Errline</label>
+          <input type="number" class="form-control" name="errline" id="field_errline" data-cy="errline" formControlName="errline" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.errlog.errtime" for="field_errtime">Errtime</label>
+          <div class="d-flex">
+            <input
+              id="field_errtime"
+              data-cy="errtime"
+              type="datetime-local"
+              class="form-control"
+              name="errtime"
+              formControlName="errtime"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.errlog.sumbitsign" for="field_sumbitsign">Sumbitsign</label>
+          <input
+            type="checkbox"
+            class="form-check"
+            name="sumbitsign"
+            id="field_sumbitsign"
+            data-cy="sumbitsign"
+            formControlName="sumbitsign"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.errlog.bmpfile" for="field_bmpfile">Bmpfile</label>
+          <input type="text" class="form-control" name="bmpfile" id="field_bmpfile" data-cy="bmpfile" formControlName="bmpfile" />
+          <div *ngIf="editForm.get('bmpfile')!.invalid && (editForm.get('bmpfile')!.dirty || editForm.get('bmpfile')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('bmpfile')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 255 }"
+            >
+              This field cannot be longer than 255 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.errlog.bmpblob" for="field_bmpblob">Bmpblob</label>
+          <div>
+            <div *ngIf="editForm.get('bmpblob')!.value" class="form-text text-danger clearfix">
+              <a
+                class="pull-left"
+                (click)="openFile(editForm.get('bmpblob')!.value, editForm.get('bmpblobContentType')!.value)"
+                jhiTranslate="entity.action.open"
+                >open</a
+              ><br />
+              <span class="pull-left">{{ editForm.get('bmpblobContentType')!.value }}, {{ byteSize(editForm.get('bmpblob')!.value) }}</span>
+              <button
+                type="button"
+                (click)="editForm.patchValue({ bmpblob: null }); editForm.patchValue({ bmpblobContentType: null })"
+                class="btn btn-secondary btn-xs pull-right"
+              >
+                <fa-icon icon="times"></fa-icon>
+              </button>
+            </div>
+            <input
+              type="file"
+              id="file_bmpblob"
+              data-cy="bmpblob"
+              (change)="setFileData($event, 'bmpblob', false)"
+              jhiTranslate="entity.action.addblob"
+            />
+          </div>
+          <input type="hidden" class="form-control" name="bmpblob" id="field_bmpblob" data-cy="bmpblob" formControlName="bmpblob" />
+          <input
+            type="hidden"
+            class="form-control"
+            name="bmpblobContentType"
+            id="field_bmpblobContentType"
+            formControlName="bmpblobContentType"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

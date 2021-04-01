@@ -1,0 +1,34 @@
+{
+  "ihotelApp": {
+    "checkinAccount": {
+      "home": {
+        "title": "Checkin Accounts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Checkin Account",
+        "createOrEditLabel": "Create or edit a Checkin Account",
+        "search": "Search for Checkin Account",
+        "notFound": "No Checkin Accounts found"
+      },
+      "created": "A new Checkin Account is created with identifier {{ param }}",
+      "updated": "A Checkin Account is updated with identifier {{ param }}",
+      "deleted": "A Checkin Account is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Checkin Account {{ id }}?"
+      },
+      "detail": {
+        "title": "Checkin Account"
+      },
+      "id": "ID",
+      "account": "Account",
+      "roomn": "Roomn",
+      "indatetime": "Indatetime",
+      "gotime": "Gotime",
+      "kfang": "Kfang",
+      "dhua": "Dhua",
+      "minin": "Minin",
+      "peich": "Peich",
+      "qit": "Qit",
+      "total": "Total"
+    }
+  }
+}

@@ -1,0 +1,155 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-classreport-room-heading"
+        data-cy="ClassreportRoomCreateUpdateHeading"
+        jhiTranslate="ihotelApp.classreportRoom.home.createOrEditLabel"
+      >
+        Create or edit a Classreport Room
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classreportRoom.account" for="field_account">Account</label>
+          <input type="text" class="form-control" name="account" id="field_account" data-cy="account" formControlName="account" />
+          <div *ngIf="editForm.get('account')!.invalid && (editForm.get('account')!.dirty || editForm.get('account')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('account')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('account')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 30 }"
+            >
+              This field cannot be longer than 30 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classreportRoom.roomn" for="field_roomn">Roomn</label>
+          <input type="text" class="form-control" name="roomn" id="field_roomn" data-cy="roomn" formControlName="roomn" />
+          <div *ngIf="editForm.get('roomn')!.invalid && (editForm.get('roomn')!.dirty || editForm.get('roomn')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('roomn')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 10 }"
+            >
+              This field cannot be longer than 10 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classreportRoom.yfj" for="field_yfj">Yfj</label>
+          <input type="number" class="form-control" name="yfj" id="field_yfj" data-cy="yfj" formControlName="yfj" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classreportRoom.yfj9008" for="field_yfj9008">Yfj 9008</label>
+          <input type="number" class="form-control" name="yfj9008" id="field_yfj9008" data-cy="yfj9008" formControlName="yfj9008" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classreportRoom.yfj9009" for="field_yfj9009">Yfj 9009</label>
+          <input type="number" class="form-control" name="yfj9009" id="field_yfj9009" data-cy="yfj9009" formControlName="yfj9009" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classreportRoom.yfj9007" for="field_yfj9007">Yfj 9007</label>
+          <input type="number" class="form-control" name="yfj9007" id="field_yfj9007" data-cy="yfj9007" formControlName="yfj9007" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classreportRoom.gz" for="field_gz">Gz</label>
+          <input type="number" class="form-control" name="gz" id="field_gz" data-cy="gz" formControlName="gz" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classreportRoom.ff" for="field_ff">Ff</label>
+          <input type="number" class="form-control" name="ff" id="field_ff" data-cy="ff" formControlName="ff" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classreportRoom.minibar" for="field_minibar">Minibar</label>
+          <input type="number" class="form-control" name="minibar" id="field_minibar" data-cy="minibar" formControlName="minibar" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classreportRoom.phone" for="field_phone">Phone</label>
+          <input type="number" class="form-control" name="phone" id="field_phone" data-cy="phone" formControlName="phone" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classreportRoom.other" for="field_other">Other</label>
+          <input type="number" class="form-control" name="other" id="field_other" data-cy="other" formControlName="other" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classreportRoom.pc" for="field_pc">Pc</label>
+          <input type="number" class="form-control" name="pc" id="field_pc" data-cy="pc" formControlName="pc" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classreportRoom.cz" for="field_cz">Cz</label>
+          <input type="number" class="form-control" name="cz" id="field_cz" data-cy="cz" formControlName="cz" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classreportRoom.cy" for="field_cy">Cy</label>
+          <input type="number" class="form-control" name="cy" id="field_cy" data-cy="cy" formControlName="cy" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classreportRoom.md" for="field_md">Md</label>
+          <input type="number" class="form-control" name="md" id="field_md" data-cy="md" formControlName="md" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classreportRoom.huiy" for="field_huiy">Huiy</label>
+          <input type="number" class="form-control" name="huiy" id="field_huiy" data-cy="huiy" formControlName="huiy" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classreportRoom.dtb" for="field_dtb">Dtb</label>
+          <input type="number" class="form-control" name="dtb" id="field_dtb" data-cy="dtb" formControlName="dtb" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classreportRoom.sszx" for="field_sszx">Sszx</label>
+          <input type="number" class="form-control" name="sszx" id="field_sszx" data-cy="sszx" formControlName="sszx" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

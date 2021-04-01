@@ -1,0 +1,33 @@
+{
+  "ihotelApp": {
+    "fwDs": {
+      "home": {
+        "title": "Fw Ds",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Fw Ds",
+        "createOrEditLabel": "Create or edit a Fw Ds",
+        "search": "Search for Fw Ds",
+        "notFound": "No Fw Ds found"
+      },
+      "created": "A new Fw Ds is created with identifier {{ param }}",
+      "updated": "A Fw Ds is updated with identifier {{ param }}",
+      "deleted": "A Fw Ds is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Fw Ds {{ id }}?"
+      },
+      "detail": {
+        "title": "Fw Ds"
+      },
+      "id": "Id",
+      "hoteltime": "Hoteltime",
+      "rq": "Rq",
+      "xz": "Xz",
+      "memo": "Memo",
+      "fwy": "Fwy",
+      "roomn": "Roomn",
+      "rtype": "Rtype",
+      "empn": "Empn",
+      "sl": "Sl"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "ihotelApp": {
+    "dEmpn": {
+      "home": {
+        "title": "D Empns",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 D Empn",
+        "createOrEditLabel": "创建或编辑 D Empn",
+        "search": "查找 D Empn",
+        "notFound": "No D Empns found"
+      },
+      "created": "D Empn {{ param }} 创建成功",
+      "updated": "D Empn {{ param }} 更新成功",
+      "deleted": "D Empn {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 D Empn {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "D Empn"
+      },
+      "id": "ID",
+      "empnid": "Empnid",
+      "empn": "Empn",
+      "deptid": "Deptid",
+      "phone": "Phone"
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "ihotelApp": {
+    "checkin": {
+      "home": {
+        "title": "Checkins",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Checkin",
+        "createOrEditLabel": "Create or edit a Checkin",
+        "search": "Search for Checkin",
+        "notFound": "No Checkins found"
+      },
+      "created": "A new Checkin is created with identifier {{ param }}",
+      "updated": "A Checkin is updated with identifier {{ param }}",
+      "deleted": "A Checkin is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Checkin {{ id }}?"
+      },
+      "detail": {
+        "title": "Checkin"
+      },
+      "id": "ID",
+      "bkid": "Bkid",
+      "guestId": "Guest Id",
+      "account": "Account",
+      "hoteltime": "Hoteltime",
+      "indatetime": "Indatetime",
+      "residefate": "Residefate",
+      "gotime": "Gotime",
+      "empn": "Empn",
+      "roomn": "Roomn",
+      "uname": "Uname",
+      "rentp": "Rentp",
+      "protocolrent": "Protocolrent",
+      "remark": "Remark",
+      "phonen": "Phonen",
+      "empn2": "Empn 2",
+      "adhoc": "Adhoc",
+      "auditflag": "Auditflag",
+      "groupn": "Groupn",
+      "memo": "Memo",
+      "lfSign": "Lf Sign",
+      "keynum": "Keynum",
+      "hykh": "Hykh",
+      "bm": "Bm",
+      "flag": "Flag",
+      "jxtime": "Jxtime",
+      "jxflag": "Jxflag",
+      "checkf": "Checkf",
+      "guestname": "Guestname",
+      "fgf": "Fgf",
+      "fgxx": "Fgxx",
+      "hourSign": "Hour Sign",
+      "xsy": "Xsy",
+      "rzsign": "Rzsign",
+      "jf": "Jf",
+      "gname": "Gname",
+      "zcsign": "Zcsign",
+      "cqsl": "Cqsl",
+      "sfjf": "Sfjf",
+      "ywly": "Ywly",
+      "fk": "Fk",
+      "fkrq": "Fkrq",
+      "bc": "Bc",
+      "jxremark": "Jxremark",
+      "txid": "Txid",
+      "cfr": "Cfr",
+      "fjbm": "Fjbm",
+      "djlx": "Djlx",
+      "wlddh": "Wlddh",
+      "fksl": "Fksl",
+      "dqtx": "Dqtx",
+      "help": {
+        "bkid": "主键"
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "ihotelApp": {
+    "crinfo": {
+      "home": {
+        "title": "Crinfos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Crinfo",
+        "createOrEditLabel": "创建或编辑 Crinfo",
+        "search": "查找 Crinfo",
+        "notFound": "No Crinfos found"
+      },
+      "created": "Crinfo {{ param }} 创建成功",
+      "updated": "Crinfo {{ param }} 更新成功",
+      "deleted": "Crinfo {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Crinfo {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Crinfo"
+      },
+      "id": "Id",
+      "operatetime": "Operatetime",
+      "oldrent": "Oldrent",
+      "newrent": "Newrent",
+      "oldroomn": "Oldroomn",
+      "newroomn": "Newroomn",
+      "account": "Account",
+      "empn": "Empn",
+      "oldday": "Oldday",
+      "newday": "Newday",
+      "hoteltime": "Hoteltime",
+      "roomn": "Roomn",
+      "memo": "Memo",
+      "realname": "Realname",
+      "isup": "Isup"
+    }
+  }
+}

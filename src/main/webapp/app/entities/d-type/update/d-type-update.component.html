@@ -1,0 +1,95 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-d-type-heading" data-cy="DTypeCreateUpdateHeading" jhiTranslate="ihotelApp.dType.home.createOrEditLabel">
+        Create or edit a D Type
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dType.typeid" for="field_typeid">Typeid</label>
+          <input type="number" class="form-control" name="typeid" id="field_typeid" data-cy="typeid" formControlName="typeid" />
+          <div *ngIf="editForm.get('typeid')!.invalid && (editForm.get('typeid')!.dirty || editForm.get('typeid')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('typeid')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small class="form-text text-danger" [hidden]="!editForm.get('typeid')?.errors?.number" jhiTranslate="entity.validation.number">
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dType.typename" for="field_typename">Typename</label>
+          <input type="text" class="form-control" name="typename" id="field_typename" data-cy="typename" formControlName="typename" />
+          <div *ngIf="editForm.get('typename')!.invalid && (editForm.get('typename')!.dirty || editForm.get('typename')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('typename')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('typename')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dType.fatherid" for="field_fatherid">Fatherid</label>
+          <input type="number" class="form-control" name="fatherid" id="field_fatherid" data-cy="fatherid" formControlName="fatherid" />
+          <div *ngIf="editForm.get('fatherid')!.invalid && (editForm.get('fatherid')!.dirty || editForm.get('fatherid')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('fatherid')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('fatherid')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dType.disabled" for="field_disabled">Disabled</label>
+          <input type="number" class="form-control" name="disabled" id="field_disabled" data-cy="disabled" formControlName="disabled" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

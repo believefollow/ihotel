@@ -1,0 +1,80 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="cardysq">
+      <h2 data-cy="cardysqDetailsHeading"><span jhiTranslate="ihotelApp.cardysq.detail.title">Cardysq</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ihotelApp.cardysq.id">Id</span></dt>
+        <dd>
+          <span>{{ cardysq.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.cardysq.roomn">Roomn</span></dt>
+        <dd>
+          <span>{{ cardysq.roomn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.cardysq.guestname">Guestname</span></dt>
+        <dd>
+          <span>{{ cardysq.guestname }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.cardysq.account">Account</span></dt>
+        <dd>
+          <span>{{ cardysq.account }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.cardysq.rq">Rq</span></dt>
+        <dd>
+          <span>{{ cardysq.rq | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.cardysq.cardid">Cardid</span></dt>
+        <dd>
+          <span>{{ cardysq.cardid }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.cardysq.djh">Djh</span></dt>
+        <dd>
+          <span>{{ cardysq.djh }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.cardysq.sqh">Sqh</span></dt>
+        <dd>
+          <span>{{ cardysq.sqh }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.cardysq.empn">Empn</span></dt>
+        <dd>
+          <span>{{ cardysq.empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.cardysq.sign">Sign</span></dt>
+        <dd>
+          <span>{{ cardysq.sign }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.cardysq.hoteltime">Hoteltime</span></dt>
+        <dd>
+          <span>{{ cardysq.hoteltime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.cardysq.yxrq">Yxrq</span></dt>
+        <dd>
+          <span>{{ cardysq.yxrq | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.cardysq.je">Je</span></dt>
+        <dd>
+          <span>{{ cardysq.je }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.cardysq.ysqmemo">Ysqmemo</span></dt>
+        <dd>
+          <span>{{ cardysq.ysqmemo }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/cardysq', cardysq.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

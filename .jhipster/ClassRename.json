@@ -1,0 +1,274 @@
+{
+  "name": "ClassRename",
+  "fields": [
+    {
+      "fieldName": "dt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "empn",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "10"
+    },
+    {
+      "fieldName": "oldmoney",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "getmoney",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "toup",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "downempn",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "10"
+    },
+    {
+      "fieldName": "todown",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "flag",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "old2",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "get2",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "toup2",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "todown2",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "upempn2",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "10"
+    },
+    {
+      "fieldName": "im9008",
+      "fieldType": "BigDecimal",
+      "javadoc": "收现金押金"
+    },
+    {
+      "fieldName": "im9009",
+      "fieldType": "BigDecimal",
+      "javadoc": "收刷卡押金"
+    },
+    {
+      "fieldName": "co9991",
+      "fieldType": "BigDecimal",
+      "javadoc": "现金收款"
+    },
+    {
+      "fieldName": "co9992",
+      "fieldType": "BigDecimal",
+      "javadoc": "刷卡收款"
+    },
+    {
+      "fieldName": "co9993",
+      "fieldType": "BigDecimal",
+      "javadoc": "免单收款"
+    },
+    {
+      "fieldName": "co9994",
+      "fieldType": "BigDecimal",
+      "javadoc": "会员卡收款"
+    },
+    {
+      "fieldName": "co9995",
+      "fieldType": "BigDecimal",
+      "javadoc": "挂账"
+    },
+    {
+      "fieldName": "co9998",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "im9007",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "gotime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "co9999",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "cm9008",
+      "fieldType": "BigDecimal",
+      "javadoc": "退现押金"
+    },
+    {
+      "fieldName": "cm9009",
+      "fieldType": "BigDecimal",
+      "javadoc": "退刷卡押金"
+    },
+    {
+      "fieldName": "co99910",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "checkSign",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "classPb",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "10"
+    },
+    {
+      "fieldName": "ck",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "dk",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "sjrq",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "qsjrq",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "byje",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "xfcw",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "30"
+    },
+    {
+      "fieldName": "hoteldm",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "isnew",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "co99912",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "xj",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "classname",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "co9010",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "co9012",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "co9013",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "co9014",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "co99915",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "hyxj",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "hysk",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "hyqt",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "hkxj",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "hksk",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "hkqt",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "qtwt",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "qtysq",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "bbysj",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "zfbje",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "wxje",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "w99920",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "z99921",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "class_rename",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131243"
+}

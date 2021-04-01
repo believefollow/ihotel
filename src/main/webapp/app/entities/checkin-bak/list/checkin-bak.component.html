@@ -1,0 +1,245 @@
+<div>
+  <h2 id="page-heading" data-cy="CheckinBakHeading">
+    <span jhiTranslate="ihotelApp.checkinBak.home.title">Checkin Baks</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="ihotelApp.checkinBak.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-checkin-bak"
+        [routerLink]="['/checkin-bak/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span class="hidden-sm-down" jhiTranslate="ihotelApp.checkinBak.home.createLabel"> Create a new Checkin Bak </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <form name="searchForm" class="form-inline">
+        <div class="input-group w-100 mt-3">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="currentSearch"
+            id="currentSearch"
+            name="currentSearch"
+            placeholder="{{ 'ihotelApp.checkinBak.home.search' | translate }}"
+          />
+
+          <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+            <fa-icon icon="search"></fa-icon>
+          </button>
+
+          <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+            <fa-icon icon="trash-alt"></fa-icon>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="checkinBaks?.length === 0">
+    <span jhiTranslate="ihotelApp.checkinBak.home.notFound">No checkinBaks found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="checkinBaks && checkinBaks.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+          <th scope="col" jhiSortBy="guestId">
+            <span jhiTranslate="ihotelApp.checkinBak.guestId">Guest Id</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="account">
+            <span jhiTranslate="ihotelApp.checkinBak.account">Account</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="hoteltime">
+            <span jhiTranslate="ihotelApp.checkinBak.hoteltime">Hoteltime</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="indatetime">
+            <span jhiTranslate="ihotelApp.checkinBak.indatetime">Indatetime</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="residefate">
+            <span jhiTranslate="ihotelApp.checkinBak.residefate">Residefate</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="gotime">
+            <span jhiTranslate="ihotelApp.checkinBak.gotime">Gotime</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="empn"><span jhiTranslate="ihotelApp.checkinBak.empn">Empn</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="roomn">
+            <span jhiTranslate="ihotelApp.checkinBak.roomn">Roomn</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="uname">
+            <span jhiTranslate="ihotelApp.checkinBak.uname">Uname</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="rentp">
+            <span jhiTranslate="ihotelApp.checkinBak.rentp">Rentp</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="protocolrent">
+            <span jhiTranslate="ihotelApp.checkinBak.protocolrent">Protocolrent</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="remark">
+            <span jhiTranslate="ihotelApp.checkinBak.remark">Remark</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="comeinfo">
+            <span jhiTranslate="ihotelApp.checkinBak.comeinfo">Comeinfo</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="goinfo">
+            <span jhiTranslate="ihotelApp.checkinBak.goinfo">Goinfo</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="phonen">
+            <span jhiTranslate="ihotelApp.checkinBak.phonen">Phonen</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="empn2">
+            <span jhiTranslate="ihotelApp.checkinBak.empn2">Empn 2</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="adhoc">
+            <span jhiTranslate="ihotelApp.checkinBak.adhoc">Adhoc</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="auditflag">
+            <span jhiTranslate="ihotelApp.checkinBak.auditflag">Auditflag</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="groupn">
+            <span jhiTranslate="ihotelApp.checkinBak.groupn">Groupn</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="payment">
+            <span jhiTranslate="ihotelApp.checkinBak.payment">Payment</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="mtype">
+            <span jhiTranslate="ihotelApp.checkinBak.mtype">Mtype</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="memo"><span jhiTranslate="ihotelApp.checkinBak.memo">Memo</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="flight">
+            <span jhiTranslate="ihotelApp.checkinBak.flight">Flight</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="credit">
+            <span jhiTranslate="ihotelApp.checkinBak.credit">Credit</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="talklevel">
+            <span jhiTranslate="ihotelApp.checkinBak.talklevel">Talklevel</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="lfSign">
+            <span jhiTranslate="ihotelApp.checkinBak.lfSign">Lf Sign</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="keynum">
+            <span jhiTranslate="ihotelApp.checkinBak.keynum">Keynum</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="icNum">
+            <span jhiTranslate="ihotelApp.checkinBak.icNum">Ic Num</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="bh"><span jhiTranslate="ihotelApp.checkinBak.bh">Bh</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="icOwner">
+            <span jhiTranslate="ihotelApp.checkinBak.icOwner">Ic Owner</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="markId">
+            <span jhiTranslate="ihotelApp.checkinBak.markId">Mark Id</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="gj"><span jhiTranslate="ihotelApp.checkinBak.gj">Gj</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="yfj"><span jhiTranslate="ihotelApp.checkinBak.yfj">Yfj</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="hoteldate">
+            <span jhiTranslate="ihotelApp.checkinBak.hoteldate">Hoteldate</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="ihotelApp.checkinBak.id">Id</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let checkinBak of checkinBaks; trackBy: trackId" data-cy="entityTable">
+          <td>{{ checkinBak.guestId }}</td>
+          <td>{{ checkinBak.account }}</td>
+          <td>{{ checkinBak.hoteltime | formatMediumDatetime }}</td>
+          <td>{{ checkinBak.indatetime | formatMediumDatetime }}</td>
+          <td>{{ checkinBak.residefate }}</td>
+          <td>{{ checkinBak.gotime | formatMediumDatetime }}</td>
+          <td>{{ checkinBak.empn }}</td>
+          <td>{{ checkinBak.roomn }}</td>
+          <td>{{ checkinBak.uname }}</td>
+          <td>{{ checkinBak.rentp }}</td>
+          <td>{{ checkinBak.protocolrent }}</td>
+          <td>{{ checkinBak.remark }}</td>
+          <td>{{ checkinBak.comeinfo }}</td>
+          <td>{{ checkinBak.goinfo }}</td>
+          <td>{{ checkinBak.phonen }}</td>
+          <td>{{ checkinBak.empn2 }}</td>
+          <td>{{ checkinBak.adhoc }}</td>
+          <td>{{ checkinBak.auditflag }}</td>
+          <td>{{ checkinBak.groupn }}</td>
+          <td>{{ checkinBak.payment }}</td>
+          <td>{{ checkinBak.mtype }}</td>
+          <td>{{ checkinBak.memo }}</td>
+          <td>{{ checkinBak.flight }}</td>
+          <td>{{ checkinBak.credit }}</td>
+          <td>{{ checkinBak.talklevel }}</td>
+          <td>{{ checkinBak.lfSign }}</td>
+          <td>{{ checkinBak.keynum }}</td>
+          <td>{{ checkinBak.icNum }}</td>
+          <td>{{ checkinBak.bh }}</td>
+          <td>{{ checkinBak.icOwner }}</td>
+          <td>{{ checkinBak.markId }}</td>
+          <td>{{ checkinBak.gj }}</td>
+          <td>{{ checkinBak.yfj }}</td>
+          <td>{{ checkinBak.hoteldate | formatMediumDatetime }}</td>
+          <td>
+            <a [routerLink]="['/checkin-bak', checkinBak.id, 'view']">{{ checkinBak.id }}</a>
+          </td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/checkin-bak', checkinBak.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/checkin-bak', checkinBak.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(checkinBak)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="checkinBaks && checkinBaks.length > 0">
+    <div class="row justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

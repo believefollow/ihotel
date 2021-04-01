@@ -1,0 +1,62 @@
+{
+  "ihotelApp": {
+    "bookYst": {
+      "home": {
+        "title": "Book Ysts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Book Yst",
+        "createOrEditLabel": "创建或编辑 Book Yst",
+        "search": "查找 Book Yst",
+        "notFound": "No Book Ysts found"
+      },
+      "created": "Book Yst {{ param }} 创建成功",
+      "updated": "Book Yst {{ param }} 更新成功",
+      "deleted": "Book Yst {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Book Yst {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Book Yst"
+      },
+      "id": "ID",
+      "roomcode": "Roomcode",
+      "roomname": "Roomname",
+      "roomnum": "Roomnum",
+      "roomseparatenum": "Roomseparatenum",
+      "bedids": "Bedids",
+      "bedsimpledesc": "Bedsimpledesc",
+      "bednum": "Bednum",
+      "roomsize": "Roomsize",
+      "roomfloor": "Roomfloor",
+      "netservice": "Netservice",
+      "nettype": "Nettype",
+      "iswindow": "Iswindow",
+      "remark": "Remark",
+      "sortid": "Sortid",
+      "roomstate": "Roomstate",
+      "source": "Source",
+      "roomamenities": "Roomamenities",
+      "maxguestnums": "Maxguestnums",
+      "roomdistribution": "Roomdistribution",
+      "conditionbeforedays": "Conditionbeforedays",
+      "conditionleastdays": "Conditionleastdays",
+      "conditionleastroomnum": "Conditionleastroomnum",
+      "paymentype": "Paymentype",
+      "rateplandesc": "Rateplandesc",
+      "rateplanname": "Rateplanname",
+      "rateplanstate": "Rateplanstate",
+      "addvaluebednum": "Addvaluebednum",
+      "addvaluebedprice": "Addvaluebedprice",
+      "addvaluebreakfastnum": "Addvaluebreakfastnum",
+      "addvaluebreakfastprice": "Addvaluebreakfastprice",
+      "baseprice": "Baseprice",
+      "saleprice": "Saleprice",
+      "marketprice": "Marketprice",
+      "hotelproductservice": "Hotelproductservice",
+      "hotelproductservicedesc": "Hotelproductservicedesc",
+      "hotelproductid": "Hotelproductid",
+      "roomid": "Roomid",
+      "hotelid": "Hotelid"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "ihotelApp": {
+    "crinfo": {
+      "home": {
+        "title": "Crinfos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Crinfo",
+        "createOrEditLabel": "Create or edit a Crinfo",
+        "search": "Search for Crinfo",
+        "notFound": "No Crinfos found"
+      },
+      "created": "A new Crinfo is created with identifier {{ param }}",
+      "updated": "A Crinfo is updated with identifier {{ param }}",
+      "deleted": "A Crinfo is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Crinfo {{ id }}?"
+      },
+      "detail": {
+        "title": "Crinfo"
+      },
+      "id": "Id",
+      "operatetime": "Operatetime",
+      "oldrent": "Oldrent",
+      "newrent": "Newrent",
+      "oldroomn": "Oldroomn",
+      "newroomn": "Newroomn",
+      "account": "Account",
+      "empn": "Empn",
+      "oldday": "Oldday",
+      "newday": "Newday",
+      "hoteltime": "Hoteltime",
+      "roomn": "Roomn",
+      "memo": "Memo",
+      "realname": "Realname",
+      "isup": "Isup"
+    }
+  }
+}

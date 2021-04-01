@@ -1,0 +1,180 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="bookYst">
+      <h2 data-cy="bookYstDetailsHeading"><span jhiTranslate="ihotelApp.bookYst.detail.title">Book Yst</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ bookYst.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.roomcode">Roomcode</span></dt>
+        <dd>
+          <span>{{ bookYst.roomcode }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.roomname">Roomname</span></dt>
+        <dd>
+          <span>{{ bookYst.roomname }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.roomnum">Roomnum</span></dt>
+        <dd>
+          <span>{{ bookYst.roomnum }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.roomseparatenum">Roomseparatenum</span></dt>
+        <dd>
+          <span>{{ bookYst.roomseparatenum }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.bedids">Bedids</span></dt>
+        <dd>
+          <span>{{ bookYst.bedids }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.bedsimpledesc">Bedsimpledesc</span></dt>
+        <dd>
+          <span>{{ bookYst.bedsimpledesc }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.bednum">Bednum</span></dt>
+        <dd>
+          <span>{{ bookYst.bednum }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.roomsize">Roomsize</span></dt>
+        <dd>
+          <span>{{ bookYst.roomsize }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.roomfloor">Roomfloor</span></dt>
+        <dd>
+          <span>{{ bookYst.roomfloor }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.netservice">Netservice</span></dt>
+        <dd>
+          <span>{{ bookYst.netservice }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.nettype">Nettype</span></dt>
+        <dd>
+          <span>{{ bookYst.nettype }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.iswindow">Iswindow</span></dt>
+        <dd>
+          <span>{{ bookYst.iswindow }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.remark">Remark</span></dt>
+        <dd>
+          <span>{{ bookYst.remark }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.sortid">Sortid</span></dt>
+        <dd>
+          <span>{{ bookYst.sortid }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.roomstate">Roomstate</span></dt>
+        <dd>
+          <span>{{ bookYst.roomstate }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.source">Source</span></dt>
+        <dd>
+          <span>{{ bookYst.source }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.roomamenities">Roomamenities</span></dt>
+        <dd>
+          <span>{{ bookYst.roomamenities }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.maxguestnums">Maxguestnums</span></dt>
+        <dd>
+          <span>{{ bookYst.maxguestnums }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.roomdistribution">Roomdistribution</span></dt>
+        <dd>
+          <span>{{ bookYst.roomdistribution }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.conditionbeforedays">Conditionbeforedays</span></dt>
+        <dd>
+          <span>{{ bookYst.conditionbeforedays }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.conditionleastdays">Conditionleastdays</span></dt>
+        <dd>
+          <span>{{ bookYst.conditionleastdays }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.conditionleastroomnum">Conditionleastroomnum</span></dt>
+        <dd>
+          <span>{{ bookYst.conditionleastroomnum }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.paymentype">Paymentype</span></dt>
+        <dd>
+          <span>{{ bookYst.paymentype }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.rateplandesc">Rateplandesc</span></dt>
+        <dd>
+          <span>{{ bookYst.rateplandesc }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.rateplanname">Rateplanname</span></dt>
+        <dd>
+          <span>{{ bookYst.rateplanname }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.rateplanstate">Rateplanstate</span></dt>
+        <dd>
+          <span>{{ bookYst.rateplanstate }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.addvaluebednum">Addvaluebednum</span></dt>
+        <dd>
+          <span>{{ bookYst.addvaluebednum }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.addvaluebedprice">Addvaluebedprice</span></dt>
+        <dd>
+          <span>{{ bookYst.addvaluebedprice }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.addvaluebreakfastnum">Addvaluebreakfastnum</span></dt>
+        <dd>
+          <span>{{ bookYst.addvaluebreakfastnum }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.addvaluebreakfastprice">Addvaluebreakfastprice</span></dt>
+        <dd>
+          <span>{{ bookYst.addvaluebreakfastprice }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.baseprice">Baseprice</span></dt>
+        <dd>
+          <span>{{ bookYst.baseprice }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.saleprice">Saleprice</span></dt>
+        <dd>
+          <span>{{ bookYst.saleprice }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.marketprice">Marketprice</span></dt>
+        <dd>
+          <span>{{ bookYst.marketprice }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.hotelproductservice">Hotelproductservice</span></dt>
+        <dd>
+          <span>{{ bookYst.hotelproductservice }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.hotelproductservicedesc">Hotelproductservicedesc</span></dt>
+        <dd>
+          <span>{{ bookYst.hotelproductservicedesc }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.hotelproductid">Hotelproductid</span></dt>
+        <dd>
+          <span>{{ bookYst.hotelproductid }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.roomid">Roomid</span></dt>
+        <dd>
+          <span>{{ bookYst.roomid }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.bookYst.hotelid">Hotelid</span></dt>
+        <dd>
+          <span>{{ bookYst.hotelid }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/book-yst', bookYst.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

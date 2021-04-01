@@ -1,0 +1,44 @@
+{
+  "ihotelApp": {
+    "czlCz": {
+      "home": {
+        "title": "Czl Czs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Czl Cz",
+        "createOrEditLabel": "Create or edit a Czl Cz",
+        "search": "Search for Czl Cz",
+        "notFound": "No Czl Czs found"
+      },
+      "created": "A new Czl Cz is created with identifier {{ param }}",
+      "updated": "A Czl Cz is updated with identifier {{ param }}",
+      "deleted": "A Czl Cz is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Czl Cz {{ id }}?"
+      },
+      "detail": {
+        "title": "Czl Cz"
+      },
+      "id": "ID",
+      "tjrq": "Tjrq",
+      "typeid": "Typeid",
+      "type": "Type",
+      "fjsl": "Fjsl",
+      "kfl": "Kfl",
+      "pjz": "Pjz",
+      "ysfz": "Ysfz",
+      "sjfz": "Sjfz",
+      "fzcz": "Fzcz",
+      "pjzcj": "Pjzcj",
+      "kfsM": "Kfs M",
+      "kflM": "Kfl M",
+      "pjzM": "Pjz M",
+      "fzsr": "Fzsr",
+      "dayz": "Dayz",
+      "hoteltime": "Hoteltime",
+      "empn": "Empn",
+      "monthz": "Monthz",
+      "hoteldm": "Hoteldm",
+      "isnew": "Isnew"
+    }
+  }
+}

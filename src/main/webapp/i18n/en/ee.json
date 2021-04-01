@@ -1,0 +1,25 @@
+{
+  "ihotelApp": {
+    "ee": {
+      "home": {
+        "title": "Ees",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Ee",
+        "createOrEditLabel": "Create or edit a Ee",
+        "search": "Search for Ee",
+        "notFound": "No Ees found"
+      },
+      "created": "A new Ee is created with identifier {{ param }}",
+      "updated": "A Ee is updated with identifier {{ param }}",
+      "deleted": "A Ee is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Ee {{ id }}?"
+      },
+      "detail": {
+        "title": "Ee"
+      },
+      "id": "Id",
+      "acc": "Acc"
+    }
+  }
+}

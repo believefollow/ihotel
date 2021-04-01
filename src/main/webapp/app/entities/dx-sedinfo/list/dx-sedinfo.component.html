@@ -1,0 +1,191 @@
+<div>
+  <h2 id="page-heading" data-cy="DxSedinfoHeading">
+    <span jhiTranslate="ihotelApp.dxSedinfo.home.title">Dx Sedinfos</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="ihotelApp.dxSedinfo.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-dx-sedinfo"
+        [routerLink]="['/dx-sedinfo/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span class="hidden-sm-down" jhiTranslate="ihotelApp.dxSedinfo.home.createLabel"> Create a new Dx Sedinfo </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <form name="searchForm" class="form-inline">
+        <div class="input-group w-100 mt-3">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="currentSearch"
+            id="currentSearch"
+            name="currentSearch"
+            placeholder="{{ 'ihotelApp.dxSedinfo.home.search' | translate }}"
+          />
+
+          <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+            <fa-icon icon="search"></fa-icon>
+          </button>
+
+          <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+            <fa-icon icon="trash-alt"></fa-icon>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="dxSedinfos?.length === 0">
+    <span jhiTranslate="ihotelApp.dxSedinfo.home.notFound">No dxSedinfos found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="dxSedinfos && dxSedinfos.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="ihotelApp.dxSedinfo.id">Id</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="yddx"><span jhiTranslate="ihotelApp.dxSedinfo.yddx">Yddx</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="yddxmemo">
+            <span jhiTranslate="ihotelApp.dxSedinfo.yddxmemo">Yddxmemo</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="qxyddx">
+            <span jhiTranslate="ihotelApp.dxSedinfo.qxyddx">Qxyddx</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="qxydmemo">
+            <span jhiTranslate="ihotelApp.dxSedinfo.qxydmemo">Qxydmemo</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="czdx"><span jhiTranslate="ihotelApp.dxSedinfo.czdx">Czdx</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="czmemo">
+            <span jhiTranslate="ihotelApp.dxSedinfo.czmemo">Czmemo</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="qxczdx">
+            <span jhiTranslate="ihotelApp.dxSedinfo.qxczdx">Qxczdx</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="qxczmemo">
+            <span jhiTranslate="ihotelApp.dxSedinfo.qxczmemo">Qxczmemo</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="yyedx"><span jhiTranslate="ihotelApp.dxSedinfo.yyedx">Yyedx</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="yyememo">
+            <span jhiTranslate="ihotelApp.dxSedinfo.yyememo">Yyememo</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="fstime">
+            <span jhiTranslate="ihotelApp.dxSedinfo.fstime">Fstime</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="sffshm">
+            <span jhiTranslate="ihotelApp.dxSedinfo.sffshm">Sffshm</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="rzdx"><span jhiTranslate="ihotelApp.dxSedinfo.rzdx">Rzdx</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="rzdxroomn">
+            <span jhiTranslate="ihotelApp.dxSedinfo.rzdxroomn">Rzdxroomn</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="jfdz"><span jhiTranslate="ihotelApp.dxSedinfo.jfdz">Jfdz</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="blhy"><span jhiTranslate="ihotelApp.dxSedinfo.blhy">Blhy</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="rzmemo">
+            <span jhiTranslate="ihotelApp.dxSedinfo.rzmemo">Rzmemo</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="blhymemo">
+            <span jhiTranslate="ihotelApp.dxSedinfo.blhymemo">Blhymemo</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="tfdx"><span jhiTranslate="ihotelApp.dxSedinfo.tfdx">Tfdx</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="tfdxmemo">
+            <span jhiTranslate="ihotelApp.dxSedinfo.tfdxmemo">Tfdxmemo</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="fslb"><span jhiTranslate="ihotelApp.dxSedinfo.fslb">Fslb</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="fslbmemo">
+            <span jhiTranslate="ihotelApp.dxSedinfo.fslbmemo">Fslbmemo</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dxSedinfo of dxSedinfos; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/dx-sedinfo', dxSedinfo.id, 'view']">{{ dxSedinfo.id }}</a>
+          </td>
+          <td>{{ dxSedinfo.yddx }}</td>
+          <td>{{ dxSedinfo.yddxmemo }}</td>
+          <td>{{ dxSedinfo.qxyddx }}</td>
+          <td>{{ dxSedinfo.qxydmemo }}</td>
+          <td>{{ dxSedinfo.czdx }}</td>
+          <td>{{ dxSedinfo.czmemo }}</td>
+          <td>{{ dxSedinfo.qxczdx }}</td>
+          <td>{{ dxSedinfo.qxczmemo }}</td>
+          <td>{{ dxSedinfo.yyedx }}</td>
+          <td>{{ dxSedinfo.yyememo }}</td>
+          <td>{{ dxSedinfo.fstime }}</td>
+          <td>{{ dxSedinfo.sffshm }}</td>
+          <td>{{ dxSedinfo.rzdx }}</td>
+          <td>{{ dxSedinfo.rzdxroomn }}</td>
+          <td>{{ dxSedinfo.jfdz }}</td>
+          <td>{{ dxSedinfo.blhy }}</td>
+          <td>{{ dxSedinfo.rzmemo }}</td>
+          <td>{{ dxSedinfo.blhymemo }}</td>
+          <td>{{ dxSedinfo.tfdx }}</td>
+          <td>{{ dxSedinfo.tfdxmemo }}</td>
+          <td>{{ dxSedinfo.fslb }}</td>
+          <td>{{ dxSedinfo.fslbmemo }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/dx-sedinfo', dxSedinfo.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/dx-sedinfo', dxSedinfo.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(dxSedinfo)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="dxSedinfos && dxSedinfos.length > 0">
+    <div class="row justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

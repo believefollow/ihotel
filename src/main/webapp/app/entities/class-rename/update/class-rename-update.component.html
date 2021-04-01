@@ -1,0 +1,517 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-class-rename-heading"
+        data-cy="ClassRenameCreateUpdateHeading"
+        jhiTranslate="ihotelApp.classRename.home.createOrEditLabel"
+      >
+        Create or edit a Class Rename
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.dt" for="field_dt">Dt</label>
+          <div class="d-flex">
+            <input
+              id="field_dt"
+              data-cy="dt"
+              type="datetime-local"
+              class="form-control"
+              name="dt"
+              formControlName="dt"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+          <div *ngIf="editForm.get('dt')!.invalid && (editForm.get('dt')!.dirty || editForm.get('dt')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('dt')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('dt')?.errors?.ZonedDateTimelocal"
+              jhiTranslate="entity.validation.ZonedDateTimelocal"
+            >
+              This field should be a date and time.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.empn" for="field_empn">Empn</label>
+          <input type="text" class="form-control" name="empn" id="field_empn" data-cy="empn" formControlName="empn" />
+          <div *ngIf="editForm.get('empn')!.invalid && (editForm.get('empn')!.dirty || editForm.get('empn')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('empn')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('empn')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 10 }"
+            >
+              This field cannot be longer than 10 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.oldmoney" for="field_oldmoney">Oldmoney</label>
+          <input type="number" class="form-control" name="oldmoney" id="field_oldmoney" data-cy="oldmoney" formControlName="oldmoney" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.getmoney" for="field_getmoney">Getmoney</label>
+          <input type="number" class="form-control" name="getmoney" id="field_getmoney" data-cy="getmoney" formControlName="getmoney" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.toup" for="field_toup">Toup</label>
+          <input type="number" class="form-control" name="toup" id="field_toup" data-cy="toup" formControlName="toup" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.downempn" for="field_downempn">Downempn</label>
+          <input type="text" class="form-control" name="downempn" id="field_downempn" data-cy="downempn" formControlName="downempn" />
+          <div *ngIf="editForm.get('downempn')!.invalid && (editForm.get('downempn')!.dirty || editForm.get('downempn')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('downempn')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 10 }"
+            >
+              This field cannot be longer than 10 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.todown" for="field_todown">Todown</label>
+          <input type="number" class="form-control" name="todown" id="field_todown" data-cy="todown" formControlName="todown" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.flag" for="field_flag">Flag</label>
+          <input type="number" class="form-control" name="flag" id="field_flag" data-cy="flag" formControlName="flag" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.old2" for="field_old2">Old 2</label>
+          <input type="number" class="form-control" name="old2" id="field_old2" data-cy="old2" formControlName="old2" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.get2" for="field_get2">Get 2</label>
+          <input type="number" class="form-control" name="get2" id="field_get2" data-cy="get2" formControlName="get2" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.toup2" for="field_toup2">Toup 2</label>
+          <input type="number" class="form-control" name="toup2" id="field_toup2" data-cy="toup2" formControlName="toup2" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.todown2" for="field_todown2">Todown 2</label>
+          <input type="number" class="form-control" name="todown2" id="field_todown2" data-cy="todown2" formControlName="todown2" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.upempn2" for="field_upempn2">Upempn 2</label>
+          <input type="text" class="form-control" name="upempn2" id="field_upempn2" data-cy="upempn2" formControlName="upempn2" />
+          <div *ngIf="editForm.get('upempn2')!.invalid && (editForm.get('upempn2')!.dirty || editForm.get('upempn2')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('upempn2')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 10 }"
+            >
+              This field cannot be longer than 10 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="ihotelApp.classRename.im9008"
+            for="field_im9008"
+            [ngbTooltip]="'ihotelApp.classRename.help.im9008' | translate"
+            >Im 9008</label
+          >
+          <input type="number" class="form-control" name="im9008" id="field_im9008" data-cy="im9008" formControlName="im9008" />
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="ihotelApp.classRename.im9009"
+            for="field_im9009"
+            [ngbTooltip]="'ihotelApp.classRename.help.im9009' | translate"
+            >Im 9009</label
+          >
+          <input type="number" class="form-control" name="im9009" id="field_im9009" data-cy="im9009" formControlName="im9009" />
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="ihotelApp.classRename.co9991"
+            for="field_co9991"
+            [ngbTooltip]="'ihotelApp.classRename.help.co9991' | translate"
+            >Co 9991</label
+          >
+          <input type="number" class="form-control" name="co9991" id="field_co9991" data-cy="co9991" formControlName="co9991" />
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="ihotelApp.classRename.co9992"
+            for="field_co9992"
+            [ngbTooltip]="'ihotelApp.classRename.help.co9992' | translate"
+            >Co 9992</label
+          >
+          <input type="number" class="form-control" name="co9992" id="field_co9992" data-cy="co9992" formControlName="co9992" />
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="ihotelApp.classRename.co9993"
+            for="field_co9993"
+            [ngbTooltip]="'ihotelApp.classRename.help.co9993' | translate"
+            >Co 9993</label
+          >
+          <input type="number" class="form-control" name="co9993" id="field_co9993" data-cy="co9993" formControlName="co9993" />
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="ihotelApp.classRename.co9994"
+            for="field_co9994"
+            [ngbTooltip]="'ihotelApp.classRename.help.co9994' | translate"
+            >Co 9994</label
+          >
+          <input type="number" class="form-control" name="co9994" id="field_co9994" data-cy="co9994" formControlName="co9994" />
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="ihotelApp.classRename.co9995"
+            for="field_co9995"
+            [ngbTooltip]="'ihotelApp.classRename.help.co9995' | translate"
+            >Co 9995</label
+          >
+          <input type="number" class="form-control" name="co9995" id="field_co9995" data-cy="co9995" formControlName="co9995" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.co9998" for="field_co9998">Co 9998</label>
+          <input type="number" class="form-control" name="co9998" id="field_co9998" data-cy="co9998" formControlName="co9998" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.im9007" for="field_im9007">Im 9007</label>
+          <input type="number" class="form-control" name="im9007" id="field_im9007" data-cy="im9007" formControlName="im9007" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.gotime" for="field_gotime">Gotime</label>
+          <div class="d-flex">
+            <input
+              id="field_gotime"
+              data-cy="gotime"
+              type="datetime-local"
+              class="form-control"
+              name="gotime"
+              formControlName="gotime"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.co9999" for="field_co9999">Co 9999</label>
+          <input type="number" class="form-control" name="co9999" id="field_co9999" data-cy="co9999" formControlName="co9999" />
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="ihotelApp.classRename.cm9008"
+            for="field_cm9008"
+            [ngbTooltip]="'ihotelApp.classRename.help.cm9008' | translate"
+            >Cm 9008</label
+          >
+          <input type="number" class="form-control" name="cm9008" id="field_cm9008" data-cy="cm9008" formControlName="cm9008" />
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="ihotelApp.classRename.cm9009"
+            for="field_cm9009"
+            [ngbTooltip]="'ihotelApp.classRename.help.cm9009' | translate"
+            >Cm 9009</label
+          >
+          <input type="number" class="form-control" name="cm9009" id="field_cm9009" data-cy="cm9009" formControlName="cm9009" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.co99910" for="field_co99910">Co 99910</label>
+          <input type="number" class="form-control" name="co99910" id="field_co99910" data-cy="co99910" formControlName="co99910" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.checkSign" for="field_checkSign">Check Sign</label>
+          <input type="text" class="form-control" name="checkSign" id="field_checkSign" data-cy="checkSign" formControlName="checkSign" />
+          <div *ngIf="editForm.get('checkSign')!.invalid && (editForm.get('checkSign')!.dirty || editForm.get('checkSign')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('checkSign')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 2 }"
+            >
+              This field cannot be longer than 2 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.classPb" for="field_classPb">Class Pb</label>
+          <input type="text" class="form-control" name="classPb" id="field_classPb" data-cy="classPb" formControlName="classPb" />
+          <div *ngIf="editForm.get('classPb')!.invalid && (editForm.get('classPb')!.dirty || editForm.get('classPb')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('classPb')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 10 }"
+            >
+              This field cannot be longer than 10 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.ck" for="field_ck">Ck</label>
+          <input type="number" class="form-control" name="ck" id="field_ck" data-cy="ck" formControlName="ck" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.dk" for="field_dk">Dk</label>
+          <input type="number" class="form-control" name="dk" id="field_dk" data-cy="dk" formControlName="dk" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.sjrq" for="field_sjrq">Sjrq</label>
+          <div class="d-flex">
+            <input
+              id="field_sjrq"
+              data-cy="sjrq"
+              type="datetime-local"
+              class="form-control"
+              name="sjrq"
+              formControlName="sjrq"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.qsjrq" for="field_qsjrq">Qsjrq</label>
+          <div class="d-flex">
+            <input
+              id="field_qsjrq"
+              data-cy="qsjrq"
+              type="datetime-local"
+              class="form-control"
+              name="qsjrq"
+              formControlName="qsjrq"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.byje" for="field_byje">Byje</label>
+          <input type="number" class="form-control" name="byje" id="field_byje" data-cy="byje" formControlName="byje" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.xfcw" for="field_xfcw">Xfcw</label>
+          <input type="text" class="form-control" name="xfcw" id="field_xfcw" data-cy="xfcw" formControlName="xfcw" />
+          <div *ngIf="editForm.get('xfcw')!.invalid && (editForm.get('xfcw')!.dirty || editForm.get('xfcw')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('xfcw')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 30 }"
+            >
+              This field cannot be longer than 30 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.hoteldm" for="field_hoteldm">Hoteldm</label>
+          <input type="text" class="form-control" name="hoteldm" id="field_hoteldm" data-cy="hoteldm" formControlName="hoteldm" />
+          <div *ngIf="editForm.get('hoteldm')!.invalid && (editForm.get('hoteldm')!.dirty || editForm.get('hoteldm')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('hoteldm')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 20 }"
+            >
+              This field cannot be longer than 20 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.isnew" for="field_isnew">Isnew</label>
+          <input type="number" class="form-control" name="isnew" id="field_isnew" data-cy="isnew" formControlName="isnew" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.co99912" for="field_co99912">Co 99912</label>
+          <input type="number" class="form-control" name="co99912" id="field_co99912" data-cy="co99912" formControlName="co99912" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.xj" for="field_xj">Xj</label>
+          <input type="number" class="form-control" name="xj" id="field_xj" data-cy="xj" formControlName="xj" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.classname" for="field_classname">Classname</label>
+          <input type="text" class="form-control" name="classname" id="field_classname" data-cy="classname" formControlName="classname" />
+          <div *ngIf="editForm.get('classname')!.invalid && (editForm.get('classname')!.dirty || editForm.get('classname')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('classname')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.co9010" for="field_co9010">Co 9010</label>
+          <input type="number" class="form-control" name="co9010" id="field_co9010" data-cy="co9010" formControlName="co9010" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.co9012" for="field_co9012">Co 9012</label>
+          <input type="number" class="form-control" name="co9012" id="field_co9012" data-cy="co9012" formControlName="co9012" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.co9013" for="field_co9013">Co 9013</label>
+          <input type="number" class="form-control" name="co9013" id="field_co9013" data-cy="co9013" formControlName="co9013" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.co9014" for="field_co9014">Co 9014</label>
+          <input type="number" class="form-control" name="co9014" id="field_co9014" data-cy="co9014" formControlName="co9014" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.co99915" for="field_co99915">Co 99915</label>
+          <input type="number" class="form-control" name="co99915" id="field_co99915" data-cy="co99915" formControlName="co99915" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.hyxj" for="field_hyxj">Hyxj</label>
+          <input type="number" class="form-control" name="hyxj" id="field_hyxj" data-cy="hyxj" formControlName="hyxj" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.hysk" for="field_hysk">Hysk</label>
+          <input type="number" class="form-control" name="hysk" id="field_hysk" data-cy="hysk" formControlName="hysk" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.hyqt" for="field_hyqt">Hyqt</label>
+          <input type="number" class="form-control" name="hyqt" id="field_hyqt" data-cy="hyqt" formControlName="hyqt" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.hkxj" for="field_hkxj">Hkxj</label>
+          <input type="number" class="form-control" name="hkxj" id="field_hkxj" data-cy="hkxj" formControlName="hkxj" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.hksk" for="field_hksk">Hksk</label>
+          <input type="number" class="form-control" name="hksk" id="field_hksk" data-cy="hksk" formControlName="hksk" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.hkqt" for="field_hkqt">Hkqt</label>
+          <input type="number" class="form-control" name="hkqt" id="field_hkqt" data-cy="hkqt" formControlName="hkqt" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.qtwt" for="field_qtwt">Qtwt</label>
+          <input type="number" class="form-control" name="qtwt" id="field_qtwt" data-cy="qtwt" formControlName="qtwt" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.qtysq" for="field_qtysq">Qtysq</label>
+          <input type="number" class="form-control" name="qtysq" id="field_qtysq" data-cy="qtysq" formControlName="qtysq" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.bbysj" for="field_bbysj">Bbysj</label>
+          <input type="number" class="form-control" name="bbysj" id="field_bbysj" data-cy="bbysj" formControlName="bbysj" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.zfbje" for="field_zfbje">Zfbje</label>
+          <input type="number" class="form-control" name="zfbje" id="field_zfbje" data-cy="zfbje" formControlName="zfbje" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.wxje" for="field_wxje">Wxje</label>
+          <input type="number" class="form-control" name="wxje" id="field_wxje" data-cy="wxje" formControlName="wxje" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.w99920" for="field_w99920">W 99920</label>
+          <input type="number" class="form-control" name="w99920" id="field_w99920" data-cy="w99920" formControlName="w99920" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.classRename.z99921" for="field_z99921">Z 99921</label>
+          <input type="number" class="form-control" name="z99921" id="field_z99921" data-cy="z99921" formControlName="z99921" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

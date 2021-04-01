@@ -1,0 +1,144 @@
+{
+  "name": "TCpda",
+  "fields": [
+    {
+      "fieldName": "cpbh",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "12"
+    },
+    {
+      "fieldName": "cpmc",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "cpgg",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "12"
+    },
+    {
+      "fieldName": "cpdw",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "10"
+    },
+    {
+      "fieldName": "xlbh",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "8"
+    },
+    {
+      "fieldName": "zlbh",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "8"
+    },
+    {
+      "fieldName": "cpjg",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "sjbz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "sjjg",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "cxbz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "cxjg",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "cfdyj",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "tybz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "scbz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "zzcs",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "10"
+    },
+    {
+      "fieldName": "zrbz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "cbj",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "roomarea",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "pym",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "52"
+    },
+    {
+      "fieldName": "xsytcbz",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "xsytc",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "modus",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "depot",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "sfzs",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "sfyx",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "1"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "t_cpda",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131536"
+}

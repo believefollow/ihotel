@@ -1,0 +1,174 @@
+{
+  "name": "TQxsz",
+  "fields": [
+    {
+      "fieldName": "userName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "16"
+    },
+    {
+      "fieldName": "czyd",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "qtyy",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "ryyskbb",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "rxlfxbb",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "rdlfxbb",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "rfwqkfx",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "sjdyyskbb",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "sjdxlfxbb",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "sjddlfxbb",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "sjdfwqkfx",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "xsfx",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pxmlfx",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "qyxx",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "bmsz",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "ygda",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "dwsz",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "cpsz",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "yclsz",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "cpgcmx",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "zhsz",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "tcyy",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "sjsz",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "cxsz",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "hyklx",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "hykgl",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "hyxfqk",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "sjbf",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "sjhf",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "sjqc",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "sjjh",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "keepbr",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "number",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "keepbrgl",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "yjkcgl",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "cprxsph",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "sjdxsph",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "tccx",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "ylrbb",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "t_qxsz",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131548"
+}

@@ -1,0 +1,49 @@
+{
+  "ihotelApp": {
+    "dCk": {
+      "home": {
+        "title": "D Cks",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 D Ck",
+        "createOrEditLabel": "创建或编辑 D Ck",
+        "search": "查找 D Ck",
+        "notFound": "No D Cks found"
+      },
+      "created": "D Ck {{ param }} 创建成功",
+      "updated": "D Ck {{ param }} 更新成功",
+      "deleted": "D Ck {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 D Ck {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "D Ck"
+      },
+      "id": "Id",
+      "depot": "Depot",
+      "ckdate": "Ckdate",
+      "ckbillno": "Ckbillno",
+      "deptname": "Deptname",
+      "jbr": "Jbr",
+      "remark": "Remark",
+      "spbm": "Spbm",
+      "spmc": "Spmc",
+      "unit": "Unit",
+      "price": "Price",
+      "sl": "Sl",
+      "je": "Je",
+      "memo": "Memo",
+      "flag": "Flag",
+      "dbSign": "Db Sign",
+      "cktype": "Cktype",
+      "empn": "Empn",
+      "lrdate": "Lrdate",
+      "kcid": "Kcid",
+      "f1": "F 1",
+      "f2": "F 2",
+      "f1empn": "F 1 Empn",
+      "f2empn": "F 2 Empn",
+      "f1sj": "F 1 Sj",
+      "f2sj": "F 2 Sj"
+    }
+  }
+}

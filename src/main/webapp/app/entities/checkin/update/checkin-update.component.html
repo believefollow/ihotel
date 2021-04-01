@@ -1,0 +1,686 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-checkin-heading" data-cy="CheckinCreateUpdateHeading" jhiTranslate="ihotelApp.checkin.home.createOrEditLabel">
+        Create or edit a Checkin
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="ihotelApp.checkin.bkid"
+            for="field_bkid"
+            [ngbTooltip]="'ihotelApp.checkin.help.bkid' | translate"
+            >Bkid</label
+          >
+          <input type="number" class="form-control" name="bkid" id="field_bkid" data-cy="bkid" formControlName="bkid" />
+          <div *ngIf="editForm.get('bkid')!.invalid && (editForm.get('bkid')!.dirty || editForm.get('bkid')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('bkid')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small class="form-text text-danger" [hidden]="!editForm.get('bkid')?.errors?.number" jhiTranslate="entity.validation.number">
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.guestId" for="field_guestId">Guest Id</label>
+          <input type="number" class="form-control" name="guestId" id="field_guestId" data-cy="guestId" formControlName="guestId" />
+          <div *ngIf="editForm.get('guestId')!.invalid && (editForm.get('guestId')!.dirty || editForm.get('guestId')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('guestId')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('guestId')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.account" for="field_account">Account</label>
+          <input type="text" class="form-control" name="account" id="field_account" data-cy="account" formControlName="account" />
+          <div *ngIf="editForm.get('account')!.invalid && (editForm.get('account')!.dirty || editForm.get('account')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('account')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('account')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 30 }"
+            >
+              This field cannot be longer than 30 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.hoteltime" for="field_hoteltime">Hoteltime</label>
+          <div class="d-flex">
+            <input
+              id="field_hoteltime"
+              data-cy="hoteltime"
+              type="datetime-local"
+              class="form-control"
+              name="hoteltime"
+              formControlName="hoteltime"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.indatetime" for="field_indatetime">Indatetime</label>
+          <div class="d-flex">
+            <input
+              id="field_indatetime"
+              data-cy="indatetime"
+              type="datetime-local"
+              class="form-control"
+              name="indatetime"
+              formControlName="indatetime"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.residefate" for="field_residefate">Residefate</label>
+          <input
+            type="number"
+            class="form-control"
+            name="residefate"
+            id="field_residefate"
+            data-cy="residefate"
+            formControlName="residefate"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.gotime" for="field_gotime">Gotime</label>
+          <div class="d-flex">
+            <input
+              id="field_gotime"
+              data-cy="gotime"
+              type="datetime-local"
+              class="form-control"
+              name="gotime"
+              formControlName="gotime"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.empn" for="field_empn">Empn</label>
+          <input type="text" class="form-control" name="empn" id="field_empn" data-cy="empn" formControlName="empn" />
+          <div *ngIf="editForm.get('empn')!.invalid && (editForm.get('empn')!.dirty || editForm.get('empn')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('empn')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 10 }"
+            >
+              This field cannot be longer than 10 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.roomn" for="field_roomn">Roomn</label>
+          <input type="text" class="form-control" name="roomn" id="field_roomn" data-cy="roomn" formControlName="roomn" />
+          <div *ngIf="editForm.get('roomn')!.invalid && (editForm.get('roomn')!.dirty || editForm.get('roomn')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('roomn')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('roomn')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 10 }"
+            >
+              This field cannot be longer than 10 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.uname" for="field_uname">Uname</label>
+          <input type="text" class="form-control" name="uname" id="field_uname" data-cy="uname" formControlName="uname" />
+          <div *ngIf="editForm.get('uname')!.invalid && (editForm.get('uname')!.dirty || editForm.get('uname')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('uname')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.rentp" for="field_rentp">Rentp</label>
+          <input type="text" class="form-control" name="rentp" id="field_rentp" data-cy="rentp" formControlName="rentp" />
+          <div *ngIf="editForm.get('rentp')!.invalid && (editForm.get('rentp')!.dirty || editForm.get('rentp')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('rentp')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('rentp')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 10 }"
+            >
+              This field cannot be longer than 10 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.protocolrent" for="field_protocolrent">Protocolrent</label>
+          <input
+            type="number"
+            class="form-control"
+            name="protocolrent"
+            id="field_protocolrent"
+            data-cy="protocolrent"
+            formControlName="protocolrent"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.remark" for="field_remark">Remark</label>
+          <input type="text" class="form-control" name="remark" id="field_remark" data-cy="remark" formControlName="remark" />
+          <div *ngIf="editForm.get('remark')!.invalid && (editForm.get('remark')!.dirty || editForm.get('remark')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('remark')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 8000 }"
+            >
+              This field cannot be longer than 8000 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.phonen" for="field_phonen">Phonen</label>
+          <input type="text" class="form-control" name="phonen" id="field_phonen" data-cy="phonen" formControlName="phonen" />
+          <div *ngIf="editForm.get('phonen')!.invalid && (editForm.get('phonen')!.dirty || editForm.get('phonen')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('phonen')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 10 }"
+            >
+              This field cannot be longer than 10 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.empn2" for="field_empn2">Empn 2</label>
+          <input type="text" class="form-control" name="empn2" id="field_empn2" data-cy="empn2" formControlName="empn2" />
+          <div *ngIf="editForm.get('empn2')!.invalid && (editForm.get('empn2')!.dirty || editForm.get('empn2')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('empn2')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 10 }"
+            >
+              This field cannot be longer than 10 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.adhoc" for="field_adhoc">Adhoc</label>
+          <input type="text" class="form-control" name="adhoc" id="field_adhoc" data-cy="adhoc" formControlName="adhoc" />
+          <div *ngIf="editForm.get('adhoc')!.invalid && (editForm.get('adhoc')!.dirty || editForm.get('adhoc')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('adhoc')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 40 }"
+            >
+              This field cannot be longer than 40 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.auditflag" for="field_auditflag">Auditflag</label>
+          <input type="number" class="form-control" name="auditflag" id="field_auditflag" data-cy="auditflag" formControlName="auditflag" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.groupn" for="field_groupn">Groupn</label>
+          <input type="text" class="form-control" name="groupn" id="field_groupn" data-cy="groupn" formControlName="groupn" />
+          <div *ngIf="editForm.get('groupn')!.invalid && (editForm.get('groupn')!.dirty || editForm.get('groupn')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('groupn')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 20 }"
+            >
+              This field cannot be longer than 20 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.memo" for="field_memo">Memo</label>
+          <input type="text" class="form-control" name="memo" id="field_memo" data-cy="memo" formControlName="memo" />
+          <div *ngIf="editForm.get('memo')!.invalid && (editForm.get('memo')!.dirty || editForm.get('memo')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('memo')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 500 }"
+            >
+              This field cannot be longer than 500 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.lfSign" for="field_lfSign">Lf Sign</label>
+          <input type="text" class="form-control" name="lfSign" id="field_lfSign" data-cy="lfSign" formControlName="lfSign" />
+          <div *ngIf="editForm.get('lfSign')!.invalid && (editForm.get('lfSign')!.dirty || editForm.get('lfSign')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('lfSign')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 1 }"
+            >
+              This field cannot be longer than 1 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.keynum" for="field_keynum">Keynum</label>
+          <input type="text" class="form-control" name="keynum" id="field_keynum" data-cy="keynum" formControlName="keynum" />
+          <div *ngIf="editForm.get('keynum')!.invalid && (editForm.get('keynum')!.dirty || editForm.get('keynum')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('keynum')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 3 }"
+            >
+              This field cannot be longer than 3 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.hykh" for="field_hykh">Hykh</label>
+          <input type="text" class="form-control" name="hykh" id="field_hykh" data-cy="hykh" formControlName="hykh" />
+          <div *ngIf="editForm.get('hykh')!.invalid && (editForm.get('hykh')!.dirty || editForm.get('hykh')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('hykh')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.bm" for="field_bm">Bm</label>
+          <input type="text" class="form-control" name="bm" id="field_bm" data-cy="bm" formControlName="bm" />
+          <div *ngIf="editForm.get('bm')!.invalid && (editForm.get('bm')!.dirty || editForm.get('bm')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('bm')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 10 }"
+            >
+              This field cannot be longer than 10 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.flag" for="field_flag">Flag</label>
+          <input type="number" class="form-control" name="flag" id="field_flag" data-cy="flag" formControlName="flag" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.jxtime" for="field_jxtime">Jxtime</label>
+          <div class="d-flex">
+            <input
+              id="field_jxtime"
+              data-cy="jxtime"
+              type="datetime-local"
+              class="form-control"
+              name="jxtime"
+              formControlName="jxtime"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.jxflag" for="field_jxflag">Jxflag</label>
+          <input type="number" class="form-control" name="jxflag" id="field_jxflag" data-cy="jxflag" formControlName="jxflag" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.checkf" for="field_checkf">Checkf</label>
+          <input type="number" class="form-control" name="checkf" id="field_checkf" data-cy="checkf" formControlName="checkf" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.guestname" for="field_guestname">Guestname</label>
+          <input type="text" class="form-control" name="guestname" id="field_guestname" data-cy="guestname" formControlName="guestname" />
+          <div *ngIf="editForm.get('guestname')!.invalid && (editForm.get('guestname')!.dirty || editForm.get('guestname')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('guestname')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('guestname')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 45 }"
+            >
+              This field cannot be longer than 45 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.fgf" for="field_fgf">Fgf</label>
+          <input type="number" class="form-control" name="fgf" id="field_fgf" data-cy="fgf" formControlName="fgf" />
+          <div *ngIf="editForm.get('fgf')!.invalid && (editForm.get('fgf')!.dirty || editForm.get('fgf')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('fgf')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small class="form-text text-danger" [hidden]="!editForm.get('fgf')?.errors?.number" jhiTranslate="entity.validation.number">
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.fgxx" for="field_fgxx">Fgxx</label>
+          <input type="text" class="form-control" name="fgxx" id="field_fgxx" data-cy="fgxx" formControlName="fgxx" />
+          <div *ngIf="editForm.get('fgxx')!.invalid && (editForm.get('fgxx')!.dirty || editForm.get('fgxx')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('fgxx')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 200 }"
+            >
+              This field cannot be longer than 200 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.hourSign" for="field_hourSign">Hour Sign</label>
+          <input type="number" class="form-control" name="hourSign" id="field_hourSign" data-cy="hourSign" formControlName="hourSign" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.xsy" for="field_xsy">Xsy</label>
+          <input type="text" class="form-control" name="xsy" id="field_xsy" data-cy="xsy" formControlName="xsy" />
+          <div *ngIf="editForm.get('xsy')!.invalid && (editForm.get('xsy')!.dirty || editForm.get('xsy')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('xsy')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 20 }"
+            >
+              This field cannot be longer than 20 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.rzsign" for="field_rzsign">Rzsign</label>
+          <input type="number" class="form-control" name="rzsign" id="field_rzsign" data-cy="rzsign" formControlName="rzsign" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.jf" for="field_jf">Jf</label>
+          <input type="number" class="form-control" name="jf" id="field_jf" data-cy="jf" formControlName="jf" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.gname" for="field_gname">Gname</label>
+          <input type="text" class="form-control" name="gname" id="field_gname" data-cy="gname" formControlName="gname" />
+          <div *ngIf="editForm.get('gname')!.invalid && (editForm.get('gname')!.dirty || editForm.get('gname')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('gname')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.zcsign" for="field_zcsign">Zcsign</label>
+          <input type="number" class="form-control" name="zcsign" id="field_zcsign" data-cy="zcsign" formControlName="zcsign" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.cqsl" for="field_cqsl">Cqsl</label>
+          <input type="number" class="form-control" name="cqsl" id="field_cqsl" data-cy="cqsl" formControlName="cqsl" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.sfjf" for="field_sfjf">Sfjf</label>
+          <input type="number" class="form-control" name="sfjf" id="field_sfjf" data-cy="sfjf" formControlName="sfjf" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.ywly" for="field_ywly">Ywly</label>
+          <input type="text" class="form-control" name="ywly" id="field_ywly" data-cy="ywly" formControlName="ywly" />
+          <div *ngIf="editForm.get('ywly')!.invalid && (editForm.get('ywly')!.dirty || editForm.get('ywly')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('ywly')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 20 }"
+            >
+              This field cannot be longer than 20 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.fk" for="field_fk">Fk</label>
+          <input type="text" class="form-control" name="fk" id="field_fk" data-cy="fk" formControlName="fk" />
+          <div *ngIf="editForm.get('fk')!.invalid && (editForm.get('fk')!.dirty || editForm.get('fk')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('fk')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 2 }"
+            >
+              This field cannot be longer than 2 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.fkrq" for="field_fkrq">Fkrq</label>
+          <div class="d-flex">
+            <input
+              id="field_fkrq"
+              data-cy="fkrq"
+              type="datetime-local"
+              class="form-control"
+              name="fkrq"
+              formControlName="fkrq"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.bc" for="field_bc">Bc</label>
+          <input type="text" class="form-control" name="bc" id="field_bc" data-cy="bc" formControlName="bc" />
+          <div *ngIf="editForm.get('bc')!.invalid && (editForm.get('bc')!.dirty || editForm.get('bc')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('bc')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.jxremark" for="field_jxremark">Jxremark</label>
+          <input type="text" class="form-control" name="jxremark" id="field_jxremark" data-cy="jxremark" formControlName="jxremark" />
+          <div *ngIf="editForm.get('jxremark')!.invalid && (editForm.get('jxremark')!.dirty || editForm.get('jxremark')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('jxremark')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 100 }"
+            >
+              This field cannot be longer than 100 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.txid" for="field_txid">Txid</label>
+          <input type="number" class="form-control" name="txid" id="field_txid" data-cy="txid" formControlName="txid" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.cfr" for="field_cfr">Cfr</label>
+          <input type="text" class="form-control" name="cfr" id="field_cfr" data-cy="cfr" formControlName="cfr" />
+          <div *ngIf="editForm.get('cfr')!.invalid && (editForm.get('cfr')!.dirty || editForm.get('cfr')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('cfr')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.fjbm" for="field_fjbm">Fjbm</label>
+          <input type="text" class="form-control" name="fjbm" id="field_fjbm" data-cy="fjbm" formControlName="fjbm" />
+          <div *ngIf="editForm.get('fjbm')!.invalid && (editForm.get('fjbm')!.dirty || editForm.get('fjbm')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('fjbm')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 2 }"
+            >
+              This field cannot be longer than 2 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.djlx" for="field_djlx">Djlx</label>
+          <input type="text" class="form-control" name="djlx" id="field_djlx" data-cy="djlx" formControlName="djlx" />
+          <div *ngIf="editForm.get('djlx')!.invalid && (editForm.get('djlx')!.dirty || editForm.get('djlx')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('djlx')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 100 }"
+            >
+              This field cannot be longer than 100 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.wlddh" for="field_wlddh">Wlddh</label>
+          <input type="text" class="form-control" name="wlddh" id="field_wlddh" data-cy="wlddh" formControlName="wlddh" />
+          <div *ngIf="editForm.get('wlddh')!.invalid && (editForm.get('wlddh')!.dirty || editForm.get('wlddh')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('wlddh')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 100 }"
+            >
+              This field cannot be longer than 100 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.fksl" for="field_fksl">Fksl</label>
+          <input type="number" class="form-control" name="fksl" id="field_fksl" data-cy="fksl" formControlName="fksl" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkin.dqtx" for="field_dqtx">Dqtx</label>
+          <input type="text" class="form-control" name="dqtx" id="field_dqtx" data-cy="dqtx" formControlName="dqtx" />
+          <div *ngIf="editForm.get('dqtx')!.invalid && (editForm.get('dqtx')!.dirty || editForm.get('dqtx')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('dqtx')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 1 }"
+            >
+              This field cannot be longer than 1 characters.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

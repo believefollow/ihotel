@@ -1,0 +1,132 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dRk">
+      <h2 data-cy="dRkDetailsHeading"><span jhiTranslate="ihotelApp.dRk.detail.title">D Rk</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ihotelApp.dRk.id">Id</span></dt>
+        <dd>
+          <span>{{ dRk.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.rkdate">Rkdate</span></dt>
+        <dd>
+          <span>{{ dRk.rkdate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.depot">Depot</span></dt>
+        <dd>
+          <span>{{ dRk.depot }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.rklx">Rklx</span></dt>
+        <dd>
+          <span>{{ dRk.rklx }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.rkbillno">Rkbillno</span></dt>
+        <dd>
+          <span>{{ dRk.rkbillno }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.company">Company</span></dt>
+        <dd>
+          <span>{{ dRk.company }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.deptname">Deptname</span></dt>
+        <dd>
+          <span>{{ dRk.deptname }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.jbr">Jbr</span></dt>
+        <dd>
+          <span>{{ dRk.jbr }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.remark">Remark</span></dt>
+        <dd>
+          <span>{{ dRk.remark }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.empn">Empn</span></dt>
+        <dd>
+          <span>{{ dRk.empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.lrdate">Lrdate</span></dt>
+        <dd>
+          <span>{{ dRk.lrdate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.spbm">Spbm</span></dt>
+        <dd>
+          <span>{{ dRk.spbm }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.spmc">Spmc</span></dt>
+        <dd>
+          <span>{{ dRk.spmc }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.ggxh">Ggxh</span></dt>
+        <dd>
+          <span>{{ dRk.ggxh }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.dw">Dw</span></dt>
+        <dd>
+          <span>{{ dRk.dw }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.price">Price</span></dt>
+        <dd>
+          <span>{{ dRk.price }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.sl">Sl</span></dt>
+        <dd>
+          <span>{{ dRk.sl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.je">Je</span></dt>
+        <dd>
+          <span>{{ dRk.je }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.sign">Sign</span></dt>
+        <dd>
+          <span>{{ dRk.sign }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.memo">Memo</span></dt>
+        <dd>
+          <span>{{ dRk.memo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.flag">Flag</span></dt>
+        <dd>
+          <span>{{ dRk.flag }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.f1">F 1</span></dt>
+        <dd>
+          <span>{{ dRk.f1 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.f2">F 2</span></dt>
+        <dd>
+          <span>{{ dRk.f2 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.f1empn">F 1 Empn</span></dt>
+        <dd>
+          <span>{{ dRk.f1empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.f2empn">F 2 Empn</span></dt>
+        <dd>
+          <span>{{ dRk.f2empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.f1sj">F 1 Sj</span></dt>
+        <dd>
+          <span>{{ dRk.f1sj | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dRk.f2sj">F 2 Sj</span></dt>
+        <dd>
+          <span>{{ dRk.f2sj | formatMediumDatetime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/d-rk', dRk.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

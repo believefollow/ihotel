@@ -1,0 +1,27 @@
+{
+  "ihotelApp": {
+    "dxSed": {
+      "home": {
+        "title": "Dx Seds",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Dx Sed",
+        "createOrEditLabel": "Create or edit a Dx Sed",
+        "search": "Search for Dx Sed",
+        "notFound": "No Dx Seds found"
+      },
+      "created": "A new Dx Sed is created with identifier {{ param }}",
+      "updated": "A Dx Sed is updated with identifier {{ param }}",
+      "deleted": "A Dx Sed is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Dx Sed {{ id }}?"
+      },
+      "detail": {
+        "title": "Dx Sed"
+      },
+      "id": "Id",
+      "dxRq": "Dx Rq",
+      "dxZt": "Dx Zt",
+      "fsSj": "Fs Sj"
+    }
+  }
+}

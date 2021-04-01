@@ -1,0 +1,26 @@
+{
+  "ihotelApp": {
+    "accbillno": {
+      "home": {
+        "title": "Accbillnos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Accbillno",
+        "createOrEditLabel": "创建或编辑 Accbillno",
+        "search": "查找 Accbillno",
+        "notFound": "No Accbillnos found"
+      },
+      "created": "Accbillno {{ param }} 创建成功",
+      "updated": "Accbillno {{ param }} 更新成功",
+      "deleted": "Accbillno {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Accbillno {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Accbillno"
+      },
+      "id": "ID",
+      "account": "Account",
+      "accbillno": "Accbillno"
+    }
+  }
+}

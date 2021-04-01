@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="comset">
+      <h2 data-cy="comsetDetailsHeading"><span jhiTranslate="ihotelApp.comset.detail.title">Comset</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ comset.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.comset.comNum">Com Num</span></dt>
+        <dd>
+          <span>{{ comset.comNum }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.comset.comBytes">Com Bytes</span></dt>
+        <dd>
+          <span>{{ comset.comBytes }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.comset.comDatabit">Com Databit</span></dt>
+        <dd>
+          <span>{{ comset.comDatabit }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.comset.comParitycheck">Com Paritycheck</span></dt>
+        <dd>
+          <span>{{ comset.comParitycheck }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.comset.comStopbit">Com Stopbit</span></dt>
+        <dd>
+          <span>{{ comset.comStopbit }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.comset.comFunction">Com Function</span></dt>
+        <dd>
+          <span>{{ comset.comFunction }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/comset', comset.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

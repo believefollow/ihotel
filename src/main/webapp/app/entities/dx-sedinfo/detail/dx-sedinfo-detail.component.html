@@ -1,0 +1,116 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dxSedinfo">
+      <h2 data-cy="dxSedinfoDetailsHeading"><span jhiTranslate="ihotelApp.dxSedinfo.detail.title">Dx Sedinfo</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ihotelApp.dxSedinfo.id">Id</span></dt>
+        <dd>
+          <span>{{ dxSedinfo.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSedinfo.yddx">Yddx</span></dt>
+        <dd>
+          <span>{{ dxSedinfo.yddx }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSedinfo.yddxmemo">Yddxmemo</span></dt>
+        <dd>
+          <span>{{ dxSedinfo.yddxmemo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSedinfo.qxyddx">Qxyddx</span></dt>
+        <dd>
+          <span>{{ dxSedinfo.qxyddx }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSedinfo.qxydmemo">Qxydmemo</span></dt>
+        <dd>
+          <span>{{ dxSedinfo.qxydmemo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSedinfo.czdx">Czdx</span></dt>
+        <dd>
+          <span>{{ dxSedinfo.czdx }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSedinfo.czmemo">Czmemo</span></dt>
+        <dd>
+          <span>{{ dxSedinfo.czmemo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSedinfo.qxczdx">Qxczdx</span></dt>
+        <dd>
+          <span>{{ dxSedinfo.qxczdx }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSedinfo.qxczmemo">Qxczmemo</span></dt>
+        <dd>
+          <span>{{ dxSedinfo.qxczmemo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSedinfo.yyedx">Yyedx</span></dt>
+        <dd>
+          <span>{{ dxSedinfo.yyedx }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSedinfo.yyememo">Yyememo</span></dt>
+        <dd>
+          <span>{{ dxSedinfo.yyememo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSedinfo.fstime">Fstime</span></dt>
+        <dd>
+          <span>{{ dxSedinfo.fstime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSedinfo.sffshm">Sffshm</span></dt>
+        <dd>
+          <span>{{ dxSedinfo.sffshm }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSedinfo.rzdx">Rzdx</span></dt>
+        <dd>
+          <span>{{ dxSedinfo.rzdx }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSedinfo.rzdxroomn">Rzdxroomn</span></dt>
+        <dd>
+          <span>{{ dxSedinfo.rzdxroomn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSedinfo.jfdz">Jfdz</span></dt>
+        <dd>
+          <span>{{ dxSedinfo.jfdz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSedinfo.blhy">Blhy</span></dt>
+        <dd>
+          <span>{{ dxSedinfo.blhy }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSedinfo.rzmemo">Rzmemo</span></dt>
+        <dd>
+          <span>{{ dxSedinfo.rzmemo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSedinfo.blhymemo">Blhymemo</span></dt>
+        <dd>
+          <span>{{ dxSedinfo.blhymemo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSedinfo.tfdx">Tfdx</span></dt>
+        <dd>
+          <span>{{ dxSedinfo.tfdx }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSedinfo.tfdxmemo">Tfdxmemo</span></dt>
+        <dd>
+          <span>{{ dxSedinfo.tfdxmemo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSedinfo.fslb">Fslb</span></dt>
+        <dd>
+          <span>{{ dxSedinfo.fslb }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSedinfo.fslbmemo">Fslbmemo</span></dt>
+        <dd>
+          <span>{{ dxSedinfo.fslbmemo }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/dx-sedinfo', dxSedinfo.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

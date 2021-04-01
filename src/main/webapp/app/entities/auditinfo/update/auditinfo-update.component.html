@@ -1,0 +1,110 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-auditinfo-heading" data-cy="AuditinfoCreateUpdateHeading" jhiTranslate="ihotelApp.auditinfo.home.createOrEditLabel">
+        Create or edit a Auditinfo
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.auditinfo.auditdate" for="field_auditdate">Auditdate</label>
+          <div class="d-flex">
+            <input
+              id="field_auditdate"
+              data-cy="auditdate"
+              type="datetime-local"
+              class="form-control"
+              name="auditdate"
+              formControlName="auditdate"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+          <div *ngIf="editForm.get('auditdate')!.invalid && (editForm.get('auditdate')!.dirty || editForm.get('auditdate')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('auditdate')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('auditdate')?.errors?.ZonedDateTimelocal"
+              jhiTranslate="entity.validation.ZonedDateTimelocal"
+            >
+              This field should be a date and time.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.auditinfo.audittime" for="field_audittime">Audittime</label>
+          <div class="d-flex">
+            <input
+              id="field_audittime"
+              data-cy="audittime"
+              type="datetime-local"
+              class="form-control"
+              name="audittime"
+              formControlName="audittime"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.auditinfo.empn" for="field_empn">Empn</label>
+          <input type="text" class="form-control" name="empn" id="field_empn" data-cy="empn" formControlName="empn" />
+          <div *ngIf="editForm.get('empn')!.invalid && (editForm.get('empn')!.dirty || editForm.get('empn')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('empn')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 10 }"
+            >
+              This field cannot be longer than 10 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.auditinfo.aidentify" for="field_aidentify">Aidentify</label>
+          <input type="text" class="form-control" name="aidentify" id="field_aidentify" data-cy="aidentify" formControlName="aidentify" />
+          <div *ngIf="editForm.get('aidentify')!.invalid && (editForm.get('aidentify')!.dirty || editForm.get('aidentify')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('aidentify')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 100 }"
+            >
+              This field cannot be longer than 100 characters.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

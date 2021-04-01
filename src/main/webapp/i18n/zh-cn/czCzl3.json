@@ -1,0 +1,29 @@
+{
+  "ihotelApp": {
+    "czCzl3": {
+      "home": {
+        "title": "Cz Czl 3 S",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Cz Czl 3",
+        "createOrEditLabel": "创建或编辑 Cz Czl 3",
+        "search": "查找 Cz Czl 3",
+        "notFound": "No Cz Czl 3 S found"
+      },
+      "created": "Cz Czl 3 {{ param }} 创建成功",
+      "updated": "Cz Czl 3 {{ param }} 更新成功",
+      "deleted": "Cz Czl 3 {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Cz Czl 3 {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Cz Czl 3"
+      },
+      "id": "ID",
+      "zfs": "Zfs",
+      "kfs": "Kfs",
+      "protocoln": "Protocoln",
+      "roomtype": "Roomtype",
+      "sl": "Sl"
+    }
+  }
+}

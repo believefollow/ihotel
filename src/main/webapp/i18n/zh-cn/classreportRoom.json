@@ -1,0 +1,42 @@
+{
+  "ihotelApp": {
+    "classreportRoom": {
+      "home": {
+        "title": "Classreport Rooms",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Classreport Room",
+        "createOrEditLabel": "创建或编辑 Classreport Room",
+        "search": "查找 Classreport Room",
+        "notFound": "No Classreport Rooms found"
+      },
+      "created": "Classreport Room {{ param }} 创建成功",
+      "updated": "Classreport Room {{ param }} 更新成功",
+      "deleted": "Classreport Room {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Classreport Room {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Classreport Room"
+      },
+      "id": "ID",
+      "account": "Account",
+      "roomn": "Roomn",
+      "yfj": "Yfj",
+      "yfj9008": "Yfj 9008",
+      "yfj9009": "Yfj 9009",
+      "yfj9007": "Yfj 9007",
+      "gz": "Gz",
+      "ff": "Ff",
+      "minibar": "Minibar",
+      "phone": "Phone",
+      "other": "Other",
+      "pc": "Pc",
+      "cz": "Cz",
+      "cy": "Cy",
+      "md": "Md",
+      "huiy": "Huiy",
+      "dtb": "Dtb",
+      "sszx": "Sszx"
+    }
+  }
+}

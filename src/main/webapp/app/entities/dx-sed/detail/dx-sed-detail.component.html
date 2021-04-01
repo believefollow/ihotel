@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dxSed">
+      <h2 data-cy="dxSedDetailsHeading"><span jhiTranslate="ihotelApp.dxSed.detail.title">Dx Sed</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ihotelApp.dxSed.id">Id</span></dt>
+        <dd>
+          <span>{{ dxSed.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSed.dxRq">Dx Rq</span></dt>
+        <dd>
+          <span>{{ dxSed.dxRq | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSed.dxZt">Dx Zt</span></dt>
+        <dd>
+          <span>{{ dxSed.dxZt }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dxSed.fsSj">Fs Sj</span></dt>
+        <dd>
+          <span>{{ dxSed.fsSj | formatMediumDatetime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/dx-sed', dxSed.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

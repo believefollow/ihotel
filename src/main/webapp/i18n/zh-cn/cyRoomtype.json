@@ -1,0 +1,29 @@
+{
+  "ihotelApp": {
+    "cyRoomtype": {
+      "home": {
+        "title": "Cy Roomtypes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Cy Roomtype",
+        "createOrEditLabel": "创建或编辑 Cy Roomtype",
+        "search": "查找 Cy Roomtype",
+        "notFound": "No Cy Roomtypes found"
+      },
+      "created": "Cy Roomtype {{ param }} 创建成功",
+      "updated": "Cy Roomtype {{ param }} 更新成功",
+      "deleted": "Cy Roomtype {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Cy Roomtype {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Cy Roomtype"
+      },
+      "id": "ID",
+      "rtdm": "Rtdm",
+      "minc": "Minc",
+      "servicerate": "Servicerate",
+      "printer": "Printer",
+      "printnum": "Printnum"
+    }
+  }
+}

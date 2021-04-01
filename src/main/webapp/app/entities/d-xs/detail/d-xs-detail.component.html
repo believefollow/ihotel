@@ -1,0 +1,84 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dXs">
+      <h2 data-cy="dXsDetailsHeading"><span jhiTranslate="ihotelApp.dXs.detail.title">D Xs</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ihotelApp.dXs.id">Id</span></dt>
+        <dd>
+          <span>{{ dXs.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dXs.begintime">Begintime</span></dt>
+        <dd>
+          <span>{{ dXs.begintime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dXs.endtime">Endtime</span></dt>
+        <dd>
+          <span>{{ dXs.endtime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dXs.ckbillno">Ckbillno</span></dt>
+        <dd>
+          <span>{{ dXs.ckbillno }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dXs.depot">Depot</span></dt>
+        <dd>
+          <span>{{ dXs.depot }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dXs.kcid">Kcid</span></dt>
+        <dd>
+          <span>{{ dXs.kcid }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dXs.ckid">Ckid</span></dt>
+        <dd>
+          <span>{{ dXs.ckid }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dXs.spbm">Spbm</span></dt>
+        <dd>
+          <span>{{ dXs.spbm }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dXs.spmc">Spmc</span></dt>
+        <dd>
+          <span>{{ dXs.spmc }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dXs.unit">Unit</span></dt>
+        <dd>
+          <span>{{ dXs.unit }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dXs.rkprice">Rkprice</span></dt>
+        <dd>
+          <span>{{ dXs.rkprice }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dXs.xsprice">Xsprice</span></dt>
+        <dd>
+          <span>{{ dXs.xsprice }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dXs.sl">Sl</span></dt>
+        <dd>
+          <span>{{ dXs.sl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dXs.rkje">Rkje</span></dt>
+        <dd>
+          <span>{{ dXs.rkje }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dXs.xsje">Xsje</span></dt>
+        <dd>
+          <span>{{ dXs.xsje }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/d-xs', dXs.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

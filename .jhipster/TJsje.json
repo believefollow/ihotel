@@ -1,0 +1,133 @@
+{
+  "name": "TJsje",
+  "fields": [
+    {
+      "fieldName": "jsjezj",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "yyls",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "xj",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "zp",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "xyk",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "cq",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "hyk",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "gz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "yq",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "jsrq",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "vipKh",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "30"
+    },
+    {
+      "fieldName": "keepbrH",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "lead",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "16"
+    },
+    {
+      "fieldName": "userName",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "16"
+    },
+    {
+      "fieldName": "yh",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "numbers",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "16"
+    },
+    {
+      "fieldName": "yfj",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "gfz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "roomarea",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "zk",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "blzk",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "10"
+    },
+    {
+      "fieldName": "fwf",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "djh",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "acc",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "gp",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "t_jsje",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131544"
+}

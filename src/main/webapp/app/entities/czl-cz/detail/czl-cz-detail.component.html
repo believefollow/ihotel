@@ -1,0 +1,108 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="czlCz">
+      <h2 data-cy="czlCzDetailsHeading"><span jhiTranslate="ihotelApp.czlCz.detail.title">Czl Cz</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ czlCz.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czlCz.tjrq">Tjrq</span></dt>
+        <dd>
+          <span>{{ czlCz.tjrq | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czlCz.typeid">Typeid</span></dt>
+        <dd>
+          <span>{{ czlCz.typeid }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czlCz.type">Type</span></dt>
+        <dd>
+          <span>{{ czlCz.type }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czlCz.fjsl">Fjsl</span></dt>
+        <dd>
+          <span>{{ czlCz.fjsl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czlCz.kfl">Kfl</span></dt>
+        <dd>
+          <span>{{ czlCz.kfl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czlCz.pjz">Pjz</span></dt>
+        <dd>
+          <span>{{ czlCz.pjz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czlCz.ysfz">Ysfz</span></dt>
+        <dd>
+          <span>{{ czlCz.ysfz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czlCz.sjfz">Sjfz</span></dt>
+        <dd>
+          <span>{{ czlCz.sjfz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czlCz.fzcz">Fzcz</span></dt>
+        <dd>
+          <span>{{ czlCz.fzcz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czlCz.pjzcj">Pjzcj</span></dt>
+        <dd>
+          <span>{{ czlCz.pjzcj }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czlCz.kfsM">Kfs M</span></dt>
+        <dd>
+          <span>{{ czlCz.kfsM }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czlCz.kflM">Kfl M</span></dt>
+        <dd>
+          <span>{{ czlCz.kflM }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czlCz.pjzM">Pjz M</span></dt>
+        <dd>
+          <span>{{ czlCz.pjzM }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czlCz.fzsr">Fzsr</span></dt>
+        <dd>
+          <span>{{ czlCz.fzsr }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czlCz.dayz">Dayz</span></dt>
+        <dd>
+          <span>{{ czlCz.dayz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czlCz.hoteltime">Hoteltime</span></dt>
+        <dd>
+          <span>{{ czlCz.hoteltime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czlCz.empn">Empn</span></dt>
+        <dd>
+          <span>{{ czlCz.empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czlCz.monthz">Monthz</span></dt>
+        <dd>
+          <span>{{ czlCz.monthz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czlCz.hoteldm">Hoteldm</span></dt>
+        <dd>
+          <span>{{ czlCz.hoteldm }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czlCz.isnew">Isnew</span></dt>
+        <dd>
+          <span>{{ czlCz.isnew }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/czl-cz', czlCz.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

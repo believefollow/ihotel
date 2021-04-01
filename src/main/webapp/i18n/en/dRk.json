@@ -1,0 +1,50 @@
+{
+  "ihotelApp": {
+    "dRk": {
+      "home": {
+        "title": "D Rks",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new D Rk",
+        "createOrEditLabel": "Create or edit a D Rk",
+        "search": "Search for D Rk",
+        "notFound": "No D Rks found"
+      },
+      "created": "A new D Rk is created with identifier {{ param }}",
+      "updated": "A D Rk is updated with identifier {{ param }}",
+      "deleted": "A D Rk is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete D Rk {{ id }}?"
+      },
+      "detail": {
+        "title": "D Rk"
+      },
+      "id": "Id",
+      "rkdate": "Rkdate",
+      "depot": "Depot",
+      "rklx": "Rklx",
+      "rkbillno": "Rkbillno",
+      "company": "Company",
+      "deptname": "Deptname",
+      "jbr": "Jbr",
+      "remark": "Remark",
+      "empn": "Empn",
+      "lrdate": "Lrdate",
+      "spbm": "Spbm",
+      "spmc": "Spmc",
+      "ggxh": "Ggxh",
+      "dw": "Dw",
+      "price": "Price",
+      "sl": "Sl",
+      "je": "Je",
+      "sign": "Sign",
+      "memo": "Memo",
+      "flag": "Flag",
+      "f1": "F 1",
+      "f2": "F 2",
+      "f1empn": "F 1 Empn",
+      "f2empn": "F 2 Empn",
+      "f1sj": "F 1 Sj",
+      "f2sj": "F 2 Sj"
+    }
+  }
+}

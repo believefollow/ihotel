@@ -1,0 +1,54 @@
+{
+  "name": "TbBookingState",
+  "fields": [
+    {
+      "fieldName": "rooms",
+      "fieldType": "Long",
+      "javadoc": "预定房间数"
+    },
+    {
+      "fieldName": "roomno",
+      "fieldType": "String",
+      "javadoc": "房号",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "roomprice",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "total",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "ordernumber",
+      "fieldType": "String",
+      "javadoc": "确认后产生订单号",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "30"
+    },
+    {
+      "fieldName": "flag",
+      "fieldType": "Long",
+      "javadoc": "1:等待酒店确认\\n2:预定成功\\n3已入住\\n4:预定失败",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "proc",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "tb_booking_state",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131606"
+}

@@ -1,0 +1,30 @@
+{
+  "ihotelApp": {
+    "dCompany": {
+      "home": {
+        "title": "D Companies",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new D Company",
+        "createOrEditLabel": "Create or edit a D Company",
+        "search": "Search for D Company",
+        "notFound": "No D Companies found"
+      },
+      "created": "A new D Company is created with identifier {{ param }}",
+      "updated": "A D Company is updated with identifier {{ param }}",
+      "deleted": "A D Company is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete D Company {{ id }}?"
+      },
+      "detail": {
+        "title": "D Company"
+      },
+      "company": "Company",
+      "linkman": "Linkman",
+      "phone": "Phone",
+      "address": "Address",
+      "remark": "Remark",
+      "fax": "Fax",
+      "id": "Id"
+    }
+  }
+}

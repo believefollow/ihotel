@@ -1,0 +1,46 @@
+{
+  "ihotelApp": {
+    "dPdb": {
+      "home": {
+        "title": "D Pdbs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new D Pdb",
+        "createOrEditLabel": "Create or edit a D Pdb",
+        "search": "Search for D Pdb",
+        "notFound": "No D Pdbs found"
+      },
+      "created": "A new D Pdb is created with identifier {{ param }}",
+      "updated": "A D Pdb is updated with identifier {{ param }}",
+      "deleted": "A D Pdb is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete D Pdb {{ id }}?"
+      },
+      "detail": {
+        "title": "D Pdb"
+      },
+      "id": "Id",
+      "begindate": "Begindate",
+      "enddate": "Enddate",
+      "bm": "Bm",
+      "spmc": "Spmc",
+      "qcsl": "Qcsl",
+      "rksl": "Rksl",
+      "xssl": "Xssl",
+      "dbsl": "Dbsl",
+      "qtck": "Qtck",
+      "jcsl": "Jcsl",
+      "swsl": "Swsl",
+      "pyk": "Pyk",
+      "memo": "Memo",
+      "depot": "Depot",
+      "rkje": "Rkje",
+      "xsje": "Xsje",
+      "dbje": "Dbje",
+      "jcje": "Jcje",
+      "dp": "Dp",
+      "qcje": "Qcje",
+      "swje": "Swje",
+      "qtje": "Qtje"
+    }
+  }
+}

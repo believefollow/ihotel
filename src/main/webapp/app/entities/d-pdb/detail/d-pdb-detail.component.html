@@ -1,0 +1,116 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dPdb">
+      <h2 data-cy="dPdbDetailsHeading"><span jhiTranslate="ihotelApp.dPdb.detail.title">D Pdb</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ihotelApp.dPdb.id">Id</span></dt>
+        <dd>
+          <span>{{ dPdb.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dPdb.begindate">Begindate</span></dt>
+        <dd>
+          <span>{{ dPdb.begindate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dPdb.enddate">Enddate</span></dt>
+        <dd>
+          <span>{{ dPdb.enddate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dPdb.bm">Bm</span></dt>
+        <dd>
+          <span>{{ dPdb.bm }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dPdb.spmc">Spmc</span></dt>
+        <dd>
+          <span>{{ dPdb.spmc }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dPdb.qcsl">Qcsl</span></dt>
+        <dd>
+          <span>{{ dPdb.qcsl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dPdb.rksl">Rksl</span></dt>
+        <dd>
+          <span>{{ dPdb.rksl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dPdb.xssl">Xssl</span></dt>
+        <dd>
+          <span>{{ dPdb.xssl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dPdb.dbsl">Dbsl</span></dt>
+        <dd>
+          <span>{{ dPdb.dbsl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dPdb.qtck">Qtck</span></dt>
+        <dd>
+          <span>{{ dPdb.qtck }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dPdb.jcsl">Jcsl</span></dt>
+        <dd>
+          <span>{{ dPdb.jcsl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dPdb.swsl">Swsl</span></dt>
+        <dd>
+          <span>{{ dPdb.swsl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dPdb.pyk">Pyk</span></dt>
+        <dd>
+          <span>{{ dPdb.pyk }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dPdb.memo">Memo</span></dt>
+        <dd>
+          <span>{{ dPdb.memo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dPdb.depot">Depot</span></dt>
+        <dd>
+          <span>{{ dPdb.depot }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dPdb.rkje">Rkje</span></dt>
+        <dd>
+          <span>{{ dPdb.rkje }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dPdb.xsje">Xsje</span></dt>
+        <dd>
+          <span>{{ dPdb.xsje }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dPdb.dbje">Dbje</span></dt>
+        <dd>
+          <span>{{ dPdb.dbje }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dPdb.jcje">Jcje</span></dt>
+        <dd>
+          <span>{{ dPdb.jcje }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dPdb.dp">Dp</span></dt>
+        <dd>
+          <span>{{ dPdb.dp }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dPdb.qcje">Qcje</span></dt>
+        <dd>
+          <span>{{ dPdb.qcje }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dPdb.swje">Swje</span></dt>
+        <dd>
+          <span>{{ dPdb.swje }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dPdb.qtje">Qtje</span></dt>
+        <dd>
+          <span>{{ dPdb.qtje }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/d-pdb', dPdb.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

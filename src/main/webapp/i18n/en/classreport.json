@@ -1,0 +1,49 @@
+{
+  "ihotelApp": {
+    "classreport": {
+      "home": {
+        "title": "Classreports",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Classreport",
+        "createOrEditLabel": "Create or edit a Classreport",
+        "search": "Search for Classreport",
+        "notFound": "No Classreports found"
+      },
+      "created": "A new Classreport is created with identifier {{ param }}",
+      "updated": "A Classreport is updated with identifier {{ param }}",
+      "deleted": "A Classreport is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Classreport {{ id }}?"
+      },
+      "detail": {
+        "title": "Classreport"
+      },
+      "id": "ID",
+      "empn": "Empn",
+      "dt": "Dt",
+      "xjUp": "Xj Up",
+      "yfjA": "Yfj A",
+      "yfjD": "Yfj D",
+      "gz": "Gz",
+      "zz": "Zz",
+      "zzYj": "Zz Yj",
+      "zzJs": "Zz Js",
+      "zzTc": "Zz Tc",
+      "ff": "Ff",
+      "minibar": "Minibar",
+      "phone": "Phone",
+      "other": "Other",
+      "pc": "Pc",
+      "cz": "Cz",
+      "cy": "Cy",
+      "md": "Md",
+      "huiy": "Huiy",
+      "dtb": "Dtb",
+      "sszx": "Sszx",
+      "cyz": "Cyz",
+      "hoteldm": "Hoteldm",
+      "gzxj": "Gzxj",
+      "isnew": "Isnew"
+    }
+  }
+}

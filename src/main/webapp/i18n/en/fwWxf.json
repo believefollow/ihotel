@@ -1,0 +1,31 @@
+{
+  "ihotelApp": {
+    "fwWxf": {
+      "home": {
+        "title": "Fw Wxfs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Fw Wxf",
+        "createOrEditLabel": "Create or edit a Fw Wxf",
+        "search": "Search for Fw Wxf",
+        "notFound": "No Fw Wxfs found"
+      },
+      "created": "A new Fw Wxf is created with identifier {{ param }}",
+      "updated": "A Fw Wxf is updated with identifier {{ param }}",
+      "deleted": "A Fw Wxf is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Fw Wxf {{ id }}?"
+      },
+      "detail": {
+        "title": "Fw Wxf"
+      },
+      "id": "Id",
+      "roomn": "Roomn",
+      "memo": "Memo",
+      "djrq": "Djrq",
+      "wxr": "Wxr",
+      "wcrq": "Wcrq",
+      "djr": "Djr",
+      "flag": "Flag"
+    }
+  }
+}

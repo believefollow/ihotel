@@ -1,0 +1,369 @@
+{
+  "name": "Rentp",
+  "fields": [
+    {
+      "fieldName": "protocoln",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "10"
+    },
+    {
+      "fieldName": "roomtype",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "agiorate",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "jfsign",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "ordersign",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "defaultP",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "isintotime",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "timeStart",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "pattern"],
+      "fieldValidateRulesMinlength": "8",
+      "fieldValidateRulesMaxlength": "8",
+      "fieldValidateRulesPattern": "^(([0-1]\\d)|(2[0-3])):([0-5]\\d):([0-5]\\d)$"
+    },
+    {
+      "fieldName": "timeEnd",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "pattern"],
+      "fieldValidateRulesMinlength": "8",
+      "fieldValidateRulesMaxlength": "8",
+      "fieldValidateRulesPattern": "^(([0-1]\\d)|(2[0-3])):([0-5]\\d):([0-5]\\d)$"
+    },
+    {
+      "fieldName": "timeFee",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "isintoday",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "dayStart",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "dayEnd",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "dayFee",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "isintosometime",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "intosometime",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "intosometimefee",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "intosometimeallfee",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "isouttimeaddfee",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "outtime",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "methodoffee",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "0"
+    },
+    {
+      "fieldName": "outtimefee",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "defaultoutday",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "defaultouttime",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "pattern"],
+      "fieldValidateRulesMinlength": "8",
+      "fieldValidateRulesMaxlength": "8",
+      "fieldValidateRulesPattern": "^(([0-1]\\d)|(2[0-3])):([0-5]\\d):([0-5]\\d)$"
+    },
+    {
+      "fieldName": "outtimeMinute",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "defaulttimelen",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "newRentp",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "0"
+    },
+    {
+      "fieldName": "qytssign",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "starttime",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "pattern"],
+      "fieldValidateRulesMinlength": "8",
+      "fieldValidateRulesMaxlength": "8",
+      "fieldValidateRulesPattern": "^(([0-1]\\d)|(2[0-3])):([0-5]\\d):([0-5]\\d)$"
+    },
+    {
+      "fieldName": "endtime",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "pattern"],
+      "fieldValidateRulesMinlength": "8",
+      "fieldValidateRulesMaxlength": "8",
+      "fieldValidateRulesPattern": "^(([0-1]\\d)|(2[0-3])):([0-5]\\d):([0-5]\\d)$"
+    },
+    {
+      "fieldName": "dr",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "tfsj",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "pattern"],
+      "fieldValidateRulesMinlength": "8",
+      "fieldValidateRulesMaxlength": "8",
+      "fieldValidateRulesPattern": "^(([0-1]\\d)|(2[0-3])):([0-5]\\d):([0-5]\\d)$"
+    },
+    {
+      "fieldName": "zds",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "bzs",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "csjs",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "rzzdzfj",
+      "fieldType": "String",
+      "javadoc": "入住超时自动转房价标识",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "rzcxss",
+      "fieldType": "Long",
+      "javadoc": "入住超过几小时按什么房价"
+    },
+    {
+      "fieldName": "rzcszfj",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "sfrxxgfj",
+      "fieldType": "String",
+      "javadoc": "否是允许修改房价",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "jffs",
+      "fieldType": "String",
+      "javadoc": "费计方式",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "10"
+    },
+    {
+      "fieldName": "rzbsftime",
+      "fieldType": "BigDecimal",
+      "javadoc": "住入多少分钟不收费"
+    },
+    {
+      "fieldName": "bztfsign",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "bztfsj",
+      "fieldType": "String",
+      "javadoc": "退房时间",
+      "fieldValidateRules": ["minlength", "maxlength", "pattern"],
+      "fieldValidateRulesMinlength": "8",
+      "fieldValidateRulesMaxlength": "8",
+      "fieldValidateRulesPattern": "^(([0-1]\\d)|(2[0-3])):([0-5]\\d):([0-5]\\d)$"
+    },
+    {
+      "fieldName": "btjssign",
+      "fieldType": "String",
+      "javadoc": "半日加收标志",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "btjstime",
+      "fieldType": "String",
+      "javadoc": "半天加收时间",
+      "fieldValidateRules": ["minlength", "maxlength", "pattern"],
+      "fieldValidateRulesMinlength": "8",
+      "fieldValidateRulesMaxlength": "8",
+      "fieldValidateRulesPattern": "^(([0-1]\\d)|(2[0-3])):([0-5]\\d):([0-5]\\d)$"
+    },
+    {
+      "fieldName": "bfprice",
+      "fieldType": "BigDecimal",
+      "javadoc": "半天费用"
+    },
+    {
+      "fieldName": "qtjssign",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "qtjstime",
+      "fieldType": "String",
+      "javadoc": "全天费加收时间",
+      "fieldValidateRules": ["minlength", "maxlength", "pattern"],
+      "fieldValidateRulesMinlength": "8",
+      "fieldValidateRulesMaxlength": "8",
+      "fieldValidateRulesPattern": "^(([0-1]\\d)|(2[0-3])):([0-5]\\d):([0-5]\\d)$"
+    },
+    {
+      "fieldName": "xzsign",
+      "fieldType": "String",
+      "javadoc": "制限入住时间段",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "xzkstime",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "pattern"],
+      "fieldValidateRulesMinlength": "8",
+      "fieldValidateRulesMaxlength": "8",
+      "fieldValidateRulesPattern": "^(([0-1]\\d)|(2[0-3])):([0-5]\\d):([0-5]\\d)$"
+    },
+    {
+      "fieldName": "xzrsign",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "xzjstime",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "pattern"],
+      "fieldValidateRulesMinlength": "8",
+      "fieldValidateRulesMaxlength": "8",
+      "fieldValidateRulesPattern": "^(([0-1]\\d)|(2[0-3])):([0-5]\\d):([0-5]\\d)$"
+    },
+    {
+      "fieldName": "qyauto",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "tsrz",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "sr",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "pattern"],
+      "fieldValidateRulesMinlength": "8",
+      "fieldValidateRulesMaxlength": "8",
+      "fieldValidateRulesPattern": "^(([0-1]\\d)|(2[0-3])):([0-5]\\d):([0-5]\\d)$"
+    },
+    {
+      "fieldName": "er",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "pattern"],
+      "fieldValidateRulesMinlength": "8",
+      "fieldValidateRulesMaxlength": "8",
+      "fieldValidateRulesPattern": "^(([0-1]\\d)|(2[0-3])):([0-5]\\d):([0-5]\\d)$"
+    },
+    {
+      "fieldName": "rztfs",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "qyxiaoshi",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "xiaosprice",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "yanchishu",
+      "fieldType": "BigDecimal",
+      "javadoc": "超时多久算1小时"
+    },
+    {
+      "fieldName": "zddw",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "rentp",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131436"
+}

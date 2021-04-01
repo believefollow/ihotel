@@ -1,0 +1,119 @@
+{
+  "name": "DPdb",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "begindate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "enddate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "bm",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "spmc",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "qcsl",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "rksl",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "xssl",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "dbsl",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "qtck",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "jcsl",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "swsl",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "pyk",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "memo",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldName": "depot",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "rkje",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "xsje",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "dbje",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "jcje",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "dp",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "qcje",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "swje",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "qtje",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "d_pdb",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131308"
+}

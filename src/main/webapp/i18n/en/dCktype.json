@@ -1,0 +1,27 @@
+{
+  "ihotelApp": {
+    "dCktype": {
+      "home": {
+        "title": "D Cktypes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new D Cktype",
+        "createOrEditLabel": "Create or edit a D Cktype",
+        "search": "Search for D Cktype",
+        "notFound": "No D Cktypes found"
+      },
+      "created": "A new D Cktype is created with identifier {{ param }}",
+      "updated": "A D Cktype is updated with identifier {{ param }}",
+      "deleted": "A D Cktype is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete D Cktype {{ id }}?"
+      },
+      "detail": {
+        "title": "D Cktype"
+      },
+      "id": "ID",
+      "cktype": "Cktype",
+      "memo": "Memo",
+      "sign": "Sign"
+    }
+  }
+}

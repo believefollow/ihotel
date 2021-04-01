@@ -1,0 +1,27 @@
+{
+  "ihotelApp": {
+    "dayearndetail": {
+      "home": {
+        "title": "Dayearndetails",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Dayearndetail",
+        "createOrEditLabel": "Create or edit a Dayearndetail",
+        "search": "Search for Dayearndetail",
+        "notFound": "No Dayearndetails found"
+      },
+      "created": "A new Dayearndetail is created with identifier {{ param }}",
+      "updated": "A Dayearndetail is updated with identifier {{ param }}",
+      "deleted": "A Dayearndetail is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Dayearndetail {{ id }}?"
+      },
+      "detail": {
+        "title": "Dayearndetail"
+      },
+      "id": "ID",
+      "earndate": "Earndate",
+      "salespotn": "Salespotn",
+      "money": "Money"
+    }
+  }
+}

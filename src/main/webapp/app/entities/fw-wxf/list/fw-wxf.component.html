@@ -1,0 +1,123 @@
+<div>
+  <h2 id="page-heading" data-cy="FwWxfHeading">
+    <span jhiTranslate="ihotelApp.fwWxf.home.title">Fw Wxfs</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="ihotelApp.fwWxf.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-fw-wxf"
+        [routerLink]="['/fw-wxf/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span class="hidden-sm-down" jhiTranslate="ihotelApp.fwWxf.home.createLabel"> Create a new Fw Wxf </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <form name="searchForm" class="form-inline">
+        <div class="input-group w-100 mt-3">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="currentSearch"
+            id="currentSearch"
+            name="currentSearch"
+            placeholder="{{ 'ihotelApp.fwWxf.home.search' | translate }}"
+          />
+
+          <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+            <fa-icon icon="search"></fa-icon>
+          </button>
+
+          <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+            <fa-icon icon="trash-alt"></fa-icon>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="fwWxfs?.length === 0">
+    <span jhiTranslate="ihotelApp.fwWxf.home.notFound">No fwWxfs found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="fwWxfs && fwWxfs.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="ihotelApp.fwWxf.id">Id</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="roomn"><span jhiTranslate="ihotelApp.fwWxf.roomn">Roomn</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="memo"><span jhiTranslate="ihotelApp.fwWxf.memo">Memo</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="djrq"><span jhiTranslate="ihotelApp.fwWxf.djrq">Djrq</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="wxr"><span jhiTranslate="ihotelApp.fwWxf.wxr">Wxr</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="wcrq"><span jhiTranslate="ihotelApp.fwWxf.wcrq">Wcrq</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="djr"><span jhiTranslate="ihotelApp.fwWxf.djr">Djr</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="flag"><span jhiTranslate="ihotelApp.fwWxf.flag">Flag</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let fwWxf of fwWxfs; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/fw-wxf', fwWxf.id, 'view']">{{ fwWxf.id }}</a>
+          </td>
+          <td>{{ fwWxf.roomn }}</td>
+          <td>{{ fwWxf.memo }}</td>
+          <td>{{ fwWxf.djrq | formatMediumDatetime }}</td>
+          <td>{{ fwWxf.wxr }}</td>
+          <td>{{ fwWxf.wcrq | formatMediumDatetime }}</td>
+          <td>{{ fwWxf.djr }}</td>
+          <td>{{ fwWxf.flag }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/fw-wxf', fwWxf.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button type="submit" [routerLink]="['/fw-wxf', fwWxf.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(fwWxf)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="fwWxfs && fwWxfs.length > 0">
+    <div class="row justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

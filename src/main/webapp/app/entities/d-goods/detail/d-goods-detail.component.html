@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dGoods">
+      <h2 data-cy="dGoodsDetailsHeading"><span jhiTranslate="ihotelApp.dGoods.detail.title">D Goods</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ dGoods.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dGoods.typeid">Typeid</span></dt>
+        <dd>
+          <span>{{ dGoods.typeid }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dGoods.goodsname">Goodsname</span></dt>
+        <dd>
+          <span>{{ dGoods.goodsname }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dGoods.goodsid">Goodsid</span></dt>
+        <dd>
+          <span>{{ dGoods.goodsid }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dGoods.ggxh">Ggxh</span></dt>
+        <dd>
+          <span>{{ dGoods.ggxh }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dGoods.pysj">Pysj</span></dt>
+        <dd>
+          <span>{{ dGoods.pysj }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dGoods.wbsj">Wbsj</span></dt>
+        <dd>
+          <span>{{ dGoods.wbsj }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dGoods.unit">Unit</span></dt>
+        <dd>
+          <span>{{ dGoods.unit }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dGoods.gcsl">Gcsl</span></dt>
+        <dd>
+          <span>{{ dGoods.gcsl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dGoods.dcsl">Dcsl</span></dt>
+        <dd>
+          <span>{{ dGoods.dcsl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dGoods.remark">Remark</span></dt>
+        <dd>
+          <span>{{ dGoods.remark }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/d-goods', dGoods.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

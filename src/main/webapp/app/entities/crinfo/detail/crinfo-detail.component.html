@@ -1,0 +1,84 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="crinfo">
+      <h2 data-cy="crinfoDetailsHeading"><span jhiTranslate="ihotelApp.crinfo.detail.title">Crinfo</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ihotelApp.crinfo.id">Id</span></dt>
+        <dd>
+          <span>{{ crinfo.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.crinfo.operatetime">Operatetime</span></dt>
+        <dd>
+          <span>{{ crinfo.operatetime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.crinfo.oldrent">Oldrent</span></dt>
+        <dd>
+          <span>{{ crinfo.oldrent }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.crinfo.newrent">Newrent</span></dt>
+        <dd>
+          <span>{{ crinfo.newrent }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.crinfo.oldroomn">Oldroomn</span></dt>
+        <dd>
+          <span>{{ crinfo.oldroomn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.crinfo.newroomn">Newroomn</span></dt>
+        <dd>
+          <span>{{ crinfo.newroomn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.crinfo.account">Account</span></dt>
+        <dd>
+          <span>{{ crinfo.account }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.crinfo.empn">Empn</span></dt>
+        <dd>
+          <span>{{ crinfo.empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.crinfo.oldday">Oldday</span></dt>
+        <dd>
+          <span>{{ crinfo.oldday }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.crinfo.newday">Newday</span></dt>
+        <dd>
+          <span>{{ crinfo.newday }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.crinfo.hoteltime">Hoteltime</span></dt>
+        <dd>
+          <span>{{ crinfo.hoteltime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.crinfo.roomn">Roomn</span></dt>
+        <dd>
+          <span>{{ crinfo.roomn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.crinfo.memo">Memo</span></dt>
+        <dd>
+          <span>{{ crinfo.memo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.crinfo.realname">Realname</span></dt>
+        <dd>
+          <span>{{ crinfo.realname }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.crinfo.isup">Isup</span></dt>
+        <dd>
+          <span>{{ crinfo.isup }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/crinfo', crinfo.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,296 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="accounts">
+      <h2 data-cy="accountsDetailsHeading"><span jhiTranslate="ihotelApp.accounts.detail.title">Accounts</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ihotelApp.accounts.account">Account</span></dt>
+        <dd>
+          <span>{{ accounts.account }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.consumetime">Consumetime</span></dt>
+        <dd>
+          <span>{{ accounts.consumetime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.hoteltime">Hoteltime</span></dt>
+        <dd>
+          <span>{{ accounts.hoteltime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.feenum">Feenum</span></dt>
+        <dd>
+          <span>{{ accounts.feenum }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.money">Money</span></dt>
+        <dd>
+          <span>{{ accounts.money }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.memo">Memo</span></dt>
+        <dd>
+          <span>{{ accounts.memo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.empn">Empn</span></dt>
+        <dd>
+          <span>{{ accounts.empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.imprest">Imprest</span></dt>
+        <dd>
+          <span>{{ accounts.imprest }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.propertiy">Propertiy</span></dt>
+        <dd>
+          <span>{{ accounts.propertiy }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.earntypen">Earntypen</span></dt>
+        <dd>
+          <span>{{ accounts.earntypen }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.payment">Payment</span></dt>
+        <dd>
+          <span>{{ accounts.payment }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.roomn">Roomn</span></dt>
+        <dd>
+          <span>{{ accounts.roomn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.id">Id</span></dt>
+        <dd>
+          <span>{{ accounts.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.ulogogram">Ulogogram</span></dt>
+        <dd>
+          <span>{{ accounts.ulogogram }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.lk">Lk</span></dt>
+        <dd>
+          <span>{{ accounts.lk }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.acc">Acc</span></dt>
+        <dd>
+          <span>{{ accounts.acc }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.jzSign">Jz Sign</span></dt>
+        <dd>
+          <span>{{ accounts.jzSign }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.jzflag">Jzflag</span></dt>
+        <dd>
+          <span>{{ accounts.jzflag }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.sign">Sign</span></dt>
+        <dd>
+          <span>{{ accounts.sign }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.bs">Bs</span></dt>
+        <dd>
+          <span>{{ accounts.bs }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.jzhotel">Jzhotel</span></dt>
+        <dd>
+          <span>{{ accounts.jzhotel | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.jzempn">Jzempn</span></dt>
+        <dd>
+          <span>{{ accounts.jzempn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.jztime">Jztime</span></dt>
+        <dd>
+          <span>{{ accounts.jztime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.chonghong">Chonghong</span></dt>
+        <dd>
+          <span>{{ accounts.chonghong }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.billno">Billno</span></dt>
+        <dd>
+          <span>{{ accounts.billno }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.printcount">Printcount</span></dt>
+        <dd>
+          <span>{{ accounts.printcount }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.vipjf">Vipjf</span></dt>
+        <dd>
+          <span>{{ accounts.vipjf }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.hykh">Hykh</span></dt>
+        <dd>
+          <span>{{ accounts.hykh }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.sl">Sl</span></dt>
+        <dd>
+          <span>{{ accounts.sl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.sgdjh">Sgdjh</span></dt>
+        <dd>
+          <span>{{ accounts.sgdjh }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.hoteldm">Hoteldm</span></dt>
+        <dd>
+          <span>{{ accounts.hoteldm }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.isnew">Isnew</span></dt>
+        <dd>
+          <span>{{ accounts.isnew }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.guestId">Guest Id</span></dt>
+        <dd>
+          <span>{{ accounts.guestId }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.yhkh">Yhkh</span></dt>
+        <dd>
+          <span>{{ accounts.yhkh }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.djq">Djq</span></dt>
+        <dd>
+          <span>{{ accounts.djq }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.ysje">Ysje</span></dt>
+        <dd>
+          <span>{{ accounts.ysje }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.bj">Bj</span></dt>
+        <dd>
+          <span>{{ accounts.bj }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.bjempn">Bjempn</span></dt>
+        <dd>
+          <span>{{ accounts.bjempn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.bjtime">Bjtime</span></dt>
+        <dd>
+          <span>{{ accounts.bjtime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.paper2">Paper 2</span></dt>
+        <dd>
+          <span>{{ accounts.paper2 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.bc">Bc</span></dt>
+        <dd>
+          <span>{{ accounts.bc }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.auto">Auto</span></dt>
+        <dd>
+          <span>{{ accounts.auto }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.xsy">Xsy</span></dt>
+        <dd>
+          <span>{{ accounts.xsy }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.djkh">Djkh</span></dt>
+        <dd>
+          <span>{{ accounts.djkh }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.djsign">Djsign</span></dt>
+        <dd>
+          <span>{{ accounts.djsign }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.classname">Classname</span></dt>
+        <dd>
+          <span>{{ accounts.classname }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.iscy">Iscy</span></dt>
+        <dd>
+          <span>{{ accounts.iscy }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.bsign">Bsign</span></dt>
+        <dd>
+          <span>{{ accounts.bsign }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.fx">Fx</span></dt>
+        <dd>
+          <span>{{ accounts.fx }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.djlx">Djlx</span></dt>
+        <dd>
+          <span>{{ accounts.djlx }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.isup">Isup</span></dt>
+        <dd>
+          <span>{{ accounts.isup }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.yongjin">Yongjin</span></dt>
+        <dd>
+          <span>{{ accounts.yongjin }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.czpc">Czpc</span></dt>
+        <dd>
+          <span>{{ accounts.czpc }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.cxflag">Cxflag</span></dt>
+        <dd>
+          <span>{{ accounts.cxflag }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.pmemo">Pmemo</span></dt>
+        <dd>
+          <span>{{ accounts.pmemo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.czbillno">Czbillno</span></dt>
+        <dd>
+          <span>{{ accounts.czbillno }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.djqbz">Djqbz</span></dt>
+        <dd>
+          <span>{{ accounts.djqbz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.ysqmemo">Ysqmemo</span></dt>
+        <dd>
+          <span>{{ accounts.ysqmemo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.transactionId">Transaction Id</span></dt>
+        <dd>
+          <span>{{ accounts.transactionId }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.outTradeNo">Out Trade No</span></dt>
+        <dd>
+          <span>{{ accounts.outTradeNo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.gsname">Gsname</span></dt>
+        <dd>
+          <span>{{ accounts.gsname }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.rz">Rz</span></dt>
+        <dd>
+          <span>{{ accounts.rz | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.gz">Gz</span></dt>
+        <dd>
+          <span>{{ accounts.gz | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.ts">Ts</span></dt>
+        <dd>
+          <span>{{ accounts.ts }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.ky">Ky</span></dt>
+        <dd>
+          <span>{{ accounts.ky }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.xy">Xy</span></dt>
+        <dd>
+          <span>{{ accounts.xy }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.roomtype">Roomtype</span></dt>
+        <dd>
+          <span>{{ accounts.roomtype }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.accounts.bkid">Bkid</span></dt>
+        <dd>
+          <span>{{ accounts.bkid }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/accounts', accounts.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

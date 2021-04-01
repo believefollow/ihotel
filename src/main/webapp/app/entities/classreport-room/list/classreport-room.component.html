@@ -1,0 +1,175 @@
+<div>
+  <h2 id="page-heading" data-cy="ClassreportRoomHeading">
+    <span jhiTranslate="ihotelApp.classreportRoom.home.title">Classreport Rooms</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="ihotelApp.classreportRoom.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-classreport-room"
+        [routerLink]="['/classreport-room/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span class="hidden-sm-down" jhiTranslate="ihotelApp.classreportRoom.home.createLabel"> Create a new Classreport Room </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <form name="searchForm" class="form-inline">
+        <div class="input-group w-100 mt-3">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="currentSearch"
+            id="currentSearch"
+            name="currentSearch"
+            placeholder="{{ 'ihotelApp.classreportRoom.home.search' | translate }}"
+          />
+
+          <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+            <fa-icon icon="search"></fa-icon>
+          </button>
+
+          <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+            <fa-icon icon="trash-alt"></fa-icon>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="classreportRooms?.length === 0">
+    <span jhiTranslate="ihotelApp.classreportRoom.home.notFound">No classreportRooms found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="classreportRooms && classreportRooms.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="account">
+            <span jhiTranslate="ihotelApp.classreportRoom.account">Account</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="roomn">
+            <span jhiTranslate="ihotelApp.classreportRoom.roomn">Roomn</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="yfj"><span jhiTranslate="ihotelApp.classreportRoom.yfj">Yfj</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="yfj9008">
+            <span jhiTranslate="ihotelApp.classreportRoom.yfj9008">Yfj 9008</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="yfj9009">
+            <span jhiTranslate="ihotelApp.classreportRoom.yfj9009">Yfj 9009</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="yfj9007">
+            <span jhiTranslate="ihotelApp.classreportRoom.yfj9007">Yfj 9007</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="gz"><span jhiTranslate="ihotelApp.classreportRoom.gz">Gz</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="ff"><span jhiTranslate="ihotelApp.classreportRoom.ff">Ff</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="minibar">
+            <span jhiTranslate="ihotelApp.classreportRoom.minibar">Minibar</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="phone">
+            <span jhiTranslate="ihotelApp.classreportRoom.phone">Phone</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="other">
+            <span jhiTranslate="ihotelApp.classreportRoom.other">Other</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="pc"><span jhiTranslate="ihotelApp.classreportRoom.pc">Pc</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="cz"><span jhiTranslate="ihotelApp.classreportRoom.cz">Cz</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="cy"><span jhiTranslate="ihotelApp.classreportRoom.cy">Cy</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="md"><span jhiTranslate="ihotelApp.classreportRoom.md">Md</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="huiy">
+            <span jhiTranslate="ihotelApp.classreportRoom.huiy">Huiy</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="dtb"><span jhiTranslate="ihotelApp.classreportRoom.dtb">Dtb</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="sszx">
+            <span jhiTranslate="ihotelApp.classreportRoom.sszx">Sszx</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let classreportRoom of classreportRooms; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/classreport-room', classreportRoom.id, 'view']">{{ classreportRoom.id }}</a>
+          </td>
+          <td>{{ classreportRoom.account }}</td>
+          <td>{{ classreportRoom.roomn }}</td>
+          <td>{{ classreportRoom.yfj }}</td>
+          <td>{{ classreportRoom.yfj9008 }}</td>
+          <td>{{ classreportRoom.yfj9009 }}</td>
+          <td>{{ classreportRoom.yfj9007 }}</td>
+          <td>{{ classreportRoom.gz }}</td>
+          <td>{{ classreportRoom.ff }}</td>
+          <td>{{ classreportRoom.minibar }}</td>
+          <td>{{ classreportRoom.phone }}</td>
+          <td>{{ classreportRoom.other }}</td>
+          <td>{{ classreportRoom.pc }}</td>
+          <td>{{ classreportRoom.cz }}</td>
+          <td>{{ classreportRoom.cy }}</td>
+          <td>{{ classreportRoom.md }}</td>
+          <td>{{ classreportRoom.huiy }}</td>
+          <td>{{ classreportRoom.dtb }}</td>
+          <td>{{ classreportRoom.sszx }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/classreport-room', classreportRoom.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/classreport-room', classreportRoom.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(classreportRoom)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="classreportRooms && classreportRooms.length > 0">
+    <div class="row justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

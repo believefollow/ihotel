@@ -1,0 +1,51 @@
+{
+  "name": "Pbcatedt",
+  "fields": [
+    {
+      "fieldName": "pbeName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "30"
+    },
+    {
+      "fieldName": "pbeEdit",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "254"
+    },
+    {
+      "fieldName": "pbeType",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pbeCntr",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pbeSeqn",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "pbeFlag",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pbeWork",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "32"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "pbcatedt",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131421"
+}

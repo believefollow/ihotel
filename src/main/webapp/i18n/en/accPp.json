@@ -1,0 +1,25 @@
+{
+  "ihotelApp": {
+    "accPp": {
+      "home": {
+        "title": "Acc Pps",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Acc Pp",
+        "createOrEditLabel": "Create or edit a Acc Pp",
+        "search": "Search for Acc Pp",
+        "notFound": "No Acc Pps found"
+      },
+      "created": "A new Acc Pp is created with identifier {{ param }}",
+      "updated": "A Acc Pp is updated with identifier {{ param }}",
+      "deleted": "A Acc Pp is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Acc Pp {{ id }}?"
+      },
+      "detail": {
+        "title": "Acc Pp"
+      },
+      "id": "Id",
+      "acc": "Acc"
+    }
+  }
+}

@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="errlog">
+      <h2 data-cy="errlogDetailsHeading"><span jhiTranslate="ihotelApp.errlog.detail.title">Errlog</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ errlog.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.errlog.iderrlog">Iderrlog</span></dt>
+        <dd>
+          <span>{{ errlog.iderrlog }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.errlog.errnumber">Errnumber</span></dt>
+        <dd>
+          <span>{{ errlog.errnumber }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.errlog.errtext">Errtext</span></dt>
+        <dd>
+          <span>{{ errlog.errtext }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.errlog.errwindowmenu">Errwindowmenu</span></dt>
+        <dd>
+          <span>{{ errlog.errwindowmenu }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.errlog.errobject">Errobject</span></dt>
+        <dd>
+          <span>{{ errlog.errobject }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.errlog.errevent">Errevent</span></dt>
+        <dd>
+          <span>{{ errlog.errevent }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.errlog.errline">Errline</span></dt>
+        <dd>
+          <span>{{ errlog.errline }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.errlog.errtime">Errtime</span></dt>
+        <dd>
+          <span>{{ errlog.errtime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.errlog.sumbitsign">Sumbitsign</span></dt>
+        <dd>
+          <span>{{ errlog.sumbitsign }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.errlog.bmpfile">Bmpfile</span></dt>
+        <dd>
+          <span>{{ errlog.bmpfile }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.errlog.bmpblob">Bmpblob</span></dt>
+        <dd>
+          <div *ngIf="errlog.bmpblob">
+            <a (click)="openFile(errlog.bmpblob, errlog.bmpblobContentType)" jhiTranslate="entity.action.open">open</a>
+            {{ errlog.bmpblobContentType }}, {{ byteSize(errlog.bmpblob) }}
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/errlog', errlog.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

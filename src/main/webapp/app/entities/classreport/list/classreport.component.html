@@ -1,0 +1,179 @@
+<div>
+  <h2 id="page-heading" data-cy="ClassreportHeading">
+    <span jhiTranslate="ihotelApp.classreport.home.title">Classreports</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="ihotelApp.classreport.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-classreport"
+        [routerLink]="['/classreport/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span class="hidden-sm-down" jhiTranslate="ihotelApp.classreport.home.createLabel"> Create a new Classreport </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <form name="searchForm" class="form-inline">
+        <div class="input-group w-100 mt-3">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="currentSearch"
+            id="currentSearch"
+            name="currentSearch"
+            placeholder="{{ 'ihotelApp.classreport.home.search' | translate }}"
+          />
+
+          <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+            <fa-icon icon="search"></fa-icon>
+          </button>
+
+          <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+            <fa-icon icon="trash-alt"></fa-icon>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="classreports?.length === 0">
+    <span jhiTranslate="ihotelApp.classreport.home.notFound">No classreports found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="classreports && classreports.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="empn"><span jhiTranslate="ihotelApp.classreport.empn">Empn</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="dt"><span jhiTranslate="ihotelApp.classreport.dt">Dt</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="xjUp"><span jhiTranslate="ihotelApp.classreport.xjUp">Xj Up</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="yfjA"><span jhiTranslate="ihotelApp.classreport.yfjA">Yfj A</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="yfjD"><span jhiTranslate="ihotelApp.classreport.yfjD">Yfj D</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="gz"><span jhiTranslate="ihotelApp.classreport.gz">Gz</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="zz"><span jhiTranslate="ihotelApp.classreport.zz">Zz</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="zzYj"><span jhiTranslate="ihotelApp.classreport.zzYj">Zz Yj</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="zzJs"><span jhiTranslate="ihotelApp.classreport.zzJs">Zz Js</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="zzTc"><span jhiTranslate="ihotelApp.classreport.zzTc">Zz Tc</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="ff"><span jhiTranslate="ihotelApp.classreport.ff">Ff</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="minibar">
+            <span jhiTranslate="ihotelApp.classreport.minibar">Minibar</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="phone">
+            <span jhiTranslate="ihotelApp.classreport.phone">Phone</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="other">
+            <span jhiTranslate="ihotelApp.classreport.other">Other</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="pc"><span jhiTranslate="ihotelApp.classreport.pc">Pc</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="cz"><span jhiTranslate="ihotelApp.classreport.cz">Cz</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="cy"><span jhiTranslate="ihotelApp.classreport.cy">Cy</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="md"><span jhiTranslate="ihotelApp.classreport.md">Md</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="huiy"><span jhiTranslate="ihotelApp.classreport.huiy">Huiy</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="dtb"><span jhiTranslate="ihotelApp.classreport.dtb">Dtb</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="sszx"><span jhiTranslate="ihotelApp.classreport.sszx">Sszx</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="cyz"><span jhiTranslate="ihotelApp.classreport.cyz">Cyz</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="hoteldm">
+            <span jhiTranslate="ihotelApp.classreport.hoteldm">Hoteldm</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="gzxj"><span jhiTranslate="ihotelApp.classreport.gzxj">Gzxj</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="isnew">
+            <span jhiTranslate="ihotelApp.classreport.isnew">Isnew</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let classreport of classreports; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/classreport', classreport.id, 'view']">{{ classreport.id }}</a>
+          </td>
+          <td>{{ classreport.empn }}</td>
+          <td>{{ classreport.dt | formatMediumDatetime }}</td>
+          <td>{{ classreport.xjUp }}</td>
+          <td>{{ classreport.yfjA }}</td>
+          <td>{{ classreport.yfjD }}</td>
+          <td>{{ classreport.gz }}</td>
+          <td>{{ classreport.zz }}</td>
+          <td>{{ classreport.zzYj }}</td>
+          <td>{{ classreport.zzJs }}</td>
+          <td>{{ classreport.zzTc }}</td>
+          <td>{{ classreport.ff }}</td>
+          <td>{{ classreport.minibar }}</td>
+          <td>{{ classreport.phone }}</td>
+          <td>{{ classreport.other }}</td>
+          <td>{{ classreport.pc }}</td>
+          <td>{{ classreport.cz }}</td>
+          <td>{{ classreport.cy }}</td>
+          <td>{{ classreport.md }}</td>
+          <td>{{ classreport.huiy }}</td>
+          <td>{{ classreport.dtb }}</td>
+          <td>{{ classreport.sszx }}</td>
+          <td>{{ classreport.cyz }}</td>
+          <td>{{ classreport.hoteldm }}</td>
+          <td>{{ classreport.gzxj }}</td>
+          <td>{{ classreport.isnew }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/classreport', classreport.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/classreport', classreport.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(classreport)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="classreports && classreports.length > 0">
+    <div class="row justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

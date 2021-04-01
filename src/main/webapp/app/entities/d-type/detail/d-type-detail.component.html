@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dType">
+      <h2 data-cy="dTypeDetailsHeading"><span jhiTranslate="ihotelApp.dType.detail.title">D Type</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ dType.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dType.typeid">Typeid</span></dt>
+        <dd>
+          <span>{{ dType.typeid }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dType.typename">Typename</span></dt>
+        <dd>
+          <span>{{ dType.typename }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dType.fatherid">Fatherid</span></dt>
+        <dd>
+          <span>{{ dType.fatherid }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dType.disabled">Disabled</span></dt>
+        <dd>
+          <span>{{ dType.disabled }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/d-type', dType.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+{
+  "ihotelApp": {
+    "classBak": {
+      "home": {
+        "title": "Class Baks",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Class Bak",
+        "createOrEditLabel": "Create or edit a Class Bak",
+        "search": "Search for Class Bak",
+        "notFound": "No Class Baks found"
+      },
+      "created": "A new Class Bak is created with identifier {{ param }}",
+      "updated": "A Class Bak is updated with identifier {{ param }}",
+      "deleted": "A Class Bak is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Class Bak {{ id }}?"
+      },
+      "detail": {
+        "title": "Class Bak"
+      },
+      "id": "Id",
+      "empn": "Empn",
+      "dt": "Dt",
+      "rq": "Rq",
+      "ghname": "Ghname",
+      "bak": "Bak"
+    }
+  }
+}

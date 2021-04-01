@@ -1,0 +1,37 @@
+{
+  "ihotelApp": {
+    "cardysq": {
+      "home": {
+        "title": "Cardysqs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Cardysq",
+        "createOrEditLabel": "Create or edit a Cardysq",
+        "search": "Search for Cardysq",
+        "notFound": "No Cardysqs found"
+      },
+      "created": "A new Cardysq is created with identifier {{ param }}",
+      "updated": "A Cardysq is updated with identifier {{ param }}",
+      "deleted": "A Cardysq is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Cardysq {{ id }}?"
+      },
+      "detail": {
+        "title": "Cardysq"
+      },
+      "id": "Id",
+      "roomn": "Roomn",
+      "guestname": "Guestname",
+      "account": "Account",
+      "rq": "Rq",
+      "cardid": "Cardid",
+      "djh": "Djh",
+      "sqh": "Sqh",
+      "empn": "Empn",
+      "sign": "Sign",
+      "hoteltime": "Hoteltime",
+      "yxrq": "Yxrq",
+      "je": "Je",
+      "ysqmemo": "Ysqmemo"
+    }
+  }
+}

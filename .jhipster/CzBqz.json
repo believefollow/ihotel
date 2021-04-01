@@ -1,0 +1,108 @@
+{
+  "name": "CzBqz",
+  "fields": [
+    {
+      "fieldName": "rq",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "qSl",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "qKfl",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "qPjz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "qYsfz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "qSjfz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "qFzcz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "qPjzcz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "bSl",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "bKfl",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "bPjz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "bYsfz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "bSjfz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "bFzcz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "bPjzcz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "zSl",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "zKfl",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "zPjz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "zYsfz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "zSjfz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "zFzcz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "zPjzcz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "zk",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "cz_bqz",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131254"
+}

@@ -1,0 +1,228 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="checkin">
+      <h2 data-cy="checkinDetailsHeading"><span jhiTranslate="ihotelApp.checkin.detail.title">Checkin</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ checkin.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.bkid" [ngbTooltip]="'ihotelApp.checkin.help.bkid' | translate">Bkid</span></dt>
+        <dd>
+          <span>{{ checkin.bkid }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.guestId">Guest Id</span></dt>
+        <dd>
+          <span>{{ checkin.guestId }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.account">Account</span></dt>
+        <dd>
+          <span>{{ checkin.account }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.hoteltime">Hoteltime</span></dt>
+        <dd>
+          <span>{{ checkin.hoteltime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.indatetime">Indatetime</span></dt>
+        <dd>
+          <span>{{ checkin.indatetime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.residefate">Residefate</span></dt>
+        <dd>
+          <span>{{ checkin.residefate }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.gotime">Gotime</span></dt>
+        <dd>
+          <span>{{ checkin.gotime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.empn">Empn</span></dt>
+        <dd>
+          <span>{{ checkin.empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.roomn">Roomn</span></dt>
+        <dd>
+          <span>{{ checkin.roomn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.uname">Uname</span></dt>
+        <dd>
+          <span>{{ checkin.uname }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.rentp">Rentp</span></dt>
+        <dd>
+          <span>{{ checkin.rentp }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.protocolrent">Protocolrent</span></dt>
+        <dd>
+          <span>{{ checkin.protocolrent }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.remark">Remark</span></dt>
+        <dd>
+          <span>{{ checkin.remark }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.phonen">Phonen</span></dt>
+        <dd>
+          <span>{{ checkin.phonen }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.empn2">Empn 2</span></dt>
+        <dd>
+          <span>{{ checkin.empn2 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.adhoc">Adhoc</span></dt>
+        <dd>
+          <span>{{ checkin.adhoc }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.auditflag">Auditflag</span></dt>
+        <dd>
+          <span>{{ checkin.auditflag }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.groupn">Groupn</span></dt>
+        <dd>
+          <span>{{ checkin.groupn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.memo">Memo</span></dt>
+        <dd>
+          <span>{{ checkin.memo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.lfSign">Lf Sign</span></dt>
+        <dd>
+          <span>{{ checkin.lfSign }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.keynum">Keynum</span></dt>
+        <dd>
+          <span>{{ checkin.keynum }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.hykh">Hykh</span></dt>
+        <dd>
+          <span>{{ checkin.hykh }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.bm">Bm</span></dt>
+        <dd>
+          <span>{{ checkin.bm }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.flag">Flag</span></dt>
+        <dd>
+          <span>{{ checkin.flag }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.jxtime">Jxtime</span></dt>
+        <dd>
+          <span>{{ checkin.jxtime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.jxflag">Jxflag</span></dt>
+        <dd>
+          <span>{{ checkin.jxflag }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.checkf">Checkf</span></dt>
+        <dd>
+          <span>{{ checkin.checkf }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.guestname">Guestname</span></dt>
+        <dd>
+          <span>{{ checkin.guestname }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.fgf">Fgf</span></dt>
+        <dd>
+          <span>{{ checkin.fgf }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.fgxx">Fgxx</span></dt>
+        <dd>
+          <span>{{ checkin.fgxx }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.hourSign">Hour Sign</span></dt>
+        <dd>
+          <span>{{ checkin.hourSign }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.xsy">Xsy</span></dt>
+        <dd>
+          <span>{{ checkin.xsy }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.rzsign">Rzsign</span></dt>
+        <dd>
+          <span>{{ checkin.rzsign }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.jf">Jf</span></dt>
+        <dd>
+          <span>{{ checkin.jf }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.gname">Gname</span></dt>
+        <dd>
+          <span>{{ checkin.gname }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.zcsign">Zcsign</span></dt>
+        <dd>
+          <span>{{ checkin.zcsign }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.cqsl">Cqsl</span></dt>
+        <dd>
+          <span>{{ checkin.cqsl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.sfjf">Sfjf</span></dt>
+        <dd>
+          <span>{{ checkin.sfjf }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.ywly">Ywly</span></dt>
+        <dd>
+          <span>{{ checkin.ywly }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.fk">Fk</span></dt>
+        <dd>
+          <span>{{ checkin.fk }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.fkrq">Fkrq</span></dt>
+        <dd>
+          <span>{{ checkin.fkrq | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.bc">Bc</span></dt>
+        <dd>
+          <span>{{ checkin.bc }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.jxremark">Jxremark</span></dt>
+        <dd>
+          <span>{{ checkin.jxremark }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.txid">Txid</span></dt>
+        <dd>
+          <span>{{ checkin.txid }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.cfr">Cfr</span></dt>
+        <dd>
+          <span>{{ checkin.cfr }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.fjbm">Fjbm</span></dt>
+        <dd>
+          <span>{{ checkin.fjbm }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.djlx">Djlx</span></dt>
+        <dd>
+          <span>{{ checkin.djlx }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.wlddh">Wlddh</span></dt>
+        <dd>
+          <span>{{ checkin.wlddh }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.fksl">Fksl</span></dt>
+        <dd>
+          <span>{{ checkin.fksl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkin.dqtx">Dqtx</span></dt>
+        <dd>
+          <span>{{ checkin.dqtx }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/checkin', checkin.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

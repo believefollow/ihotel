@@ -1,0 +1,26 @@
+{
+  "ihotelApp": {
+    "dDepot": {
+      "home": {
+        "title": "D Depots",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new D Depot",
+        "createOrEditLabel": "Create or edit a D Depot",
+        "search": "Search for D Depot",
+        "notFound": "No D Depots found"
+      },
+      "created": "A new D Depot is created with identifier {{ param }}",
+      "updated": "A D Depot is updated with identifier {{ param }}",
+      "deleted": "A D Depot is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete D Depot {{ id }}?"
+      },
+      "detail": {
+        "title": "D Depot"
+      },
+      "id": "ID",
+      "depotid": "Depotid",
+      "depot": "Depot"
+    }
+  }
+}

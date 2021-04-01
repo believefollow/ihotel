@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="cyCptype">
+      <h2 data-cy="cyCptypeDetailsHeading"><span jhiTranslate="ihotelApp.cyCptype.detail.title">Cy Cptype</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ cyCptype.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.cyCptype.cptdm">Cptdm</span></dt>
+        <dd>
+          <span>{{ cyCptype.cptdm }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.cyCptype.cptname">Cptname</span></dt>
+        <dd>
+          <span>{{ cyCptype.cptname }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.cyCptype.printsign">Printsign</span></dt>
+        <dd>
+          <span>{{ cyCptype.printsign }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.cyCptype.printer">Printer</span></dt>
+        <dd>
+          <span>{{ cyCptype.printer }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.cyCptype.printnum">Printnum</span></dt>
+        <dd>
+          <span>{{ cyCptype.printnum }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.cyCptype.printcut">Printcut</span></dt>
+        <dd>
+          <span>{{ cyCptype.printcut }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.cyCptype.syssign">Syssign</span></dt>
+        <dd>
+          <span>{{ cyCptype.syssign }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.cyCptype.typesign">Typesign</span></dt>
+        <dd>
+          <span>{{ cyCptype.typesign }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.cyCptype.qy">Qy</span></dt>
+        <dd>
+          <span>{{ cyCptype.qy }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/cy-cptype', cyCptype.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

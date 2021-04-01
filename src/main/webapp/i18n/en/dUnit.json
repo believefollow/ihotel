@@ -1,0 +1,25 @@
+{
+  "ihotelApp": {
+    "dUnit": {
+      "home": {
+        "title": "D Units",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new D Unit",
+        "createOrEditLabel": "Create or edit a D Unit",
+        "search": "Search for D Unit",
+        "notFound": "No D Units found"
+      },
+      "created": "A new D Unit is created with identifier {{ param }}",
+      "updated": "A D Unit is updated with identifier {{ param }}",
+      "deleted": "A D Unit is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete D Unit {{ id }}?"
+      },
+      "detail": {
+        "title": "D Unit"
+      },
+      "id": "ID",
+      "unit": "Unit"
+    }
+  }
+}

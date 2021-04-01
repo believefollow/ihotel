@@ -1,0 +1,95 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-dayearndetail-heading"
+        data-cy="DayearndetailCreateUpdateHeading"
+        jhiTranslate="ihotelApp.dayearndetail.home.createOrEditLabel"
+      >
+        Create or edit a Dayearndetail
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dayearndetail.earndate" for="field_earndate">Earndate</label>
+          <div class="d-flex">
+            <input
+              id="field_earndate"
+              data-cy="earndate"
+              type="datetime-local"
+              class="form-control"
+              name="earndate"
+              formControlName="earndate"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+          <div *ngIf="editForm.get('earndate')!.invalid && (editForm.get('earndate')!.dirty || editForm.get('earndate')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('earndate')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('earndate')?.errors?.ZonedDateTimelocal"
+              jhiTranslate="entity.validation.ZonedDateTimelocal"
+            >
+              This field should be a date and time.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dayearndetail.salespotn" for="field_salespotn">Salespotn</label>
+          <input type="number" class="form-control" name="salespotn" id="field_salespotn" data-cy="salespotn" formControlName="salespotn" />
+          <div *ngIf="editForm.get('salespotn')!.invalid && (editForm.get('salespotn')!.dirty || editForm.get('salespotn')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('salespotn')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('salespotn')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dayearndetail.money" for="field_money">Money</label>
+          <input type="number" class="form-control" name="money" id="field_money" data-cy="money" formControlName="money" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

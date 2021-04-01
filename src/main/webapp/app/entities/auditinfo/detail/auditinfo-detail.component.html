@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="auditinfo">
+      <h2 data-cy="auditinfoDetailsHeading"><span jhiTranslate="ihotelApp.auditinfo.detail.title">Auditinfo</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ auditinfo.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.auditinfo.auditdate">Auditdate</span></dt>
+        <dd>
+          <span>{{ auditinfo.auditdate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.auditinfo.audittime">Audittime</span></dt>
+        <dd>
+          <span>{{ auditinfo.audittime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.auditinfo.empn">Empn</span></dt>
+        <dd>
+          <span>{{ auditinfo.empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.auditinfo.aidentify">Aidentify</span></dt>
+        <dd>
+          <span>{{ auditinfo.aidentify }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/auditinfo', auditinfo.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

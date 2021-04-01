@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="fwJywp">
+      <h2 data-cy="fwJywpDetailsHeading"><span jhiTranslate="ihotelApp.fwJywp.detail.title">Fw Jywp</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ihotelApp.fwJywp.id">Id</span></dt>
+        <dd>
+          <span>{{ fwJywp.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwJywp.jyrq">Jyrq</span></dt>
+        <dd>
+          <span>{{ fwJywp.jyrq | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwJywp.roomn">Roomn</span></dt>
+        <dd>
+          <span>{{ fwJywp.roomn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwJywp.guestname">Guestname</span></dt>
+        <dd>
+          <span>{{ fwJywp.guestname }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwJywp.jywp">Jywp</span></dt>
+        <dd>
+          <span>{{ fwJywp.jywp }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwJywp.fwy">Fwy</span></dt>
+        <dd>
+          <span>{{ fwJywp.fwy }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwJywp.djr">Djr</span></dt>
+        <dd>
+          <span>{{ fwJywp.djr }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwJywp.flag" [ngbTooltip]="'ihotelApp.fwJywp.help.flag' | translate">Flag</span></dt>
+        <dd>
+          <span>{{ fwJywp.flag }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwJywp.ghrq">Ghrq</span></dt>
+        <dd>
+          <span>{{ fwJywp.ghrq | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwJywp.djrq">Djrq</span></dt>
+        <dd>
+          <span>{{ fwJywp.djrq | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwJywp.remark">Remark</span></dt>
+        <dd>
+          <span>{{ fwJywp.remark }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/fw-jywp', fwJywp.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

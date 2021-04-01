@@ -1,0 +1,39 @@
+{
+  "name": "VipGuest",
+  "fields": [
+    {
+      "fieldName": "vipcard",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "30"
+    },
+    {
+      "fieldName": "vipCardtypeid",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "groupcard",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "totalconsumer",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "totalintegration",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "vip_guest",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131623"
+}

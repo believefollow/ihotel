@@ -1,0 +1,26 @@
+{
+  "ihotelApp": {
+    "dDept": {
+      "home": {
+        "title": "D Depts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new D Dept",
+        "createOrEditLabel": "Create or edit a D Dept",
+        "search": "Search for D Dept",
+        "notFound": "No D Depts found"
+      },
+      "created": "A new D Dept is created with identifier {{ param }}",
+      "updated": "A D Dept is updated with identifier {{ param }}",
+      "deleted": "A D Dept is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete D Dept {{ id }}?"
+      },
+      "detail": {
+        "title": "D Dept"
+      },
+      "id": "ID",
+      "deptid": "Deptid",
+      "deptname": "Deptname"
+    }
+  }
+}

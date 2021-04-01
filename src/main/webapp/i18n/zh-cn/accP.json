@@ -1,0 +1,25 @@
+{
+  "ihotelApp": {
+    "accP": {
+      "home": {
+        "title": "Acc PS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Acc P",
+        "createOrEditLabel": "创建或编辑 Acc P",
+        "search": "查找 Acc P",
+        "notFound": "No Acc PS found"
+      },
+      "created": "Acc P {{ param }} 创建成功",
+      "updated": "Acc P {{ param }} 更新成功",
+      "deleted": "Acc P {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Acc P {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Acc P"
+      },
+      "id": "ID",
+      "acc": "Acc"
+    }
+  }
+}

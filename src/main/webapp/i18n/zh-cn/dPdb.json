@@ -1,0 +1,46 @@
+{
+  "ihotelApp": {
+    "dPdb": {
+      "home": {
+        "title": "D Pdbs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 D Pdb",
+        "createOrEditLabel": "创建或编辑 D Pdb",
+        "search": "查找 D Pdb",
+        "notFound": "No D Pdbs found"
+      },
+      "created": "D Pdb {{ param }} 创建成功",
+      "updated": "D Pdb {{ param }} 更新成功",
+      "deleted": "D Pdb {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 D Pdb {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "D Pdb"
+      },
+      "id": "Id",
+      "begindate": "Begindate",
+      "enddate": "Enddate",
+      "bm": "Bm",
+      "spmc": "Spmc",
+      "qcsl": "Qcsl",
+      "rksl": "Rksl",
+      "xssl": "Xssl",
+      "dbsl": "Dbsl",
+      "qtck": "Qtck",
+      "jcsl": "Jcsl",
+      "swsl": "Swsl",
+      "pyk": "Pyk",
+      "memo": "Memo",
+      "depot": "Depot",
+      "rkje": "Rkje",
+      "xsje": "Xsje",
+      "dbje": "Dbje",
+      "jcje": "Jcje",
+      "dp": "Dp",
+      "qcje": "Qcje",
+      "swje": "Swje",
+      "qtje": "Qtje"
+    }
+  }
+}

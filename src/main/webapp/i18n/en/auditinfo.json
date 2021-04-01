@@ -1,0 +1,28 @@
+{
+  "ihotelApp": {
+    "auditinfo": {
+      "home": {
+        "title": "Auditinfos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Auditinfo",
+        "createOrEditLabel": "Create or edit a Auditinfo",
+        "search": "Search for Auditinfo",
+        "notFound": "No Auditinfos found"
+      },
+      "created": "A new Auditinfo is created with identifier {{ param }}",
+      "updated": "A Auditinfo is updated with identifier {{ param }}",
+      "deleted": "A Auditinfo is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Auditinfo {{ id }}?"
+      },
+      "detail": {
+        "title": "Auditinfo"
+      },
+      "id": "ID",
+      "auditdate": "Auditdate",
+      "audittime": "Audittime",
+      "empn": "Empn",
+      "aidentify": "Aidentify"
+    }
+  }
+}

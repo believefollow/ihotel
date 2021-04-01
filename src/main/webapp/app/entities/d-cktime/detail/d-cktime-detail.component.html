@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dCktime">
+      <h2 data-cy="dCktimeDetailsHeading"><span jhiTranslate="ihotelApp.dCktime.detail.title">D Cktime</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ dCktime.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCktime.begintime">Begintime</span></dt>
+        <dd>
+          <span>{{ dCktime.begintime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCktime.endtime">Endtime</span></dt>
+        <dd>
+          <span>{{ dCktime.endtime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCktime.depot">Depot</span></dt>
+        <dd>
+          <span>{{ dCktime.depot }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCktime.ckbillno">Ckbillno</span></dt>
+        <dd>
+          <span>{{ dCktime.ckbillno }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/d-cktime', dCktime.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

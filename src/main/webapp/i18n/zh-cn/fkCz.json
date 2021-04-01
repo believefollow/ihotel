@@ -1,0 +1,37 @@
+{
+  "ihotelApp": {
+    "fkCz": {
+      "home": {
+        "title": "Fk Czs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Fk Cz",
+        "createOrEditLabel": "创建或编辑 Fk Cz",
+        "search": "查找 Fk Cz",
+        "notFound": "No Fk Czs found"
+      },
+      "created": "Fk Cz {{ param }} 创建成功",
+      "updated": "Fk Cz {{ param }} 更新成功",
+      "deleted": "Fk Cz {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Fk Cz {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Fk Cz"
+      },
+      "id": "Id",
+      "hoteltime": "Hoteltime",
+      "wxf": "Wxf",
+      "ksf": "Ksf",
+      "kf": "Kf",
+      "zfs": "Zfs",
+      "groupyd": "Groupyd",
+      "skyd": "Skyd",
+      "ydwd": "Ydwd",
+      "qxyd": "Qxyd",
+      "isnew": "Isnew",
+      "hoteldm": "Hoteldm",
+      "hys": "Hys",
+      "khys": "Khys"
+    }
+  }
+}

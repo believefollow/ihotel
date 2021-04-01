@@ -1,0 +1,25 @@
+{
+  "ihotelApp": {
+    "adhoc": {
+      "home": {
+        "title": "Adhocs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Adhoc",
+        "createOrEditLabel": "Create or edit a Adhoc",
+        "search": "Search for Adhoc",
+        "notFound": "No Adhocs found"
+      },
+      "created": "A new Adhoc is created with identifier {{ param }}",
+      "updated": "A Adhoc is updated with identifier {{ param }}",
+      "deleted": "A Adhoc is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Adhoc {{ id }}?"
+      },
+      "detail": {
+        "title": "Adhoc"
+      },
+      "id": "Id",
+      "remark": "Remark"
+    }
+  }
+}

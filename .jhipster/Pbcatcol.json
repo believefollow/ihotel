@@ -1,0 +1,120 @@
+{
+  "name": "Pbcatcol",
+  "fields": [
+    {
+      "fieldName": "pbcTnam",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "65"
+    },
+    {
+      "fieldName": "pbcTid",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pbcOwnr",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "65"
+    },
+    {
+      "fieldName": "pbcCnam",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "65"
+    },
+    {
+      "fieldName": "pbcCid",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pbcLabl",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "254"
+    },
+    {
+      "fieldName": "pbcLpos",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pbcHdr",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "254"
+    },
+    {
+      "fieldName": "pbcHpos",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pbcJtfy",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pbcMask",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "31"
+    },
+    {
+      "fieldName": "pbcCase",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pbcHght",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pbcWdth",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pbcPtrn",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "31"
+    },
+    {
+      "fieldName": "pbcBmap",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "1"
+    },
+    {
+      "fieldName": "pbcInit",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "254"
+    },
+    {
+      "fieldName": "pbcCmnt",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "254"
+    },
+    {
+      "fieldName": "pbcEdit",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "31"
+    },
+    {
+      "fieldName": "pbcTag",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "254"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "pbcatcol",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131420"
+}

@@ -1,0 +1,165 @@
+<div>
+  <h2 id="page-heading" data-cy="DRkHeading">
+    <span jhiTranslate="ihotelApp.dRk.home.title">D Rks</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="ihotelApp.dRk.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-d-rk"
+        [routerLink]="['/d-rk/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span class="hidden-sm-down" jhiTranslate="ihotelApp.dRk.home.createLabel"> Create a new D Rk </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <form name="searchForm" class="form-inline">
+        <div class="input-group w-100 mt-3">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="currentSearch"
+            id="currentSearch"
+            name="currentSearch"
+            placeholder="{{ 'ihotelApp.dRk.home.search' | translate }}"
+          />
+
+          <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+            <fa-icon icon="search"></fa-icon>
+          </button>
+
+          <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+            <fa-icon icon="trash-alt"></fa-icon>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="dRks?.length === 0">
+    <span jhiTranslate="ihotelApp.dRk.home.notFound">No dRks found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="dRks && dRks.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="ihotelApp.dRk.id">Id</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="rkdate"><span jhiTranslate="ihotelApp.dRk.rkdate">Rkdate</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="depot"><span jhiTranslate="ihotelApp.dRk.depot">Depot</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="rklx"><span jhiTranslate="ihotelApp.dRk.rklx">Rklx</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="rkbillno">
+            <span jhiTranslate="ihotelApp.dRk.rkbillno">Rkbillno</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="company"><span jhiTranslate="ihotelApp.dRk.company">Company</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="deptname">
+            <span jhiTranslate="ihotelApp.dRk.deptname">Deptname</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="jbr"><span jhiTranslate="ihotelApp.dRk.jbr">Jbr</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="remark"><span jhiTranslate="ihotelApp.dRk.remark">Remark</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="empn"><span jhiTranslate="ihotelApp.dRk.empn">Empn</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="lrdate"><span jhiTranslate="ihotelApp.dRk.lrdate">Lrdate</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="spbm"><span jhiTranslate="ihotelApp.dRk.spbm">Spbm</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="spmc"><span jhiTranslate="ihotelApp.dRk.spmc">Spmc</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="ggxh"><span jhiTranslate="ihotelApp.dRk.ggxh">Ggxh</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="dw"><span jhiTranslate="ihotelApp.dRk.dw">Dw</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="price"><span jhiTranslate="ihotelApp.dRk.price">Price</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="sl"><span jhiTranslate="ihotelApp.dRk.sl">Sl</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="je"><span jhiTranslate="ihotelApp.dRk.je">Je</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="sign"><span jhiTranslate="ihotelApp.dRk.sign">Sign</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="memo"><span jhiTranslate="ihotelApp.dRk.memo">Memo</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="flag"><span jhiTranslate="ihotelApp.dRk.flag">Flag</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="f1"><span jhiTranslate="ihotelApp.dRk.f1">F 1</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="f2"><span jhiTranslate="ihotelApp.dRk.f2">F 2</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="f1empn"><span jhiTranslate="ihotelApp.dRk.f1empn">F 1 Empn</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="f2empn"><span jhiTranslate="ihotelApp.dRk.f2empn">F 2 Empn</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="f1sj"><span jhiTranslate="ihotelApp.dRk.f1sj">F 1 Sj</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="f2sj"><span jhiTranslate="ihotelApp.dRk.f2sj">F 2 Sj</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dRk of dRks; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/d-rk', dRk.id, 'view']">{{ dRk.id }}</a>
+          </td>
+          <td>{{ dRk.rkdate | formatMediumDatetime }}</td>
+          <td>{{ dRk.depot }}</td>
+          <td>{{ dRk.rklx }}</td>
+          <td>{{ dRk.rkbillno }}</td>
+          <td>{{ dRk.company }}</td>
+          <td>{{ dRk.deptname }}</td>
+          <td>{{ dRk.jbr }}</td>
+          <td>{{ dRk.remark }}</td>
+          <td>{{ dRk.empn }}</td>
+          <td>{{ dRk.lrdate | formatMediumDatetime }}</td>
+          <td>{{ dRk.spbm }}</td>
+          <td>{{ dRk.spmc }}</td>
+          <td>{{ dRk.ggxh }}</td>
+          <td>{{ dRk.dw }}</td>
+          <td>{{ dRk.price }}</td>
+          <td>{{ dRk.sl }}</td>
+          <td>{{ dRk.je }}</td>
+          <td>{{ dRk.sign }}</td>
+          <td>{{ dRk.memo }}</td>
+          <td>{{ dRk.flag }}</td>
+          <td>{{ dRk.f1 }}</td>
+          <td>{{ dRk.f2 }}</td>
+          <td>{{ dRk.f1empn }}</td>
+          <td>{{ dRk.f2empn }}</td>
+          <td>{{ dRk.f1sj | formatMediumDatetime }}</td>
+          <td>{{ dRk.f2sj | formatMediumDatetime }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/d-rk', dRk.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button type="submit" [routerLink]="['/d-rk', dRk.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(dRk)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="dRks && dRks.length > 0">
+    <div class="row justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

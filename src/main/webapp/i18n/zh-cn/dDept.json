@@ -1,0 +1,26 @@
+{
+  "ihotelApp": {
+    "dDept": {
+      "home": {
+        "title": "D Depts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 D Dept",
+        "createOrEditLabel": "创建或编辑 D Dept",
+        "search": "查找 D Dept",
+        "notFound": "No D Depts found"
+      },
+      "created": "D Dept {{ param }} 创建成功",
+      "updated": "D Dept {{ param }} 更新成功",
+      "deleted": "D Dept {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 D Dept {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "D Dept"
+      },
+      "id": "ID",
+      "deptid": "Deptid",
+      "deptname": "Deptname"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "ihotelApp": {
+    "ck2xsy": {
+      "home": {
+        "title": "Ck 2 Xsies",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Ck 2 Xsy",
+        "createOrEditLabel": "Create or edit a Ck 2 Xsy",
+        "search": "Search for Ck 2 Xsy",
+        "notFound": "No Ck 2 Xsies found"
+      },
+      "created": "A new Ck 2 Xsy is created with identifier {{ param }}",
+      "updated": "A Ck 2 Xsy is updated with identifier {{ param }}",
+      "deleted": "A Ck 2 Xsy is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Ck 2 Xsy {{ id }}?"
+      },
+      "detail": {
+        "title": "Ck 2 Xsy"
+      },
+      "id": "ID",
+      "rq": "Rq",
+      "cpbh": "Cpbh",
+      "sl": "Sl"
+    }
+  }
+}

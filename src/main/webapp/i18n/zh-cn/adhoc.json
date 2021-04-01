@@ -1,0 +1,25 @@
+{
+  "ihotelApp": {
+    "adhoc": {
+      "home": {
+        "title": "Adhocs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Adhoc",
+        "createOrEditLabel": "创建或编辑 Adhoc",
+        "search": "查找 Adhoc",
+        "notFound": "No Adhocs found"
+      },
+      "created": "Adhoc {{ param }} 创建成功",
+      "updated": "Adhoc {{ param }} 更新成功",
+      "deleted": "Adhoc {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Adhoc {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Adhoc"
+      },
+      "id": "Id",
+      "remark": "Remark"
+    }
+  }
+}

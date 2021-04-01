@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="fwYlwp">
+      <h2 data-cy="fwYlwpDetailsHeading"><span jhiTranslate="ihotelApp.fwYlwp.detail.title">Fw Ylwp</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ihotelApp.fwYlwp.id">Id</span></dt>
+        <dd>
+          <span>{{ fwYlwp.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwYlwp.roomn">Roomn</span></dt>
+        <dd>
+          <span>{{ fwYlwp.roomn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwYlwp.guestname">Guestname</span></dt>
+        <dd>
+          <span>{{ fwYlwp.guestname }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwYlwp.memo">Memo</span></dt>
+        <dd>
+          <span>{{ fwYlwp.memo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwYlwp.sdr">Sdr</span></dt>
+        <dd>
+          <span>{{ fwYlwp.sdr }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwYlwp.sdrq">Sdrq</span></dt>
+        <dd>
+          <span>{{ fwYlwp.sdrq | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwYlwp.rlr">Rlr</span></dt>
+        <dd>
+          <span>{{ fwYlwp.rlr }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwYlwp.rlrq">Rlrq</span></dt>
+        <dd>
+          <span>{{ fwYlwp.rlrq | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwYlwp.remark">Remark</span></dt>
+        <dd>
+          <span>{{ fwYlwp.remark }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwYlwp.empn">Empn</span></dt>
+        <dd>
+          <span>{{ fwYlwp.empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwYlwp.czrq">Czrq</span></dt>
+        <dd>
+          <span>{{ fwYlwp.czrq | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwYlwp.flag" [ngbTooltip]="'ihotelApp.fwYlwp.help.flag' | translate">Flag</span></dt>
+        <dd>
+          <span>{{ fwYlwp.flag }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/fw-ylwp', fwYlwp.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

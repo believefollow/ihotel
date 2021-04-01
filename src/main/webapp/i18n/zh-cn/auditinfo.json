@@ -1,0 +1,28 @@
+{
+  "ihotelApp": {
+    "auditinfo": {
+      "home": {
+        "title": "Auditinfos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Auditinfo",
+        "createOrEditLabel": "创建或编辑 Auditinfo",
+        "search": "查找 Auditinfo",
+        "notFound": "No Auditinfos found"
+      },
+      "created": "Auditinfo {{ param }} 创建成功",
+      "updated": "Auditinfo {{ param }} 更新成功",
+      "deleted": "Auditinfo {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Auditinfo {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Auditinfo"
+      },
+      "id": "ID",
+      "auditdate": "Auditdate",
+      "audittime": "Audittime",
+      "empn": "Empn",
+      "aidentify": "Aidentify"
+    }
+  }
+}

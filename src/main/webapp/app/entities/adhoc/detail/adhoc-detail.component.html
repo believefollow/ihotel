@@ -1,0 +1,32 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="adhoc">
+      <h2 data-cy="adhocDetailsHeading"><span jhiTranslate="ihotelApp.adhoc.detail.title">Adhoc</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ihotelApp.adhoc.id">Id</span></dt>
+        <dd>
+          <span>{{ adhoc.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.adhoc.remark">Remark</span></dt>
+        <dd>
+          <span>{{ adhoc.remark }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/adhoc', adhoc.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

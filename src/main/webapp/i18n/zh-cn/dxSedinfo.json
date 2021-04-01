@@ -1,0 +1,46 @@
+{
+  "ihotelApp": {
+    "dxSedinfo": {
+      "home": {
+        "title": "Dx Sedinfos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Dx Sedinfo",
+        "createOrEditLabel": "创建或编辑 Dx Sedinfo",
+        "search": "查找 Dx Sedinfo",
+        "notFound": "No Dx Sedinfos found"
+      },
+      "created": "Dx Sedinfo {{ param }} 创建成功",
+      "updated": "Dx Sedinfo {{ param }} 更新成功",
+      "deleted": "Dx Sedinfo {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Dx Sedinfo {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Dx Sedinfo"
+      },
+      "id": "Id",
+      "yddx": "Yddx",
+      "yddxmemo": "Yddxmemo",
+      "qxyddx": "Qxyddx",
+      "qxydmemo": "Qxydmemo",
+      "czdx": "Czdx",
+      "czmemo": "Czmemo",
+      "qxczdx": "Qxczdx",
+      "qxczmemo": "Qxczmemo",
+      "yyedx": "Yyedx",
+      "yyememo": "Yyememo",
+      "fstime": "Fstime",
+      "sffshm": "Sffshm",
+      "rzdx": "Rzdx",
+      "rzdxroomn": "Rzdxroomn",
+      "jfdz": "Jfdz",
+      "blhy": "Blhy",
+      "rzmemo": "Rzmemo",
+      "blhymemo": "Blhymemo",
+      "tfdx": "Tfdx",
+      "tfdxmemo": "Tfdxmemo",
+      "fslb": "Fslb",
+      "fslbmemo": "Fslbmemo"
+    }
+  }
+}

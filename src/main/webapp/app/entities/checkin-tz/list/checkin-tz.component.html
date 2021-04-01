@@ -1,0 +1,181 @@
+<div>
+  <h2 id="page-heading" data-cy="CheckinTzHeading">
+    <span jhiTranslate="ihotelApp.checkinTz.home.title">Checkin Tzs</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="ihotelApp.checkinTz.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-checkin-tz"
+        [routerLink]="['/checkin-tz/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span class="hidden-sm-down" jhiTranslate="ihotelApp.checkinTz.home.createLabel"> Create a new Checkin Tz </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <form name="searchForm" class="form-inline">
+        <div class="input-group w-100 mt-3">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="currentSearch"
+            id="currentSearch"
+            name="currentSearch"
+            placeholder="{{ 'ihotelApp.checkinTz.home.search' | translate }}"
+          />
+
+          <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+            <fa-icon icon="search"></fa-icon>
+          </button>
+
+          <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+            <fa-icon icon="trash-alt"></fa-icon>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="checkinTzs?.length === 0">
+    <span jhiTranslate="ihotelApp.checkinTz.home.notFound">No checkinTzs found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="checkinTzs && checkinTzs.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="guestId">
+            <span jhiTranslate="ihotelApp.checkinTz.guestId">Guest Id</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="account">
+            <span jhiTranslate="ihotelApp.checkinTz.account">Account</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="hoteltime">
+            <span jhiTranslate="ihotelApp.checkinTz.hoteltime">Hoteltime</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="indatetime">
+            <span jhiTranslate="ihotelApp.checkinTz.indatetime">Indatetime</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="residefate">
+            <span jhiTranslate="ihotelApp.checkinTz.residefate">Residefate</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="gotime">
+            <span jhiTranslate="ihotelApp.checkinTz.gotime">Gotime</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="empn"><span jhiTranslate="ihotelApp.checkinTz.empn">Empn</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="roomn"><span jhiTranslate="ihotelApp.checkinTz.roomn">Roomn</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="rentp"><span jhiTranslate="ihotelApp.checkinTz.rentp">Rentp</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="protocolrent">
+            <span jhiTranslate="ihotelApp.checkinTz.protocolrent">Protocolrent</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="remark">
+            <span jhiTranslate="ihotelApp.checkinTz.remark">Remark</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="phonen">
+            <span jhiTranslate="ihotelApp.checkinTz.phonen">Phonen</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="empn2">
+            <span jhiTranslate="ihotelApp.checkinTz.empn2">Empn 2</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="memo"><span jhiTranslate="ihotelApp.checkinTz.memo">Memo</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="lfSign">
+            <span jhiTranslate="ihotelApp.checkinTz.lfSign">Lf Sign</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="guestname">
+            <span jhiTranslate="ihotelApp.checkinTz.guestname">Guestname</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="bc"><span jhiTranslate="ihotelApp.checkinTz.bc">Bc</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="roomtype">
+            <span jhiTranslate="ihotelApp.checkinTz.roomtype">Roomtype</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let checkinTz of checkinTzs; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/checkin-tz', checkinTz.id, 'view']">{{ checkinTz.id }}</a>
+          </td>
+          <td>{{ checkinTz.guestId }}</td>
+          <td>{{ checkinTz.account }}</td>
+          <td>{{ checkinTz.hoteltime | formatMediumDatetime }}</td>
+          <td>{{ checkinTz.indatetime | formatMediumDatetime }}</td>
+          <td>{{ checkinTz.residefate }}</td>
+          <td>{{ checkinTz.gotime | formatMediumDatetime }}</td>
+          <td>{{ checkinTz.empn }}</td>
+          <td>{{ checkinTz.roomn }}</td>
+          <td>{{ checkinTz.rentp }}</td>
+          <td>{{ checkinTz.protocolrent }}</td>
+          <td>{{ checkinTz.remark }}</td>
+          <td>{{ checkinTz.phonen }}</td>
+          <td>{{ checkinTz.empn2 }}</td>
+          <td>{{ checkinTz.memo }}</td>
+          <td>{{ checkinTz.lfSign }}</td>
+          <td>{{ checkinTz.guestname }}</td>
+          <td>{{ checkinTz.bc }}</td>
+          <td>{{ checkinTz.roomtype }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/checkin-tz', checkinTz.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/checkin-tz', checkinTz.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(checkinTz)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="checkinTzs && checkinTzs.length > 0">
+    <div class="row justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

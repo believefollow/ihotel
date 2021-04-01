@@ -1,0 +1,157 @@
+<div>
+  <h2 id="page-heading" data-cy="CheckinAccountHeading">
+    <span jhiTranslate="ihotelApp.checkinAccount.home.title">Checkin Accounts</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="ihotelApp.checkinAccount.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-checkin-account"
+        [routerLink]="['/checkin-account/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span class="hidden-sm-down" jhiTranslate="ihotelApp.checkinAccount.home.createLabel"> Create a new Checkin Account </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <form name="searchForm" class="form-inline">
+        <div class="input-group w-100 mt-3">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="currentSearch"
+            id="currentSearch"
+            name="currentSearch"
+            placeholder="{{ 'ihotelApp.checkinAccount.home.search' | translate }}"
+          />
+
+          <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+            <fa-icon icon="search"></fa-icon>
+          </button>
+
+          <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+            <fa-icon icon="trash-alt"></fa-icon>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="checkinAccounts?.length === 0">
+    <span jhiTranslate="ihotelApp.checkinAccount.home.notFound">No checkinAccounts found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="checkinAccounts && checkinAccounts.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="account">
+            <span jhiTranslate="ihotelApp.checkinAccount.account">Account</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="roomn">
+            <span jhiTranslate="ihotelApp.checkinAccount.roomn">Roomn</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="indatetime">
+            <span jhiTranslate="ihotelApp.checkinAccount.indatetime">Indatetime</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="gotime">
+            <span jhiTranslate="ihotelApp.checkinAccount.gotime">Gotime</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="kfang">
+            <span jhiTranslate="ihotelApp.checkinAccount.kfang">Kfang</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="dhua">
+            <span jhiTranslate="ihotelApp.checkinAccount.dhua">Dhua</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="minin">
+            <span jhiTranslate="ihotelApp.checkinAccount.minin">Minin</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="peich">
+            <span jhiTranslate="ihotelApp.checkinAccount.peich">Peich</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="qit"><span jhiTranslate="ihotelApp.checkinAccount.qit">Qit</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="total">
+            <span jhiTranslate="ihotelApp.checkinAccount.total">Total</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let checkinAccount of checkinAccounts; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/checkin-account', checkinAccount.id, 'view']">{{ checkinAccount.id }}</a>
+          </td>
+          <td>{{ checkinAccount.account }}</td>
+          <td>{{ checkinAccount.roomn }}</td>
+          <td>{{ checkinAccount.indatetime | formatMediumDatetime }}</td>
+          <td>{{ checkinAccount.gotime | formatMediumDatetime }}</td>
+          <td>{{ checkinAccount.kfang }}</td>
+          <td>{{ checkinAccount.dhua }}</td>
+          <td>{{ checkinAccount.minin }}</td>
+          <td>{{ checkinAccount.peich }}</td>
+          <td>{{ checkinAccount.qit }}</td>
+          <td>{{ checkinAccount.total }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/checkin-account', checkinAccount.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/checkin-account', checkinAccount.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(checkinAccount)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="checkinAccounts && checkinAccounts.length > 0">
+    <div class="row justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>
