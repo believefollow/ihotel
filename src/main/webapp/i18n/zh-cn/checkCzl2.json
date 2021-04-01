@@ -1,0 +1,32 @@
+{
+  "ihotelApp": {
+    "checkCzl2": {
+      "home": {
+        "title": "Check Czl 2 S",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Check Czl 2",
+        "createOrEditLabel": "创建或编辑 Check Czl 2",
+        "search": "查找 Check Czl 2",
+        "notFound": "No Check Czl 2 S found"
+      },
+      "created": "Check Czl 2 {{ param }} 创建成功",
+      "updated": "Check Czl 2 {{ param }} 更新成功",
+      "deleted": "Check Czl 2 {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Check Czl 2 {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Check Czl 2"
+      },
+      "id": "ID",
+      "hoteltime": "Hoteltime",
+      "protocol": "Protocol",
+      "rnum": "Rnum",
+      "czl": "Czl",
+      "chagrge": "Chagrge",
+      "chagrgeAvg": "Chagrge Avg",
+      "empn": "Empn",
+      "entertime": "Entertime"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "ihotelApp": {
+    "dDepot": {
+      "home": {
+        "title": "D Depots",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 D Depot",
+        "createOrEditLabel": "创建或编辑 D Depot",
+        "search": "查找 D Depot",
+        "notFound": "No D Depots found"
+      },
+      "created": "D Depot {{ param }} 创建成功",
+      "updated": "D Depot {{ param }} 更新成功",
+      "deleted": "D Depot {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 D Depot {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "D Depot"
+      },
+      "id": "ID",
+      "depotid": "Depotid",
+      "depot": "Depot"
+    }
+  }
+}

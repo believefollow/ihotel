@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="fwWxf">
+      <h2 data-cy="fwWxfDetailsHeading"><span jhiTranslate="ihotelApp.fwWxf.detail.title">Fw Wxf</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ihotelApp.fwWxf.id">Id</span></dt>
+        <dd>
+          <span>{{ fwWxf.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwWxf.roomn">Roomn</span></dt>
+        <dd>
+          <span>{{ fwWxf.roomn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwWxf.memo">Memo</span></dt>
+        <dd>
+          <span>{{ fwWxf.memo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwWxf.djrq">Djrq</span></dt>
+        <dd>
+          <span>{{ fwWxf.djrq | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwWxf.wxr">Wxr</span></dt>
+        <dd>
+          <span>{{ fwWxf.wxr }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwWxf.wcrq">Wcrq</span></dt>
+        <dd>
+          <span>{{ fwWxf.wcrq | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwWxf.djr">Djr</span></dt>
+        <dd>
+          <span>{{ fwWxf.djr }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwWxf.flag">Flag</span></dt>
+        <dd>
+          <span>{{ fwWxf.flag }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/fw-wxf', fwWxf.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

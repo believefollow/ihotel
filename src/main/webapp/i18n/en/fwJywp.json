@@ -1,0 +1,37 @@
+{
+  "ihotelApp": {
+    "fwJywp": {
+      "home": {
+        "title": "Fw Jywps",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Fw Jywp",
+        "createOrEditLabel": "Create or edit a Fw Jywp",
+        "search": "Search for Fw Jywp",
+        "notFound": "No Fw Jywps found"
+      },
+      "created": "A new Fw Jywp is created with identifier {{ param }}",
+      "updated": "A Fw Jywp is updated with identifier {{ param }}",
+      "deleted": "A Fw Jywp is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Fw Jywp {{ id }}?"
+      },
+      "detail": {
+        "title": "Fw Jywp"
+      },
+      "id": "Id",
+      "jyrq": "Jyrq",
+      "roomn": "Roomn",
+      "guestname": "Guestname",
+      "jywp": "Jywp",
+      "fwy": "Fwy",
+      "djr": "Djr",
+      "flag": "Flag",
+      "ghrq": "Ghrq",
+      "djrq": "Djrq",
+      "remark": "Remark",
+      "help": {
+        "flag": "是否归还"
+      }
+    }
+  }
+}

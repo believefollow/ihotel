@@ -1,0 +1,54 @@
+{
+  "name": "TbRoom",
+  "fields": [
+    {
+      "fieldName": "fRoomno",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "6"
+    },
+    {
+      "fieldName": "fLouno",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "1"
+    },
+    {
+      "fieldName": "fFloorno",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "fPerson",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "fCardno",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "fEndtime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "fCardid",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "fSele",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "1"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "tb_room",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131607"
+}

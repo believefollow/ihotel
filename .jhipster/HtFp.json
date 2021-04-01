@@ -1,0 +1,81 @@
+{
+  "name": "HtFp",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "account",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "roomn",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "guestname",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "fphm",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "xfe",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "fpje",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "empn",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "rq",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "hoteltime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "zpe",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "zxf",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "sign",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "ht_fp",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131353"
+}

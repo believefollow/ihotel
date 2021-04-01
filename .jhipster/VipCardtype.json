@@ -1,0 +1,97 @@
+{
+  "name": "VipCardtype",
+  "fields": [
+    {
+      "fieldName": "cardname",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "cardtype",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "kfrent",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "zcrent",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "xcrent",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "xxrent",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "czcardrate",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "initintegration",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "jfgz",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "45"
+    },
+    {
+      "fieldName": "types",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "jfsign",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "jfpoint",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "kkzsjf",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "jdcz",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "spzk",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "srjf",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "vip_cardtype",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131618"
+}

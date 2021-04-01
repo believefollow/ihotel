@@ -1,0 +1,37 @@
+{
+  "ihotelApp": {
+    "cardysq": {
+      "home": {
+        "title": "Cardysqs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Cardysq",
+        "createOrEditLabel": "创建或编辑 Cardysq",
+        "search": "查找 Cardysq",
+        "notFound": "No Cardysqs found"
+      },
+      "created": "Cardysq {{ param }} 创建成功",
+      "updated": "Cardysq {{ param }} 更新成功",
+      "deleted": "Cardysq {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Cardysq {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Cardysq"
+      },
+      "id": "Id",
+      "roomn": "Roomn",
+      "guestname": "Guestname",
+      "account": "Account",
+      "rq": "Rq",
+      "cardid": "Cardid",
+      "djh": "Djh",
+      "sqh": "Sqh",
+      "empn": "Empn",
+      "sign": "Sign",
+      "hoteltime": "Hoteltime",
+      "yxrq": "Yxrq",
+      "je": "Je",
+      "ysqmemo": "Ysqmemo"
+    }
+  }
+}

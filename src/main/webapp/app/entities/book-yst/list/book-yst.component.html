@@ -1,0 +1,271 @@
+<div>
+  <h2 id="page-heading" data-cy="BookYstHeading">
+    <span jhiTranslate="ihotelApp.bookYst.home.title">Book Ysts</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="ihotelApp.bookYst.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-book-yst"
+        [routerLink]="['/book-yst/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span class="hidden-sm-down" jhiTranslate="ihotelApp.bookYst.home.createLabel"> Create a new Book Yst </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <form name="searchForm" class="form-inline">
+        <div class="input-group w-100 mt-3">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="currentSearch"
+            id="currentSearch"
+            name="currentSearch"
+            placeholder="{{ 'ihotelApp.bookYst.home.search' | translate }}"
+          />
+
+          <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+            <fa-icon icon="search"></fa-icon>
+          </button>
+
+          <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+            <fa-icon icon="trash-alt"></fa-icon>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="bookYsts?.length === 0">
+    <span jhiTranslate="ihotelApp.bookYst.home.notFound">No bookYsts found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="bookYsts && bookYsts.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="roomcode">
+            <span jhiTranslate="ihotelApp.bookYst.roomcode">Roomcode</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="roomname">
+            <span jhiTranslate="ihotelApp.bookYst.roomname">Roomname</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="roomnum">
+            <span jhiTranslate="ihotelApp.bookYst.roomnum">Roomnum</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="roomseparatenum">
+            <span jhiTranslate="ihotelApp.bookYst.roomseparatenum">Roomseparatenum</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="bedids">
+            <span jhiTranslate="ihotelApp.bookYst.bedids">Bedids</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="bedsimpledesc">
+            <span jhiTranslate="ihotelApp.bookYst.bedsimpledesc">Bedsimpledesc</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="bednum">
+            <span jhiTranslate="ihotelApp.bookYst.bednum">Bednum</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="roomsize">
+            <span jhiTranslate="ihotelApp.bookYst.roomsize">Roomsize</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="roomfloor">
+            <span jhiTranslate="ihotelApp.bookYst.roomfloor">Roomfloor</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="netservice">
+            <span jhiTranslate="ihotelApp.bookYst.netservice">Netservice</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="nettype">
+            <span jhiTranslate="ihotelApp.bookYst.nettype">Nettype</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="iswindow">
+            <span jhiTranslate="ihotelApp.bookYst.iswindow">Iswindow</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="remark">
+            <span jhiTranslate="ihotelApp.bookYst.remark">Remark</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="sortid">
+            <span jhiTranslate="ihotelApp.bookYst.sortid">Sortid</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="roomstate">
+            <span jhiTranslate="ihotelApp.bookYst.roomstate">Roomstate</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="source">
+            <span jhiTranslate="ihotelApp.bookYst.source">Source</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="roomamenities">
+            <span jhiTranslate="ihotelApp.bookYst.roomamenities">Roomamenities</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="maxguestnums">
+            <span jhiTranslate="ihotelApp.bookYst.maxguestnums">Maxguestnums</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="roomdistribution">
+            <span jhiTranslate="ihotelApp.bookYst.roomdistribution">Roomdistribution</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="conditionbeforedays">
+            <span jhiTranslate="ihotelApp.bookYst.conditionbeforedays">Conditionbeforedays</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="conditionleastdays">
+            <span jhiTranslate="ihotelApp.bookYst.conditionleastdays">Conditionleastdays</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="conditionleastroomnum">
+            <span jhiTranslate="ihotelApp.bookYst.conditionleastroomnum">Conditionleastroomnum</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="paymentype">
+            <span jhiTranslate="ihotelApp.bookYst.paymentype">Paymentype</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="rateplandesc">
+            <span jhiTranslate="ihotelApp.bookYst.rateplandesc">Rateplandesc</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="rateplanname">
+            <span jhiTranslate="ihotelApp.bookYst.rateplanname">Rateplanname</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="rateplanstate">
+            <span jhiTranslate="ihotelApp.bookYst.rateplanstate">Rateplanstate</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="addvaluebednum">
+            <span jhiTranslate="ihotelApp.bookYst.addvaluebednum">Addvaluebednum</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="addvaluebedprice">
+            <span jhiTranslate="ihotelApp.bookYst.addvaluebedprice">Addvaluebedprice</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="addvaluebreakfastnum">
+            <span jhiTranslate="ihotelApp.bookYst.addvaluebreakfastnum">Addvaluebreakfastnum</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="addvaluebreakfastprice">
+            <span jhiTranslate="ihotelApp.bookYst.addvaluebreakfastprice">Addvaluebreakfastprice</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="baseprice">
+            <span jhiTranslate="ihotelApp.bookYst.baseprice">Baseprice</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="saleprice">
+            <span jhiTranslate="ihotelApp.bookYst.saleprice">Saleprice</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="marketprice">
+            <span jhiTranslate="ihotelApp.bookYst.marketprice">Marketprice</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="hotelproductservice">
+            <span jhiTranslate="ihotelApp.bookYst.hotelproductservice">Hotelproductservice</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="hotelproductservicedesc">
+            <span jhiTranslate="ihotelApp.bookYst.hotelproductservicedesc">Hotelproductservicedesc</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="hotelproductid">
+            <span jhiTranslate="ihotelApp.bookYst.hotelproductid">Hotelproductid</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="roomid">
+            <span jhiTranslate="ihotelApp.bookYst.roomid">Roomid</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="hotelid">
+            <span jhiTranslate="ihotelApp.bookYst.hotelid">Hotelid</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let bookYst of bookYsts; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/book-yst', bookYst.id, 'view']">{{ bookYst.id }}</a>
+          </td>
+          <td>{{ bookYst.roomcode }}</td>
+          <td>{{ bookYst.roomname }}</td>
+          <td>{{ bookYst.roomnum }}</td>
+          <td>{{ bookYst.roomseparatenum }}</td>
+          <td>{{ bookYst.bedids }}</td>
+          <td>{{ bookYst.bedsimpledesc }}</td>
+          <td>{{ bookYst.bednum }}</td>
+          <td>{{ bookYst.roomsize }}</td>
+          <td>{{ bookYst.roomfloor }}</td>
+          <td>{{ bookYst.netservice }}</td>
+          <td>{{ bookYst.nettype }}</td>
+          <td>{{ bookYst.iswindow }}</td>
+          <td>{{ bookYst.remark }}</td>
+          <td>{{ bookYst.sortid }}</td>
+          <td>{{ bookYst.roomstate }}</td>
+          <td>{{ bookYst.source }}</td>
+          <td>{{ bookYst.roomamenities }}</td>
+          <td>{{ bookYst.maxguestnums }}</td>
+          <td>{{ bookYst.roomdistribution }}</td>
+          <td>{{ bookYst.conditionbeforedays }}</td>
+          <td>{{ bookYst.conditionleastdays }}</td>
+          <td>{{ bookYst.conditionleastroomnum }}</td>
+          <td>{{ bookYst.paymentype }}</td>
+          <td>{{ bookYst.rateplandesc }}</td>
+          <td>{{ bookYst.rateplanname }}</td>
+          <td>{{ bookYst.rateplanstate }}</td>
+          <td>{{ bookYst.addvaluebednum }}</td>
+          <td>{{ bookYst.addvaluebedprice }}</td>
+          <td>{{ bookYst.addvaluebreakfastnum }}</td>
+          <td>{{ bookYst.addvaluebreakfastprice }}</td>
+          <td>{{ bookYst.baseprice }}</td>
+          <td>{{ bookYst.saleprice }}</td>
+          <td>{{ bookYst.marketprice }}</td>
+          <td>{{ bookYst.hotelproductservice }}</td>
+          <td>{{ bookYst.hotelproductservicedesc }}</td>
+          <td>{{ bookYst.hotelproductid }}</td>
+          <td>{{ bookYst.roomid }}</td>
+          <td>{{ bookYst.hotelid }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/book-yst', bookYst.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/book-yst', bookYst.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(bookYst)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="bookYsts && bookYsts.length > 0">
+    <div class="row justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

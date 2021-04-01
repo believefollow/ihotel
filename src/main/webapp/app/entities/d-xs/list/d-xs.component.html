@@ -1,0 +1,141 @@
+<div>
+  <h2 id="page-heading" data-cy="DXsHeading">
+    <span jhiTranslate="ihotelApp.dXs.home.title">D Xs</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="ihotelApp.dXs.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-d-xs"
+        [routerLink]="['/d-xs/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span class="hidden-sm-down" jhiTranslate="ihotelApp.dXs.home.createLabel"> Create a new D Xs </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <form name="searchForm" class="form-inline">
+        <div class="input-group w-100 mt-3">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="currentSearch"
+            id="currentSearch"
+            name="currentSearch"
+            placeholder="{{ 'ihotelApp.dXs.home.search' | translate }}"
+          />
+
+          <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+            <fa-icon icon="search"></fa-icon>
+          </button>
+
+          <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+            <fa-icon icon="trash-alt"></fa-icon>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="dXs?.length === 0">
+    <span jhiTranslate="ihotelApp.dXs.home.notFound">No dXs found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="dXs && dXs.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="ihotelApp.dXs.id">Id</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="begintime">
+            <span jhiTranslate="ihotelApp.dXs.begintime">Begintime</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="endtime"><span jhiTranslate="ihotelApp.dXs.endtime">Endtime</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="ckbillno">
+            <span jhiTranslate="ihotelApp.dXs.ckbillno">Ckbillno</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="depot"><span jhiTranslate="ihotelApp.dXs.depot">Depot</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="kcid"><span jhiTranslate="ihotelApp.dXs.kcid">Kcid</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="ckid"><span jhiTranslate="ihotelApp.dXs.ckid">Ckid</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="spbm"><span jhiTranslate="ihotelApp.dXs.spbm">Spbm</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="spmc"><span jhiTranslate="ihotelApp.dXs.spmc">Spmc</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="unit"><span jhiTranslate="ihotelApp.dXs.unit">Unit</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="rkprice"><span jhiTranslate="ihotelApp.dXs.rkprice">Rkprice</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="xsprice"><span jhiTranslate="ihotelApp.dXs.xsprice">Xsprice</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="sl"><span jhiTranslate="ihotelApp.dXs.sl">Sl</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="rkje"><span jhiTranslate="ihotelApp.dXs.rkje">Rkje</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="xsje"><span jhiTranslate="ihotelApp.dXs.xsje">Xsje</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dXs of dXs; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/d-xs', dXs.id, 'view']">{{ dXs.id }}</a>
+          </td>
+          <td>{{ dXs.begintime | formatMediumDatetime }}</td>
+          <td>{{ dXs.endtime | formatMediumDatetime }}</td>
+          <td>{{ dXs.ckbillno }}</td>
+          <td>{{ dXs.depot }}</td>
+          <td>{{ dXs.kcid }}</td>
+          <td>{{ dXs.ckid }}</td>
+          <td>{{ dXs.spbm }}</td>
+          <td>{{ dXs.spmc }}</td>
+          <td>{{ dXs.unit }}</td>
+          <td>{{ dXs.rkprice }}</td>
+          <td>{{ dXs.xsprice }}</td>
+          <td>{{ dXs.sl }}</td>
+          <td>{{ dXs.rkje }}</td>
+          <td>{{ dXs.xsje }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/d-xs', dXs.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button type="submit" [routerLink]="['/d-xs', dXs.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(dXs)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="dXs && dXs.length > 0">
+    <div class="row justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

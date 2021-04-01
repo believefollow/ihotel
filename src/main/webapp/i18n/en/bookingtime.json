@@ -1,0 +1,32 @@
+{
+  "ihotelApp": {
+    "bookingtime": {
+      "home": {
+        "title": "Bookingtimes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Bookingtime",
+        "createOrEditLabel": "Create or edit a Bookingtime",
+        "search": "Search for Bookingtime",
+        "notFound": "No Bookingtimes found"
+      },
+      "created": "A new Bookingtime is created with identifier {{ param }}",
+      "updated": "A Bookingtime is updated with identifier {{ param }}",
+      "deleted": "A Bookingtime is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Bookingtime {{ id }}?"
+      },
+      "detail": {
+        "title": "Bookingtime"
+      },
+      "id": "Id",
+      "bookid": "Bookid",
+      "roomn": "Roomn",
+      "booktime": "Booktime",
+      "rtype": "Rtype",
+      "sl": "Sl",
+      "remark": "Remark",
+      "sign": "Sign",
+      "rzsign": "Rzsign"
+    }
+  }
+}

@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="fwDs">
+      <h2 data-cy="fwDsDetailsHeading"><span jhiTranslate="ihotelApp.fwDs.detail.title">Fw Ds</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ihotelApp.fwDs.id">Id</span></dt>
+        <dd>
+          <span>{{ fwDs.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwDs.hoteltime">Hoteltime</span></dt>
+        <dd>
+          <span>{{ fwDs.hoteltime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwDs.rq">Rq</span></dt>
+        <dd>
+          <span>{{ fwDs.rq | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwDs.xz">Xz</span></dt>
+        <dd>
+          <span>{{ fwDs.xz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwDs.memo">Memo</span></dt>
+        <dd>
+          <span>{{ fwDs.memo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwDs.fwy">Fwy</span></dt>
+        <dd>
+          <span>{{ fwDs.fwy }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwDs.roomn">Roomn</span></dt>
+        <dd>
+          <span>{{ fwDs.roomn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwDs.rtype">Rtype</span></dt>
+        <dd>
+          <span>{{ fwDs.rtype }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwDs.empn">Empn</span></dt>
+        <dd>
+          <span>{{ fwDs.empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwDs.sl">Sl</span></dt>
+        <dd>
+          <span>{{ fwDs.sl }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/fw-ds', fwDs.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

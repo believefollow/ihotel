@@ -1,0 +1,27 @@
+{
+  "ihotelApp": {
+    "dxSed": {
+      "home": {
+        "title": "Dx Seds",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Dx Sed",
+        "createOrEditLabel": "创建或编辑 Dx Sed",
+        "search": "查找 Dx Sed",
+        "notFound": "No Dx Seds found"
+      },
+      "created": "Dx Sed {{ param }} 创建成功",
+      "updated": "Dx Sed {{ param }} 更新成功",
+      "deleted": "Dx Sed {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Dx Sed {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Dx Sed"
+      },
+      "id": "Id",
+      "dxRq": "Dx Rq",
+      "dxZt": "Dx Zt",
+      "fsSj": "Fs Sj"
+    }
+  }
+}

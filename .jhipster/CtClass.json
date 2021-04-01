@@ -1,0 +1,87 @@
+{
+  "name": "CtClass",
+  "fields": [
+    {
+      "fieldName": "dt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "empn",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "10"
+    },
+    {
+      "fieldName": "flag",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "jbempn",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "gotime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "xj",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "zp",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "sk",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "hyk",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "cq",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "gz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "gfz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "yq",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "yh",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "zzh",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "checkSign",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "ct_class",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131251"
+}

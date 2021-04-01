@@ -1,0 +1,29 @@
+{
+  "ihotelApp": {
+    "czCzl3": {
+      "home": {
+        "title": "Cz Czl 3 S",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Cz Czl 3",
+        "createOrEditLabel": "Create or edit a Cz Czl 3",
+        "search": "Search for Cz Czl 3",
+        "notFound": "No Cz Czl 3 S found"
+      },
+      "created": "A new Cz Czl 3 is created with identifier {{ param }}",
+      "updated": "A Cz Czl 3 is updated with identifier {{ param }}",
+      "deleted": "A Cz Czl 3 is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Cz Czl 3 {{ id }}?"
+      },
+      "detail": {
+        "title": "Cz Czl 3"
+      },
+      "id": "ID",
+      "zfs": "Zfs",
+      "kfs": "Kfs",
+      "protocoln": "Protocoln",
+      "roomtype": "Roomtype",
+      "sl": "Sl"
+    }
+  }
+}

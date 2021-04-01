@@ -1,0 +1,42 @@
+{
+  "ihotelApp": {
+    "classreportRoom": {
+      "home": {
+        "title": "Classreport Rooms",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Classreport Room",
+        "createOrEditLabel": "Create or edit a Classreport Room",
+        "search": "Search for Classreport Room",
+        "notFound": "No Classreport Rooms found"
+      },
+      "created": "A new Classreport Room is created with identifier {{ param }}",
+      "updated": "A Classreport Room is updated with identifier {{ param }}",
+      "deleted": "A Classreport Room is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Classreport Room {{ id }}?"
+      },
+      "detail": {
+        "title": "Classreport Room"
+      },
+      "id": "ID",
+      "account": "Account",
+      "roomn": "Roomn",
+      "yfj": "Yfj",
+      "yfj9008": "Yfj 9008",
+      "yfj9009": "Yfj 9009",
+      "yfj9007": "Yfj 9007",
+      "gz": "Gz",
+      "ff": "Ff",
+      "minibar": "Minibar",
+      "phone": "Phone",
+      "other": "Other",
+      "pc": "Pc",
+      "cz": "Cz",
+      "cy": "Cy",
+      "md": "Md",
+      "huiy": "Huiy",
+      "dtb": "Dtb",
+      "sszx": "Sszx"
+    }
+  }
+}

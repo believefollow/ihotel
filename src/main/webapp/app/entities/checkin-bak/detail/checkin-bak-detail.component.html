@@ -1,0 +1,164 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="checkinBak">
+      <h2 data-cy="checkinBakDetailsHeading"><span jhiTranslate="ihotelApp.checkinBak.detail.title">Checkin Bak</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ihotelApp.checkinBak.guestId">Guest Id</span></dt>
+        <dd>
+          <span>{{ checkinBak.guestId }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.account">Account</span></dt>
+        <dd>
+          <span>{{ checkinBak.account }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.hoteltime">Hoteltime</span></dt>
+        <dd>
+          <span>{{ checkinBak.hoteltime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.indatetime">Indatetime</span></dt>
+        <dd>
+          <span>{{ checkinBak.indatetime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.residefate">Residefate</span></dt>
+        <dd>
+          <span>{{ checkinBak.residefate }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.gotime">Gotime</span></dt>
+        <dd>
+          <span>{{ checkinBak.gotime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.empn">Empn</span></dt>
+        <dd>
+          <span>{{ checkinBak.empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.roomn">Roomn</span></dt>
+        <dd>
+          <span>{{ checkinBak.roomn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.uname">Uname</span></dt>
+        <dd>
+          <span>{{ checkinBak.uname }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.rentp">Rentp</span></dt>
+        <dd>
+          <span>{{ checkinBak.rentp }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.protocolrent">Protocolrent</span></dt>
+        <dd>
+          <span>{{ checkinBak.protocolrent }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.remark">Remark</span></dt>
+        <dd>
+          <span>{{ checkinBak.remark }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.comeinfo">Comeinfo</span></dt>
+        <dd>
+          <span>{{ checkinBak.comeinfo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.goinfo">Goinfo</span></dt>
+        <dd>
+          <span>{{ checkinBak.goinfo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.phonen">Phonen</span></dt>
+        <dd>
+          <span>{{ checkinBak.phonen }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.empn2">Empn 2</span></dt>
+        <dd>
+          <span>{{ checkinBak.empn2 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.adhoc">Adhoc</span></dt>
+        <dd>
+          <span>{{ checkinBak.adhoc }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.auditflag">Auditflag</span></dt>
+        <dd>
+          <span>{{ checkinBak.auditflag }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.groupn">Groupn</span></dt>
+        <dd>
+          <span>{{ checkinBak.groupn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.payment">Payment</span></dt>
+        <dd>
+          <span>{{ checkinBak.payment }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.mtype">Mtype</span></dt>
+        <dd>
+          <span>{{ checkinBak.mtype }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.memo">Memo</span></dt>
+        <dd>
+          <span>{{ checkinBak.memo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.flight">Flight</span></dt>
+        <dd>
+          <span>{{ checkinBak.flight }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.credit">Credit</span></dt>
+        <dd>
+          <span>{{ checkinBak.credit }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.talklevel">Talklevel</span></dt>
+        <dd>
+          <span>{{ checkinBak.talklevel }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.lfSign">Lf Sign</span></dt>
+        <dd>
+          <span>{{ checkinBak.lfSign }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.keynum">Keynum</span></dt>
+        <dd>
+          <span>{{ checkinBak.keynum }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.icNum">Ic Num</span></dt>
+        <dd>
+          <span>{{ checkinBak.icNum }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.bh">Bh</span></dt>
+        <dd>
+          <span>{{ checkinBak.bh }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.icOwner">Ic Owner</span></dt>
+        <dd>
+          <span>{{ checkinBak.icOwner }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.markId">Mark Id</span></dt>
+        <dd>
+          <span>{{ checkinBak.markId }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.gj">Gj</span></dt>
+        <dd>
+          <span>{{ checkinBak.gj }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.yfj">Yfj</span></dt>
+        <dd>
+          <span>{{ checkinBak.yfj }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.hoteldate">Hoteldate</span></dt>
+        <dd>
+          <span>{{ checkinBak.hoteldate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinBak.id">Id</span></dt>
+        <dd>
+          <span>{{ checkinBak.id }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/checkin-bak', checkinBak.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

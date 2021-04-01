@@ -1,0 +1,35 @@
+{
+  "ihotelApp": {
+    "errlog": {
+      "home": {
+        "title": "Errlogs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Errlog",
+        "createOrEditLabel": "Create or edit a Errlog",
+        "search": "Search for Errlog",
+        "notFound": "No Errlogs found"
+      },
+      "created": "A new Errlog is created with identifier {{ param }}",
+      "updated": "A Errlog is updated with identifier {{ param }}",
+      "deleted": "A Errlog is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Errlog {{ id }}?"
+      },
+      "detail": {
+        "title": "Errlog"
+      },
+      "id": "ID",
+      "iderrlog": "Iderrlog",
+      "errnumber": "Errnumber",
+      "errtext": "Errtext",
+      "errwindowmenu": "Errwindowmenu",
+      "errobject": "Errobject",
+      "errevent": "Errevent",
+      "errline": "Errline",
+      "errtime": "Errtime",
+      "sumbitsign": "Sumbitsign",
+      "bmpfile": "Bmpfile",
+      "bmpblob": "Bmpblob"
+    }
+  }
+}

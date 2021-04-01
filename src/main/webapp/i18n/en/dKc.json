@@ -1,0 +1,32 @@
+{
+  "ihotelApp": {
+    "dKc": {
+      "home": {
+        "title": "D Kcs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new D Kc",
+        "createOrEditLabel": "Create or edit a D Kc",
+        "search": "Search for D Kc",
+        "notFound": "No D Kcs found"
+      },
+      "created": "A new D Kc is created with identifier {{ param }}",
+      "updated": "A D Kc is updated with identifier {{ param }}",
+      "deleted": "A D Kc is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete D Kc {{ id }}?"
+      },
+      "detail": {
+        "title": "D Kc"
+      },
+      "id": "Id",
+      "depot": "Depot",
+      "spbm": "Spbm",
+      "spmc": "Spmc",
+      "xh": "Xh",
+      "dw": "Dw",
+      "price": "Price",
+      "sl": "Sl",
+      "je": "Je"
+    }
+  }
+}

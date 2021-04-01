@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="fwEmpn">
+      <h2 data-cy="fwEmpnDetailsHeading"><span jhiTranslate="ihotelApp.fwEmpn.detail.title">Fw Empn</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ fwEmpn.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwEmpn.empnid">Empnid</span></dt>
+        <dd>
+          <span>{{ fwEmpn.empnid }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwEmpn.empn">Empn</span></dt>
+        <dd>
+          <span>{{ fwEmpn.empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwEmpn.deptid">Deptid</span></dt>
+        <dd>
+          <span>{{ fwEmpn.deptid }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.fwEmpn.phone">Phone</span></dt>
+        <dd>
+          <span>{{ fwEmpn.phone }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/fw-empn', fwEmpn.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

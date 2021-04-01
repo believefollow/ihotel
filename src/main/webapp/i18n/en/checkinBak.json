@@ -1,0 +1,58 @@
+{
+  "ihotelApp": {
+    "checkinBak": {
+      "home": {
+        "title": "Checkin Baks",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Checkin Bak",
+        "createOrEditLabel": "Create or edit a Checkin Bak",
+        "search": "Search for Checkin Bak",
+        "notFound": "No Checkin Baks found"
+      },
+      "created": "A new Checkin Bak is created with identifier {{ param }}",
+      "updated": "A Checkin Bak is updated with identifier {{ param }}",
+      "deleted": "A Checkin Bak is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Checkin Bak {{ id }}?"
+      },
+      "detail": {
+        "title": "Checkin Bak"
+      },
+      "guestId": "Guest Id",
+      "account": "Account",
+      "hoteltime": "Hoteltime",
+      "indatetime": "Indatetime",
+      "residefate": "Residefate",
+      "gotime": "Gotime",
+      "empn": "Empn",
+      "roomn": "Roomn",
+      "uname": "Uname",
+      "rentp": "Rentp",
+      "protocolrent": "Protocolrent",
+      "remark": "Remark",
+      "comeinfo": "Comeinfo",
+      "goinfo": "Goinfo",
+      "phonen": "Phonen",
+      "empn2": "Empn 2",
+      "adhoc": "Adhoc",
+      "auditflag": "Auditflag",
+      "groupn": "Groupn",
+      "payment": "Payment",
+      "mtype": "Mtype",
+      "memo": "Memo",
+      "flight": "Flight",
+      "credit": "Credit",
+      "talklevel": "Talklevel",
+      "lfSign": "Lf Sign",
+      "keynum": "Keynum",
+      "icNum": "Ic Num",
+      "bh": "Bh",
+      "icOwner": "Ic Owner",
+      "markId": "Mark Id",
+      "gj": "Gj",
+      "yfj": "Yfj",
+      "hoteldate": "Hoteldate",
+      "id": "Id"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "ihotelApp": {
+    "czBqz": {
+      "home": {
+        "title": "Cz Bqzs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Cz Bqz",
+        "createOrEditLabel": "创建或编辑 Cz Bqz",
+        "search": "查找 Cz Bqz",
+        "notFound": "No Cz Bqzs found"
+      },
+      "created": "Cz Bqz {{ param }} 创建成功",
+      "updated": "Cz Bqz {{ param }} 更新成功",
+      "deleted": "Cz Bqz {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Cz Bqz {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Cz Bqz"
+      },
+      "id": "ID",
+      "rq": "Rq",
+      "qSl": "Q Sl",
+      "qKfl": "Q Kfl",
+      "qPjz": "Q Pjz",
+      "qYsfz": "Q Ysfz",
+      "qSjfz": "Q Sjfz",
+      "qFzcz": "Q Fzcz",
+      "qPjzcz": "Q Pjzcz",
+      "bSl": "B Sl",
+      "bKfl": "B Kfl",
+      "bPjz": "B Pjz",
+      "bYsfz": "B Ysfz",
+      "bSjfz": "B Sjfz",
+      "bFzcz": "B Fzcz",
+      "bPjzcz": "B Pjzcz",
+      "zSl": "Z Sl",
+      "zKfl": "Z Kfl",
+      "zPjz": "Z Pjz",
+      "zYsfz": "Z Ysfz",
+      "zSjfz": "Z Sjfz",
+      "zFzcz": "Z Fzcz",
+      "zPjzcz": "Z Pjzcz",
+      "zk": "Zk"
+    }
+  }
+}

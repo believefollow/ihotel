@@ -1,0 +1,222 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-d-pdb-heading" data-cy="DPdbCreateUpdateHeading" jhiTranslate="ihotelApp.dPdb.home.createOrEditLabel">
+        Create or edit a D Pdb
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dPdb.id" for="field_id">Id</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          <div *ngIf="editForm.get('id')!.invalid && (editForm.get('id')!.dirty || editForm.get('id')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('id')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small class="form-text text-danger" [hidden]="!editForm.get('id')?.errors?.number" jhiTranslate="entity.validation.number">
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dPdb.begindate" for="field_begindate">Begindate</label>
+          <div class="d-flex">
+            <input
+              id="field_begindate"
+              data-cy="begindate"
+              type="datetime-local"
+              class="form-control"
+              name="begindate"
+              formControlName="begindate"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dPdb.enddate" for="field_enddate">Enddate</label>
+          <div class="d-flex">
+            <input
+              id="field_enddate"
+              data-cy="enddate"
+              type="datetime-local"
+              class="form-control"
+              name="enddate"
+              formControlName="enddate"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dPdb.bm" for="field_bm">Bm</label>
+          <input type="text" class="form-control" name="bm" id="field_bm" data-cy="bm" formControlName="bm" />
+          <div *ngIf="editForm.get('bm')!.invalid && (editForm.get('bm')!.dirty || editForm.get('bm')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('bm')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 20 }"
+            >
+              This field cannot be longer than 20 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dPdb.spmc" for="field_spmc">Spmc</label>
+          <input type="text" class="form-control" name="spmc" id="field_spmc" data-cy="spmc" formControlName="spmc" />
+          <div *ngIf="editForm.get('spmc')!.invalid && (editForm.get('spmc')!.dirty || editForm.get('spmc')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('spmc')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dPdb.qcsl" for="field_qcsl">Qcsl</label>
+          <input type="number" class="form-control" name="qcsl" id="field_qcsl" data-cy="qcsl" formControlName="qcsl" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dPdb.rksl" for="field_rksl">Rksl</label>
+          <input type="number" class="form-control" name="rksl" id="field_rksl" data-cy="rksl" formControlName="rksl" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dPdb.xssl" for="field_xssl">Xssl</label>
+          <input type="number" class="form-control" name="xssl" id="field_xssl" data-cy="xssl" formControlName="xssl" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dPdb.dbsl" for="field_dbsl">Dbsl</label>
+          <input type="number" class="form-control" name="dbsl" id="field_dbsl" data-cy="dbsl" formControlName="dbsl" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dPdb.qtck" for="field_qtck">Qtck</label>
+          <input type="number" class="form-control" name="qtck" id="field_qtck" data-cy="qtck" formControlName="qtck" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dPdb.jcsl" for="field_jcsl">Jcsl</label>
+          <input type="number" class="form-control" name="jcsl" id="field_jcsl" data-cy="jcsl" formControlName="jcsl" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dPdb.swsl" for="field_swsl">Swsl</label>
+          <input type="number" class="form-control" name="swsl" id="field_swsl" data-cy="swsl" formControlName="swsl" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dPdb.pyk" for="field_pyk">Pyk</label>
+          <input type="number" class="form-control" name="pyk" id="field_pyk" data-cy="pyk" formControlName="pyk" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dPdb.memo" for="field_memo">Memo</label>
+          <input type="text" class="form-control" name="memo" id="field_memo" data-cy="memo" formControlName="memo" />
+          <div *ngIf="editForm.get('memo')!.invalid && (editForm.get('memo')!.dirty || editForm.get('memo')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('memo')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 200 }"
+            >
+              This field cannot be longer than 200 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dPdb.depot" for="field_depot">Depot</label>
+          <input type="text" class="form-control" name="depot" id="field_depot" data-cy="depot" formControlName="depot" />
+          <div *ngIf="editForm.get('depot')!.invalid && (editForm.get('depot')!.dirty || editForm.get('depot')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('depot')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dPdb.rkje" for="field_rkje">Rkje</label>
+          <input type="number" class="form-control" name="rkje" id="field_rkje" data-cy="rkje" formControlName="rkje" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dPdb.xsje" for="field_xsje">Xsje</label>
+          <input type="number" class="form-control" name="xsje" id="field_xsje" data-cy="xsje" formControlName="xsje" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dPdb.dbje" for="field_dbje">Dbje</label>
+          <input type="number" class="form-control" name="dbje" id="field_dbje" data-cy="dbje" formControlName="dbje" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dPdb.jcje" for="field_jcje">Jcje</label>
+          <input type="number" class="form-control" name="jcje" id="field_jcje" data-cy="jcje" formControlName="jcje" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dPdb.dp" for="field_dp">Dp</label>
+          <input type="text" class="form-control" name="dp" id="field_dp" data-cy="dp" formControlName="dp" />
+          <div *ngIf="editForm.get('dp')!.invalid && (editForm.get('dp')!.dirty || editForm.get('dp')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('dp')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dPdb.qcje" for="field_qcje">Qcje</label>
+          <input type="number" class="form-control" name="qcje" id="field_qcje" data-cy="qcje" formControlName="qcje" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dPdb.swje" for="field_swje">Swje</label>
+          <input type="number" class="form-control" name="swje" id="field_swje" data-cy="swje" formControlName="swje" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dPdb.qtje" for="field_qtje">Qtje</label>
+          <input type="number" class="form-control" name="qtje" id="field_qtje" data-cy="qtje" formControlName="qtje" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

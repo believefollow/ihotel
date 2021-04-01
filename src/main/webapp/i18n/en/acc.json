@@ -1,0 +1,25 @@
+{
+  "ihotelApp": {
+    "acc": {
+      "home": {
+        "title": "Accs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Acc",
+        "createOrEditLabel": "Create or edit a Acc",
+        "search": "Search for Acc",
+        "notFound": "No Accs found"
+      },
+      "created": "A new Acc is created with identifier {{ param }}",
+      "updated": "A Acc is updated with identifier {{ param }}",
+      "deleted": "A Acc is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Acc {{ id }}?"
+      },
+      "detail": {
+        "title": "Acc"
+      },
+      "id": "Id",
+      "acc": "Acc"
+    }
+  }
+}

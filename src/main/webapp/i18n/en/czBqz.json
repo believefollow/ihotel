@@ -1,0 +1,47 @@
+{
+  "ihotelApp": {
+    "czBqz": {
+      "home": {
+        "title": "Cz Bqzs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Cz Bqz",
+        "createOrEditLabel": "Create or edit a Cz Bqz",
+        "search": "Search for Cz Bqz",
+        "notFound": "No Cz Bqzs found"
+      },
+      "created": "A new Cz Bqz is created with identifier {{ param }}",
+      "updated": "A Cz Bqz is updated with identifier {{ param }}",
+      "deleted": "A Cz Bqz is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Cz Bqz {{ id }}?"
+      },
+      "detail": {
+        "title": "Cz Bqz"
+      },
+      "id": "ID",
+      "rq": "Rq",
+      "qSl": "Q Sl",
+      "qKfl": "Q Kfl",
+      "qPjz": "Q Pjz",
+      "qYsfz": "Q Ysfz",
+      "qSjfz": "Q Sjfz",
+      "qFzcz": "Q Fzcz",
+      "qPjzcz": "Q Pjzcz",
+      "bSl": "B Sl",
+      "bKfl": "B Kfl",
+      "bPjz": "B Pjz",
+      "bYsfz": "B Ysfz",
+      "bSjfz": "B Sjfz",
+      "bFzcz": "B Fzcz",
+      "bPjzcz": "B Pjzcz",
+      "zSl": "Z Sl",
+      "zKfl": "Z Kfl",
+      "zPjz": "Z Pjz",
+      "zYsfz": "Z Ysfz",
+      "zSjfz": "Z Sjfz",
+      "zFzcz": "Z Fzcz",
+      "zPjzcz": "Z Pjzcz",
+      "zk": "Zk"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "ihotelApp": {
+    "feetype": {
+      "home": {
+        "title": "Feetypes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Feetype",
+        "createOrEditLabel": "创建或编辑 Feetype",
+        "search": "查找 Feetype",
+        "notFound": "No Feetypes found"
+      },
+      "created": "Feetype {{ param }} 创建成功",
+      "updated": "Feetype {{ param }} 更新成功",
+      "deleted": "Feetype {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Feetype {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Feetype"
+      },
+      "id": "ID",
+      "feenum": "Feenum",
+      "feename": "Feename",
+      "price": "Price",
+      "sign": "Sign",
+      "beizhu": "Beizhu",
+      "pym": "Pym",
+      "salespotn": "Salespotn",
+      "depot": "Depot",
+      "cbsign": "Cbsign",
+      "ordersign": "Ordersign",
+      "hoteldm": "Hoteldm",
+      "isnew": "Isnew",
+      "ygj": "Ygj",
+      "autosign": "Autosign",
+      "jj": "Jj",
+      "hyj": "Hyj",
+      "dqkc": "Dqkc"
+    }
+  }
+}

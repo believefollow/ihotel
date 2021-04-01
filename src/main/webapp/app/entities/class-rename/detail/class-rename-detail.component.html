@@ -1,0 +1,278 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="classRename">
+      <h2 data-cy="classRenameDetailsHeading"><span jhiTranslate="ihotelApp.classRename.detail.title">Class Rename</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ classRename.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.dt">Dt</span></dt>
+        <dd>
+          <span>{{ classRename.dt | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.empn">Empn</span></dt>
+        <dd>
+          <span>{{ classRename.empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.oldmoney">Oldmoney</span></dt>
+        <dd>
+          <span>{{ classRename.oldmoney }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.getmoney">Getmoney</span></dt>
+        <dd>
+          <span>{{ classRename.getmoney }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.toup">Toup</span></dt>
+        <dd>
+          <span>{{ classRename.toup }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.downempn">Downempn</span></dt>
+        <dd>
+          <span>{{ classRename.downempn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.todown">Todown</span></dt>
+        <dd>
+          <span>{{ classRename.todown }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.flag">Flag</span></dt>
+        <dd>
+          <span>{{ classRename.flag }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.old2">Old 2</span></dt>
+        <dd>
+          <span>{{ classRename.old2 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.get2">Get 2</span></dt>
+        <dd>
+          <span>{{ classRename.get2 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.toup2">Toup 2</span></dt>
+        <dd>
+          <span>{{ classRename.toup2 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.todown2">Todown 2</span></dt>
+        <dd>
+          <span>{{ classRename.todown2 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.upempn2">Upempn 2</span></dt>
+        <dd>
+          <span>{{ classRename.upempn2 }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="ihotelApp.classRename.im9008" [ngbTooltip]="'ihotelApp.classRename.help.im9008' | translate">Im 9008</span>
+        </dt>
+        <dd>
+          <span>{{ classRename.im9008 }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="ihotelApp.classRename.im9009" [ngbTooltip]="'ihotelApp.classRename.help.im9009' | translate">Im 9009</span>
+        </dt>
+        <dd>
+          <span>{{ classRename.im9009 }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="ihotelApp.classRename.co9991" [ngbTooltip]="'ihotelApp.classRename.help.co9991' | translate">Co 9991</span>
+        </dt>
+        <dd>
+          <span>{{ classRename.co9991 }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="ihotelApp.classRename.co9992" [ngbTooltip]="'ihotelApp.classRename.help.co9992' | translate">Co 9992</span>
+        </dt>
+        <dd>
+          <span>{{ classRename.co9992 }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="ihotelApp.classRename.co9993" [ngbTooltip]="'ihotelApp.classRename.help.co9993' | translate">Co 9993</span>
+        </dt>
+        <dd>
+          <span>{{ classRename.co9993 }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="ihotelApp.classRename.co9994" [ngbTooltip]="'ihotelApp.classRename.help.co9994' | translate">Co 9994</span>
+        </dt>
+        <dd>
+          <span>{{ classRename.co9994 }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="ihotelApp.classRename.co9995" [ngbTooltip]="'ihotelApp.classRename.help.co9995' | translate">Co 9995</span>
+        </dt>
+        <dd>
+          <span>{{ classRename.co9995 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.co9998">Co 9998</span></dt>
+        <dd>
+          <span>{{ classRename.co9998 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.im9007">Im 9007</span></dt>
+        <dd>
+          <span>{{ classRename.im9007 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.gotime">Gotime</span></dt>
+        <dd>
+          <span>{{ classRename.gotime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.co9999">Co 9999</span></dt>
+        <dd>
+          <span>{{ classRename.co9999 }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="ihotelApp.classRename.cm9008" [ngbTooltip]="'ihotelApp.classRename.help.cm9008' | translate">Cm 9008</span>
+        </dt>
+        <dd>
+          <span>{{ classRename.cm9008 }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="ihotelApp.classRename.cm9009" [ngbTooltip]="'ihotelApp.classRename.help.cm9009' | translate">Cm 9009</span>
+        </dt>
+        <dd>
+          <span>{{ classRename.cm9009 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.co99910">Co 99910</span></dt>
+        <dd>
+          <span>{{ classRename.co99910 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.checkSign">Check Sign</span></dt>
+        <dd>
+          <span>{{ classRename.checkSign }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.classPb">Class Pb</span></dt>
+        <dd>
+          <span>{{ classRename.classPb }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.ck">Ck</span></dt>
+        <dd>
+          <span>{{ classRename.ck }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.dk">Dk</span></dt>
+        <dd>
+          <span>{{ classRename.dk }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.sjrq">Sjrq</span></dt>
+        <dd>
+          <span>{{ classRename.sjrq | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.qsjrq">Qsjrq</span></dt>
+        <dd>
+          <span>{{ classRename.qsjrq | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.byje">Byje</span></dt>
+        <dd>
+          <span>{{ classRename.byje }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.xfcw">Xfcw</span></dt>
+        <dd>
+          <span>{{ classRename.xfcw }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.hoteldm">Hoteldm</span></dt>
+        <dd>
+          <span>{{ classRename.hoteldm }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.isnew">Isnew</span></dt>
+        <dd>
+          <span>{{ classRename.isnew }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.co99912">Co 99912</span></dt>
+        <dd>
+          <span>{{ classRename.co99912 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.xj">Xj</span></dt>
+        <dd>
+          <span>{{ classRename.xj }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.classname">Classname</span></dt>
+        <dd>
+          <span>{{ classRename.classname }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.co9010">Co 9010</span></dt>
+        <dd>
+          <span>{{ classRename.co9010 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.co9012">Co 9012</span></dt>
+        <dd>
+          <span>{{ classRename.co9012 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.co9013">Co 9013</span></dt>
+        <dd>
+          <span>{{ classRename.co9013 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.co9014">Co 9014</span></dt>
+        <dd>
+          <span>{{ classRename.co9014 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.co99915">Co 99915</span></dt>
+        <dd>
+          <span>{{ classRename.co99915 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.hyxj">Hyxj</span></dt>
+        <dd>
+          <span>{{ classRename.hyxj }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.hysk">Hysk</span></dt>
+        <dd>
+          <span>{{ classRename.hysk }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.hyqt">Hyqt</span></dt>
+        <dd>
+          <span>{{ classRename.hyqt }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.hkxj">Hkxj</span></dt>
+        <dd>
+          <span>{{ classRename.hkxj }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.hksk">Hksk</span></dt>
+        <dd>
+          <span>{{ classRename.hksk }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.hkqt">Hkqt</span></dt>
+        <dd>
+          <span>{{ classRename.hkqt }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.qtwt">Qtwt</span></dt>
+        <dd>
+          <span>{{ classRename.qtwt }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.qtysq">Qtysq</span></dt>
+        <dd>
+          <span>{{ classRename.qtysq }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.bbysj">Bbysj</span></dt>
+        <dd>
+          <span>{{ classRename.bbysj }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.zfbje">Zfbje</span></dt>
+        <dd>
+          <span>{{ classRename.zfbje }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.wxje">Wxje</span></dt>
+        <dd>
+          <span>{{ classRename.wxje }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.w99920">W 99920</span></dt>
+        <dd>
+          <span>{{ classRename.w99920 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classRename.z99921">Z 99921</span></dt>
+        <dd>
+          <span>{{ classRename.z99921 }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/class-rename', classRename.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

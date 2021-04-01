@@ -1,0 +1,63 @@
+{
+  "name": "KtvSr",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "rq",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "xj",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "sk",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "gz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "md",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "djq",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "hyk",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "ml",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "czrq",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "czy",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "ktv_sr",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131404"
+}

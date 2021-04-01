@@ -1,0 +1,27 @@
+{
+  "ihotelApp": {
+    "dayearndetail": {
+      "home": {
+        "title": "Dayearndetails",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Dayearndetail",
+        "createOrEditLabel": "创建或编辑 Dayearndetail",
+        "search": "查找 Dayearndetail",
+        "notFound": "No Dayearndetails found"
+      },
+      "created": "Dayearndetail {{ param }} 创建成功",
+      "updated": "Dayearndetail {{ param }} 更新成功",
+      "deleted": "Dayearndetail {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Dayearndetail {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Dayearndetail"
+      },
+      "id": "ID",
+      "earndate": "Earndate",
+      "salespotn": "Salespotn",
+      "money": "Money"
+    }
+  }
+}

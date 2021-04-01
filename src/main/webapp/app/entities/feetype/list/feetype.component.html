@@ -1,0 +1,169 @@
+<div>
+  <h2 id="page-heading" data-cy="FeetypeHeading">
+    <span jhiTranslate="ihotelApp.feetype.home.title">Feetypes</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="ihotelApp.feetype.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-feetype"
+        [routerLink]="['/feetype/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span class="hidden-sm-down" jhiTranslate="ihotelApp.feetype.home.createLabel"> Create a new Feetype </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <form name="searchForm" class="form-inline">
+        <div class="input-group w-100 mt-3">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="currentSearch"
+            id="currentSearch"
+            name="currentSearch"
+            placeholder="{{ 'ihotelApp.feetype.home.search' | translate }}"
+          />
+
+          <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+            <fa-icon icon="search"></fa-icon>
+          </button>
+
+          <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+            <fa-icon icon="trash-alt"></fa-icon>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="feetypes?.length === 0">
+    <span jhiTranslate="ihotelApp.feetype.home.notFound">No feetypes found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="feetypes && feetypes.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="feenum">
+            <span jhiTranslate="ihotelApp.feetype.feenum">Feenum</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="feename">
+            <span jhiTranslate="ihotelApp.feetype.feename">Feename</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="price"><span jhiTranslate="ihotelApp.feetype.price">Price</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="sign"><span jhiTranslate="ihotelApp.feetype.sign">Sign</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="beizhu">
+            <span jhiTranslate="ihotelApp.feetype.beizhu">Beizhu</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="pym"><span jhiTranslate="ihotelApp.feetype.pym">Pym</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="salespotn">
+            <span jhiTranslate="ihotelApp.feetype.salespotn">Salespotn</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="depot"><span jhiTranslate="ihotelApp.feetype.depot">Depot</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="cbsign">
+            <span jhiTranslate="ihotelApp.feetype.cbsign">Cbsign</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="ordersign">
+            <span jhiTranslate="ihotelApp.feetype.ordersign">Ordersign</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="hoteldm">
+            <span jhiTranslate="ihotelApp.feetype.hoteldm">Hoteldm</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="isnew"><span jhiTranslate="ihotelApp.feetype.isnew">Isnew</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="ygj"><span jhiTranslate="ihotelApp.feetype.ygj">Ygj</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="autosign">
+            <span jhiTranslate="ihotelApp.feetype.autosign">Autosign</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="jj"><span jhiTranslate="ihotelApp.feetype.jj">Jj</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="hyj"><span jhiTranslate="ihotelApp.feetype.hyj">Hyj</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="dqkc"><span jhiTranslate="ihotelApp.feetype.dqkc">Dqkc</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let feetype of feetypes; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/feetype', feetype.id, 'view']">{{ feetype.id }}</a>
+          </td>
+          <td>{{ feetype.feenum }}</td>
+          <td>{{ feetype.feename }}</td>
+          <td>{{ feetype.price }}</td>
+          <td>{{ feetype.sign }}</td>
+          <td>{{ feetype.beizhu }}</td>
+          <td>{{ feetype.pym }}</td>
+          <td>{{ feetype.salespotn }}</td>
+          <td>{{ feetype.depot }}</td>
+          <td>{{ feetype.cbsign }}</td>
+          <td>{{ feetype.ordersign }}</td>
+          <td>{{ feetype.hoteldm }}</td>
+          <td>{{ feetype.isnew }}</td>
+          <td>{{ feetype.ygj }}</td>
+          <td>{{ feetype.autosign }}</td>
+          <td>{{ feetype.jj }}</td>
+          <td>{{ feetype.hyj }}</td>
+          <td>{{ feetype.dqkc }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/feetype', feetype.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/feetype', feetype.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(feetype)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="feetypes && feetypes.length > 0">
+    <div class="row justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

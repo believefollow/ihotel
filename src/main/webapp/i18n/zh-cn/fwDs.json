@@ -1,0 +1,33 @@
+{
+  "ihotelApp": {
+    "fwDs": {
+      "home": {
+        "title": "Fw Ds",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Fw Ds",
+        "createOrEditLabel": "创建或编辑 Fw Ds",
+        "search": "查找 Fw Ds",
+        "notFound": "No Fw Ds found"
+      },
+      "created": "Fw Ds {{ param }} 创建成功",
+      "updated": "Fw Ds {{ param }} 更新成功",
+      "deleted": "Fw Ds {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Fw Ds {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Fw Ds"
+      },
+      "id": "Id",
+      "hoteltime": "Hoteltime",
+      "rq": "Rq",
+      "xz": "Xz",
+      "memo": "Memo",
+      "fwy": "Fwy",
+      "roomn": "Roomn",
+      "rtype": "Rtype",
+      "empn": "Empn",
+      "sl": "Sl"
+    }
+  }
+}

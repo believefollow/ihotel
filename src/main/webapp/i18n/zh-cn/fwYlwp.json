@@ -1,0 +1,38 @@
+{
+  "ihotelApp": {
+    "fwYlwp": {
+      "home": {
+        "title": "Fw Ylwps",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Fw Ylwp",
+        "createOrEditLabel": "创建或编辑 Fw Ylwp",
+        "search": "查找 Fw Ylwp",
+        "notFound": "No Fw Ylwps found"
+      },
+      "created": "Fw Ylwp {{ param }} 创建成功",
+      "updated": "Fw Ylwp {{ param }} 更新成功",
+      "deleted": "Fw Ylwp {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Fw Ylwp {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Fw Ylwp"
+      },
+      "id": "Id",
+      "roomn": "Roomn",
+      "guestname": "Guestname",
+      "memo": "Memo",
+      "sdr": "Sdr",
+      "sdrq": "Sdrq",
+      "rlr": "Rlr",
+      "rlrq": "Rlrq",
+      "remark": "Remark",
+      "empn": "Empn",
+      "czrq": "Czrq",
+      "flag": "Flag",
+      "help": {
+        "flag": "0未认领"
+      }
+    }
+  }
+}

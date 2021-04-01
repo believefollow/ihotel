@@ -1,0 +1,159 @@
+{
+  "name": "TbBooking",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "hotelid",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "hotelname",
+      "fieldType": "String",
+      "javadoc": "店酒名称",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "hotelphone",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "15"
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "stay",
+      "fieldType": "String",
+      "javadoc": "住店人",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "bookpeople",
+      "fieldType": "String",
+      "javadoc": "预订人",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "papernumber",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "30"
+    },
+    {
+      "fieldName": "mobile",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "13"
+    },
+    {
+      "fieldName": "telphone",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "15"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "30"
+    },
+    {
+      "fieldName": "staydate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "leavedate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "days",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "timeRange",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "roomid",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "roomtype",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "rooms",
+      "fieldType": "Long",
+      "javadoc": "预定房间数"
+    },
+    {
+      "fieldName": "roomno",
+      "fieldType": "String",
+      "javadoc": "房号",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "roomprice",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "total",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "operatedate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "modfiydate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "loginname",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "30"
+    },
+    {
+      "fieldName": "ordernumber",
+      "fieldType": "String",
+      "javadoc": "确认后产生订单号",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "30"
+    },
+    {
+      "fieldName": "flag",
+      "fieldType": "Long",
+      "javadoc": "1:等待酒店确认\\n2:预定成功\\n3已入住\\n4:预定失败",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "tb_booking",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131605"
+}

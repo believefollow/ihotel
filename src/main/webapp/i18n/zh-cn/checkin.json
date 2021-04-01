@@ -1,0 +1,77 @@
+{
+  "ihotelApp": {
+    "checkin": {
+      "home": {
+        "title": "Checkins",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Checkin",
+        "createOrEditLabel": "创建或编辑 Checkin",
+        "search": "查找 Checkin",
+        "notFound": "No Checkins found"
+      },
+      "created": "Checkin {{ param }} 创建成功",
+      "updated": "Checkin {{ param }} 更新成功",
+      "deleted": "Checkin {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Checkin {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Checkin"
+      },
+      "id": "ID",
+      "bkid": "Bkid",
+      "guestId": "Guest Id",
+      "account": "Account",
+      "hoteltime": "Hoteltime",
+      "indatetime": "Indatetime",
+      "residefate": "Residefate",
+      "gotime": "Gotime",
+      "empn": "Empn",
+      "roomn": "Roomn",
+      "uname": "Uname",
+      "rentp": "Rentp",
+      "protocolrent": "Protocolrent",
+      "remark": "Remark",
+      "phonen": "Phonen",
+      "empn2": "Empn 2",
+      "adhoc": "Adhoc",
+      "auditflag": "Auditflag",
+      "groupn": "Groupn",
+      "memo": "Memo",
+      "lfSign": "Lf Sign",
+      "keynum": "Keynum",
+      "hykh": "Hykh",
+      "bm": "Bm",
+      "flag": "Flag",
+      "jxtime": "Jxtime",
+      "jxflag": "Jxflag",
+      "checkf": "Checkf",
+      "guestname": "Guestname",
+      "fgf": "Fgf",
+      "fgxx": "Fgxx",
+      "hourSign": "Hour Sign",
+      "xsy": "Xsy",
+      "rzsign": "Rzsign",
+      "jf": "Jf",
+      "gname": "Gname",
+      "zcsign": "Zcsign",
+      "cqsl": "Cqsl",
+      "sfjf": "Sfjf",
+      "ywly": "Ywly",
+      "fk": "Fk",
+      "fkrq": "Fkrq",
+      "bc": "Bc",
+      "jxremark": "Jxremark",
+      "txid": "Txid",
+      "cfr": "Cfr",
+      "fjbm": "Fjbm",
+      "djlx": "Djlx",
+      "wlddh": "Wlddh",
+      "fksl": "Fksl",
+      "dqtx": "Dqtx",
+      "help": {
+        "bkid": "主键"
+      }
+    }
+  }
+}

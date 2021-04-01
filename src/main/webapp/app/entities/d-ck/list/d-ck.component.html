@@ -1,0 +1,163 @@
+<div>
+  <h2 id="page-heading" data-cy="DCkHeading">
+    <span jhiTranslate="ihotelApp.dCk.home.title">D Cks</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="ihotelApp.dCk.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-d-ck"
+        [routerLink]="['/d-ck/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span class="hidden-sm-down" jhiTranslate="ihotelApp.dCk.home.createLabel"> Create a new D Ck </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <form name="searchForm" class="form-inline">
+        <div class="input-group w-100 mt-3">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="currentSearch"
+            id="currentSearch"
+            name="currentSearch"
+            placeholder="{{ 'ihotelApp.dCk.home.search' | translate }}"
+          />
+
+          <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+            <fa-icon icon="search"></fa-icon>
+          </button>
+
+          <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+            <fa-icon icon="trash-alt"></fa-icon>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="dCks?.length === 0">
+    <span jhiTranslate="ihotelApp.dCk.home.notFound">No dCks found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="dCks && dCks.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="ihotelApp.dCk.id">Id</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="depot"><span jhiTranslate="ihotelApp.dCk.depot">Depot</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="ckdate"><span jhiTranslate="ihotelApp.dCk.ckdate">Ckdate</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="ckbillno">
+            <span jhiTranslate="ihotelApp.dCk.ckbillno">Ckbillno</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="deptname">
+            <span jhiTranslate="ihotelApp.dCk.deptname">Deptname</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="jbr"><span jhiTranslate="ihotelApp.dCk.jbr">Jbr</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="remark"><span jhiTranslate="ihotelApp.dCk.remark">Remark</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="spbm"><span jhiTranslate="ihotelApp.dCk.spbm">Spbm</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="spmc"><span jhiTranslate="ihotelApp.dCk.spmc">Spmc</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="unit"><span jhiTranslate="ihotelApp.dCk.unit">Unit</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="price"><span jhiTranslate="ihotelApp.dCk.price">Price</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="sl"><span jhiTranslate="ihotelApp.dCk.sl">Sl</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="je"><span jhiTranslate="ihotelApp.dCk.je">Je</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="memo"><span jhiTranslate="ihotelApp.dCk.memo">Memo</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="flag"><span jhiTranslate="ihotelApp.dCk.flag">Flag</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="dbSign"><span jhiTranslate="ihotelApp.dCk.dbSign">Db Sign</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="cktype"><span jhiTranslate="ihotelApp.dCk.cktype">Cktype</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="empn"><span jhiTranslate="ihotelApp.dCk.empn">Empn</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="lrdate"><span jhiTranslate="ihotelApp.dCk.lrdate">Lrdate</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="kcid"><span jhiTranslate="ihotelApp.dCk.kcid">Kcid</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="f1"><span jhiTranslate="ihotelApp.dCk.f1">F 1</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="f2"><span jhiTranslate="ihotelApp.dCk.f2">F 2</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="f1empn"><span jhiTranslate="ihotelApp.dCk.f1empn">F 1 Empn</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="f2empn"><span jhiTranslate="ihotelApp.dCk.f2empn">F 2 Empn</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="f1sj"><span jhiTranslate="ihotelApp.dCk.f1sj">F 1 Sj</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="f2sj"><span jhiTranslate="ihotelApp.dCk.f2sj">F 2 Sj</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dCk of dCks; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/d-ck', dCk.id, 'view']">{{ dCk.id }}</a>
+          </td>
+          <td>{{ dCk.depot }}</td>
+          <td>{{ dCk.ckdate | formatMediumDatetime }}</td>
+          <td>{{ dCk.ckbillno }}</td>
+          <td>{{ dCk.deptname }}</td>
+          <td>{{ dCk.jbr }}</td>
+          <td>{{ dCk.remark }}</td>
+          <td>{{ dCk.spbm }}</td>
+          <td>{{ dCk.spmc }}</td>
+          <td>{{ dCk.unit }}</td>
+          <td>{{ dCk.price }}</td>
+          <td>{{ dCk.sl }}</td>
+          <td>{{ dCk.je }}</td>
+          <td>{{ dCk.memo }}</td>
+          <td>{{ dCk.flag }}</td>
+          <td>{{ dCk.dbSign }}</td>
+          <td>{{ dCk.cktype }}</td>
+          <td>{{ dCk.empn }}</td>
+          <td>{{ dCk.lrdate | formatMediumDatetime }}</td>
+          <td>{{ dCk.kcid }}</td>
+          <td>{{ dCk.f1 }}</td>
+          <td>{{ dCk.f2 }}</td>
+          <td>{{ dCk.f1empn }}</td>
+          <td>{{ dCk.f2empn }}</td>
+          <td>{{ dCk.f1sj | formatMediumDatetime }}</td>
+          <td>{{ dCk.f2sj | formatMediumDatetime }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/d-ck', dCk.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button type="submit" [routerLink]="['/d-ck', dCk.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(dCk)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="dCks && dCks.length > 0">
+    <div class="row justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

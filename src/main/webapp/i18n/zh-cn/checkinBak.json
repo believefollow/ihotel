@@ -1,0 +1,58 @@
+{
+  "ihotelApp": {
+    "checkinBak": {
+      "home": {
+        "title": "Checkin Baks",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Checkin Bak",
+        "createOrEditLabel": "创建或编辑 Checkin Bak",
+        "search": "查找 Checkin Bak",
+        "notFound": "No Checkin Baks found"
+      },
+      "created": "Checkin Bak {{ param }} 创建成功",
+      "updated": "Checkin Bak {{ param }} 更新成功",
+      "deleted": "Checkin Bak {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Checkin Bak {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Checkin Bak"
+      },
+      "guestId": "Guest Id",
+      "account": "Account",
+      "hoteltime": "Hoteltime",
+      "indatetime": "Indatetime",
+      "residefate": "Residefate",
+      "gotime": "Gotime",
+      "empn": "Empn",
+      "roomn": "Roomn",
+      "uname": "Uname",
+      "rentp": "Rentp",
+      "protocolrent": "Protocolrent",
+      "remark": "Remark",
+      "comeinfo": "Comeinfo",
+      "goinfo": "Goinfo",
+      "phonen": "Phonen",
+      "empn2": "Empn 2",
+      "adhoc": "Adhoc",
+      "auditflag": "Auditflag",
+      "groupn": "Groupn",
+      "payment": "Payment",
+      "mtype": "Mtype",
+      "memo": "Memo",
+      "flight": "Flight",
+      "credit": "Credit",
+      "talklevel": "Talklevel",
+      "lfSign": "Lf Sign",
+      "keynum": "Keynum",
+      "icNum": "Ic Num",
+      "bh": "Bh",
+      "icOwner": "Ic Owner",
+      "markId": "Mark Id",
+      "gj": "Gj",
+      "yfj": "Yfj",
+      "hoteldate": "Hoteldate",
+      "id": "Id"
+    }
+  }
+}

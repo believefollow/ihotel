@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="checkCzl">
+      <h2 data-cy="checkCzlDetailsHeading"><span jhiTranslate="ihotelApp.checkCzl.detail.title">Check Czl</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ checkCzl.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkCzl.hoteltime">Hoteltime</span></dt>
+        <dd>
+          <span>{{ checkCzl.hoteltime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkCzl.rtype">Rtype</span></dt>
+        <dd>
+          <span>{{ checkCzl.rtype }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkCzl.rnum">Rnum</span></dt>
+        <dd>
+          <span>{{ checkCzl.rnum }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkCzl.rOutnum">R Outnum</span></dt>
+        <dd>
+          <span>{{ checkCzl.rOutnum }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkCzl.czl">Czl</span></dt>
+        <dd>
+          <span>{{ checkCzl.czl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkCzl.chagrge">Chagrge</span></dt>
+        <dd>
+          <span>{{ checkCzl.chagrge }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkCzl.chagrgeAvg">Chagrge Avg</span></dt>
+        <dd>
+          <span>{{ checkCzl.chagrgeAvg }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkCzl.empn">Empn</span></dt>
+        <dd>
+          <span>{{ checkCzl.empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkCzl.entertime">Entertime</span></dt>
+        <dd>
+          <span>{{ checkCzl.entertime | formatMediumDatetime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/check-czl', checkCzl.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

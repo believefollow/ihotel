@@ -1,0 +1,317 @@
+<div>
+  <h2 id="page-heading" data-cy="AccountsHeading">
+    <span jhiTranslate="ihotelApp.accounts.home.title">Accounts</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="ihotelApp.accounts.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-accounts"
+        [routerLink]="['/accounts/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span class="hidden-sm-down" jhiTranslate="ihotelApp.accounts.home.createLabel"> Create a new Accounts </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <form name="searchForm" class="form-inline">
+        <div class="input-group w-100 mt-3">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="currentSearch"
+            id="currentSearch"
+            name="currentSearch"
+            placeholder="{{ 'ihotelApp.accounts.home.search' | translate }}"
+          />
+
+          <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+            <fa-icon icon="search"></fa-icon>
+          </button>
+
+          <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+            <fa-icon icon="trash-alt"></fa-icon>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="accounts?.length === 0">
+    <span jhiTranslate="ihotelApp.accounts.home.notFound">No accounts found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="accounts && accounts.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+          <th scope="col" jhiSortBy="account">
+            <span jhiTranslate="ihotelApp.accounts.account">Account</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="consumetime">
+            <span jhiTranslate="ihotelApp.accounts.consumetime">Consumetime</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="hoteltime">
+            <span jhiTranslate="ihotelApp.accounts.hoteltime">Hoteltime</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="feenum">
+            <span jhiTranslate="ihotelApp.accounts.feenum">Feenum</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="money"><span jhiTranslate="ihotelApp.accounts.money">Money</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="memo"><span jhiTranslate="ihotelApp.accounts.memo">Memo</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="empn"><span jhiTranslate="ihotelApp.accounts.empn">Empn</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="imprest">
+            <span jhiTranslate="ihotelApp.accounts.imprest">Imprest</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="propertiy">
+            <span jhiTranslate="ihotelApp.accounts.propertiy">Propertiy</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="earntypen">
+            <span jhiTranslate="ihotelApp.accounts.earntypen">Earntypen</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="payment">
+            <span jhiTranslate="ihotelApp.accounts.payment">Payment</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="roomn"><span jhiTranslate="ihotelApp.accounts.roomn">Roomn</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="ihotelApp.accounts.id">Id</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="ulogogram">
+            <span jhiTranslate="ihotelApp.accounts.ulogogram">Ulogogram</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="lk"><span jhiTranslate="ihotelApp.accounts.lk">Lk</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="acc"><span jhiTranslate="ihotelApp.accounts.acc">Acc</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="jzSign">
+            <span jhiTranslate="ihotelApp.accounts.jzSign">Jz Sign</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="jzflag">
+            <span jhiTranslate="ihotelApp.accounts.jzflag">Jzflag</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="sign"><span jhiTranslate="ihotelApp.accounts.sign">Sign</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="bs"><span jhiTranslate="ihotelApp.accounts.bs">Bs</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="jzhotel">
+            <span jhiTranslate="ihotelApp.accounts.jzhotel">Jzhotel</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="jzempn">
+            <span jhiTranslate="ihotelApp.accounts.jzempn">Jzempn</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="jztime">
+            <span jhiTranslate="ihotelApp.accounts.jztime">Jztime</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="chonghong">
+            <span jhiTranslate="ihotelApp.accounts.chonghong">Chonghong</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="billno">
+            <span jhiTranslate="ihotelApp.accounts.billno">Billno</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="printcount">
+            <span jhiTranslate="ihotelApp.accounts.printcount">Printcount</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="vipjf"><span jhiTranslate="ihotelApp.accounts.vipjf">Vipjf</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="hykh"><span jhiTranslate="ihotelApp.accounts.hykh">Hykh</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="sl"><span jhiTranslate="ihotelApp.accounts.sl">Sl</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="sgdjh"><span jhiTranslate="ihotelApp.accounts.sgdjh">Sgdjh</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="hoteldm">
+            <span jhiTranslate="ihotelApp.accounts.hoteldm">Hoteldm</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="isnew"><span jhiTranslate="ihotelApp.accounts.isnew">Isnew</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="guestId">
+            <span jhiTranslate="ihotelApp.accounts.guestId">Guest Id</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="yhkh"><span jhiTranslate="ihotelApp.accounts.yhkh">Yhkh</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="djq"><span jhiTranslate="ihotelApp.accounts.djq">Djq</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="ysje"><span jhiTranslate="ihotelApp.accounts.ysje">Ysje</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="bj"><span jhiTranslate="ihotelApp.accounts.bj">Bj</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="bjempn">
+            <span jhiTranslate="ihotelApp.accounts.bjempn">Bjempn</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="bjtime">
+            <span jhiTranslate="ihotelApp.accounts.bjtime">Bjtime</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="paper2">
+            <span jhiTranslate="ihotelApp.accounts.paper2">Paper 2</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="bc"><span jhiTranslate="ihotelApp.accounts.bc">Bc</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="auto"><span jhiTranslate="ihotelApp.accounts.auto">Auto</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="xsy"><span jhiTranslate="ihotelApp.accounts.xsy">Xsy</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="djkh"><span jhiTranslate="ihotelApp.accounts.djkh">Djkh</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="djsign">
+            <span jhiTranslate="ihotelApp.accounts.djsign">Djsign</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="classname">
+            <span jhiTranslate="ihotelApp.accounts.classname">Classname</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="iscy"><span jhiTranslate="ihotelApp.accounts.iscy">Iscy</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="bsign"><span jhiTranslate="ihotelApp.accounts.bsign">Bsign</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="fx"><span jhiTranslate="ihotelApp.accounts.fx">Fx</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="djlx"><span jhiTranslate="ihotelApp.accounts.djlx">Djlx</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="isup"><span jhiTranslate="ihotelApp.accounts.isup">Isup</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="yongjin">
+            <span jhiTranslate="ihotelApp.accounts.yongjin">Yongjin</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="czpc"><span jhiTranslate="ihotelApp.accounts.czpc">Czpc</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="cxflag">
+            <span jhiTranslate="ihotelApp.accounts.cxflag">Cxflag</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="pmemo"><span jhiTranslate="ihotelApp.accounts.pmemo">Pmemo</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="czbillno">
+            <span jhiTranslate="ihotelApp.accounts.czbillno">Czbillno</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="djqbz"><span jhiTranslate="ihotelApp.accounts.djqbz">Djqbz</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="ysqmemo">
+            <span jhiTranslate="ihotelApp.accounts.ysqmemo">Ysqmemo</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="transactionId">
+            <span jhiTranslate="ihotelApp.accounts.transactionId">Transaction Id</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="outTradeNo">
+            <span jhiTranslate="ihotelApp.accounts.outTradeNo">Out Trade No</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="gsname">
+            <span jhiTranslate="ihotelApp.accounts.gsname">Gsname</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="rz"><span jhiTranslate="ihotelApp.accounts.rz">Rz</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="gz"><span jhiTranslate="ihotelApp.accounts.gz">Gz</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="ts"><span jhiTranslate="ihotelApp.accounts.ts">Ts</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="ky"><span jhiTranslate="ihotelApp.accounts.ky">Ky</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="xy"><span jhiTranslate="ihotelApp.accounts.xy">Xy</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="roomtype">
+            <span jhiTranslate="ihotelApp.accounts.roomtype">Roomtype</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="bkid"><span jhiTranslate="ihotelApp.accounts.bkid">Bkid</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let accounts of accounts; trackBy: trackId" data-cy="entityTable">
+          <td>{{ accounts.account }}</td>
+          <td>{{ accounts.consumetime | formatMediumDatetime }}</td>
+          <td>{{ accounts.hoteltime | formatMediumDatetime }}</td>
+          <td>{{ accounts.feenum }}</td>
+          <td>{{ accounts.money }}</td>
+          <td>{{ accounts.memo }}</td>
+          <td>{{ accounts.empn }}</td>
+          <td>{{ accounts.imprest }}</td>
+          <td>{{ accounts.propertiy }}</td>
+          <td>{{ accounts.earntypen }}</td>
+          <td>{{ accounts.payment }}</td>
+          <td>{{ accounts.roomn }}</td>
+          <td>
+            <a [routerLink]="['/accounts', accounts.id, 'view']">{{ accounts.id }}</a>
+          </td>
+          <td>{{ accounts.ulogogram }}</td>
+          <td>{{ accounts.lk }}</td>
+          <td>{{ accounts.acc }}</td>
+          <td>{{ accounts.jzSign }}</td>
+          <td>{{ accounts.jzflag }}</td>
+          <td>{{ accounts.sign }}</td>
+          <td>{{ accounts.bs }}</td>
+          <td>{{ accounts.jzhotel | formatMediumDatetime }}</td>
+          <td>{{ accounts.jzempn }}</td>
+          <td>{{ accounts.jztime | formatMediumDatetime }}</td>
+          <td>{{ accounts.chonghong }}</td>
+          <td>{{ accounts.billno }}</td>
+          <td>{{ accounts.printcount }}</td>
+          <td>{{ accounts.vipjf }}</td>
+          <td>{{ accounts.hykh }}</td>
+          <td>{{ accounts.sl }}</td>
+          <td>{{ accounts.sgdjh }}</td>
+          <td>{{ accounts.hoteldm }}</td>
+          <td>{{ accounts.isnew }}</td>
+          <td>{{ accounts.guestId }}</td>
+          <td>{{ accounts.yhkh }}</td>
+          <td>{{ accounts.djq }}</td>
+          <td>{{ accounts.ysje }}</td>
+          <td>{{ accounts.bj }}</td>
+          <td>{{ accounts.bjempn }}</td>
+          <td>{{ accounts.bjtime | formatMediumDatetime }}</td>
+          <td>{{ accounts.paper2 }}</td>
+          <td>{{ accounts.bc }}</td>
+          <td>{{ accounts.auto }}</td>
+          <td>{{ accounts.xsy }}</td>
+          <td>{{ accounts.djkh }}</td>
+          <td>{{ accounts.djsign }}</td>
+          <td>{{ accounts.classname }}</td>
+          <td>{{ accounts.iscy }}</td>
+          <td>{{ accounts.bsign }}</td>
+          <td>{{ accounts.fx }}</td>
+          <td>{{ accounts.djlx }}</td>
+          <td>{{ accounts.isup }}</td>
+          <td>{{ accounts.yongjin }}</td>
+          <td>{{ accounts.czpc }}</td>
+          <td>{{ accounts.cxflag }}</td>
+          <td>{{ accounts.pmemo }}</td>
+          <td>{{ accounts.czbillno }}</td>
+          <td>{{ accounts.djqbz }}</td>
+          <td>{{ accounts.ysqmemo }}</td>
+          <td>{{ accounts.transactionId }}</td>
+          <td>{{ accounts.outTradeNo }}</td>
+          <td>{{ accounts.gsname }}</td>
+          <td>{{ accounts.rz | formatMediumDatetime }}</td>
+          <td>{{ accounts.gz | formatMediumDatetime }}</td>
+          <td>{{ accounts.ts }}</td>
+          <td>{{ accounts.ky }}</td>
+          <td>{{ accounts.xy }}</td>
+          <td>{{ accounts.roomtype }}</td>
+          <td>{{ accounts.bkid }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/accounts', accounts.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/accounts', accounts.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(accounts)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="accounts && accounts.length > 0">
+    <div class="row justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

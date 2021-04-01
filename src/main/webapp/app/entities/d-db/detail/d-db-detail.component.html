@@ -1,0 +1,124 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dDb">
+      <h2 data-cy="dDbDetailsHeading"><span jhiTranslate="ihotelApp.dDb.detail.title">D Db</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ihotelApp.dDb.id">Id</span></dt>
+        <dd>
+          <span>{{ dDb.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dDb.dbdate">Dbdate</span></dt>
+        <dd>
+          <span>{{ dDb.dbdate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dDb.dbbillno">Dbbillno</span></dt>
+        <dd>
+          <span>{{ dDb.dbbillno }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dDb.rdepot">Rdepot</span></dt>
+        <dd>
+          <span>{{ dDb.rdepot }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dDb.cdepot">Cdepot</span></dt>
+        <dd>
+          <span>{{ dDb.cdepot }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dDb.jbr">Jbr</span></dt>
+        <dd>
+          <span>{{ dDb.jbr }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dDb.remark">Remark</span></dt>
+        <dd>
+          <span>{{ dDb.remark }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dDb.spbm">Spbm</span></dt>
+        <dd>
+          <span>{{ dDb.spbm }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dDb.spmc">Spmc</span></dt>
+        <dd>
+          <span>{{ dDb.spmc }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dDb.unit">Unit</span></dt>
+        <dd>
+          <span>{{ dDb.unit }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dDb.price">Price</span></dt>
+        <dd>
+          <span>{{ dDb.price }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dDb.sl">Sl</span></dt>
+        <dd>
+          <span>{{ dDb.sl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dDb.je">Je</span></dt>
+        <dd>
+          <span>{{ dDb.je }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dDb.memo">Memo</span></dt>
+        <dd>
+          <span>{{ dDb.memo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dDb.flag">Flag</span></dt>
+        <dd>
+          <span>{{ dDb.flag }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dDb.kcid">Kcid</span></dt>
+        <dd>
+          <span>{{ dDb.kcid }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dDb.empn">Empn</span></dt>
+        <dd>
+          <span>{{ dDb.empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dDb.lrdate">Lrdate</span></dt>
+        <dd>
+          <span>{{ dDb.lrdate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dDb.ckbillno">Ckbillno</span></dt>
+        <dd>
+          <span>{{ dDb.ckbillno }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dDb.f1">F 1</span></dt>
+        <dd>
+          <span>{{ dDb.f1 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dDb.f2">F 2</span></dt>
+        <dd>
+          <span>{{ dDb.f2 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dDb.f1empn">F 1 Empn</span></dt>
+        <dd>
+          <span>{{ dDb.f1empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dDb.f2empn">F 2 Empn</span></dt>
+        <dd>
+          <span>{{ dDb.f2empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dDb.f1sj">F 1 Sj</span></dt>
+        <dd>
+          <span>{{ dDb.f1sj | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dDb.f2sj">F 2 Sj</span></dt>
+        <dd>
+          <span>{{ dDb.f2sj | formatMediumDatetime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/d-db', dDb.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

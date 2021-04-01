@@ -1,0 +1,48 @@
+{
+  "ihotelApp": {
+    "dDb": {
+      "home": {
+        "title": "D Dbs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new D Db",
+        "createOrEditLabel": "Create or edit a D Db",
+        "search": "Search for D Db",
+        "notFound": "No D Dbs found"
+      },
+      "created": "A new D Db is created with identifier {{ param }}",
+      "updated": "A D Db is updated with identifier {{ param }}",
+      "deleted": "A D Db is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete D Db {{ id }}?"
+      },
+      "detail": {
+        "title": "D Db"
+      },
+      "id": "Id",
+      "dbdate": "Dbdate",
+      "dbbillno": "Dbbillno",
+      "rdepot": "Rdepot",
+      "cdepot": "Cdepot",
+      "jbr": "Jbr",
+      "remark": "Remark",
+      "spbm": "Spbm",
+      "spmc": "Spmc",
+      "unit": "Unit",
+      "price": "Price",
+      "sl": "Sl",
+      "je": "Je",
+      "memo": "Memo",
+      "flag": "Flag",
+      "kcid": "Kcid",
+      "empn": "Empn",
+      "lrdate": "Lrdate",
+      "ckbillno": "Ckbillno",
+      "f1": "F 1",
+      "f2": "F 2",
+      "f1empn": "F 1 Empn",
+      "f2empn": "F 2 Empn",
+      "f1sj": "F 1 Sj",
+      "f2sj": "F 2 Sj"
+    }
+  }
+}

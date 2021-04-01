@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="checkinAccount">
+      <h2 data-cy="checkinAccountDetailsHeading"><span jhiTranslate="ihotelApp.checkinAccount.detail.title">Checkin Account</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ checkinAccount.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinAccount.account">Account</span></dt>
+        <dd>
+          <span>{{ checkinAccount.account }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinAccount.roomn">Roomn</span></dt>
+        <dd>
+          <span>{{ checkinAccount.roomn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinAccount.indatetime">Indatetime</span></dt>
+        <dd>
+          <span>{{ checkinAccount.indatetime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinAccount.gotime">Gotime</span></dt>
+        <dd>
+          <span>{{ checkinAccount.gotime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinAccount.kfang">Kfang</span></dt>
+        <dd>
+          <span>{{ checkinAccount.kfang }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinAccount.dhua">Dhua</span></dt>
+        <dd>
+          <span>{{ checkinAccount.dhua }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinAccount.minin">Minin</span></dt>
+        <dd>
+          <span>{{ checkinAccount.minin }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinAccount.peich">Peich</span></dt>
+        <dd>
+          <span>{{ checkinAccount.peich }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinAccount.qit">Qit</span></dt>
+        <dd>
+          <span>{{ checkinAccount.qit }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkinAccount.total">Total</span></dt>
+        <dd>
+          <span>{{ checkinAccount.total }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/checkin-account', checkinAccount.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

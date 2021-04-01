@@ -1,0 +1,28 @@
+{
+  "ihotelApp": {
+    "dType": {
+      "home": {
+        "title": "D Types",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new D Type",
+        "createOrEditLabel": "Create or edit a D Type",
+        "search": "Search for D Type",
+        "notFound": "No D Types found"
+      },
+      "created": "A new D Type is created with identifier {{ param }}",
+      "updated": "A D Type is updated with identifier {{ param }}",
+      "deleted": "A D Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete D Type {{ id }}?"
+      },
+      "detail": {
+        "title": "D Type"
+      },
+      "id": "ID",
+      "typeid": "Typeid",
+      "typename": "Typename",
+      "fatherid": "Fatherid",
+      "disabled": "Disabled"
+    }
+  }
+}

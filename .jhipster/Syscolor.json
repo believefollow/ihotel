@@ -1,0 +1,49 @@
+{
+  "name": "Syscolor",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "vc",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "vd",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "oc",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "od",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "oo",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "ss",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "book",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "syscolor",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131529"
+}

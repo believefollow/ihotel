@@ -1,0 +1,28 @@
+{
+  "ihotelApp": {
+    "dCktime": {
+      "home": {
+        "title": "D Cktimes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 D Cktime",
+        "createOrEditLabel": "创建或编辑 D Cktime",
+        "search": "查找 D Cktime",
+        "notFound": "No D Cktimes found"
+      },
+      "created": "D Cktime {{ param }} 创建成功",
+      "updated": "D Cktime {{ param }} 更新成功",
+      "deleted": "D Cktime {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 D Cktime {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "D Cktime"
+      },
+      "id": "ID",
+      "begintime": "Begintime",
+      "endtime": "Endtime",
+      "depot": "Depot",
+      "ckbillno": "Ckbillno"
+    }
+  }
+}

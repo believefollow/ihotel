@@ -1,0 +1,195 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-comset-heading" data-cy="ComsetCreateUpdateHeading" jhiTranslate="ihotelApp.comset.home.createOrEditLabel">
+        Create or edit a Comset
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.comset.comNum" for="field_comNum">Com Num</label>
+          <input type="text" class="form-control" name="comNum" id="field_comNum" data-cy="comNum" formControlName="comNum" />
+          <div *ngIf="editForm.get('comNum')!.invalid && (editForm.get('comNum')!.dirty || editForm.get('comNum')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('comNum')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('comNum')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 10 }"
+            >
+              This field cannot be longer than 10 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.comset.comBytes" for="field_comBytes">Com Bytes</label>
+          <input type="text" class="form-control" name="comBytes" id="field_comBytes" data-cy="comBytes" formControlName="comBytes" />
+          <div *ngIf="editForm.get('comBytes')!.invalid && (editForm.get('comBytes')!.dirty || editForm.get('comBytes')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('comBytes')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('comBytes')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 18 }"
+            >
+              This field cannot be longer than 18 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.comset.comDatabit" for="field_comDatabit">Com Databit</label>
+          <input
+            type="text"
+            class="form-control"
+            name="comDatabit"
+            id="field_comDatabit"
+            data-cy="comDatabit"
+            formControlName="comDatabit"
+          />
+          <div *ngIf="editForm.get('comDatabit')!.invalid && (editForm.get('comDatabit')!.dirty || editForm.get('comDatabit')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('comDatabit')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('comDatabit')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 10 }"
+            >
+              This field cannot be longer than 10 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.comset.comParitycheck" for="field_comParitycheck"
+            >Com Paritycheck</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="comParitycheck"
+            id="field_comParitycheck"
+            data-cy="comParitycheck"
+            formControlName="comParitycheck"
+          />
+          <div
+            *ngIf="
+              editForm.get('comParitycheck')!.invalid && (editForm.get('comParitycheck')!.dirty || editForm.get('comParitycheck')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('comParitycheck')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('comParitycheck')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 10 }"
+            >
+              This field cannot be longer than 10 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.comset.comStopbit" for="field_comStopbit">Com Stopbit</label>
+          <input
+            type="text"
+            class="form-control"
+            name="comStopbit"
+            id="field_comStopbit"
+            data-cy="comStopbit"
+            formControlName="comStopbit"
+          />
+          <div *ngIf="editForm.get('comStopbit')!.invalid && (editForm.get('comStopbit')!.dirty || editForm.get('comStopbit')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('comStopbit')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('comStopbit')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 18 }"
+            >
+              This field cannot be longer than 18 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.comset.comFunction" for="field_comFunction">Com Function</label>
+          <input
+            type="number"
+            class="form-control"
+            name="comFunction"
+            id="field_comFunction"
+            data-cy="comFunction"
+            formControlName="comFunction"
+          />
+          <div *ngIf="editForm.get('comFunction')!.invalid && (editForm.get('comFunction')!.dirty || editForm.get('comFunction')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('comFunction')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('comFunction')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

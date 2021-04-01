@@ -1,0 +1,31 @@
+{
+  "ihotelApp": {
+    "fwWxf": {
+      "home": {
+        "title": "Fw Wxfs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Fw Wxf",
+        "createOrEditLabel": "创建或编辑 Fw Wxf",
+        "search": "查找 Fw Wxf",
+        "notFound": "No Fw Wxfs found"
+      },
+      "created": "Fw Wxf {{ param }} 创建成功",
+      "updated": "Fw Wxf {{ param }} 更新成功",
+      "deleted": "Fw Wxf {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Fw Wxf {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Fw Wxf"
+      },
+      "id": "Id",
+      "roomn": "Roomn",
+      "memo": "Memo",
+      "djrq": "Djrq",
+      "wxr": "Wxr",
+      "wcrq": "Wcrq",
+      "djr": "Djr",
+      "flag": "Flag"
+    }
+  }
+}

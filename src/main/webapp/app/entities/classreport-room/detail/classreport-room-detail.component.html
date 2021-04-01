@@ -1,0 +1,100 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="classreportRoom">
+      <h2 data-cy="classreportRoomDetailsHeading"><span jhiTranslate="ihotelApp.classreportRoom.detail.title">Classreport Room</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ classreportRoom.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classreportRoom.account">Account</span></dt>
+        <dd>
+          <span>{{ classreportRoom.account }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classreportRoom.roomn">Roomn</span></dt>
+        <dd>
+          <span>{{ classreportRoom.roomn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classreportRoom.yfj">Yfj</span></dt>
+        <dd>
+          <span>{{ classreportRoom.yfj }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classreportRoom.yfj9008">Yfj 9008</span></dt>
+        <dd>
+          <span>{{ classreportRoom.yfj9008 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classreportRoom.yfj9009">Yfj 9009</span></dt>
+        <dd>
+          <span>{{ classreportRoom.yfj9009 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classreportRoom.yfj9007">Yfj 9007</span></dt>
+        <dd>
+          <span>{{ classreportRoom.yfj9007 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classreportRoom.gz">Gz</span></dt>
+        <dd>
+          <span>{{ classreportRoom.gz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classreportRoom.ff">Ff</span></dt>
+        <dd>
+          <span>{{ classreportRoom.ff }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classreportRoom.minibar">Minibar</span></dt>
+        <dd>
+          <span>{{ classreportRoom.minibar }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classreportRoom.phone">Phone</span></dt>
+        <dd>
+          <span>{{ classreportRoom.phone }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classreportRoom.other">Other</span></dt>
+        <dd>
+          <span>{{ classreportRoom.other }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classreportRoom.pc">Pc</span></dt>
+        <dd>
+          <span>{{ classreportRoom.pc }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classreportRoom.cz">Cz</span></dt>
+        <dd>
+          <span>{{ classreportRoom.cz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classreportRoom.cy">Cy</span></dt>
+        <dd>
+          <span>{{ classreportRoom.cy }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classreportRoom.md">Md</span></dt>
+        <dd>
+          <span>{{ classreportRoom.md }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classreportRoom.huiy">Huiy</span></dt>
+        <dd>
+          <span>{{ classreportRoom.huiy }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classreportRoom.dtb">Dtb</span></dt>
+        <dd>
+          <span>{{ classreportRoom.dtb }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classreportRoom.sszx">Sszx</span></dt>
+        <dd>
+          <span>{{ classreportRoom.sszx }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/classreport-room', classreportRoom.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

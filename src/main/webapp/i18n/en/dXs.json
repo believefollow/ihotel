@@ -1,0 +1,38 @@
+{
+  "ihotelApp": {
+    "dXs": {
+      "home": {
+        "title": "D Xs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new D Xs",
+        "createOrEditLabel": "Create or edit a D Xs",
+        "search": "Search for D Xs",
+        "notFound": "No D Xs found"
+      },
+      "created": "A new D Xs is created with identifier {{ param }}",
+      "updated": "A D Xs is updated with identifier {{ param }}",
+      "deleted": "A D Xs is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete D Xs {{ id }}?"
+      },
+      "detail": {
+        "title": "D Xs"
+      },
+      "id": "Id",
+      "begintime": "Begintime",
+      "endtime": "Endtime",
+      "ckbillno": "Ckbillno",
+      "depot": "Depot",
+      "kcid": "Kcid",
+      "ckid": "Ckid",
+      "spbm": "Spbm",
+      "spmc": "Spmc",
+      "unit": "Unit",
+      "rkprice": "Rkprice",
+      "xsprice": "Xsprice",
+      "sl": "Sl",
+      "rkje": "Rkje",
+      "xsje": "Xsje"
+    }
+  }
+}

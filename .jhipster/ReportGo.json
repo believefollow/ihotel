@@ -1,0 +1,189 @@
+{
+  "name": "ReportGo",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "roomn",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldName": "intime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "gotime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "zdh",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "fj",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "ff",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "min",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "pc",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "yh",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "dh",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "hy",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "qt",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "xj",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "sk",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "hyk",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "md",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "gz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "djq",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "qt2",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "empn",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "hoteltime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "x1",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "x2",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "x3",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "j1",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "j2",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "j3",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "account",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "memo",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldName": "jzGo",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "jsrq",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "xy",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "jzTime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "jzHoteltime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "wxje",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "zfb",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "report_go",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131444"
+}

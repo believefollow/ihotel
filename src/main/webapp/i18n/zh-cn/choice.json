@@ -1,0 +1,29 @@
+{
+  "ihotelApp": {
+    "choice": {
+      "home": {
+        "title": "Choices",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Choice",
+        "createOrEditLabel": "创建或编辑 Choice",
+        "search": "查找 Choice",
+        "notFound": "No Choices found"
+      },
+      "created": "Choice {{ param }} 创建成功",
+      "updated": "Choice {{ param }} 更新成功",
+      "deleted": "Choice {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Choice {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Choice"
+      },
+      "id": "Id",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "text": "Text",
+      "votes": "Votes",
+      "question": "Question"
+    }
+  }
+}

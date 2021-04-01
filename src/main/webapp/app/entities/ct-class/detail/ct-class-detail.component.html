@@ -1,0 +1,92 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="ctClass">
+      <h2 data-cy="ctClassDetailsHeading"><span jhiTranslate="ihotelApp.ctClass.detail.title">Ct Class</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ ctClass.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.ctClass.dt">Dt</span></dt>
+        <dd>
+          <span>{{ ctClass.dt | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.ctClass.empn">Empn</span></dt>
+        <dd>
+          <span>{{ ctClass.empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.ctClass.flag">Flag</span></dt>
+        <dd>
+          <span>{{ ctClass.flag }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.ctClass.jbempn">Jbempn</span></dt>
+        <dd>
+          <span>{{ ctClass.jbempn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.ctClass.gotime">Gotime</span></dt>
+        <dd>
+          <span>{{ ctClass.gotime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.ctClass.xj">Xj</span></dt>
+        <dd>
+          <span>{{ ctClass.xj }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.ctClass.zp">Zp</span></dt>
+        <dd>
+          <span>{{ ctClass.zp }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.ctClass.sk">Sk</span></dt>
+        <dd>
+          <span>{{ ctClass.sk }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.ctClass.hyk">Hyk</span></dt>
+        <dd>
+          <span>{{ ctClass.hyk }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.ctClass.cq">Cq</span></dt>
+        <dd>
+          <span>{{ ctClass.cq }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.ctClass.gz">Gz</span></dt>
+        <dd>
+          <span>{{ ctClass.gz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.ctClass.gfz">Gfz</span></dt>
+        <dd>
+          <span>{{ ctClass.gfz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.ctClass.yq">Yq</span></dt>
+        <dd>
+          <span>{{ ctClass.yq }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.ctClass.yh">Yh</span></dt>
+        <dd>
+          <span>{{ ctClass.yh }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.ctClass.zzh">Zzh</span></dt>
+        <dd>
+          <span>{{ ctClass.zzh }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.ctClass.checkSign">Check Sign</span></dt>
+        <dd>
+          <span>{{ ctClass.checkSign }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/ct-class', ctClass.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

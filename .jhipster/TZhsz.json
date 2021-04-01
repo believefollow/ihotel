@@ -1,0 +1,198 @@
+{
+  "name": "TZhsz",
+  "fields": [
+    {
+      "fieldName": "zhbm",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "10"
+    },
+    {
+      "fieldName": "zhmc",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "10"
+    },
+    {
+      "fieldName": "zhsm",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "maxsl",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "krsl",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "roomarea",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "userName",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "16"
+    },
+    {
+      "fieldName": "zwzt",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "sj",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "yyls",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "ydr",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "30"
+    },
+    {
+      "fieldName": "ydrdh",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "18"
+    },
+    {
+      "fieldName": "ydsj",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "jzSign",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "padyyls",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "11"
+    },
+    {
+      "fieldName": "pdano",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "120"
+    },
+    {
+      "fieldName": "zdxf",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "ce",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "sign",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "qbj",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "xsj",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "csdw",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "csjg",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "gsj",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "gsjg",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "tm",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "jzsj",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "pattern"],
+      "fieldValidateRulesMinlength": "8",
+      "fieldValidateRulesMaxlength": "8",
+      "fieldValidateRulesPattern": "^(([0-1]\\d)|(2[0-3])):([0-5]\\d):([0-5]\\d)$"
+    },
+    {
+      "fieldName": "yscs",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "qybc",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "kssj",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "pattern"],
+      "fieldValidateRulesMinlength": "8",
+      "fieldValidateRulesMaxlength": "8",
+      "fieldValidateRulesPattern": "^(([0-1]\\d)|(2[0-3])):([0-5]\\d):([0-5]\\d)$"
+    },
+    {
+      "fieldName": "jssj",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "pattern"],
+      "fieldValidateRulesMinlength": "8",
+      "fieldValidateRulesMaxlength": "8",
+      "fieldValidateRulesPattern": "^(([0-1]\\d)|(2[0-3])):([0-5]\\d):([0-5]\\d)$"
+    },
+    {
+      "fieldName": "fy",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "jj",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "hourSign",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "px",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "t_zhsz",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131604"
+}

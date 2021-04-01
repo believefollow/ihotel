@@ -1,0 +1,65 @@
+{
+  "name": "TTelecom",
+  "fields": [
+    {
+      "fieldName": "markid",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "callnumstart",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "callnumlen",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "tonumstart",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "tonumlen",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "starttimestart",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "starttimelen",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "endtimestart",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "endtimelen",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "timelongstart",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "timelonglen",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "totallen",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "t_telecom",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131555"
+}

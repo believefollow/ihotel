@@ -1,0 +1,157 @@
+<div>
+  <h2 id="page-heading" data-cy="DPdbHeading">
+    <span jhiTranslate="ihotelApp.dPdb.home.title">D Pdbs</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="ihotelApp.dPdb.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-d-pdb"
+        [routerLink]="['/d-pdb/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span class="hidden-sm-down" jhiTranslate="ihotelApp.dPdb.home.createLabel"> Create a new D Pdb </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <form name="searchForm" class="form-inline">
+        <div class="input-group w-100 mt-3">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="currentSearch"
+            id="currentSearch"
+            name="currentSearch"
+            placeholder="{{ 'ihotelApp.dPdb.home.search' | translate }}"
+          />
+
+          <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+            <fa-icon icon="search"></fa-icon>
+          </button>
+
+          <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+            <fa-icon icon="trash-alt"></fa-icon>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="dPdbs?.length === 0">
+    <span jhiTranslate="ihotelApp.dPdb.home.notFound">No dPdbs found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="dPdbs && dPdbs.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="ihotelApp.dPdb.id">Id</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="begindate">
+            <span jhiTranslate="ihotelApp.dPdb.begindate">Begindate</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="enddate">
+            <span jhiTranslate="ihotelApp.dPdb.enddate">Enddate</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="bm"><span jhiTranslate="ihotelApp.dPdb.bm">Bm</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="spmc"><span jhiTranslate="ihotelApp.dPdb.spmc">Spmc</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="qcsl"><span jhiTranslate="ihotelApp.dPdb.qcsl">Qcsl</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="rksl"><span jhiTranslate="ihotelApp.dPdb.rksl">Rksl</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="xssl"><span jhiTranslate="ihotelApp.dPdb.xssl">Xssl</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="dbsl"><span jhiTranslate="ihotelApp.dPdb.dbsl">Dbsl</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="qtck"><span jhiTranslate="ihotelApp.dPdb.qtck">Qtck</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="jcsl"><span jhiTranslate="ihotelApp.dPdb.jcsl">Jcsl</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="swsl"><span jhiTranslate="ihotelApp.dPdb.swsl">Swsl</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="pyk"><span jhiTranslate="ihotelApp.dPdb.pyk">Pyk</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="memo"><span jhiTranslate="ihotelApp.dPdb.memo">Memo</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="depot"><span jhiTranslate="ihotelApp.dPdb.depot">Depot</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="rkje"><span jhiTranslate="ihotelApp.dPdb.rkje">Rkje</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="xsje"><span jhiTranslate="ihotelApp.dPdb.xsje">Xsje</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="dbje"><span jhiTranslate="ihotelApp.dPdb.dbje">Dbje</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="jcje"><span jhiTranslate="ihotelApp.dPdb.jcje">Jcje</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="dp"><span jhiTranslate="ihotelApp.dPdb.dp">Dp</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="qcje"><span jhiTranslate="ihotelApp.dPdb.qcje">Qcje</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="swje"><span jhiTranslate="ihotelApp.dPdb.swje">Swje</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="qtje"><span jhiTranslate="ihotelApp.dPdb.qtje">Qtje</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dPdb of dPdbs; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/d-pdb', dPdb.id, 'view']">{{ dPdb.id }}</a>
+          </td>
+          <td>{{ dPdb.begindate | formatMediumDatetime }}</td>
+          <td>{{ dPdb.enddate | formatMediumDatetime }}</td>
+          <td>{{ dPdb.bm }}</td>
+          <td>{{ dPdb.spmc }}</td>
+          <td>{{ dPdb.qcsl }}</td>
+          <td>{{ dPdb.rksl }}</td>
+          <td>{{ dPdb.xssl }}</td>
+          <td>{{ dPdb.dbsl }}</td>
+          <td>{{ dPdb.qtck }}</td>
+          <td>{{ dPdb.jcsl }}</td>
+          <td>{{ dPdb.swsl }}</td>
+          <td>{{ dPdb.pyk }}</td>
+          <td>{{ dPdb.memo }}</td>
+          <td>{{ dPdb.depot }}</td>
+          <td>{{ dPdb.rkje }}</td>
+          <td>{{ dPdb.xsje }}</td>
+          <td>{{ dPdb.dbje }}</td>
+          <td>{{ dPdb.jcje }}</td>
+          <td>{{ dPdb.dp }}</td>
+          <td>{{ dPdb.qcje }}</td>
+          <td>{{ dPdb.swje }}</td>
+          <td>{{ dPdb.qtje }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/d-pdb', dPdb.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button type="submit" [routerLink]="['/d-pdb', dPdb.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(dPdb)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="dPdbs && dPdbs.length > 0">
+    <div class="row justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

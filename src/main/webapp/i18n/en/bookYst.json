@@ -1,0 +1,62 @@
+{
+  "ihotelApp": {
+    "bookYst": {
+      "home": {
+        "title": "Book Ysts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Book Yst",
+        "createOrEditLabel": "Create or edit a Book Yst",
+        "search": "Search for Book Yst",
+        "notFound": "No Book Ysts found"
+      },
+      "created": "A new Book Yst is created with identifier {{ param }}",
+      "updated": "A Book Yst is updated with identifier {{ param }}",
+      "deleted": "A Book Yst is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Book Yst {{ id }}?"
+      },
+      "detail": {
+        "title": "Book Yst"
+      },
+      "id": "ID",
+      "roomcode": "Roomcode",
+      "roomname": "Roomname",
+      "roomnum": "Roomnum",
+      "roomseparatenum": "Roomseparatenum",
+      "bedids": "Bedids",
+      "bedsimpledesc": "Bedsimpledesc",
+      "bednum": "Bednum",
+      "roomsize": "Roomsize",
+      "roomfloor": "Roomfloor",
+      "netservice": "Netservice",
+      "nettype": "Nettype",
+      "iswindow": "Iswindow",
+      "remark": "Remark",
+      "sortid": "Sortid",
+      "roomstate": "Roomstate",
+      "source": "Source",
+      "roomamenities": "Roomamenities",
+      "maxguestnums": "Maxguestnums",
+      "roomdistribution": "Roomdistribution",
+      "conditionbeforedays": "Conditionbeforedays",
+      "conditionleastdays": "Conditionleastdays",
+      "conditionleastroomnum": "Conditionleastroomnum",
+      "paymentype": "Paymentype",
+      "rateplandesc": "Rateplandesc",
+      "rateplanname": "Rateplanname",
+      "rateplanstate": "Rateplanstate",
+      "addvaluebednum": "Addvaluebednum",
+      "addvaluebedprice": "Addvaluebedprice",
+      "addvaluebreakfastnum": "Addvaluebreakfastnum",
+      "addvaluebreakfastprice": "Addvaluebreakfastprice",
+      "baseprice": "Baseprice",
+      "saleprice": "Saleprice",
+      "marketprice": "Marketprice",
+      "hotelproductservice": "Hotelproductservice",
+      "hotelproductservicedesc": "Hotelproductservicedesc",
+      "hotelproductid": "Hotelproductid",
+      "roomid": "Roomid",
+      "hotelid": "Hotelid"
+    }
+  }
+}

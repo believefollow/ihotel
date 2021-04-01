@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dKc">
+      <h2 data-cy="dKcDetailsHeading"><span jhiTranslate="ihotelApp.dKc.detail.title">D Kc</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ihotelApp.dKc.id">Id</span></dt>
+        <dd>
+          <span>{{ dKc.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dKc.depot">Depot</span></dt>
+        <dd>
+          <span>{{ dKc.depot }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dKc.spbm">Spbm</span></dt>
+        <dd>
+          <span>{{ dKc.spbm }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dKc.spmc">Spmc</span></dt>
+        <dd>
+          <span>{{ dKc.spmc }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dKc.xh">Xh</span></dt>
+        <dd>
+          <span>{{ dKc.xh }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dKc.dw">Dw</span></dt>
+        <dd>
+          <span>{{ dKc.dw }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dKc.price">Price</span></dt>
+        <dd>
+          <span>{{ dKc.price }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dKc.sl">Sl</span></dt>
+        <dd>
+          <span>{{ dKc.sl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dKc.je">Je</span></dt>
+        <dd>
+          <span>{{ dKc.je }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/d-kc', dKc.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

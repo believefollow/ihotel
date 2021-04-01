@@ -1,0 +1,68 @@
+{
+  "name": "ManagerR",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "hoteldate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "feenum",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "feename",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "salespotn",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "dayje",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "mje",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "smje",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "yje",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "syje",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "sign",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "10"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "manager_r",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131407"
+}

@@ -1,0 +1,25 @@
+{
+  "ihotelApp": {
+    "ftXz": {
+      "home": {
+        "title": "Ft Xzs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Ft Xz",
+        "createOrEditLabel": "Create or edit a Ft Xz",
+        "search": "Search for Ft Xz",
+        "notFound": "No Ft Xzs found"
+      },
+      "created": "A new Ft Xz is created with identifier {{ param }}",
+      "updated": "A Ft Xz is updated with identifier {{ param }}",
+      "deleted": "A Ft Xz is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Ft Xz {{ id }}?"
+      },
+      "detail": {
+        "title": "Ft Xz"
+      },
+      "id": "Id",
+      "roomn": "Roomn"
+    }
+  }
+}

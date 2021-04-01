@@ -1,0 +1,33 @@
+{
+  "ihotelApp": {
+    "cyCptype": {
+      "home": {
+        "title": "Cy Cptypes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Cy Cptype",
+        "createOrEditLabel": "创建或编辑 Cy Cptype",
+        "search": "查找 Cy Cptype",
+        "notFound": "No Cy Cptypes found"
+      },
+      "created": "Cy Cptype {{ param }} 创建成功",
+      "updated": "Cy Cptype {{ param }} 更新成功",
+      "deleted": "Cy Cptype {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Cy Cptype {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Cy Cptype"
+      },
+      "id": "ID",
+      "cptdm": "Cptdm",
+      "cptname": "Cptname",
+      "printsign": "Printsign",
+      "printer": "Printer",
+      "printnum": "Printnum",
+      "printcut": "Printcut",
+      "syssign": "Syssign",
+      "typesign": "Typesign",
+      "qy": "Qy"
+    }
+  }
+}

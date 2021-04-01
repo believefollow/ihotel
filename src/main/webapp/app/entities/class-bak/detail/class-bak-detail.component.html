@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="classBak">
+      <h2 data-cy="classBakDetailsHeading"><span jhiTranslate="ihotelApp.classBak.detail.title">Class Bak</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ihotelApp.classBak.id">Id</span></dt>
+        <dd>
+          <span>{{ classBak.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classBak.empn">Empn</span></dt>
+        <dd>
+          <span>{{ classBak.empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classBak.dt">Dt</span></dt>
+        <dd>
+          <span>{{ classBak.dt | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classBak.rq">Rq</span></dt>
+        <dd>
+          <span>{{ classBak.rq | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classBak.ghname">Ghname</span></dt>
+        <dd>
+          <span>{{ classBak.ghname }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.classBak.bak">Bak</span></dt>
+        <dd>
+          <span>{{ classBak.bak }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/class-bak', classBak.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

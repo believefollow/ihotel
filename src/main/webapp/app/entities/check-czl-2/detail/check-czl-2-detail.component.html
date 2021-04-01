@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="checkCzl2">
+      <h2 data-cy="checkCzl2DetailsHeading"><span jhiTranslate="ihotelApp.checkCzl2.detail.title">Check Czl 2</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ checkCzl2.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkCzl2.hoteltime">Hoteltime</span></dt>
+        <dd>
+          <span>{{ checkCzl2.hoteltime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkCzl2.protocol">Protocol</span></dt>
+        <dd>
+          <span>{{ checkCzl2.protocol }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkCzl2.rnum">Rnum</span></dt>
+        <dd>
+          <span>{{ checkCzl2.rnum }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkCzl2.czl">Czl</span></dt>
+        <dd>
+          <span>{{ checkCzl2.czl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkCzl2.chagrge">Chagrge</span></dt>
+        <dd>
+          <span>{{ checkCzl2.chagrge }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkCzl2.chagrgeAvg">Chagrge Avg</span></dt>
+        <dd>
+          <span>{{ checkCzl2.chagrgeAvg }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkCzl2.empn">Empn</span></dt>
+        <dd>
+          <span>{{ checkCzl2.empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.checkCzl2.entertime">Entertime</span></dt>
+        <dd>
+          <span>{{ checkCzl2.entertime | formatMediumDatetime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/check-czl-2', checkCzl2.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

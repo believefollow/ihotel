@@ -1,0 +1,26 @@
+{
+  "ihotelApp": {
+    "accbillno": {
+      "home": {
+        "title": "Accbillnos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Accbillno",
+        "createOrEditLabel": "Create or edit a Accbillno",
+        "search": "Search for Accbillno",
+        "notFound": "No Accbillnos found"
+      },
+      "created": "A new Accbillno is created with identifier {{ param }}",
+      "updated": "A Accbillno is updated with identifier {{ param }}",
+      "deleted": "A Accbillno is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Accbillno {{ id }}?"
+      },
+      "detail": {
+        "title": "Accbillno"
+      },
+      "id": "ID",
+      "account": "Account",
+      "accbillno": "Accbillno"
+    }
+  }
+}

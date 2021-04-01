@@ -1,0 +1,148 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-cy-cptype-heading" data-cy="CyCptypeCreateUpdateHeading" jhiTranslate="ihotelApp.cyCptype.home.createOrEditLabel">
+        Create or edit a Cy Cptype
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.cyCptype.cptdm" for="field_cptdm">Cptdm</label>
+          <input type="text" class="form-control" name="cptdm" id="field_cptdm" data-cy="cptdm" formControlName="cptdm" />
+          <div *ngIf="editForm.get('cptdm')!.invalid && (editForm.get('cptdm')!.dirty || editForm.get('cptdm')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('cptdm')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('cptdm')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 4 }"
+            >
+              This field cannot be longer than 4 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.cyCptype.cptname" for="field_cptname">Cptname</label>
+          <input type="text" class="form-control" name="cptname" id="field_cptname" data-cy="cptname" formControlName="cptname" />
+          <div *ngIf="editForm.get('cptname')!.invalid && (editForm.get('cptname')!.dirty || editForm.get('cptname')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('cptname')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('cptname')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 20 }"
+            >
+              This field cannot be longer than 20 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.cyCptype.printsign" for="field_printsign">Printsign</label>
+          <input type="checkbox" class="form-check" name="printsign" id="field_printsign" data-cy="printsign" formControlName="printsign" />
+          <div *ngIf="editForm.get('printsign')!.invalid && (editForm.get('printsign')!.dirty || editForm.get('printsign')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('printsign')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.cyCptype.printer" for="field_printer">Printer</label>
+          <input type="text" class="form-control" name="printer" id="field_printer" data-cy="printer" formControlName="printer" />
+          <div *ngIf="editForm.get('printer')!.invalid && (editForm.get('printer')!.dirty || editForm.get('printer')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('printer')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 100 }"
+            >
+              This field cannot be longer than 100 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.cyCptype.printnum" for="field_printnum">Printnum</label>
+          <input type="number" class="form-control" name="printnum" id="field_printnum" data-cy="printnum" formControlName="printnum" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.cyCptype.printcut" for="field_printcut">Printcut</label>
+          <input type="number" class="form-control" name="printcut" id="field_printcut" data-cy="printcut" formControlName="printcut" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.cyCptype.syssign" for="field_syssign">Syssign</label>
+          <input type="checkbox" class="form-check" name="syssign" id="field_syssign" data-cy="syssign" formControlName="syssign" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.cyCptype.typesign" for="field_typesign">Typesign</label>
+          <input type="text" class="form-control" name="typesign" id="field_typesign" data-cy="typesign" formControlName="typesign" />
+          <div *ngIf="editForm.get('typesign')!.invalid && (editForm.get('typesign')!.dirty || editForm.get('typesign')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('typesign')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 100 }"
+            >
+              This field cannot be longer than 100 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.cyCptype.qy" for="field_qy">Qy</label>
+          <input type="text" class="form-control" name="qy" id="field_qy" data-cy="qy" formControlName="qy" />
+          <div *ngIf="editForm.get('qy')!.invalid && (editForm.get('qy')!.dirty || editForm.get('qy')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('qy')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 20 }"
+            >
+              This field cannot be longer than 20 characters.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

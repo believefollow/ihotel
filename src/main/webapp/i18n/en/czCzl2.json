@@ -1,0 +1,50 @@
+{
+  "ihotelApp": {
+    "czCzl2": {
+      "home": {
+        "title": "Cz Czl 2 S",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Cz Czl 2",
+        "createOrEditLabel": "Create or edit a Cz Czl 2",
+        "search": "Search for Cz Czl 2",
+        "notFound": "No Cz Czl 2 S found"
+      },
+      "created": "A new Cz Czl 2 is created with identifier {{ param }}",
+      "updated": "A Cz Czl 2 is updated with identifier {{ param }}",
+      "deleted": "A Cz Czl 2 is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Cz Czl 2 {{ id }}?"
+      },
+      "detail": {
+        "title": "Cz Czl 2"
+      },
+      "id": "ID",
+      "dr": "Dr",
+      "type": "Type",
+      "fs": "Fs",
+      "kfl": "Kfl",
+      "fzsr": "Fzsr",
+      "pjz": "Pjz",
+      "fsM": "Fs M",
+      "kflM": "Kfl M",
+      "fzsrM": "Fzsr M",
+      "pjzM": "Pjz M",
+      "fsY": "Fs Y",
+      "kflY": "Kfl Y",
+      "fzsrY": "Fzsr Y",
+      "pjzY": "Pjz Y",
+      "fsQ": "Fs Q",
+      "kflQ": "Kfl Q",
+      "fzsrQ": "Fzsr Q",
+      "pjzQ": "Pjz Q",
+      "dateY": "Date Y",
+      "dqdate": "Dqdate",
+      "empn": "Empn",
+      "number": "Number",
+      "numberM": "Number M",
+      "numberY": "Number Y",
+      "hoteldm": "Hoteldm",
+      "isnew": "Isnew"
+    }
+  }
+}

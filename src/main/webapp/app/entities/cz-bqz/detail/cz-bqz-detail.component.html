@@ -1,0 +1,120 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="czBqz">
+      <h2 data-cy="czBqzDetailsHeading"><span jhiTranslate="ihotelApp.czBqz.detail.title">Cz Bqz</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ czBqz.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czBqz.rq">Rq</span></dt>
+        <dd>
+          <span>{{ czBqz.rq | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czBqz.qSl">Q Sl</span></dt>
+        <dd>
+          <span>{{ czBqz.qSl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czBqz.qKfl">Q Kfl</span></dt>
+        <dd>
+          <span>{{ czBqz.qKfl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czBqz.qPjz">Q Pjz</span></dt>
+        <dd>
+          <span>{{ czBqz.qPjz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czBqz.qYsfz">Q Ysfz</span></dt>
+        <dd>
+          <span>{{ czBqz.qYsfz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czBqz.qSjfz">Q Sjfz</span></dt>
+        <dd>
+          <span>{{ czBqz.qSjfz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czBqz.qFzcz">Q Fzcz</span></dt>
+        <dd>
+          <span>{{ czBqz.qFzcz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czBqz.qPjzcz">Q Pjzcz</span></dt>
+        <dd>
+          <span>{{ czBqz.qPjzcz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czBqz.bSl">B Sl</span></dt>
+        <dd>
+          <span>{{ czBqz.bSl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czBqz.bKfl">B Kfl</span></dt>
+        <dd>
+          <span>{{ czBqz.bKfl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czBqz.bPjz">B Pjz</span></dt>
+        <dd>
+          <span>{{ czBqz.bPjz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czBqz.bYsfz">B Ysfz</span></dt>
+        <dd>
+          <span>{{ czBqz.bYsfz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czBqz.bSjfz">B Sjfz</span></dt>
+        <dd>
+          <span>{{ czBqz.bSjfz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czBqz.bFzcz">B Fzcz</span></dt>
+        <dd>
+          <span>{{ czBqz.bFzcz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czBqz.bPjzcz">B Pjzcz</span></dt>
+        <dd>
+          <span>{{ czBqz.bPjzcz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czBqz.zSl">Z Sl</span></dt>
+        <dd>
+          <span>{{ czBqz.zSl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czBqz.zKfl">Z Kfl</span></dt>
+        <dd>
+          <span>{{ czBqz.zKfl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czBqz.zPjz">Z Pjz</span></dt>
+        <dd>
+          <span>{{ czBqz.zPjz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czBqz.zYsfz">Z Ysfz</span></dt>
+        <dd>
+          <span>{{ czBqz.zYsfz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czBqz.zSjfz">Z Sjfz</span></dt>
+        <dd>
+          <span>{{ czBqz.zSjfz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czBqz.zFzcz">Z Fzcz</span></dt>
+        <dd>
+          <span>{{ czBqz.zFzcz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czBqz.zPjzcz">Z Pjzcz</span></dt>
+        <dd>
+          <span>{{ czBqz.zPjzcz }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.czBqz.zk">Zk</span></dt>
+        <dd>
+          <span>{{ czBqz.zk }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/cz-bqz', czBqz.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

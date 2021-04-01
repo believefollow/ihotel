@@ -1,0 +1,159 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-cz-bqz-heading" data-cy="CzBqzCreateUpdateHeading" jhiTranslate="ihotelApp.czBqz.home.createOrEditLabel">
+        Create or edit a Cz Bqz
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czBqz.rq" for="field_rq">Rq</label>
+          <div class="d-flex">
+            <input
+              id="field_rq"
+              data-cy="rq"
+              type="datetime-local"
+              class="form-control"
+              name="rq"
+              formControlName="rq"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czBqz.qSl" for="field_qSl">Q Sl</label>
+          <input type="number" class="form-control" name="qSl" id="field_qSl" data-cy="qSl" formControlName="qSl" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czBqz.qKfl" for="field_qKfl">Q Kfl</label>
+          <input type="number" class="form-control" name="qKfl" id="field_qKfl" data-cy="qKfl" formControlName="qKfl" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czBqz.qPjz" for="field_qPjz">Q Pjz</label>
+          <input type="number" class="form-control" name="qPjz" id="field_qPjz" data-cy="qPjz" formControlName="qPjz" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czBqz.qYsfz" for="field_qYsfz">Q Ysfz</label>
+          <input type="number" class="form-control" name="qYsfz" id="field_qYsfz" data-cy="qYsfz" formControlName="qYsfz" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czBqz.qSjfz" for="field_qSjfz">Q Sjfz</label>
+          <input type="number" class="form-control" name="qSjfz" id="field_qSjfz" data-cy="qSjfz" formControlName="qSjfz" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czBqz.qFzcz" for="field_qFzcz">Q Fzcz</label>
+          <input type="number" class="form-control" name="qFzcz" id="field_qFzcz" data-cy="qFzcz" formControlName="qFzcz" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czBqz.qPjzcz" for="field_qPjzcz">Q Pjzcz</label>
+          <input type="number" class="form-control" name="qPjzcz" id="field_qPjzcz" data-cy="qPjzcz" formControlName="qPjzcz" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czBqz.bSl" for="field_bSl">B Sl</label>
+          <input type="number" class="form-control" name="bSl" id="field_bSl" data-cy="bSl" formControlName="bSl" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czBqz.bKfl" for="field_bKfl">B Kfl</label>
+          <input type="number" class="form-control" name="bKfl" id="field_bKfl" data-cy="bKfl" formControlName="bKfl" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czBqz.bPjz" for="field_bPjz">B Pjz</label>
+          <input type="number" class="form-control" name="bPjz" id="field_bPjz" data-cy="bPjz" formControlName="bPjz" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czBqz.bYsfz" for="field_bYsfz">B Ysfz</label>
+          <input type="number" class="form-control" name="bYsfz" id="field_bYsfz" data-cy="bYsfz" formControlName="bYsfz" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czBqz.bSjfz" for="field_bSjfz">B Sjfz</label>
+          <input type="number" class="form-control" name="bSjfz" id="field_bSjfz" data-cy="bSjfz" formControlName="bSjfz" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czBqz.bFzcz" for="field_bFzcz">B Fzcz</label>
+          <input type="number" class="form-control" name="bFzcz" id="field_bFzcz" data-cy="bFzcz" formControlName="bFzcz" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czBqz.bPjzcz" for="field_bPjzcz">B Pjzcz</label>
+          <input type="number" class="form-control" name="bPjzcz" id="field_bPjzcz" data-cy="bPjzcz" formControlName="bPjzcz" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czBqz.zSl" for="field_zSl">Z Sl</label>
+          <input type="number" class="form-control" name="zSl" id="field_zSl" data-cy="zSl" formControlName="zSl" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czBqz.zKfl" for="field_zKfl">Z Kfl</label>
+          <input type="number" class="form-control" name="zKfl" id="field_zKfl" data-cy="zKfl" formControlName="zKfl" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czBqz.zPjz" for="field_zPjz">Z Pjz</label>
+          <input type="number" class="form-control" name="zPjz" id="field_zPjz" data-cy="zPjz" formControlName="zPjz" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czBqz.zYsfz" for="field_zYsfz">Z Ysfz</label>
+          <input type="number" class="form-control" name="zYsfz" id="field_zYsfz" data-cy="zYsfz" formControlName="zYsfz" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czBqz.zSjfz" for="field_zSjfz">Z Sjfz</label>
+          <input type="number" class="form-control" name="zSjfz" id="field_zSjfz" data-cy="zSjfz" formControlName="zSjfz" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czBqz.zFzcz" for="field_zFzcz">Z Fzcz</label>
+          <input type="number" class="form-control" name="zFzcz" id="field_zFzcz" data-cy="zFzcz" formControlName="zFzcz" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czBqz.zPjzcz" for="field_zPjzcz">Z Pjzcz</label>
+          <input type="number" class="form-control" name="zPjzcz" id="field_zPjzcz" data-cy="zPjzcz" formControlName="zPjzcz" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czBqz.zk" for="field_zk">Zk</label>
+          <input type="number" class="form-control" name="zk" id="field_zk" data-cy="zk" formControlName="zk" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

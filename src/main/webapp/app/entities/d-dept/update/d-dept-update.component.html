@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-d-dept-heading" data-cy="DDeptCreateUpdateHeading" jhiTranslate="ihotelApp.dDept.home.createOrEditLabel">
+        Create or edit a D Dept
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dDept.deptid" for="field_deptid">Deptid</label>
+          <input type="number" class="form-control" name="deptid" id="field_deptid" data-cy="deptid" formControlName="deptid" />
+          <div *ngIf="editForm.get('deptid')!.invalid && (editForm.get('deptid')!.dirty || editForm.get('deptid')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('deptid')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small class="form-text text-danger" [hidden]="!editForm.get('deptid')?.errors?.number" jhiTranslate="entity.validation.number">
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dDept.deptname" for="field_deptname">Deptname</label>
+          <input type="text" class="form-control" name="deptname" id="field_deptname" data-cy="deptname" formControlName="deptname" />
+          <div *ngIf="editForm.get('deptname')!.invalid && (editForm.get('deptname')!.dirty || editForm.get('deptname')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('deptname')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('deptname')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

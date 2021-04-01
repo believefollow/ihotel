@@ -1,0 +1,33 @@
+{
+  "ihotelApp": {
+    "cyCptype": {
+      "home": {
+        "title": "Cy Cptypes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Cy Cptype",
+        "createOrEditLabel": "Create or edit a Cy Cptype",
+        "search": "Search for Cy Cptype",
+        "notFound": "No Cy Cptypes found"
+      },
+      "created": "A new Cy Cptype is created with identifier {{ param }}",
+      "updated": "A Cy Cptype is updated with identifier {{ param }}",
+      "deleted": "A Cy Cptype is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Cy Cptype {{ id }}?"
+      },
+      "detail": {
+        "title": "Cy Cptype"
+      },
+      "id": "ID",
+      "cptdm": "Cptdm",
+      "cptname": "Cptname",
+      "printsign": "Printsign",
+      "printer": "Printer",
+      "printnum": "Printnum",
+      "printcut": "Printcut",
+      "syssign": "Syssign",
+      "typesign": "Typesign",
+      "qy": "Qy"
+    }
+  }
+}

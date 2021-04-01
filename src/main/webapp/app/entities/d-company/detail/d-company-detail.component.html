@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dCompany">
+      <h2 data-cy="dCompanyDetailsHeading"><span jhiTranslate="ihotelApp.dCompany.detail.title">D Company</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ihotelApp.dCompany.company">Company</span></dt>
+        <dd>
+          <span>{{ dCompany.company }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCompany.linkman">Linkman</span></dt>
+        <dd>
+          <span>{{ dCompany.linkman }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCompany.phone">Phone</span></dt>
+        <dd>
+          <span>{{ dCompany.phone }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCompany.address">Address</span></dt>
+        <dd>
+          <span>{{ dCompany.address }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCompany.remark">Remark</span></dt>
+        <dd>
+          <span>{{ dCompany.remark }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCompany.fax">Fax</span></dt>
+        <dd>
+          <span>{{ dCompany.fax }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCompany.id">Id</span></dt>
+        <dd>
+          <span>{{ dCompany.id }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/d-company', dCompany.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

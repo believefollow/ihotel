@@ -1,0 +1,153 @@
+<div>
+  <h2 id="page-heading" data-cy="CrinfoHeading">
+    <span jhiTranslate="ihotelApp.crinfo.home.title">Crinfos</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="ihotelApp.crinfo.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-crinfo"
+        [routerLink]="['/crinfo/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span class="hidden-sm-down" jhiTranslate="ihotelApp.crinfo.home.createLabel"> Create a new Crinfo </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <form name="searchForm" class="form-inline">
+        <div class="input-group w-100 mt-3">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="currentSearch"
+            id="currentSearch"
+            name="currentSearch"
+            placeholder="{{ 'ihotelApp.crinfo.home.search' | translate }}"
+          />
+
+          <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+            <fa-icon icon="search"></fa-icon>
+          </button>
+
+          <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+            <fa-icon icon="trash-alt"></fa-icon>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="crinfos?.length === 0">
+    <span jhiTranslate="ihotelApp.crinfo.home.notFound">No crinfos found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="crinfos && crinfos.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="ihotelApp.crinfo.id">Id</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="operatetime">
+            <span jhiTranslate="ihotelApp.crinfo.operatetime">Operatetime</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="oldrent">
+            <span jhiTranslate="ihotelApp.crinfo.oldrent">Oldrent</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="newrent">
+            <span jhiTranslate="ihotelApp.crinfo.newrent">Newrent</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="oldroomn">
+            <span jhiTranslate="ihotelApp.crinfo.oldroomn">Oldroomn</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="newroomn">
+            <span jhiTranslate="ihotelApp.crinfo.newroomn">Newroomn</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="account">
+            <span jhiTranslate="ihotelApp.crinfo.account">Account</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="empn"><span jhiTranslate="ihotelApp.crinfo.empn">Empn</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="oldday"><span jhiTranslate="ihotelApp.crinfo.oldday">Oldday</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="newday"><span jhiTranslate="ihotelApp.crinfo.newday">Newday</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="hoteltime">
+            <span jhiTranslate="ihotelApp.crinfo.hoteltime">Hoteltime</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="roomn"><span jhiTranslate="ihotelApp.crinfo.roomn">Roomn</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="memo"><span jhiTranslate="ihotelApp.crinfo.memo">Memo</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="realname">
+            <span jhiTranslate="ihotelApp.crinfo.realname">Realname</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="isup"><span jhiTranslate="ihotelApp.crinfo.isup">Isup</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let crinfo of crinfos; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/crinfo', crinfo.id, 'view']">{{ crinfo.id }}</a>
+          </td>
+          <td>{{ crinfo.operatetime | formatMediumDatetime }}</td>
+          <td>{{ crinfo.oldrent }}</td>
+          <td>{{ crinfo.newrent }}</td>
+          <td>{{ crinfo.oldroomn }}</td>
+          <td>{{ crinfo.newroomn }}</td>
+          <td>{{ crinfo.account }}</td>
+          <td>{{ crinfo.empn }}</td>
+          <td>{{ crinfo.oldday }}</td>
+          <td>{{ crinfo.newday }}</td>
+          <td>{{ crinfo.hoteltime | formatMediumDatetime }}</td>
+          <td>{{ crinfo.roomn }}</td>
+          <td>{{ crinfo.memo }}</td>
+          <td>{{ crinfo.realname }}</td>
+          <td>{{ crinfo.isup }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/crinfo', crinfo.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button type="submit" [routerLink]="['/crinfo', crinfo.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(crinfo)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="crinfos && crinfos.length > 0">
+    <div class="row justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+{
+  "ihotelApp": {
+    "dGoods": {
+      "home": {
+        "title": "D Goods",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new D Goods",
+        "createOrEditLabel": "Create or edit a D Goods",
+        "search": "Search for D Goods",
+        "notFound": "No D Goods found"
+      },
+      "created": "A new D Goods is created with identifier {{ param }}",
+      "updated": "A D Goods is updated with identifier {{ param }}",
+      "deleted": "A D Goods is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete D Goods {{ id }}?"
+      },
+      "detail": {
+        "title": "D Goods"
+      },
+      "id": "ID",
+      "typeid": "Typeid",
+      "goodsname": "Goodsname",
+      "goodsid": "Goodsid",
+      "ggxh": "Ggxh",
+      "pysj": "Pysj",
+      "wbsj": "Wbsj",
+      "unit": "Unit",
+      "gcsl": "Gcsl",
+      "dcsl": "Dcsl",
+      "remark": "Remark"
+    }
+  }
+}

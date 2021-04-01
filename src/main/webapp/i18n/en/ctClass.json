@@ -1,0 +1,40 @@
+{
+  "ihotelApp": {
+    "ctClass": {
+      "home": {
+        "title": "Ct Classes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Ct Class",
+        "createOrEditLabel": "Create or edit a Ct Class",
+        "search": "Search for Ct Class",
+        "notFound": "No Ct Classes found"
+      },
+      "created": "A new Ct Class is created with identifier {{ param }}",
+      "updated": "A Ct Class is updated with identifier {{ param }}",
+      "deleted": "A Ct Class is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Ct Class {{ id }}?"
+      },
+      "detail": {
+        "title": "Ct Class"
+      },
+      "id": "ID",
+      "dt": "Dt",
+      "empn": "Empn",
+      "flag": "Flag",
+      "jbempn": "Jbempn",
+      "gotime": "Gotime",
+      "xj": "Xj",
+      "zp": "Zp",
+      "sk": "Sk",
+      "hyk": "Hyk",
+      "cq": "Cq",
+      "gz": "Gz",
+      "gfz": "Gfz",
+      "yq": "Yq",
+      "yh": "Yh",
+      "zzh": "Zzh",
+      "checkSign": "Check Sign"
+    }
+  }
+}

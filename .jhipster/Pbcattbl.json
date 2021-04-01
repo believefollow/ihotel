@@ -1,0 +1,140 @@
+{
+  "name": "Pbcattbl",
+  "fields": [
+    {
+      "fieldName": "pbtTnam",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "65"
+    },
+    {
+      "fieldName": "pbtTid",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pbtOwnr",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "65"
+    },
+    {
+      "fieldName": "pbdFhgt",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pbdFwgt",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pbdFitl",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "1"
+    },
+    {
+      "fieldName": "pbdFunl",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "1"
+    },
+    {
+      "fieldName": "pbdFchr",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pbdFptc",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pbdFfce",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "18"
+    },
+    {
+      "fieldName": "pbhFhgt",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pbhFwgt",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pbhFitl",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "1"
+    },
+    {
+      "fieldName": "pbhFunl",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "1"
+    },
+    {
+      "fieldName": "pbhFchr",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pbhFptc",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pbhFfce",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "18"
+    },
+    {
+      "fieldName": "pblFhgt",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pblFwgt",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pblFitl",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "1"
+    },
+    {
+      "fieldName": "pblFunl",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "1"
+    },
+    {
+      "fieldName": "pblFchr",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pblFptc",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pblFfce",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "18"
+    },
+    {
+      "fieldName": "pbtCmnt",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "254"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "pbcattbl",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131423"
+}

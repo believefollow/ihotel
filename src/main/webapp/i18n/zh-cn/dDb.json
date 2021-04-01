@@ -1,0 +1,48 @@
+{
+  "ihotelApp": {
+    "dDb": {
+      "home": {
+        "title": "D Dbs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 D Db",
+        "createOrEditLabel": "创建或编辑 D Db",
+        "search": "查找 D Db",
+        "notFound": "No D Dbs found"
+      },
+      "created": "D Db {{ param }} 创建成功",
+      "updated": "D Db {{ param }} 更新成功",
+      "deleted": "D Db {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 D Db {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "D Db"
+      },
+      "id": "Id",
+      "dbdate": "Dbdate",
+      "dbbillno": "Dbbillno",
+      "rdepot": "Rdepot",
+      "cdepot": "Cdepot",
+      "jbr": "Jbr",
+      "remark": "Remark",
+      "spbm": "Spbm",
+      "spmc": "Spmc",
+      "unit": "Unit",
+      "price": "Price",
+      "sl": "Sl",
+      "je": "Je",
+      "memo": "Memo",
+      "flag": "Flag",
+      "kcid": "Kcid",
+      "empn": "Empn",
+      "lrdate": "Lrdate",
+      "ckbillno": "Ckbillno",
+      "f1": "F 1",
+      "f2": "F 2",
+      "f1empn": "F 1 Empn",
+      "f2empn": "F 2 Empn",
+      "f1sj": "F 1 Sj",
+      "f2sj": "F 2 Sj"
+    }
+  }
+}

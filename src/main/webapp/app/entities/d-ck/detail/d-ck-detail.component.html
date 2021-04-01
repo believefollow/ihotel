@@ -1,0 +1,128 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dCk">
+      <h2 data-cy="dCkDetailsHeading"><span jhiTranslate="ihotelApp.dCk.detail.title">D Ck</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ihotelApp.dCk.id">Id</span></dt>
+        <dd>
+          <span>{{ dCk.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.depot">Depot</span></dt>
+        <dd>
+          <span>{{ dCk.depot }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.ckdate">Ckdate</span></dt>
+        <dd>
+          <span>{{ dCk.ckdate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.ckbillno">Ckbillno</span></dt>
+        <dd>
+          <span>{{ dCk.ckbillno }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.deptname">Deptname</span></dt>
+        <dd>
+          <span>{{ dCk.deptname }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.jbr">Jbr</span></dt>
+        <dd>
+          <span>{{ dCk.jbr }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.remark">Remark</span></dt>
+        <dd>
+          <span>{{ dCk.remark }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.spbm">Spbm</span></dt>
+        <dd>
+          <span>{{ dCk.spbm }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.spmc">Spmc</span></dt>
+        <dd>
+          <span>{{ dCk.spmc }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.unit">Unit</span></dt>
+        <dd>
+          <span>{{ dCk.unit }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.price">Price</span></dt>
+        <dd>
+          <span>{{ dCk.price }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.sl">Sl</span></dt>
+        <dd>
+          <span>{{ dCk.sl }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.je">Je</span></dt>
+        <dd>
+          <span>{{ dCk.je }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.memo">Memo</span></dt>
+        <dd>
+          <span>{{ dCk.memo }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.flag">Flag</span></dt>
+        <dd>
+          <span>{{ dCk.flag }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.dbSign">Db Sign</span></dt>
+        <dd>
+          <span>{{ dCk.dbSign }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.cktype">Cktype</span></dt>
+        <dd>
+          <span>{{ dCk.cktype }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.empn">Empn</span></dt>
+        <dd>
+          <span>{{ dCk.empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.lrdate">Lrdate</span></dt>
+        <dd>
+          <span>{{ dCk.lrdate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.kcid">Kcid</span></dt>
+        <dd>
+          <span>{{ dCk.kcid }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.f1">F 1</span></dt>
+        <dd>
+          <span>{{ dCk.f1 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.f2">F 2</span></dt>
+        <dd>
+          <span>{{ dCk.f2 }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.f1empn">F 1 Empn</span></dt>
+        <dd>
+          <span>{{ dCk.f1empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.f2empn">F 2 Empn</span></dt>
+        <dd>
+          <span>{{ dCk.f2empn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.f1sj">F 1 Sj</span></dt>
+        <dd>
+          <span>{{ dCk.f1sj | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.dCk.f2sj">F 2 Sj</span></dt>
+        <dd>
+          <span>{{ dCk.f2sj | formatMediumDatetime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/d-ck', dCk.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

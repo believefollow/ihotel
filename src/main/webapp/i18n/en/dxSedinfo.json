@@ -1,0 +1,46 @@
+{
+  "ihotelApp": {
+    "dxSedinfo": {
+      "home": {
+        "title": "Dx Sedinfos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Dx Sedinfo",
+        "createOrEditLabel": "Create or edit a Dx Sedinfo",
+        "search": "Search for Dx Sedinfo",
+        "notFound": "No Dx Sedinfos found"
+      },
+      "created": "A new Dx Sedinfo is created with identifier {{ param }}",
+      "updated": "A Dx Sedinfo is updated with identifier {{ param }}",
+      "deleted": "A Dx Sedinfo is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Dx Sedinfo {{ id }}?"
+      },
+      "detail": {
+        "title": "Dx Sedinfo"
+      },
+      "id": "Id",
+      "yddx": "Yddx",
+      "yddxmemo": "Yddxmemo",
+      "qxyddx": "Qxyddx",
+      "qxydmemo": "Qxydmemo",
+      "czdx": "Czdx",
+      "czmemo": "Czmemo",
+      "qxczdx": "Qxczdx",
+      "qxczmemo": "Qxczmemo",
+      "yyedx": "Yyedx",
+      "yyememo": "Yyememo",
+      "fstime": "Fstime",
+      "sffshm": "Sffshm",
+      "rzdx": "Rzdx",
+      "rzdxroomn": "Rzdxroomn",
+      "jfdz": "Jfdz",
+      "blhy": "Blhy",
+      "rzmemo": "Rzmemo",
+      "blhymemo": "Blhymemo",
+      "tfdx": "Tfdx",
+      "tfdxmemo": "Tfdxmemo",
+      "fslb": "Fslb",
+      "fslbmemo": "Fslbmemo"
+    }
+  }
+}

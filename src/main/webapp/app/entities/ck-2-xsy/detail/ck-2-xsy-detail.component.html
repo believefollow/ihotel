@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="ck2xsy">
+      <h2 data-cy="ck2xsyDetailsHeading"><span jhiTranslate="ihotelApp.ck2xsy.detail.title">Ck 2 Xsy</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ ck2xsy.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.ck2xsy.rq">Rq</span></dt>
+        <dd>
+          <span>{{ ck2xsy.rq | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.ck2xsy.cpbh">Cpbh</span></dt>
+        <dd>
+          <span>{{ ck2xsy.cpbh }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.ck2xsy.sl">Sl</span></dt>
+        <dd>
+          <span>{{ ck2xsy.sl }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/ck-2-xsy', ck2xsy.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

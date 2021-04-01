@@ -1,0 +1,36 @@
+{
+  "name": "Pbcatfmt",
+  "fields": [
+    {
+      "fieldName": "pbfName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "30"
+    },
+    {
+      "fieldName": "pbfFrmt",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "254"
+    },
+    {
+      "fieldName": "pbfType",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pbfCntr",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "pbcatfmt",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131422"
+}

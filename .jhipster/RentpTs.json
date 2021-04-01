@@ -1,0 +1,58 @@
+{
+  "name": "RentpTs",
+  "fields": [
+    {
+      "fieldName": "protocoln",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "10"
+    },
+    {
+      "fieldName": "qytssign",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "starttime",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "pattern"],
+      "fieldValidateRulesMinlength": "8",
+      "fieldValidateRulesMaxlength": "8",
+      "fieldValidateRulesPattern": "^(([0-1]\\d)|(2[0-3])):([0-5]\\d):([0-5]\\d)$"
+    },
+    {
+      "fieldName": "endtime",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "pattern"],
+      "fieldValidateRulesMinlength": "8",
+      "fieldValidateRulesMaxlength": "8",
+      "fieldValidateRulesPattern": "^(([0-1]\\d)|(2[0-3])):([0-5]\\d):([0-5]\\d)$"
+    },
+    {
+      "fieldName": "dr",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2"
+    },
+    {
+      "fieldName": "tfsj",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "pattern"],
+      "fieldValidateRulesMinlength": "8",
+      "fieldValidateRulesMaxlength": "8",
+      "fieldValidateRulesPattern": "^(([0-1]\\d)|(2[0-3])):([0-5]\\d):([0-5]\\d)$"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "rentp_ts",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131439"
+}

@@ -1,0 +1,33 @@
+{
+  "ihotelApp": {
+    "checkCzl": {
+      "home": {
+        "title": "Check Czls",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Check Czl",
+        "createOrEditLabel": "Create or edit a Check Czl",
+        "search": "Search for Check Czl",
+        "notFound": "No Check Czls found"
+      },
+      "created": "A new Check Czl is created with identifier {{ param }}",
+      "updated": "A Check Czl is updated with identifier {{ param }}",
+      "deleted": "A Check Czl is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Check Czl {{ id }}?"
+      },
+      "detail": {
+        "title": "Check Czl"
+      },
+      "id": "ID",
+      "hoteltime": "Hoteltime",
+      "rtype": "Rtype",
+      "rnum": "Rnum",
+      "rOutnum": "R Outnum",
+      "czl": "Czl",
+      "chagrge": "Chagrge",
+      "chagrgeAvg": "Chagrge Avg",
+      "empn": "Empn",
+      "entertime": "Entertime"
+    }
+  }
+}

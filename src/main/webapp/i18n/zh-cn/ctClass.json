@@ -1,0 +1,40 @@
+{
+  "ihotelApp": {
+    "ctClass": {
+      "home": {
+        "title": "Ct Classes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Ct Class",
+        "createOrEditLabel": "创建或编辑 Ct Class",
+        "search": "查找 Ct Class",
+        "notFound": "No Ct Classes found"
+      },
+      "created": "Ct Class {{ param }} 创建成功",
+      "updated": "Ct Class {{ param }} 更新成功",
+      "deleted": "Ct Class {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Ct Class {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Ct Class"
+      },
+      "id": "ID",
+      "dt": "Dt",
+      "empn": "Empn",
+      "flag": "Flag",
+      "jbempn": "Jbempn",
+      "gotime": "Gotime",
+      "xj": "Xj",
+      "zp": "Zp",
+      "sk": "Sk",
+      "hyk": "Hyk",
+      "cq": "Cq",
+      "gz": "Gz",
+      "gfz": "Gfz",
+      "yq": "Yq",
+      "yh": "Yh",
+      "zzh": "Zzh",
+      "checkSign": "Check Sign"
+    }
+  }
+}

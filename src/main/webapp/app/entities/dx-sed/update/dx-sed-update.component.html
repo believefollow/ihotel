@@ -1,0 +1,87 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-dx-sed-heading" data-cy="DxSedCreateUpdateHeading" jhiTranslate="ihotelApp.dxSed.home.createOrEditLabel">
+        Create or edit a Dx Sed
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dxSed.id" for="field_id">Id</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          <div *ngIf="editForm.get('id')!.invalid && (editForm.get('id')!.dirty || editForm.get('id')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('id')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small class="form-text text-danger" [hidden]="!editForm.get('id')?.errors?.number" jhiTranslate="entity.validation.number">
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dxSed.dxRq" for="field_dxRq">Dx Rq</label>
+          <div class="d-flex">
+            <input
+              id="field_dxRq"
+              data-cy="dxRq"
+              type="datetime-local"
+              class="form-control"
+              name="dxRq"
+              formControlName="dxRq"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dxSed.dxZt" for="field_dxZt">Dx Zt</label>
+          <input type="text" class="form-control" name="dxZt" id="field_dxZt" data-cy="dxZt" formControlName="dxZt" />
+          <div *ngIf="editForm.get('dxZt')!.invalid && (editForm.get('dxZt')!.dirty || editForm.get('dxZt')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('dxZt')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 2 }"
+            >
+              This field cannot be longer than 2 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.dxSed.fsSj" for="field_fsSj">Fs Sj</label>
+          <div class="d-flex">
+            <input
+              id="field_fsSj"
+              data-cy="fsSj"
+              type="datetime-local"
+              class="form-control"
+              name="fsSj"
+              formControlName="fsSj"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

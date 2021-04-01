@@ -1,0 +1,155 @@
+<div>
+  <h2 id="page-heading" data-cy="CardysqHeading">
+    <span jhiTranslate="ihotelApp.cardysq.home.title">Cardysqs</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="ihotelApp.cardysq.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-cardysq"
+        [routerLink]="['/cardysq/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span class="hidden-sm-down" jhiTranslate="ihotelApp.cardysq.home.createLabel"> Create a new Cardysq </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <form name="searchForm" class="form-inline">
+        <div class="input-group w-100 mt-3">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="currentSearch"
+            id="currentSearch"
+            name="currentSearch"
+            placeholder="{{ 'ihotelApp.cardysq.home.search' | translate }}"
+          />
+
+          <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+            <fa-icon icon="search"></fa-icon>
+          </button>
+
+          <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+            <fa-icon icon="trash-alt"></fa-icon>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="cardysqs?.length === 0">
+    <span jhiTranslate="ihotelApp.cardysq.home.notFound">No cardysqs found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="cardysqs && cardysqs.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="ihotelApp.cardysq.id">Id</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="roomn"><span jhiTranslate="ihotelApp.cardysq.roomn">Roomn</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="guestname">
+            <span jhiTranslate="ihotelApp.cardysq.guestname">Guestname</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="account">
+            <span jhiTranslate="ihotelApp.cardysq.account">Account</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="rq"><span jhiTranslate="ihotelApp.cardysq.rq">Rq</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="cardid">
+            <span jhiTranslate="ihotelApp.cardysq.cardid">Cardid</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="djh"><span jhiTranslate="ihotelApp.cardysq.djh">Djh</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="sqh"><span jhiTranslate="ihotelApp.cardysq.sqh">Sqh</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="empn"><span jhiTranslate="ihotelApp.cardysq.empn">Empn</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="sign"><span jhiTranslate="ihotelApp.cardysq.sign">Sign</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="hoteltime">
+            <span jhiTranslate="ihotelApp.cardysq.hoteltime">Hoteltime</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="yxrq"><span jhiTranslate="ihotelApp.cardysq.yxrq">Yxrq</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="je"><span jhiTranslate="ihotelApp.cardysq.je">Je</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="ysqmemo">
+            <span jhiTranslate="ihotelApp.cardysq.ysqmemo">Ysqmemo</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cardysq of cardysqs; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/cardysq', cardysq.id, 'view']">{{ cardysq.id }}</a>
+          </td>
+          <td>{{ cardysq.roomn }}</td>
+          <td>{{ cardysq.guestname }}</td>
+          <td>{{ cardysq.account }}</td>
+          <td>{{ cardysq.rq | formatMediumDatetime }}</td>
+          <td>{{ cardysq.cardid }}</td>
+          <td>{{ cardysq.djh }}</td>
+          <td>{{ cardysq.sqh }}</td>
+          <td>{{ cardysq.empn }}</td>
+          <td>{{ cardysq.sign }}</td>
+          <td>{{ cardysq.hoteltime | formatMediumDatetime }}</td>
+          <td>{{ cardysq.yxrq | formatMediumDatetime }}</td>
+          <td>{{ cardysq.je }}</td>
+          <td>{{ cardysq.ysqmemo }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/cardysq', cardysq.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/cardysq', cardysq.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(cardysq)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="cardysqs && cardysqs.length > 0">
+    <div class="row justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

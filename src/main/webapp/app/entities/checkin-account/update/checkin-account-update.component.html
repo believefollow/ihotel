@@ -1,0 +1,135 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-checkin-account-heading"
+        data-cy="CheckinAccountCreateUpdateHeading"
+        jhiTranslate="ihotelApp.checkinAccount.home.createOrEditLabel"
+      >
+        Create or edit a Checkin Account
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkinAccount.account" for="field_account">Account</label>
+          <input type="text" class="form-control" name="account" id="field_account" data-cy="account" formControlName="account" />
+          <div *ngIf="editForm.get('account')!.invalid && (editForm.get('account')!.dirty || editForm.get('account')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('account')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('account')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 30 }"
+            >
+              This field cannot be longer than 30 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkinAccount.roomn" for="field_roomn">Roomn</label>
+          <input type="text" class="form-control" name="roomn" id="field_roomn" data-cy="roomn" formControlName="roomn" />
+          <div *ngIf="editForm.get('roomn')!.invalid && (editForm.get('roomn')!.dirty || editForm.get('roomn')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('roomn')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 10 }"
+            >
+              This field cannot be longer than 10 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkinAccount.indatetime" for="field_indatetime">Indatetime</label>
+          <div class="d-flex">
+            <input
+              id="field_indatetime"
+              data-cy="indatetime"
+              type="datetime-local"
+              class="form-control"
+              name="indatetime"
+              formControlName="indatetime"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkinAccount.gotime" for="field_gotime">Gotime</label>
+          <div class="d-flex">
+            <input
+              id="field_gotime"
+              data-cy="gotime"
+              type="datetime-local"
+              class="form-control"
+              name="gotime"
+              formControlName="gotime"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkinAccount.kfang" for="field_kfang">Kfang</label>
+          <input type="number" class="form-control" name="kfang" id="field_kfang" data-cy="kfang" formControlName="kfang" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkinAccount.dhua" for="field_dhua">Dhua</label>
+          <input type="number" class="form-control" name="dhua" id="field_dhua" data-cy="dhua" formControlName="dhua" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkinAccount.minin" for="field_minin">Minin</label>
+          <input type="number" class="form-control" name="minin" id="field_minin" data-cy="minin" formControlName="minin" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkinAccount.peich" for="field_peich">Peich</label>
+          <input type="number" class="form-control" name="peich" id="field_peich" data-cy="peich" formControlName="peich" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkinAccount.qit" for="field_qit">Qit</label>
+          <input type="number" class="form-control" name="qit" id="field_qit" data-cy="qit" formControlName="qit" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.checkinAccount.total" for="field_total">Total</label>
+          <input type="number" class="form-control" name="total" id="field_total" data-cy="total" formControlName="total" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

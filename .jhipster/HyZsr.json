@@ -1,0 +1,65 @@
+{
+  "name": "HyZsr",
+  "fields": [
+    {
+      "fieldName": "rq",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "xj",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "sk",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "gz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "md",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "djq",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "hyk",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "ml",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "bm",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "hoteldm",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "isnew",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "hy_zsr",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131400"
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Yearearn",
+  "fields": [
+    {
+      "fieldName": "syear",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "4"
+    },
+    {
+      "fieldName": "totalmoney",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "prepay",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "realearn",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "tab",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "tab2",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "yearearn",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131636"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "TbSqlNoupdate",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "javadoc": "id自增",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "sqlstr",
+      "fieldType": "String",
+      "javadoc": "执行语法",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "8000"
+    },
+    {
+      "fieldName": "scsj",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "gxsj",
+      "fieldType": "Instant",
+      "javadoc": "更新时间"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "tb_sql_noupdate",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131609"
+}

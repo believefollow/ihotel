@@ -1,0 +1,96 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="feetype">
+      <h2 data-cy="feetypeDetailsHeading"><span jhiTranslate="ihotelApp.feetype.detail.title">Feetype</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ feetype.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.feetype.feenum">Feenum</span></dt>
+        <dd>
+          <span>{{ feetype.feenum }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.feetype.feename">Feename</span></dt>
+        <dd>
+          <span>{{ feetype.feename }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.feetype.price">Price</span></dt>
+        <dd>
+          <span>{{ feetype.price }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.feetype.sign">Sign</span></dt>
+        <dd>
+          <span>{{ feetype.sign }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.feetype.beizhu">Beizhu</span></dt>
+        <dd>
+          <span>{{ feetype.beizhu }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.feetype.pym">Pym</span></dt>
+        <dd>
+          <span>{{ feetype.pym }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.feetype.salespotn">Salespotn</span></dt>
+        <dd>
+          <span>{{ feetype.salespotn }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.feetype.depot">Depot</span></dt>
+        <dd>
+          <span>{{ feetype.depot }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.feetype.cbsign">Cbsign</span></dt>
+        <dd>
+          <span>{{ feetype.cbsign }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.feetype.ordersign">Ordersign</span></dt>
+        <dd>
+          <span>{{ feetype.ordersign }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.feetype.hoteldm">Hoteldm</span></dt>
+        <dd>
+          <span>{{ feetype.hoteldm }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.feetype.isnew">Isnew</span></dt>
+        <dd>
+          <span>{{ feetype.isnew }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.feetype.ygj">Ygj</span></dt>
+        <dd>
+          <span>{{ feetype.ygj }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.feetype.autosign">Autosign</span></dt>
+        <dd>
+          <span>{{ feetype.autosign }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.feetype.jj">Jj</span></dt>
+        <dd>
+          <span>{{ feetype.jj }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.feetype.hyj">Hyj</span></dt>
+        <dd>
+          <span>{{ feetype.hyj }}</span>
+        </dd>
+        <dt><span jhiTranslate="ihotelApp.feetype.dqkc">Dqkc</span></dt>
+        <dd>
+          <span>{{ feetype.dqkc }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/feetype', feetype.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

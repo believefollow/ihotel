@@ -1,0 +1,112 @@
+{
+  "name": "ReportGoday",
+  "fields": [
+    {
+      "fieldName": "xm",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "roomn",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "account",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "30"
+    },
+    {
+      "fieldName": "residefate",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "gotime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "indatetime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "markid",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "kefang",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "canyin",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "chaz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "xxian",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "dhua",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "minin",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "peich",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "qt",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "total",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "huiy",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "dtb",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "sszx",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "yj9007",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "yj9008",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "yj9009",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "report_goday",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131445"
+}

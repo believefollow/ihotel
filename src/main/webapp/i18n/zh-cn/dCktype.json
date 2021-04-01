@@ -1,0 +1,27 @@
+{
+  "ihotelApp": {
+    "dCktype": {
+      "home": {
+        "title": "D Cktypes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 D Cktype",
+        "createOrEditLabel": "创建或编辑 D Cktype",
+        "search": "查找 D Cktype",
+        "notFound": "No D Cktypes found"
+      },
+      "created": "D Cktype {{ param }} 创建成功",
+      "updated": "D Cktype {{ param }} 更新成功",
+      "deleted": "D Cktype {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 D Cktype {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "D Cktype"
+      },
+      "id": "ID",
+      "cktype": "Cktype",
+      "memo": "Memo",
+      "sign": "Sign"
+    }
+  }
+}

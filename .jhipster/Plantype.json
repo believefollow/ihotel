@@ -1,0 +1,70 @@
+{
+  "name": "Plantype",
+  "fields": [
+    {
+      "fieldName": "account",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "groupn",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "roomtype",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "kysl",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "sl",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "indate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "rentp",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "flag",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "godate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "zs",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "ypf",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "yqx",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "plantype",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131426"
+}

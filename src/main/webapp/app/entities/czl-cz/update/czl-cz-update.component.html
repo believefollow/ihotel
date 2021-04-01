@@ -1,0 +1,199 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-czl-cz-heading" data-cy="CzlCzCreateUpdateHeading" jhiTranslate="ihotelApp.czlCz.home.createOrEditLabel">
+        Create or edit a Czl Cz
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czlCz.tjrq" for="field_tjrq">Tjrq</label>
+          <div class="d-flex">
+            <input
+              id="field_tjrq"
+              data-cy="tjrq"
+              type="datetime-local"
+              class="form-control"
+              name="tjrq"
+              formControlName="tjrq"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+          <div *ngIf="editForm.get('tjrq')!.invalid && (editForm.get('tjrq')!.dirty || editForm.get('tjrq')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('tjrq')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('tjrq')?.errors?.ZonedDateTimelocal"
+              jhiTranslate="entity.validation.ZonedDateTimelocal"
+            >
+              This field should be a date and time.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czlCz.typeid" for="field_typeid">Typeid</label>
+          <input type="number" class="form-control" name="typeid" id="field_typeid" data-cy="typeid" formControlName="typeid" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czlCz.type" for="field_type">Type</label>
+          <input type="text" class="form-control" name="type" id="field_type" data-cy="type" formControlName="type" />
+          <div *ngIf="editForm.get('type')!.invalid && (editForm.get('type')!.dirty || editForm.get('type')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('type')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('type')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czlCz.fjsl" for="field_fjsl">Fjsl</label>
+          <input type="number" class="form-control" name="fjsl" id="field_fjsl" data-cy="fjsl" formControlName="fjsl" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czlCz.kfl" for="field_kfl">Kfl</label>
+          <input type="number" class="form-control" name="kfl" id="field_kfl" data-cy="kfl" formControlName="kfl" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czlCz.pjz" for="field_pjz">Pjz</label>
+          <input type="number" class="form-control" name="pjz" id="field_pjz" data-cy="pjz" formControlName="pjz" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czlCz.ysfz" for="field_ysfz">Ysfz</label>
+          <input type="number" class="form-control" name="ysfz" id="field_ysfz" data-cy="ysfz" formControlName="ysfz" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czlCz.sjfz" for="field_sjfz">Sjfz</label>
+          <input type="number" class="form-control" name="sjfz" id="field_sjfz" data-cy="sjfz" formControlName="sjfz" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czlCz.fzcz" for="field_fzcz">Fzcz</label>
+          <input type="number" class="form-control" name="fzcz" id="field_fzcz" data-cy="fzcz" formControlName="fzcz" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czlCz.pjzcj" for="field_pjzcj">Pjzcj</label>
+          <input type="number" class="form-control" name="pjzcj" id="field_pjzcj" data-cy="pjzcj" formControlName="pjzcj" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czlCz.kfsM" for="field_kfsM">Kfs M</label>
+          <input type="number" class="form-control" name="kfsM" id="field_kfsM" data-cy="kfsM" formControlName="kfsM" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czlCz.kflM" for="field_kflM">Kfl M</label>
+          <input type="number" class="form-control" name="kflM" id="field_kflM" data-cy="kflM" formControlName="kflM" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czlCz.pjzM" for="field_pjzM">Pjz M</label>
+          <input type="number" class="form-control" name="pjzM" id="field_pjzM" data-cy="pjzM" formControlName="pjzM" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czlCz.fzsr" for="field_fzsr">Fzsr</label>
+          <input type="number" class="form-control" name="fzsr" id="field_fzsr" data-cy="fzsr" formControlName="fzsr" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czlCz.dayz" for="field_dayz">Dayz</label>
+          <input type="number" class="form-control" name="dayz" id="field_dayz" data-cy="dayz" formControlName="dayz" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czlCz.hoteltime" for="field_hoteltime">Hoteltime</label>
+          <div class="d-flex">
+            <input
+              id="field_hoteltime"
+              data-cy="hoteltime"
+              type="datetime-local"
+              class="form-control"
+              name="hoteltime"
+              formControlName="hoteltime"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czlCz.empn" for="field_empn">Empn</label>
+          <input type="text" class="form-control" name="empn" id="field_empn" data-cy="empn" formControlName="empn" />
+          <div *ngIf="editForm.get('empn')!.invalid && (editForm.get('empn')!.dirty || editForm.get('empn')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('empn')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 45 }"
+            >
+              This field cannot be longer than 45 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czlCz.monthz" for="field_monthz">Monthz</label>
+          <input type="number" class="form-control" name="monthz" id="field_monthz" data-cy="monthz" formControlName="monthz" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czlCz.hoteldm" for="field_hoteldm">Hoteldm</label>
+          <input type="text" class="form-control" name="hoteldm" id="field_hoteldm" data-cy="hoteldm" formControlName="hoteldm" />
+          <div *ngIf="editForm.get('hoteldm')!.invalid && (editForm.get('hoteldm')!.dirty || editForm.get('hoteldm')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('hoteldm')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ihotelApp.czlCz.isnew" for="field_isnew">Isnew</label>
+          <input type="number" class="form-control" name="isnew" id="field_isnew" data-cy="isnew" formControlName="isnew" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

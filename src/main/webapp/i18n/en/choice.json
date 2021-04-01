@@ -1,0 +1,29 @@
+{
+  "ihotelApp": {
+    "choice": {
+      "home": {
+        "title": "Choices",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Choice",
+        "createOrEditLabel": "Create or edit a Choice",
+        "search": "Search for Choice",
+        "notFound": "No Choices found"
+      },
+      "created": "A new Choice is created with identifier {{ param }}",
+      "updated": "A Choice is updated with identifier {{ param }}",
+      "deleted": "A Choice is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Choice {{ id }}?"
+      },
+      "detail": {
+        "title": "Choice"
+      },
+      "id": "Id",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "text": "Text",
+      "votes": "Votes",
+      "question": "Question"
+    }
+  }
+}

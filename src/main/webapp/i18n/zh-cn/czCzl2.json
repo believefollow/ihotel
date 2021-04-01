@@ -1,0 +1,50 @@
+{
+  "ihotelApp": {
+    "czCzl2": {
+      "home": {
+        "title": "Cz Czl 2 S",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Cz Czl 2",
+        "createOrEditLabel": "创建或编辑 Cz Czl 2",
+        "search": "查找 Cz Czl 2",
+        "notFound": "No Cz Czl 2 S found"
+      },
+      "created": "Cz Czl 2 {{ param }} 创建成功",
+      "updated": "Cz Czl 2 {{ param }} 更新成功",
+      "deleted": "Cz Czl 2 {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Cz Czl 2 {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Cz Czl 2"
+      },
+      "id": "ID",
+      "dr": "Dr",
+      "type": "Type",
+      "fs": "Fs",
+      "kfl": "Kfl",
+      "fzsr": "Fzsr",
+      "pjz": "Pjz",
+      "fsM": "Fs M",
+      "kflM": "Kfl M",
+      "fzsrM": "Fzsr M",
+      "pjzM": "Pjz M",
+      "fsY": "Fs Y",
+      "kflY": "Kfl Y",
+      "fzsrY": "Fzsr Y",
+      "pjzY": "Pjz Y",
+      "fsQ": "Fs Q",
+      "kflQ": "Kfl Q",
+      "fzsrQ": "Fzsr Q",
+      "pjzQ": "Pjz Q",
+      "dateY": "Date Y",
+      "dqdate": "Dqdate",
+      "empn": "Empn",
+      "number": "Number",
+      "numberM": "Number M",
+      "numberY": "Number Y",
+      "hoteldm": "Hoteldm",
+      "isnew": "Isnew"
+    }
+  }
+}

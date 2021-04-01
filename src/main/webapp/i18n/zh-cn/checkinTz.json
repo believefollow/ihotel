@@ -1,0 +1,42 @@
+{
+  "ihotelApp": {
+    "checkinTz": {
+      "home": {
+        "title": "Checkin Tzs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Checkin Tz",
+        "createOrEditLabel": "创建或编辑 Checkin Tz",
+        "search": "查找 Checkin Tz",
+        "notFound": "No Checkin Tzs found"
+      },
+      "created": "Checkin Tz {{ param }} 创建成功",
+      "updated": "Checkin Tz {{ param }} 更新成功",
+      "deleted": "Checkin Tz {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Checkin Tz {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Checkin Tz"
+      },
+      "id": "ID",
+      "guestId": "Guest Id",
+      "account": "Account",
+      "hoteltime": "Hoteltime",
+      "indatetime": "Indatetime",
+      "residefate": "Residefate",
+      "gotime": "Gotime",
+      "empn": "Empn",
+      "roomn": "Roomn",
+      "rentp": "Rentp",
+      "protocolrent": "Protocolrent",
+      "remark": "Remark",
+      "phonen": "Phonen",
+      "empn2": "Empn 2",
+      "memo": "Memo",
+      "lfSign": "Lf Sign",
+      "guestname": "Guestname",
+      "bc": "Bc",
+      "roomtype": "Roomtype"
+    }
+  }
+}

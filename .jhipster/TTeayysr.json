@@ -1,0 +1,100 @@
+{
+  "name": "TTeayysr",
+  "fields": [
+    {
+      "fieldName": "rq",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "hoteltime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "qy",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "zh",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "yyls",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "xf",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "xj",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "sk",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "md",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "gz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "gfz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "hyk",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "yh",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "ml",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "djq",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "gsz",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "isup",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "zfb",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "t_teayysr",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210401131554"
+}

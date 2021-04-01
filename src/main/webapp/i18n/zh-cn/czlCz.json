@@ -1,0 +1,44 @@
+{
+  "ihotelApp": {
+    "czlCz": {
+      "home": {
+        "title": "Czl Czs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Czl Cz",
+        "createOrEditLabel": "创建或编辑 Czl Cz",
+        "search": "查找 Czl Cz",
+        "notFound": "No Czl Czs found"
+      },
+      "created": "Czl Cz {{ param }} 创建成功",
+      "updated": "Czl Cz {{ param }} 更新成功",
+      "deleted": "Czl Cz {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Czl Cz {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Czl Cz"
+      },
+      "id": "ID",
+      "tjrq": "Tjrq",
+      "typeid": "Typeid",
+      "type": "Type",
+      "fjsl": "Fjsl",
+      "kfl": "Kfl",
+      "pjz": "Pjz",
+      "ysfz": "Ysfz",
+      "sjfz": "Sjfz",
+      "fzcz": "Fzcz",
+      "pjzcj": "Pjzcj",
+      "kfsM": "Kfs M",
+      "kflM": "Kfl M",
+      "pjzM": "Pjz M",
+      "fzsr": "Fzsr",
+      "dayz": "Dayz",
+      "hoteltime": "Hoteltime",
+      "empn": "Empn",
+      "monthz": "Monthz",
+      "hoteldm": "Hoteldm",
+      "isnew": "Isnew"
+    }
+  }
+}

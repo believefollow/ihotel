@@ -1,0 +1,30 @@
+{
+  "ihotelApp": {
+    "comset": {
+      "home": {
+        "title": "Comsets",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Comset",
+        "createOrEditLabel": "Create or edit a Comset",
+        "search": "Search for Comset",
+        "notFound": "No Comsets found"
+      },
+      "created": "A new Comset is created with identifier {{ param }}",
+      "updated": "A Comset is updated with identifier {{ param }}",
+      "deleted": "A Comset is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Comset {{ id }}?"
+      },
+      "detail": {
+        "title": "Comset"
+      },
+      "id": "ID",
+      "comNum": "Com Num",
+      "comBytes": "Com Bytes",
+      "comDatabit": "Com Databit",
+      "comParitycheck": "Com Paritycheck",
+      "comStopbit": "Com Stopbit",
+      "comFunction": "Com Function"
+    }
+  }
+}

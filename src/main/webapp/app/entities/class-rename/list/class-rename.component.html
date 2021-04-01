@@ -1,0 +1,311 @@
+<div>
+  <h2 id="page-heading" data-cy="ClassRenameHeading">
+    <span jhiTranslate="ihotelApp.classRename.home.title">Class Renames</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="ihotelApp.classRename.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-class-rename"
+        [routerLink]="['/class-rename/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span class="hidden-sm-down" jhiTranslate="ihotelApp.classRename.home.createLabel"> Create a new Class Rename </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <form name="searchForm" class="form-inline">
+        <div class="input-group w-100 mt-3">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="currentSearch"
+            id="currentSearch"
+            name="currentSearch"
+            placeholder="{{ 'ihotelApp.classRename.home.search' | translate }}"
+          />
+
+          <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+            <fa-icon icon="search"></fa-icon>
+          </button>
+
+          <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+            <fa-icon icon="trash-alt"></fa-icon>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="classRenames?.length === 0">
+    <span jhiTranslate="ihotelApp.classRename.home.notFound">No classRenames found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="classRenames && classRenames.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="dt"><span jhiTranslate="ihotelApp.classRename.dt">Dt</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="empn"><span jhiTranslate="ihotelApp.classRename.empn">Empn</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="oldmoney">
+            <span jhiTranslate="ihotelApp.classRename.oldmoney">Oldmoney</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="getmoney">
+            <span jhiTranslate="ihotelApp.classRename.getmoney">Getmoney</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="toup"><span jhiTranslate="ihotelApp.classRename.toup">Toup</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="downempn">
+            <span jhiTranslate="ihotelApp.classRename.downempn">Downempn</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="todown">
+            <span jhiTranslate="ihotelApp.classRename.todown">Todown</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="flag"><span jhiTranslate="ihotelApp.classRename.flag">Flag</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="old2"><span jhiTranslate="ihotelApp.classRename.old2">Old 2</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="get2"><span jhiTranslate="ihotelApp.classRename.get2">Get 2</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="toup2">
+            <span jhiTranslate="ihotelApp.classRename.toup2">Toup 2</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="todown2">
+            <span jhiTranslate="ihotelApp.classRename.todown2">Todown 2</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="upempn2">
+            <span jhiTranslate="ihotelApp.classRename.upempn2">Upempn 2</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="im9008">
+            <span jhiTranslate="ihotelApp.classRename.im9008">Im 9008</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="im9009">
+            <span jhiTranslate="ihotelApp.classRename.im9009">Im 9009</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="co9991">
+            <span jhiTranslate="ihotelApp.classRename.co9991">Co 9991</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="co9992">
+            <span jhiTranslate="ihotelApp.classRename.co9992">Co 9992</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="co9993">
+            <span jhiTranslate="ihotelApp.classRename.co9993">Co 9993</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="co9994">
+            <span jhiTranslate="ihotelApp.classRename.co9994">Co 9994</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="co9995">
+            <span jhiTranslate="ihotelApp.classRename.co9995">Co 9995</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="co9998">
+            <span jhiTranslate="ihotelApp.classRename.co9998">Co 9998</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="im9007">
+            <span jhiTranslate="ihotelApp.classRename.im9007">Im 9007</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="gotime">
+            <span jhiTranslate="ihotelApp.classRename.gotime">Gotime</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="co9999">
+            <span jhiTranslate="ihotelApp.classRename.co9999">Co 9999</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="cm9008">
+            <span jhiTranslate="ihotelApp.classRename.cm9008">Cm 9008</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="cm9009">
+            <span jhiTranslate="ihotelApp.classRename.cm9009">Cm 9009</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="co99910">
+            <span jhiTranslate="ihotelApp.classRename.co99910">Co 99910</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="checkSign">
+            <span jhiTranslate="ihotelApp.classRename.checkSign">Check Sign</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="classPb">
+            <span jhiTranslate="ihotelApp.classRename.classPb">Class Pb</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="ck"><span jhiTranslate="ihotelApp.classRename.ck">Ck</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="dk"><span jhiTranslate="ihotelApp.classRename.dk">Dk</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="sjrq"><span jhiTranslate="ihotelApp.classRename.sjrq">Sjrq</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="qsjrq">
+            <span jhiTranslate="ihotelApp.classRename.qsjrq">Qsjrq</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="byje"><span jhiTranslate="ihotelApp.classRename.byje">Byje</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="xfcw"><span jhiTranslate="ihotelApp.classRename.xfcw">Xfcw</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="hoteldm">
+            <span jhiTranslate="ihotelApp.classRename.hoteldm">Hoteldm</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="isnew">
+            <span jhiTranslate="ihotelApp.classRename.isnew">Isnew</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="co99912">
+            <span jhiTranslate="ihotelApp.classRename.co99912">Co 99912</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="xj"><span jhiTranslate="ihotelApp.classRename.xj">Xj</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="classname">
+            <span jhiTranslate="ihotelApp.classRename.classname">Classname</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="co9010">
+            <span jhiTranslate="ihotelApp.classRename.co9010">Co 9010</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="co9012">
+            <span jhiTranslate="ihotelApp.classRename.co9012">Co 9012</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="co9013">
+            <span jhiTranslate="ihotelApp.classRename.co9013">Co 9013</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="co9014">
+            <span jhiTranslate="ihotelApp.classRename.co9014">Co 9014</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="co99915">
+            <span jhiTranslate="ihotelApp.classRename.co99915">Co 99915</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="hyxj"><span jhiTranslate="ihotelApp.classRename.hyxj">Hyxj</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="hysk"><span jhiTranslate="ihotelApp.classRename.hysk">Hysk</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="hyqt"><span jhiTranslate="ihotelApp.classRename.hyqt">Hyqt</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="hkxj"><span jhiTranslate="ihotelApp.classRename.hkxj">Hkxj</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="hksk"><span jhiTranslate="ihotelApp.classRename.hksk">Hksk</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="hkqt"><span jhiTranslate="ihotelApp.classRename.hkqt">Hkqt</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="qtwt"><span jhiTranslate="ihotelApp.classRename.qtwt">Qtwt</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="qtysq">
+            <span jhiTranslate="ihotelApp.classRename.qtysq">Qtysq</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="bbysj">
+            <span jhiTranslate="ihotelApp.classRename.bbysj">Bbysj</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="zfbje">
+            <span jhiTranslate="ihotelApp.classRename.zfbje">Zfbje</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="wxje"><span jhiTranslate="ihotelApp.classRename.wxje">Wxje</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="w99920">
+            <span jhiTranslate="ihotelApp.classRename.w99920">W 99920</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="z99921">
+            <span jhiTranslate="ihotelApp.classRename.z99921">Z 99921</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let classRename of classRenames; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/class-rename', classRename.id, 'view']">{{ classRename.id }}</a>
+          </td>
+          <td>{{ classRename.dt | formatMediumDatetime }}</td>
+          <td>{{ classRename.empn }}</td>
+          <td>{{ classRename.oldmoney }}</td>
+          <td>{{ classRename.getmoney }}</td>
+          <td>{{ classRename.toup }}</td>
+          <td>{{ classRename.downempn }}</td>
+          <td>{{ classRename.todown }}</td>
+          <td>{{ classRename.flag }}</td>
+          <td>{{ classRename.old2 }}</td>
+          <td>{{ classRename.get2 }}</td>
+          <td>{{ classRename.toup2 }}</td>
+          <td>{{ classRename.todown2 }}</td>
+          <td>{{ classRename.upempn2 }}</td>
+          <td>{{ classRename.im9008 }}</td>
+          <td>{{ classRename.im9009 }}</td>
+          <td>{{ classRename.co9991 }}</td>
+          <td>{{ classRename.co9992 }}</td>
+          <td>{{ classRename.co9993 }}</td>
+          <td>{{ classRename.co9994 }}</td>
+          <td>{{ classRename.co9995 }}</td>
+          <td>{{ classRename.co9998 }}</td>
+          <td>{{ classRename.im9007 }}</td>
+          <td>{{ classRename.gotime | formatMediumDatetime }}</td>
+          <td>{{ classRename.co9999 }}</td>
+          <td>{{ classRename.cm9008 }}</td>
+          <td>{{ classRename.cm9009 }}</td>
+          <td>{{ classRename.co99910 }}</td>
+          <td>{{ classRename.checkSign }}</td>
+          <td>{{ classRename.classPb }}</td>
+          <td>{{ classRename.ck }}</td>
+          <td>{{ classRename.dk }}</td>
+          <td>{{ classRename.sjrq | formatMediumDatetime }}</td>
+          <td>{{ classRename.qsjrq | formatMediumDatetime }}</td>
+          <td>{{ classRename.byje }}</td>
+          <td>{{ classRename.xfcw }}</td>
+          <td>{{ classRename.hoteldm }}</td>
+          <td>{{ classRename.isnew }}</td>
+          <td>{{ classRename.co99912 }}</td>
+          <td>{{ classRename.xj }}</td>
+          <td>{{ classRename.classname }}</td>
+          <td>{{ classRename.co9010 }}</td>
+          <td>{{ classRename.co9012 }}</td>
+          <td>{{ classRename.co9013 }}</td>
+          <td>{{ classRename.co9014 }}</td>
+          <td>{{ classRename.co99915 }}</td>
+          <td>{{ classRename.hyxj }}</td>
+          <td>{{ classRename.hysk }}</td>
+          <td>{{ classRename.hyqt }}</td>
+          <td>{{ classRename.hkxj }}</td>
+          <td>{{ classRename.hksk }}</td>
+          <td>{{ classRename.hkqt }}</td>
+          <td>{{ classRename.qtwt }}</td>
+          <td>{{ classRename.qtysq }}</td>
+          <td>{{ classRename.bbysj }}</td>
+          <td>{{ classRename.zfbje }}</td>
+          <td>{{ classRename.wxje }}</td>
+          <td>{{ classRename.w99920 }}</td>
+          <td>{{ classRename.z99921 }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/class-rename', classRename.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/class-rename', classRename.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(classRename)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="classRenames && classRenames.length > 0">
+    <div class="row justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>
